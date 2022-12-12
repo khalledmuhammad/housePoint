@@ -106,8 +106,8 @@ const ListingDynamicDetailsV1 = () => {
                   <div className="col-lg-12">
                     <div className="spls_style_two mb30-520">
                       <Item
-                        original={image && image[0].file_image}
-                        thumbnail={image && image[0].file_image}
+                        original={`https://housepointegypt.com/photos/${ image && image[0].file_image}`}
+                        thumbnail={`https://housepointegypt.com/photos/${ image && image[0].file_image}`}
                         width={752}
                         height={450}
                       >
@@ -133,8 +133,8 @@ const ListingDynamicDetailsV1 = () => {
                     <div className="col-6" key={i}>
                       <div className="spls_style_two img-gallery-box mb24">
                         <Item
-                          original={val}
-                          thumbnail={val}
+                          original={`https://housepointegypt.com/photos/${val.file_image}`}
+                          thumbnail={`https://housepointegypt.com/photos/${val.file_image}`}
                           width={752}
                           height={450}
                         >
