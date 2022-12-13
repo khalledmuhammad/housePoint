@@ -35,36 +35,39 @@ const FeaturedProperties = () => {
       },
     ],
   };
+  const [image, setImage] = useState();
+  
   const [properties, setproperties] = useState([]);
-  const [image , setImage] = useState()
- 
   useEffect(() => {
     async function getPageData() {
       const apiUrlEndpoint = `http://localhost:5000/api/`;
       const { data } = await axios.get(apiUrlEndpoint);
-     console.log(data)
-     setproperties(data)
+      console.log(data);
+      setproperties(data);
     }
     getPageData();
-    async function getImageData() {
-      const apiUrlEndpoint = `http://localhost:5000/api/image/${image}`;
-      const { data } = await axios.get(apiUrlEndpoint);
-     console.log(data)
-     setImage(data.file_image)
-    }
-    getImageData()
-
   }, []);
 
-  
   return (
     <>
       <Slider {...settings} arrows={false}>
         {properties?.slice(0, 12).map((item) => (
           <div className="item" key={item.Id_property}>
             <div className="feat_property home3">
+            <h4 className="p-2"  style={{background:"rgb(62, 76, 102)"}}>
+                    <Link href={`/singleProperty/${item.Id_property}`}>
+                      <a className="text-white">{item.Title}</a>
+                    </Link>
+                  </h4>
+                  <Link href={`/singleProperty/${item.Id_property}`}>
+<a>
               <div className="thumb">
-                <img className="img-whp" src={item.img} alt="fp1.jpg" />
+                
+                <img
+                  className="img-whp"
+                  src={`https://housepointegypt.com/photos/${item.file_image}`}
+                  alt="fp1.jpg"
+                />
                 <div className="thmb_cntnt">
                   <ul className="tag mb0 ">
                     <li className="list-inline-item">
@@ -74,36 +77,66 @@ const FeaturedProperties = () => {
                       <a href="#">{item.Property_for}</a>
                     </li>
                   </ul>
+                  
 
                   <Link href={`/singleProperty/${item.Id_property}`}>
                     <a className="fp_price">
-                      {item.Price_ex} {item.Price}
+                      {item.Property_for === "Rent"
+                        ? `${item.Price} ${item.Price_ex}/month `
+                        : `${item.Price} ${item.Price_ex}`}
                     </a>
                   </Link>
                 </div>
               </div>
+              </a>
+              </Link>
               <div className="details">
                 <div className="tc_content">
                   <p className="text-thm">{item.Property_for}</p>
-                  <h4>
-                    <Link href={`/singleProperty/${item.Id_property}`}>
-                      <a>{item.Title}</a>
-                    </Link>
-                  </h4>
+                 
                   <p>
                     <span className="flaticon-placeholder"></span>
                     {item.name}, {item.name2}
                   </p>
 
-                  {/*     <ul className="prop_details mb0">
-                    {item.itemDetails.map((val, i) => (
-                      <li className="list-inline-item" key={i}>
-                        <a href="#">
-                          {val.name}: {val.number}
-                        </a>
-                      </li>
-                    ))}
-                  </ul> */}
+                  <ul className="row  ">
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-home " ></i>{item.Surface_area}sqm<sup>2</sup></a>  
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-bath"></i>  {item.No_of_bathrooms} bathrooms
+                    </a>  
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-bed"></i>  {item.No_of_bedrooms} bedrooms                    </a>  
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-eye"></i>  {item.views}                     </a>  
+                      </Link>
+                    </li>
+
+
+                  
+                  </ul>
                 </div>
               </div>
             </div>

@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../../features/properties/propertiesSlice";
 import properties from "../../../data/properties";
+import { useState } from "react";
+import axios from "axios";
 
 const FeaturedItem = () => {
   const {
@@ -26,7 +28,7 @@ const FeaturedItem = () => {
 
   // keyword filter
   const keywordHandler = (item) =>
-    item.title.toLowerCase().includes(keyword?.toLowerCase());
+    item.Title.toLowerCase().includes(keyword?.toLowerCase());
 
   // location handler
   const locationHandler = (item) => {
@@ -112,11 +114,23 @@ const FeaturedItem = () => {
     }
     return true;
   };
+  const [properties, setproperties] = useState([]);
+  useEffect(() => {
+    async function getPageData() {
+      const apiUrlEndpoint = `http://localhost:5000/api/`;
+      const { data } = await axios.get(apiUrlEndpoint);
+      console.log(data);
+      setproperties(data);
+    }
+    getPageData();
+  }, []);
+
 
   // status handler
   let content = properties
-    ?.slice(0, 10)
-    ?.filter(keywordHandler)
+     ?.slice(0, 10)
+     ?.filter(keywordHandler)
+   /*
     ?.filter(locationHandler)
     ?.filter(statusHandler)
     ?.filter(propertiesHandler)
@@ -128,7 +142,7 @@ const FeaturedItem = () => {
     ?.filter(areaHandler)
     ?.filter(advanceHandler)
     ?.sort(statusTypeHandler)
-    ?.filter(featuredHandler)
+    ?.filter(featuredHandler) */
     .map((item) => (
       <div
         className={`${
@@ -142,35 +156,28 @@ const FeaturedItem = () => {
           }`}
         >
           <div className="thumb">
-            <img className="img-whp" src={item.img} alt="fp1.jpg" />
+            <img className="img-whp" 
+                              src={`https://housepointegypt.com/photos/${item.file_image}`}
+
+            alt="fp1.jpg" />
             <div className="thmb_cntnt">
               <ul className="tag mb0">
                 <li className="list-inline-item">
-                  <a href="#">Featured</a>
+                  <a href="#">#{item.Id_property}</a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#" className="text-capitalize">
-                    {item.featured}
+                    {item.Property_for}
                   </a>
                 </li>
               </ul>
-              <ul className="icon mb0">
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-transfer-1"></span>
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-heart"></span>
-                  </a>
-                </li>
-              </ul>
+             
 
               <Link href={`/singleProperty/${item.id}`}>
                 <a className="fp_price">
-                  ${item.price}
-                  <small>/mo</small>
+                {item.Property_for === "Rent"
+                        ? `${item.Price} ${item.Price_ex}/month `
+                        : `${item.Price} ${item.Price_ex}`}
                 </a>
               </Link>
             </div>
@@ -180,41 +187,56 @@ const FeaturedItem = () => {
               <p className="text-thm">{item.type}</p>
               <h4>
                 <Link href={`/singleProperty/${item.id}`}>
-                  <a>{item.title}</a>
+                  <a>{item.Title}</a>
                 </Link>
               </h4>
               <p>
                 <span className="flaticon-placeholder"></span>
-                {item.location}
+                {item.name} , {item.name2}
               </p>
 
-              <ul className="prop_details mb0">
-                {item.itemDetails.map((val, i) => (
-                  <li className="list-inline-item" key={i}>
-                    <a href="#">
-                      {val.name}: {val.number}
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </div>
             {/* End .tc_content */}
 
             <div className="fp_footer">
-              <ul className="fp_meta float-start mb0">
-                <li className="list-inline-item">
-                  <Link href="/agent-v2">
-                    <a>
-                      <img src={item.posterAvatar} alt="pposter1.png" />
-                    </a>
-                  </Link>
-                </li>
-                <li className="list-inline-item">
-                  <Link href="/agent-v2">
-                    <a>{item.posterName}</a>
-                  </Link>
-                </li>
-              </ul>
+            <ul className="row  ">
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-home " ></i>{item.Surface_area}sqm<sup>2</sup></a>  
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-bath"></i>  {item.No_of_bathrooms} bathrooms
+                    </a>  
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-bed"></i>  {item.No_of_bedrooms} bedrooms                    </a>  
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      
+                      <Link  href={`/singleProperty/${item.Id_property}`}  >
+                    <a  className="text-dark"  >
+                      
+                    <i className="fa fa-eye"></i>  {item.views}                     </a>  
+                      </Link>
+                    </li>
+
+
+                  
+                  </ul>
               <div className="fp_pdate float-end">{item.postedYear}</div>
             </div>
             {/* End .fp_footer */}

@@ -10,7 +10,7 @@ import GlobalSelectBox from "./GlobalSelectBox";
 const GlobalFilter = ({ className = "" }) => {
   // submit handler
   const submitHandler = () => {
-    Router.push("/listing-grid-v1");
+    Router.push("/AllProperties");
   };
 
   return (
