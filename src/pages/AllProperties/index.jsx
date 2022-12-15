@@ -3,6 +3,7 @@ import Seo from "../../components/common/seo";
 import AllProperties from "../../components/AllProperties/AllProperties";
 
 const index = () => {
+     
   return (
     <>
       <Seo pageTitle="Simple Listing – Grid V1" />

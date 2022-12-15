@@ -46,7 +46,7 @@ const index = () => {
                     discounts.
                   </p>
                 </div>
-                <GlobalHeroFilter className="home4" />
+              {/*   <GlobalHeroFilter className="home4" /> */}
               </div>
             </div>
           </div>

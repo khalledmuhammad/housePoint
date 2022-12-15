@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     keyword: "",
-    propertyType: "",
+    Property_type: "",
     location: "",
     price: {
         min: 0,
@@ -19,6 +19,7 @@ const initialState = {
         max: "",
     },
     length: 0,
+    
 };
 
 export const propertiesSlice = createSlice({
@@ -28,8 +29,8 @@ export const propertiesSlice = createSlice({
         addKeyword: (state, action) => {
             state.keyword = action.payload;
         },
-        addPropertyType: (state, action) => {
-            state.propertyType = action.payload;
+        addProperty_type: (state, action) => {
+            state.Property_type = action.payload;
         },
         addLocation: (state, action) => {
             state.location = action.payload;
@@ -82,7 +83,7 @@ export const propertiesSlice = createSlice({
 
 export const {
     addKeyword,
-    addPropertyType,
+    addProperty_type,
     addLocation,
     addPrice,
     addAmenities,

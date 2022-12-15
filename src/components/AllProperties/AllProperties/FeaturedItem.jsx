@@ -2,16 +2,19 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../../features/properties/propertiesSlice";
-import properties from "../../../data/properties";
 import { useState } from "react";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 
 const FeaturedItem = () => {
+
+
+
   const {
     keyword,
     location,
     status,
-    propertyType,
+    Property_type,
     price,
     bathrooms,
     bedrooms,
@@ -19,7 +22,9 @@ const FeaturedItem = () => {
     yearBuilt,
     area,
     amenities,
+    pageSize
   } = useSelector((state) => state.properties);
+
   const { statusType, featured, isGridOrList } = useSelector(
     (state) => state.filter
   );
@@ -41,7 +46,7 @@ const FeaturedItem = () => {
 
   // properties handler
   const propertiesHandler = (item) =>
-    item.type.toLowerCase().includes(propertyType.toLowerCase());
+    item.Property_type.includes(Property_type);
 
   // price handler
   const priceHandler = (item) =>
@@ -114,7 +119,10 @@ const FeaturedItem = () => {
     }
     return true;
   };
+  
   const [properties, setproperties] = useState([]);
+
+
   useEffect(() => {
     async function getPageData() {
       const apiUrlEndpoint = `http://localhost:5000/api/`;
@@ -125,11 +133,16 @@ const FeaturedItem = () => {
     getPageData();
   }, []);
 
+  const [pageNumb, setPageNum] = useState(0);
+  const propertiesperPage = 25;
+  const pageVisited = pageNumb * propertiesperPage;
+  const pageCount = Math.ceil(properties.length / propertiesperPage);
+
 
   // status handler
   let content = properties
-     ?.slice(0, 10)
-     ?.filter(keywordHandler)
+  ?.filter(keywordHandler)
+  ?.filter(propertiesHandler)
    /*
     ?.filter(locationHandler)
     ?.filter(statusHandler)
@@ -143,6 +156,7 @@ const FeaturedItem = () => {
     ?.filter(advanceHandler)
     ?.sort(statusTypeHandler)
     ?.filter(featuredHandler) */
+    ?.slice(pageVisited, pageVisited+propertiesperPage)
     .map((item) => (
       <div
         className={`${
@@ -237,20 +251,56 @@ const FeaturedItem = () => {
 
                   
                   </ul>
-              <div className="fp_pdate float-end">{item.postedYear}</div>
+              <div className="fp_pdate float-end">{item.ztype_en}</div>
             </div>
+            
             {/* End .fp_footer */}
           </div>
         </div>
+      
       </div>
     ));
+  
 
   // add length of filter items
   useEffect(() => {
     dispatch(addLength(content.length));
   }, [dispatch, addLength, content]);
 
-  return <>{content}</>;
+  const handlePageClick = async (data) => {
+    console.log(data.selected);
+
+    setPageNum(data.selected);
+  };
+
+  return <>{content}
+  
+  <div className="mbp_pagination">
+  <ReactPaginate
+        previousLabel={""}
+        nextLabel={""}
+        breakLabel={"..."}
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={3}
+        onPageChange={handlePageClick}
+        containerClassName={"page_navigation  justify-content-center"}
+
+        pageClassName={"page-item "}
+        pageLinkClassName={"page-link"}
+
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link flaticon-left-arrow "}
+
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link flaticon-right-arrow "}
+        
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
+        activeClassName={"active"}
+      />
+      </div>
+  </>;
 };
 
 export default FeaturedItem;

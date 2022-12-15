@@ -22,14 +22,14 @@ const ListingDynamicDetailsV1 = () => {
  
   useEffect(() => {
     async function getPageData() {
-      const apiUrlEndpoint = `http://localhost:5000/api/prop/${id}`;
+      const apiUrlEndpoint = `https://housepointserver-production.up.railway.app/api/prop/${id}`;
       const { data } = await axios.get(apiUrlEndpoint);
      console.log(data)
      setProperty(data)
     }
     getPageData();
     async function getImageData() {
-      const apiUrlEndpoint = `http://localhost:5000/api/image/${id}`;
+      const apiUrlEndpoint = `https://housepointserver-production.up.railway.app/api/image/${id}`;
       const { data } = await axios.get(apiUrlEndpoint);
      console.log(data)
      setImage(data)
