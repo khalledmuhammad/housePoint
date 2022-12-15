@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect  } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLength } from "../../../features/properties/propertiesSlice";
+import { addLength } from "../../features/properties/propertiesSlice";
 import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
-import { store } from "../../../app/store";
 
 
-const FeaturedItem = ({properties}) => {
+const FeaturedItem = ({data}) => {
 
 
+  const [properties , setProperties] = useState(data)
 
   const {
     keyword,
@@ -23,7 +23,8 @@ const FeaturedItem = ({properties}) => {
     garages,
     yearBuilt,
     area,
-    amenities
+    amenities,
+
   } = useSelector((state) => state.properties);
 
   const { statusType, featured, isGridOrList } = useSelector(
@@ -37,10 +38,8 @@ const FeaturedItem = ({properties}) => {
     item.Title.toLowerCase().includes(keyword?.toLowerCase());
 
   // location handler
-  const locationHandler = (item) => {
-    return item.location.toLowerCase().includes(location.toLowerCase());
-  };
 
+  
   // status handler
   const statusHandler = (item) =>
     item.type.toLowerCase().includes(status.toLowerCase());
@@ -122,9 +121,7 @@ const FeaturedItem = ({properties}) => {
   };
   
 
-  
-/*   useSelector(state=>state.properties.AllProperties)
- */
+
 
   const [pageNumb, setPageNum] = useState(0);
   const propertiesperPage = 25;
@@ -136,10 +133,7 @@ const FeaturedItem = ({properties}) => {
   let content = properties
   ?.filter(keywordHandler)
   ?.filter(propertiesHandler)
-   /*
-    ?.filter(locationHandler)
-    ?.filter(statusHandler)
-    ?.filter(propertiesHandler)
+   /*  ?.filter(propertiesHandler)
     ?.filter(priceHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
@@ -153,15 +147,22 @@ const FeaturedItem = ({properties}) => {
     .map((item) => (
       <div
         className={`${
-          isGridOrList ? "col-12 feature-list  " : "col-md-6 col-lg-6"
+          isGridOrList ? "col-12 feature-list" : "col-md-6 col-lg-6"
         } `}
         key={item.id}
       >
         <div
           className={`feat_property home7 style4 ${
-            isGridOrList ? "d-flex   align-items-center" : undefined
+            isGridOrList ? "d-flex align-items-center" : undefined
           }`}
         >
+          {
+  isGridOrList ? null :
+<h4 className="p-2"  style={{background:"rgb(62, 76, 102)"}}>
+                    <Link href={`/singleProperty/${item.Id_property}`}>
+                      <a className="text-white">{item.Title}</a>
+                    </Link>
+                  </h4>}
           <div className="thumb">
             <img className="img-whp" 
                               src={`https://housepointegypt.com/photos/${item.file_image}`}
@@ -296,15 +297,5 @@ const FeaturedItem = ({properties}) => {
   </>;
 };
 
-export async function getStaticProps() {
-  const proper = store.getState()
-  const properties = proper.properties.AllProperties
-  console.log(properties)
-  return {
-    props: {
-      properties
-    },
-  };
-}
 
 export default FeaturedItem;

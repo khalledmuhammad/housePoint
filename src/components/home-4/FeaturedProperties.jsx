@@ -1,9 +1,10 @@
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Slider from "react-slick";
 
-const FeaturedProperties = () => {
+const FeaturedProperties = ({Properties}) => {
   const settings = {
     dots: true,
     arrows: false,
@@ -37,21 +38,12 @@ const FeaturedProperties = () => {
   };
   const [image, setImage] = useState();
   
-  const [properties, setproperties] = useState([]);
-  useEffect(() => {
-    async function getPageData() {
-      const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}`;
-      const { data } = await axios.get(apiUrlEndpoint);
-      console.log(data);
-      setproperties(data);
-    }
-    getPageData();
-  }, []);
+
 
   return (
     <>
       <Slider {...settings} arrows={false}>
-        {properties?.slice(0, 12).map((item) => (
+        {  Properties?.slice(0, 12).map((item) => (
           <div className="item" key={item.Id_property}>
             <div className="feat_property home3">
             <h4 className="p-2"  style={{background:"rgb(62, 76, 102)"}}>

@@ -118,24 +118,25 @@ const HeaderMenuContent = ({ float = "" }) => {
       className="ace-responsive-menu text-end d-lg-block d-none"
       data-menu-style="horizontal"
     >
-      <li className="dropitem">
+      <li>
+      <Link href="/" className="dropitem">
         <a
-          href="/"
           className={
             home.some((page) => page.routerPath === route.pathname)
               ? "ui-active"
               : undefined
           }
         >
-          <span className="title">Home</span>
+          <span className="title  ">Home</span>
         </a>
         {/* <!-- Level Two--> */}
+      </Link>
       </li>
       {/* End .dropitem */}
+      <li>
 
-      <li className="dropitem">
+      <Link href="/AllProperties" className="dropitem">
         <a
-          href="/AllProperties"
           className={
             listing.some((page) => page.routerPath === route.pathname)
               ? "ui-active"
@@ -145,7 +146,9 @@ const HeaderMenuContent = ({ float = "" }) => {
           <span className="title">All properties</span>
         </a>
         {/* <!-- Level Two--> */}
+      </Link>
       </li>
+
       {/* End .dropitem */}
 
       <li className="dropitem">
@@ -170,7 +173,6 @@ const HeaderMenuContent = ({ float = "" }) => {
           {property.map((item) => (
             <li className="dropitem arrow" key={item.id}>
               <a
-                href="#"
                 className={
                   item.items.some(
                     (page) =>
