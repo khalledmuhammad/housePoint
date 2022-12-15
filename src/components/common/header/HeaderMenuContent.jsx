@@ -135,8 +135,8 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End .dropitem */}
       <li>
 
-      <Link href="/AllProperties" className="dropitem">
         <a
+        href="/AllProperties"
           className={
             listing.some((page) => page.routerPath === route.pathname)
               ? "ui-active"
@@ -146,68 +146,11 @@ const HeaderMenuContent = ({ float = "" }) => {
           <span className="title">All properties</span>
         </a>
         {/* <!-- Level Two--> */}
-      </Link>
       </li>
 
       {/* End .dropitem */}
 
-      <li className="dropitem">
-        <a
-          href="#"
-          className={
-            property.some((parent) => {
-              return parent.items.some(
-                (page) =>
-                  page.routerPath === route.pathname ||
-                  page.routerPath + "/[id]" === route.pathname
-              );
-            })
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">Property</span>{" "}
-          <span className="arrow"></span>
-        </a>
-        <ul className="sub-menu ">
-          {property.map((item) => (
-            <li className="dropitem arrow" key={item.id}>
-              <a
-                className={
-                  item.items.some(
-                    (page) =>
-                      page.routerPath === route.pathname ||
-                      page.routerPath + "/[id]" === route.pathname
-                  )
-                    ? "ui-active"
-                    : undefined
-                }
-              >
-                {item.title}
-              </a>
-              {/* <!-- Level Three--> */}
-              <ul className="sub-menu ">
-                {item.items.map((val, i) => (
-                  <li key={i}>
-                    <Link href={val.routerPath}>
-                      <a
-                        className={
-                          route.pathname === val.routerPath ||
-                          val.routerPath + "/[id]" === route.pathname
-                            ? "ui-active"
-                            : undefined
-                        }
-                      >
-                        {val.name}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </li>
+  
       {/* End .dropitem */}
 
       {/*  <li className="dropitem">
