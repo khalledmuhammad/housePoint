@@ -125,7 +125,7 @@ const FeaturedItem = () => {
 
   useEffect(() => {
     async function getPageData() {
-      const apiUrlEndpoint = `http://localhost:5000/api/`;
+      const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}`;
       const { data } = await axios.get(apiUrlEndpoint);
       console.log(data);
       setproperties(data);

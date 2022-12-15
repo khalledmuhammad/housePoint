@@ -26,31 +26,3 @@ export default async function getAllProperties(req, res) {
   }
 }
 
-export  async function getImage(req,res) {
-  const dbconnection = await mysql.createConnection({
-    host: "localhost",
-    database: "techlife",
-    // port: 8889,
-    user: "root",
-    password: "",
-  });
-
-  try {
-
-    const imagequery = ` select * from image where cat=${req.Id_property} and main=1 limit 1 `
-
-    const values = [];
-
-    const [images] = await dbconnection.execute(imagequery, values);
-    dbconnection.end();
-
-
-    
-    res.status(200).json({ images: images });
-
-} catch (error) {
-  // unhide to check error
-  res.status(500).json({ error: error.message });
-}
-  
-}

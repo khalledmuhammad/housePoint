@@ -40,7 +40,7 @@ const FeaturedProperties = () => {
   const [properties, setproperties] = useState([]);
   useEffect(() => {
     async function getPageData() {
-      const apiUrlEndpoint = `https://housepointserver-production.up.railway.app/api/`;
+      const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}`;
       const { data } = await axios.get(apiUrlEndpoint);
       console.log(data);
       setproperties(data);
