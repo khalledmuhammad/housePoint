@@ -6,7 +6,6 @@ import {
   addStatusType,
 } from "../../../features/filter/filterSlice";
 import {
-  addAmenities,
   addAreaMax,
   addAreaMin,
   addBathrooms,
@@ -28,7 +27,7 @@ const FilteringItem = () => {
   const {
     keyword,
     location,
-    status,
+    Furniture_status,
     Property_type,
     bathrooms,
     bedrooms,
@@ -41,7 +40,7 @@ const FilteringItem = () => {
   // input state
   const [getKeyword, setKeyword] = useState(keyword);
   const [getLocation, setLocation] = useState(location);
-  const [getStatus, setStatus] = useState(status);
+  const [getStatus, setStatus] = useState(Furniture_status);
   const [getPropertiesType, setPropertiesType] = useState(Property_type);
   const [getBathroom, setBathroom] = useState(bathrooms);
   const [getBedroom, setBedroom] = useState(bedrooms);
@@ -216,13 +215,11 @@ const FilteringItem = () => {
               className="selectpicker w100 show-tick form-select"
               value={getStatus}
             >
-              <option value="">Status</option>
-              <option value="apartment">Apartment</option>
-              <option value="bungalow">Bungalow</option>
-              <option value="condo">Condo</option>
-              <option value="house">House</option>
-              <option value="land">Land</option>
-              <option value="single family">Single Family</option>
+              <option value="">Property status</option>
+              <option value={1}>furnished</option>
+              <option value={4}>Modern Furnished</option>
+              <option value={2}>semi furnished</option>
+              <option value={3}>Unfurnished</option>
             </select>
           </div>
         </div>
@@ -304,6 +301,15 @@ const FilteringItem = () => {
               <option value="4">4</option>
               <option value="5">5</option>
               <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
             </select>
           </div>
         </div>
@@ -325,13 +331,22 @@ const FilteringItem = () => {
               <option value="4">4</option>
               <option value="5">5</option>
               <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
             </select>
           </div>
         </div>
       </li>
       {/* End li */}
 
-      <li>
+     {/*  <li>
         <div className="search_option_two">
           <div className="candidate_revew_select">
             <select
@@ -346,10 +361,10 @@ const FilteringItem = () => {
             </select>
           </div>
         </div>
-      </li>
+      </li> */}
       {/* End li */}
 
-      <li>
+     {/*  <li>
         <div className="search_option_two">
           <div className="candidate_revew_select">
             <select
@@ -369,10 +384,10 @@ const FilteringItem = () => {
             </select>
           </div>
         </div>
-      </li>
+      </li> */}
       {/* End li */}
 
-      <li className="min_area list-inline-item">
+    {/*   <li className="min_area list-inline-item">
         <div className="form-group mb-4">
           <input
             type="number"
@@ -383,10 +398,10 @@ const FilteringItem = () => {
             onChange={(e) => setAreaMin(e.target.value)}
           />
         </div>
-      </li>
+      </li> */}
       {/* End li */}
 
-      <li className="max_area list-inline-item">
+     {/*  <li className="max_area list-inline-item">
         <div className="form-group mb-4">
           <input
             type="number"
@@ -397,60 +412,10 @@ const FilteringItem = () => {
             onChange={(e) => setAreaMax(e.target.value)}
           />
         </div>
-      </li>
+      </li> */}
       {/* End li */}
 
-      <li>
-        <div id="accordion" className="panel-group">
-          <div className="panel">
-            <div className="panel-heading">
-              <h4 className="panel-title">
-                <a
-                  href="#panelBodyRating"
-                  className="accordion-toggle link"
-                  data-bs-toggle="collapse"
-                  data-bs-parent="#accordion"
-                >
-                  <i className="flaticon-more"></i> Advanced features
-                </a>
-              </h4>
-            </div>
-            {/* End .panel-heading */}
-
-            <div id="panelBodyRating" className="panel-collapse collapse">
-              <div className="panel-body row">
-                <div className="col-lg-12">
-                  <ul className="ui_kit_checkbox selectable-list fn-400">
-                    {getAdvanced?.map((feature) => (
-                      <li key={feature.id}>
-                        <div className="form-check custom-checkbox">
-                          <input
-                            type="checkbox"
-                            className="form-check-input"
-                            id={feature.id}
-                            value={feature.name}
-                            checked={feature.isChecked || false}
-                            onChange={(e) =>
-                              dispath(addAmenities(e.target.value))
-                            }
-                            onClick={() => advancedHandler(feature.id)}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor={feature.id}
-                          >
-                            {feature.name}
-                          </label>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
+    
       {/* End li */}
 
       <li>

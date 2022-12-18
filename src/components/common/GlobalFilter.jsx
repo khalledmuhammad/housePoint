@@ -123,7 +123,6 @@ const GlobalFilter = ({ className = "" }) => {
                     <h4 className="text-thm3 mb-4">Amenities</h4>
                   </div>
 
-                  <CheckBoxFilter />
                 </div>
                 {/* End .row */}
 

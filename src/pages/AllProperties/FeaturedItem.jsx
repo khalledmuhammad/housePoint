@@ -12,7 +12,7 @@ const FeaturedItem = ({ data }) => {
   const {
     keyword,
     location,
-    status,
+    Furniture_status,
     Property_type,
     price,
     bathrooms,
@@ -33,11 +33,9 @@ const FeaturedItem = ({ data }) => {
   const keywordHandler = (item) =>
     item.Title.toLowerCase().includes(keyword?.toLowerCase());
 
-  // location handler
-
-  // status handler
+  // status handler furnished
   const statusHandler = (item) =>
-    item.type.toLowerCase().includes(status.toLowerCase());
+    item.Furniture_status.includes(Furniture_status);
 
   // properties handler
   const propertiesHandler = (item) =>
@@ -45,12 +43,12 @@ const FeaturedItem = ({ data }) => {
 
   // price handler
   const priceHandler = (item) =>
-    item.price < price?.max && item.price > price?.min;
+    item.Price < price?.max && item.Price > price?.min;
 
   // bathroom handler
   const bathroomHandler = (item) => {
     if (bathrooms !== "") {
-      return item.itemDetails[1].number == bathrooms;
+      return item.No_of_bathrooms.includes(bathrooms);
     }
     return true;
   };
@@ -58,7 +56,7 @@ const FeaturedItem = ({ data }) => {
   // bedroom handler
   const bedroomHandler = (item) => {
     if (bedrooms !== "") {
-      return item.itemDetails[0].number == bedrooms;
+      return item.No_of_bedrooms.includes(bedrooms);
     }
     return true;
   };
@@ -126,10 +124,11 @@ const FeaturedItem = ({ data }) => {
   let content = properties
     ?.filter(keywordHandler)
     ?.filter(propertiesHandler)
-    /*  ?.filter(propertiesHandler)
-    ?.filter(priceHandler)
+    ?.filter(statusHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
+    ?.filter(priceHandler)
+    /*  
     ?.filter(garagesHandler)
     ?.filter(builtYearsHandler)
     ?.filter(areaHandler)
@@ -247,7 +246,9 @@ const FeaturedItem = ({ data }) => {
                   </Link>
                 </li>
               </ul>
+
               <div className="fp_pdate float-end">{item.ztype_en}</div>
+              <div className="fp_pdate float-start"> {item.ff_en}</div>
             </div>
 
             {/* End .fp_footer */}

@@ -9,7 +9,7 @@ const initialState = {
         max: 0,
     },
     amenities: [],
-    status: "",
+    Furniture_status: "",
     bathrooms: "",
     bedrooms: "",
     garages: "",
@@ -55,13 +55,13 @@ export const propertiesSlice = createSlice({
             state.amenities = [];
         },
         addStatus: (state, action) => {
-            state.status = action.payload;
+            state.Furniture_status = action.payload;
         },
         addBathrooms: (state, action) => {
             state.bathrooms = action.payload;
         },
         addBedrooms: (state, action) => {
-            state.bathrooms = action.payload;
+            state.bedrooms = action.payload;
         },
         addGarages: (state, action) => {
             state.garages = action.payload;

@@ -1,18 +1,34 @@
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  addBathrooms,
+  addBedrooms,
+  addStatus
+} from "../../features/properties/propertiesSlice";
+
 const GlobalSelectBox = () => {
+  const dispatch = useDispatch()
   return (
     <>
       <li className="list-inline-item">
         <div className="candidate_revew_select">
-          <select className="selectpicker w100 show-tick form-select">
-            <option>Bathrooms</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
+          <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addBathrooms(e.target.value))}  >
+          <option value="">Bathrooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
           </select>
         </div>
       </li>
@@ -20,22 +36,29 @@ const GlobalSelectBox = () => {
 
       <li className="list-inline-item">
         <div className="candidate_revew_select">
-          <select className="selectpicker w100 show-tick form-select">
-            <option>Bedrooms</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
+          <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addBedrooms(e.target.value))}  >
+          <option value="">Bedrooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
           </select>
         </div>
       </li>
       {/* End li */}
 
-      <li className="list-inline-item">
+{/*       <li className="list-inline-item">
         <div className="candidate_revew_select">
           <select className="selectpicker w100 show-tick form-select">
             <option>Year built</option>
@@ -49,23 +72,21 @@ const GlobalSelectBox = () => {
             <option>2020</option>
           </select>
         </div>
-      </li>
+      </li> */}
       {/* End li */}
 
       <li className="list-inline-item">
         <div className="candidate_revew_select">
-          <select className="selectpicker w100 show-tick form-select">
-            <option>Built-up Area</option>
-            <option>Adana</option>
-            <option>Ankara</option>
-            <option>Antalya</option>
-            <option>Bursa</option>
-            <option>Bodrum</option>
-            <option>Gaziantep</option>
-            <option>İstanbul</option>
-            <option>İzmir</option>
-            <option>Konya</option>
-          </select>
+          <select
+              onChange={(e) => dispatch.addStatus(e.target.value)}
+              className="selectpicker w100 show-tick form-select"
+            >
+              <option value="">Property status</option>
+              <option value={1}>furnished</option>
+              <option value={4}>Modern Furnished</option>
+              <option value={2}>semi furnished</option>
+              <option value={3}>Unfurnished</option>
+            </select>
         </div>
       </li>
     </>
