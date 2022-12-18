@@ -2,16 +2,19 @@ import Router from "next/router";
 import {
   addKeyword,
   addLocation,
+  addProperty_type
 } from "../../features/properties/propertiesSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
 import GlobalSelectBox from "./GlobalSelectBox";
+import { useDispatch } from "react-redux";
 
 const GlobalFilter = ({ className = "" }) => {
   // submit handler
   const submitHandler = () => {
     Router.push("/AllProperties");
   };
+   const dispatch = useDispatch()
 
   return (
     <div className={`home1-advnc-search ${className}`}>
@@ -31,15 +34,34 @@ const GlobalFilter = ({ className = "" }) => {
         <li className="list-inline-item">
           <div className="search_option_two">
             <div className="candidate_revew_select">
-              <select className="selectpicker w100 form-select show-tick">
-                <option value="">Property Type</option>
-                <option>Apartment</option>
-                <option>Bungalow</option>
-                <option>Condo</option>
-                <option>House</option>
-                <option>Land</option>
-                <option>Single Family</option>
-              </select>
+            <select
+              onChange={(e) => dispatch(addProperty_type((e.target.value)))   }
+              className="selectpicker w100 show-tick form-select"
+            >
+              <option value="">Property Type</option>
+              <option value={1}>Duplex</option>
+              <option value={2}>Apartment</option>
+              <option value={3}>Ground Floors duplex</option>
+              <option value={4}>Ground Floors</option>
+              <option value={5}>Penthouses</option>
+              <option value={6}>Villas</option>
+              <option value={7}>Roof Top</option>
+              <option value={8}>Studios</option>
+              <option value={9}>Penthouses Duplex</option>
+              <option value={10}>Penthouses Triplex</option>
+              <option value={11}>Ground Floors Triplex</option>
+              <option value={12}>Adminstration Buildings</option>
+
+              <option value={13}>Twin Houses</option>
+              <option value={14}>Buildings</option>
+              <option value={17}>Chalets</option>
+              <option value={18}>Town House</option>
+              <option value={19}>lands</option>
+              <option value={20}>Flats</option>
+              <option value={21}>Commercial Stores and Shops</option>
+              <option value={22}>offices</option>
+              <option value={23}>Office Adminstration Buildings</option>
+            </select>
             </div>
           </div>
         </li>

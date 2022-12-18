@@ -1,16 +1,13 @@
 import Link from "next/link";
-import { useEffect  } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLength } from "../../features/properties/propertiesSlice";
 import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 
-
-const FeaturedItem = ({data}) => {
-
-
-  const [properties , setProperties] = useState(data)
+const FeaturedItem = ({ data }) => {
+  const [properties, setProperties] = useState(data);
 
   const {
     keyword,
@@ -24,7 +21,6 @@ const FeaturedItem = ({data}) => {
     yearBuilt,
     area,
     amenities,
-
   } = useSelector((state) => state.properties);
 
   const { statusType, featured, isGridOrList } = useSelector(
@@ -39,7 +35,6 @@ const FeaturedItem = ({data}) => {
 
   // location handler
 
-  
   // status handler
   const statusHandler = (item) =>
     item.type.toLowerCase().includes(status.toLowerCase());
@@ -119,21 +114,19 @@ const FeaturedItem = ({data}) => {
     }
     return true;
   };
-  
-
-
 
   const [pageNumb, setPageNum] = useState(0);
   const propertiesperPage = 25;
   const pageVisited = pageNumb * propertiesperPage;
-  const pageCount = Math.ceil(properties && properties.length / propertiesperPage);
-
+  const pageCount = Math.ceil(
+    properties && properties.length / propertiesperPage
+  );
 
   // status handler
   let content = properties
-  ?.filter(keywordHandler)
-  ?.filter(propertiesHandler)
-   /*  ?.filter(propertiesHandler)
+    ?.filter(keywordHandler)
+    ?.filter(propertiesHandler)
+    /*  ?.filter(propertiesHandler)
     ?.filter(priceHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
@@ -143,31 +136,32 @@ const FeaturedItem = ({data}) => {
     ?.filter(advanceHandler)
     ?.sort(statusTypeHandler)
     ?.filter(featuredHandler) */
-    ?.slice(pageVisited, pageVisited+propertiesperPage)
+    ?.slice(pageVisited, pageVisited + propertiesperPage)
     .map((item) => (
       <div
         className={`${
           isGridOrList ? "col-12 feature-list" : "col-md-6 col-lg-6"
         } `}
-        key={item.id}
+        key={item.Id_property}
       >
         <div
           className={`feat_property home7 style4 ${
             isGridOrList ? "d-flex align-items-center" : undefined
           }`}
         >
-          {
-  isGridOrList ? null :
-<h4 className="p-2"  style={{background:"rgb(62, 76, 102)"}}>
-                    <Link href={`/singleProperty/${item.Id_property}`}>
-                      <a className="text-white">{item.Title}</a>
-                    </Link>
-                  </h4>}
+          {isGridOrList ? null : (
+            <h4 className="p-2" style={{ background: "rgb(62, 76, 102)" }}>
+              <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
+                <a className="text-white">{item.Title}</a>
+              </Link>
+            </h4>
+          )}
           <div className="thumb">
-            <img className="img-whp" 
-                              src={`https://housepointegypt.com/photos/${item.file_image}`}
-
-            alt="fp1.jpg" />
+            <img
+              className="img-whp"
+              src={`https://housepointegypt.com/photos/${item.file_image}`}
+              alt="fp1.jpg"
+            />
             <div className="thmb_cntnt">
               <ul className="tag mb0">
                 <li className="list-inline-item">
@@ -179,13 +173,12 @@ const FeaturedItem = ({data}) => {
                   </a>
                 </li>
               </ul>
-             
 
-              <Link href={`/singleProperty/${item.Id_property}`}>
+              <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
                 <a className="fp_price">
-                {item.Property_for === "Rent"
-                        ? `${item.Price} ${item.Price_ex}/month `
-                        : `${item.Price} ${item.Price_ex}`}
+                  {item.Property_for === "Rent"
+                    ? `${item.Price} ${item.Price_ex}/month `
+                    : `${item.Price} ${item.Price_ex}`}
                 </a>
               </Link>
             </div>
@@ -194,7 +187,10 @@ const FeaturedItem = ({data}) => {
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
               <h4>
-                <Link href={`/singleProperty/${item.Id_property}`}>
+                <Link
+                  legacyBehavior
+                  href={`/singleProperty/${item.Id_property}`}
+                >
                   <a>{item.Title}</a>
                 </Link>
               </h4>
@@ -202,59 +198,63 @@ const FeaturedItem = ({data}) => {
                 <span className="flaticon-placeholder"></span>
                 {item.name} , {item.name2}
               </p>
-
             </div>
             {/* End .tc_content */}
 
             <div className="fp_footer">
-            <ul className="row  ">
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-home " ></i>{item.Surface_area}sqm<sup>2</sup></a>  
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-bath"></i>  {item.No_of_bathrooms} bathrooms
-                    </a>  
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-bed"></i>  {item.No_of_bedrooms} bedrooms                    </a>  
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-eye"></i>  {item.views}                     </a>  
-                      </Link>
-                    </li>
-
-
-                  
-                  </ul>
+              <ul className="row  ">
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-home "></i>
+                      {item.Surface_area}sqm<sup>2</sup>
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
+                      bathrooms
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
+                      bedrooms{" "}
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-eye"></i> {item.views}{" "}
+                    </a>
+                  </Link>
+                </li>
+              </ul>
               <div className="fp_pdate float-end">{item.ztype_en}</div>
             </div>
-            
+
             {/* End .fp_footer */}
           </div>
         </div>
-      
       </div>
     ));
-  
 
   // add length of filter items
   useEffect(() => {
@@ -267,35 +267,33 @@ const FeaturedItem = ({data}) => {
     setPageNum(data.selected);
   };
 
-  return <>{content}
-  
-  <div className="mbp_pagination">
-  <ReactPaginate
-        previousLabel={""}
-        nextLabel={""}
-        breakLabel={"..."}
-        pageCount={pageCount}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={3}
-        onPageChange={handlePageClick}
-        containerClassName={"page_navigation  justify-content-center"}
+  return (
+    <>
+      {content}
 
-        pageClassName={"page-item "}
-        pageLinkClassName={"page-link"}
-
-        previousClassName={"page-item"}
-        previousLinkClassName={"page-link flaticon-left-arrow "}
-
-        nextClassName={"page-item"}
-        nextLinkClassName={"page-link flaticon-right-arrow "}
-        
-        breakClassName={"page-item"}
-        breakLinkClassName={"page-link"}
-        activeClassName={"active"}
-      />
+      <div className="mbp_pagination">
+        <ReactPaginate
+          previousLabel={""}
+          nextLabel={""}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"page_navigation  justify-content-center"}
+          pageClassName={"page-item "}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link flaticon-left-arrow "}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link flaticon-right-arrow "}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
       </div>
-  </>;
+    </>
+  );
 };
-
 
 export default FeaturedItem;

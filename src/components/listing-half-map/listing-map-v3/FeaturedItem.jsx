@@ -169,7 +169,7 @@ const FeaturedItem = () => {
                 </li>
               </ul>
 
-              <Link href={`/singleProperty/${item.id}`}>
+              <Link legacyBehavior href={`/singleProperty/${item.id}`}>
                 <a className="fp_price">
                   ${item.price}
                   <small>/mo</small>
@@ -181,7 +181,7 @@ const FeaturedItem = () => {
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
               <h4>
-                <Link href={`/singleProperty/${item.id}`}>
+                <Link legacyBehavior href={`/singleProperty/${item.id}`}>
                   <a>{item.title}</a>
                 </Link>
               </h4>
@@ -205,14 +205,14 @@ const FeaturedItem = () => {
             <div className="fp_footer">
               <ul className="fp_meta float-start mb0">
                 <li className="list-inline-item">
-                  <Link href="/agent-v2">
+                  <Link legacyBehavior href="/agent-v2">
                     <a>
                       <img src={item.posterAvatar} alt="pposter1.png" />
                     </a>
                   </Link>
                 </li>
                 <li className="list-inline-item">
-                  <Link href="/agent-v2">
+                  <Link legacyBehavior href="/agent-v2">
                     <a>{item.posterName}</a>
                   </Link>
                 </li>

@@ -21,27 +21,27 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul className="list-unstyled">
             <li>
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>About Us</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>Terms & Conditions</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>User’s Guide</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>Support Center</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a>Press Info</a>
               </Link>
             </li>

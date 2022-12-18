@@ -119,24 +119,23 @@ const HeaderMenuContent = ({ float = "" }) => {
       data-menu-style="horizontal"
     >
       <li>
-      <Link href="/" className="dropitem">
-        <a
-          className={
-            home.some((page) => page.routerPath === route.pathname)
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title  ">Home</span>
-        </a>
-        {/* <!-- Level Two--> */}
-      </Link>
+        <Link legacyBehavior href="/" className="dropitem">
+          <a
+            className={
+              home.some((page) => page.routerPath === route.pathname)
+                ? "ui-active"
+                : undefined
+            }
+          >
+            <span className="title  ">Home</span>
+          </a>
+          {/* <!-- Level Two--> */}
+        </Link>
       </li>
       {/* End .dropitem */}
       <li>
-
         <a
-        href="/AllProperties"
+          href="/AllProperties"
           className={
             listing.some((page) => page.routerPath === route.pathname)
               ? "ui-active"
@@ -150,7 +149,6 @@ const HeaderMenuContent = ({ float = "" }) => {
 
       {/* End .dropitem */}
 
-  
       {/* End .dropitem */}
 
       {/*  <li className="dropitem">
@@ -168,7 +166,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         <ul className="sub-menu ">
           {pages.map((item) => (
             <li key={item.id}>
-              <Link href={item.routerPath}>
+              <Link legacyBehavior  href={item.routerPath}>
                 <a
                   className={
                     route.pathname === item.routerPath ? "ui-active" : undefined
@@ -202,7 +200,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         <ul className="sub-menu ">
           {blog.map((item) => (
             <li key={item.id}>
-              <Link href={item.routerPath}>
+              <Link legacyBehavior  href={item.routerPath}>
                 <a
                   className={
                     route.pathname === item.routerPath ||
@@ -221,7 +219,7 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End .dropitem */}
 
       <li className="last">
-        <Link href="/contact">
+        <Link legacyBehavior href="/contact">
           <a
             className={route.pathname === "/contact" ? "ui-active" : undefined}
           >
@@ -244,7 +242,7 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End .dropitem */}
 
       <li className={`list-inline-item add_listing ${float}`}>
-        <Link href="/create-listing">
+        <Link legacyBehavior href="/create-listing">
           <a>
             <span className="flaticon-plus"></span>
             <span className="dn-lg"> Create Listing</span>

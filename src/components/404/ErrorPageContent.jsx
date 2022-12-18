@@ -17,7 +17,7 @@ const ErrorPageContent = () => {
       <Form />
       {/* End form */}
 
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a className="btn btn_error btn-thm">Back To Home</a>
       </Link>
     </div>

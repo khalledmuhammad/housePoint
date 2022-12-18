@@ -21,4 +21,4 @@ export async function getServerSideProps() {
     },
   };
 }
-export default dynamic(() => Promise.resolve(index), { ssr: true });
+export default dynamic(() => Promise.resolve(index), { ssr: false });

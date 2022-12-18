@@ -6,7 +6,7 @@ const FeaturedListings = () => {
     <>
       {featureContent.slice(27, 30).map((item) => (
         <div className="media d-flex" key={item.id}>
-          <Link href={`/singleProperty/${item.id}`}>
+          <Link legacyBehavior href={`/singleProperty/${item.id}`}>
             <a>
               <img
                 className="align-self-start me-3"
@@ -18,11 +18,11 @@ const FeaturedListings = () => {
 
           <div className="media-body">
             <h5 className="mt-0 post_title">
-              <Link href={`/singleProperty/${item.id}`}>
+              <Link legacyBehavior href={`/singleProperty/${item.id}`}>
                 <a>{item.title}</a>
               </Link>
             </h5>
-            <Link href={`/singleProperty/${item.id}`}>
+            <Link legacyBehavior href={`/singleProperty/${item.id}`}>
               <a>
                 {" "}
                 ${item.price}/<small>/mo</small>

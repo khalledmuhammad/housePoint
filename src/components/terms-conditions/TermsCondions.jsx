@@ -68,7 +68,7 @@ const TermsCondions = () => {
             <ul className="list_details">
               {navigationList.map((list) => (
                 <li key={list.id}>
-                  <Link href={list.routeLink}>
+                  <Link legacyBehavior href={list.routeLink}>
                     <a>
                       <i className="fa fa-caret-right mr10"></i>
                       {list.name}

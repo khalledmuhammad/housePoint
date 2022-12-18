@@ -7,11 +7,7 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { store } from "../../../app/store";
 
-
-const FeaturedItem = ({properties}) => {
-
-
-
+const FeaturedItem = ({ properties }) => {
   const {
     keyword,
     location,
@@ -23,7 +19,7 @@ const FeaturedItem = ({properties}) => {
     garages,
     yearBuilt,
     area,
-    amenities
+    amenities,
   } = useSelector((state) => state.properties);
 
   const { statusType, featured, isGridOrList } = useSelector(
@@ -120,23 +116,22 @@ const FeaturedItem = ({properties}) => {
     }
     return true;
   };
-  
 
-  
-/*   useSelector(state=>state.properties.AllProperties)
- */
+  /*   useSelector(state=>state.properties.AllProperties)
+   */
 
   const [pageNumb, setPageNum] = useState(0);
   const propertiesperPage = 25;
   const pageVisited = pageNumb * propertiesperPage;
-  const pageCount = Math.ceil(properties && properties.length / propertiesperPage);
-
+  const pageCount = Math.ceil(
+    properties && properties.length / propertiesperPage
+  );
 
   // status handler
   let content = properties
-  ?.filter(keywordHandler)
-  ?.filter(propertiesHandler)
-   /*
+    ?.filter(keywordHandler)
+    ?.filter(propertiesHandler)
+    /*
     ?.filter(locationHandler)
     ?.filter(statusHandler)
     ?.filter(propertiesHandler)
@@ -149,7 +144,7 @@ const FeaturedItem = ({properties}) => {
     ?.filter(advanceHandler)
     ?.sort(statusTypeHandler)
     ?.filter(featuredHandler) */
-    ?.slice(pageVisited, pageVisited+propertiesperPage)
+    ?.slice(pageVisited, pageVisited + propertiesperPage)
     .map((item) => (
       <div
         className={`${
@@ -163,10 +158,11 @@ const FeaturedItem = ({properties}) => {
           }`}
         >
           <div className="thumb">
-            <img className="img-whp" 
-                              src={`https://housepointegypt.com/photos/${item.file_image}`}
-
-            alt="fp1.jpg" />
+            <img
+              className="img-whp"
+              src={`https://housepointegypt.com/photos/${item.file_image}`}
+              alt="fp1.jpg"
+            />
             <div className="thmb_cntnt">
               <ul className="tag mb0">
                 <li className="list-inline-item">
@@ -178,13 +174,12 @@ const FeaturedItem = ({properties}) => {
                   </a>
                 </li>
               </ul>
-             
 
-              <Link href={`/singleProperty/${item.Id_property}`}>
+              <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
                 <a className="fp_price">
-                {item.Property_for === "Rent"
-                        ? `${item.Price} ${item.Price_ex}/month `
-                        : `${item.Price} ${item.Price_ex}`}
+                  {item.Property_for === "Rent"
+                    ? `${item.Price} ${item.Price_ex}/month `
+                    : `${item.Price} ${item.Price_ex}`}
                 </a>
               </Link>
             </div>
@@ -193,7 +188,10 @@ const FeaturedItem = ({properties}) => {
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
               <h4>
-                <Link href={`/singleProperty/${item.Id_property}`}>
+                <Link
+                  legacyBehavior
+                  href={`/singleProperty/${item.Id_property}`}
+                >
                   <a>{item.Title}</a>
                 </Link>
               </h4>
@@ -201,59 +199,63 @@ const FeaturedItem = ({properties}) => {
                 <span className="flaticon-placeholder"></span>
                 {item.name} , {item.name2}
               </p>
-
             </div>
             {/* End .tc_content */}
 
             <div className="fp_footer">
-            <ul className="row  ">
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-home " ></i>{item.Surface_area}sqm<sup>2</sup></a>  
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-bath"></i>  {item.No_of_bathrooms} bathrooms
-                    </a>  
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-bed"></i>  {item.No_of_bedrooms} bedrooms                    </a>  
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                      
-                      <Link  href={`/singleProperty/${item.Id_property}`}  >
-                    <a  className="text-dark"  >
-                      
-                    <i className="fa fa-eye"></i>  {item.views}                     </a>  
-                      </Link>
-                    </li>
-
-
-                  
-                  </ul>
+              <ul className="row  ">
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-home "></i>
+                      {item.Surface_area}sqm<sup>2</sup>
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
+                      bathrooms
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
+                      bedrooms{" "}
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-eye"></i> {item.views}{" "}
+                    </a>
+                  </Link>
+                </li>
+              </ul>
               <div className="fp_pdate float-end">{item.ztype_en}</div>
             </div>
-            
+
             {/* End .fp_footer */}
           </div>
         </div>
-      
       </div>
     ));
-  
 
   // add length of filter items
   useEffect(() => {
@@ -266,43 +268,42 @@ const FeaturedItem = ({properties}) => {
     setPageNum(data.selected);
   };
 
-  return <>{content}
-  
-  <div className="mbp_pagination">
-  <ReactPaginate
-        previousLabel={""}
-        nextLabel={""}
-        breakLabel={"..."}
-        pageCount={pageCount}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={3}
-        onPageChange={handlePageClick}
-        containerClassName={"page_navigation  justify-content-center"}
+  return (
+    <>
+      {content}
 
-        pageClassName={"page-item "}
-        pageLinkClassName={"page-link"}
-
-        previousClassName={"page-item"}
-        previousLinkClassName={"page-link flaticon-left-arrow "}
-
-        nextClassName={"page-item"}
-        nextLinkClassName={"page-link flaticon-right-arrow "}
-        
-        breakClassName={"page-item"}
-        breakLinkClassName={"page-link"}
-        activeClassName={"active"}
-      />
+      <div className="mbp_pagination">
+        <ReactPaginate
+          previousLabel={""}
+          nextLabel={""}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={3}
+          onPageChange={handlePageClick}
+          containerClassName={"page_navigation  justify-content-center"}
+          pageClassName={"page-item "}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link flaticon-left-arrow "}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link flaticon-right-arrow "}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
       </div>
-  </>;
+    </>
+  );
 };
 
 export async function getStaticProps() {
-  const proper = store.getState()
-  const properties = proper.properties.AllProperties
-  console.log(properties)
+  const proper = store.getState();
+  const properties = proper.properties.AllProperties;
+  console.log(properties);
   return {
     props: {
-      properties
+      properties,
     },
   };
 }

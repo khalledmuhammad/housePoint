@@ -17,7 +17,7 @@ const CopyrightFooter = () => {
           <ul>
             {menuItems.map((item) => (
               <li className="list-inline-item" key={item.id}>
-                <Link href={item.routeLink}>
+                <Link legacyBehavior href={item.routeLink}>
                   <a>{item.name}</a>
                 </Link>
               </li>

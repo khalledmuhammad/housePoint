@@ -8,7 +8,7 @@ const Blogs = () => {
         <div className="col-md-6 col-lg-4 col-xl-4" key={item.id}>
           <div className="for_blog feat_property">
             <div className="thumb">
-              <Link href={`/blog-details/${item.id}`}>
+              <Link legacyBehavior href={`/blog-details/${item.id}`}>
                 <a>
                   <img className="img-whp" src={item.img} alt="bh1.jpg" />
                 </a>
@@ -18,7 +18,7 @@ const Blogs = () => {
               <div className="tc_content">
                 <p className="text-thm">{item.postMeta}</p>
                 <h4>
-                  <Link href={`/blog-details/${item.id}`}>
+                  <Link legacyBehavior href={`/blog-details/${item.id}`}>
                     <a>{item.title}</a>
                   </Link>
                 </h4>
@@ -26,14 +26,14 @@ const Blogs = () => {
               <div className="fp_footer">
                 <ul className="fp_meta float-start mb0">
                   <li className="list-inline-item">
-                    <Link href="/agent-v2">
+                    <Link legacyBehavior href="/agent-v2">
                       <a>
                         <img src={item.posterAvatar} alt="pposter1.png" />
                       </a>
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link href="/agent-v2">
+                    <Link legacyBehavior href="/agent-v2">
                       <a>{item.posterName}</a>
                     </Link>
                   </li>

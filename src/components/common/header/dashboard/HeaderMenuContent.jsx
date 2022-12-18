@@ -260,7 +260,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         <ul className="sub-menu ">
           {home.map((item) => (
             <li key={item.id}>
-              <Link href={item.routerPath}>
+              <Link legacyBehavior href={item.routerPath}>
                 <a
                   className={
                     route.pathname === item.routerPath ? "ui-active" : undefined
@@ -309,7 +309,7 @@ const HeaderMenuContent = ({ float = "" }) => {
               <ul className="sub-menu ">
                 {item.items.map((val, i) => (
                   <li key={i}>
-                    <Link href={val.routerPath}>
+                    <Link legacyBehavior href={val.routerPath}>
                       <a
                         className={
                           route.pathname === val.routerPath
@@ -368,7 +368,7 @@ const HeaderMenuContent = ({ float = "" }) => {
               <ul className="sub-menu ">
                 {item.items.map((val, i) => (
                   <li key={i}>
-                    <Link href={val.routerPath}>
+                    <Link legacyBehavior href={val.routerPath}>
                       <a
                         className={
                           route.pathname === val.routerPath ||
@@ -404,7 +404,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         <ul className="sub-menu ">
           {pages.map((item) => (
             <li key={item.id}>
-              <Link href={item.routerPath}>
+              <Link legacyBehavior href={item.routerPath}>
                 <a
                   className={
                     route.pathname === item.routerPath ? "ui-active" : undefined
@@ -438,7 +438,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         <ul className="sub-menu ">
           {blog.map((item) => (
             <li key={item.id}>
-              <Link href={item.routerPath}>
+              <Link legacyBehavior href={item.routerPath}>
                 <a
                   className={
                     route.pathname === item.routerPath ||
@@ -457,7 +457,7 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End .dropitem */}
 
       <li className="last">
-        <Link href="/contact">
+        <Link legacyBehavior href="/contact">
           <a
             className={route.pathname === "/contact" ? "ui-active" : undefined}
           >
@@ -485,7 +485,7 @@ const HeaderMenuContent = ({ float = "" }) => {
       {/* End ."user_setting */}
 
       <li className={`list-inline-item add_listing ${float}`}>
-        <Link href="/create-listing">
+        <Link legacyBehavior href="/create-listing">
           <a>
             <span className="flaticon-plus"></span>
             <span className="dn-lg"> Create Listing</span>

@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container-fluid p0">
         {/* <!-- Ace Responsive Menu --> */}
 
-        <Link href="/">
+        <Link legacyBehavior href="/">
           <a className="navbar_brand float-start dn-smd">
             <img
               className="logo1 img-fluid"

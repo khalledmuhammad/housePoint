@@ -8,7 +8,7 @@ const RelatedPost = () => {
         <div className="col-md-6 col-lg-6" key={item.id}>
           <div className="for_blog feat_property">
             <div className="thumb">
-              <Link href={`/blog-details/${item.id}`}>
+              <Link legacyBehavior href={`/blog-details/${item.id}`}>
                 <a>
                   <img className="img-whp" src={item.img} alt={item.img} />
                 </a>
@@ -17,7 +17,7 @@ const RelatedPost = () => {
             <div className="details">
               <div className="tc_content">
                 <h4>
-                  <Link href={`/blog-details/${item.id}`}>
+                  <Link legacyBehavior href={`/blog-details/${item.id}`}>
                     <a>{item.title}</a>
                   </Link>
                 </h4>

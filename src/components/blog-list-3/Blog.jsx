@@ -8,7 +8,7 @@ const Blog = () => {
         <div className="col-lg-4 col-md-6" key={item.id}>
           <div className="for_blog feat_property">
             <div className="thumb">
-              <Link href={`/blog-details/${item.id}`}>
+              <Link legacyBehavior href={`/blog-details/${item.id}`}>
                 <a>
                   <img className="img-whp" src={item.img} alt={item.img} />
                 </a>
@@ -20,7 +20,7 @@ const Blog = () => {
             <div className="details">
               <div className="tc_content">
                 <h4 className="mb15">
-                  <Link href={`/blog-details/${item.id}`}>
+                  <Link legacyBehavior href={`/blog-details/${item.id}`}>
                     <a>{item.title}</a>
                   </Link>
                 </h4>

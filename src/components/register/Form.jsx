@@ -7,7 +7,7 @@ const Form = () => {
         <h3>Register to your account</h3>
         <p className="text-center">
           Already have an account?{" "}
-          <Link href="/login">
+          <Link legacyBehavior href="/login">
             <a className="text-thm">Login</a>
           </Link>
         </p>

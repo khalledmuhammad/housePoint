@@ -97,7 +97,7 @@ const AuthorReview = () => {
           <div className="media-body">
             <h5 className="review_title mt-0">
               Your review on{" "}
-              <Link href="/agency-details/1">
+              <Link legacyBehavior href="/agency-details/1">
                 <a>
                   <span className="text-thm">{item.reviewOn}</span>
                 </a>

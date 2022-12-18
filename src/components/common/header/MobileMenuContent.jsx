@@ -147,7 +147,7 @@ const MobileMenuContent = () => {
     <ProSidebar>
       <SidebarHeader>
         <div className="sidebar-header">
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a className="sidebar-header-inner">
               <img
                 className="nav_logo_img img-fluid mt20"
@@ -176,7 +176,7 @@ const MobileMenuContent = () => {
         <Menu>
           {home.map((val, i) => (
             <MenuItem key={i} active={true}>
-              <Link href={val.routerPath}>
+              <Link legacyBehavior href={val.routerPath}>
                 <a
                   className={
                     val.routerPath === route.pathname ? "ui-active" : undefined
@@ -191,7 +191,7 @@ const MobileMenuContent = () => {
 
           {listing.map((val, i) => (
             <MenuItem key={i}>
-              <Link href={val.routerPath}>
+              <Link legacyBehavior href={val.routerPath}>
                 <a
                   className={
                     route.pathname === val.routerPath ? "ui-active" : undefined
@@ -235,7 +235,7 @@ const MobileMenuContent = () => {
               >
                 {item.items.map((val, i) => (
                   <MenuItem key={i}>
-                    <Link href={val.routerPath}>
+                    <Link legacyBehavior  href={val.routerPath}>
                       <a
                         className={
                           route.pathname === val.routerPath ||
@@ -268,7 +268,7 @@ const MobileMenuContent = () => {
           >
             {blog.map((val, i) => (
               <MenuItem key={i}>
-                <Link href={val.routerPath}>
+                <Link legacyBehavior href={val.routerPath}>
                   <a
                     className={
                       route.pathname === val.routerPath ||
@@ -295,7 +295,7 @@ const MobileMenuContent = () => {
           >
             {pages.map((val, i) => (
               <MenuItem key={i}>
-                <Link href={val.routerPath}>
+                <Link legacyBehavior  href={val.routerPath}>
                   <a
                     className={
                       route.pathname === val.routerPath
@@ -312,7 +312,7 @@ const MobileMenuContent = () => {
           {/* End pages Pages */}
 
           <MenuItem>
-            <Link href="/contact">
+            <Link legacyBehavior href="/contact">
               <a
                 className={
                   route.pathname === "/contact" ? "ui-active" : undefined
@@ -324,7 +324,7 @@ const MobileMenuContent = () => {
           </MenuItem>
 
           <MenuItem>
-            <Link href="/login">
+            <Link legacyBehavior href="/login">
               <a
                 className={
                   route.pathname === "/login" ? "ui-active" : undefined
@@ -336,7 +336,7 @@ const MobileMenuContent = () => {
           </MenuItem>
 
           <MenuItem>
-            <Link href="/register">
+            <Link legacyBehavior href="/register">
               <a
                 className={
                   route.pathname === "/register" ? "ui-active" : undefined
@@ -350,7 +350,7 @@ const MobileMenuContent = () => {
       </SidebarContent>
 
       <SidebarFooter>
-        <Link href="/create-listing">
+        <Link legacyBehavior href="/create-listing">
           <a className="btn btn-block btn-lg btn-thm circle">
             <span className="flaticon-plus"></span> Create Listing
           </a>

@@ -20,7 +20,7 @@ const MyAccount = () => {
       {/* End user_set_header */}
 
       <div className="user_setting_content">
-        <Link href="/my-profile">
+        <Link legacyBehavior href="/my-profile">
           <a
             className="dropdown-item"
             style={
@@ -32,7 +32,7 @@ const MyAccount = () => {
             My Profile
           </a>
         </Link>
-        <Link href="/my-message">
+        <Link legacyBehavior href="/my-message">
           <a
             className="dropdown-item "
             style={
@@ -44,7 +44,7 @@ const MyAccount = () => {
             My Message
           </a>
         </Link>
-        <Link href="/my-favourites">
+        <Link legacyBehavior href="/my-favourites">
           <a
             className="dropdown-item "
             style={
@@ -56,7 +56,7 @@ const MyAccount = () => {
             My Favourite
           </a>
         </Link>
-        <Link href="/my-package">
+        <Link legacyBehavior href="/my-package">
           <a
             className="dropdown-item "
             style={
@@ -68,7 +68,7 @@ const MyAccount = () => {
             My Package
           </a>
         </Link>
-        <Link href="/login">
+        <Link legacyBehavior href="/login">
           <a
             className="dropdown-item "
             style={

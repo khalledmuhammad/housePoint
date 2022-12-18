@@ -12,22 +12,15 @@ import DetailsContent from "../../components/singleProperty/DetailsContent";
 import Sidebar from "../../components/singleProperty/Sidebar";
 import axios from "axios";
 
-const ListingDynamicDetailsV1 = () => {
+const ListingDynamicDetailsV1 = ({Properties}) => {
   const router = useRouter();
-  const [property, setProperty] = useState({});
+  const [property, setProperty] = useState(Properties);
   const id = router.query.id;
-  console.log(id)
 
   const [image , setImage] = useState()
  
   useEffect(() => {
-    async function getPageData() {
-      const apiUrlEndpoint = ` ${process.env.NEXT_PUBLIC_API}/prop/${id}`;
-      const { data } = await axios.get(apiUrlEndpoint);
-     console.log(data)
-     setProperty(data)
-    }
-    getPageData();
+  
     async function getImageData() {
       const apiUrlEndpoint = ` ${process.env.NEXT_PUBLIC_API}/image/${id}`;
       const { data } = await axios.get(apiUrlEndpoint);
@@ -196,5 +189,17 @@ const ListingDynamicDetailsV1 = () => {
     </>
   );
 };
+
+export async function getServerSideProps({params}) {
+  const apiUrlEndpoint = ` ${process.env.NEXT_PUBLIC_API}/prop/${params.id}`;
+  const { data } = await axios.get(apiUrlEndpoint);
+  
+  return {
+    props: {
+      Properties: data,
+    },
+  };
+}
+
 
 export default ListingDynamicDetailsV1;

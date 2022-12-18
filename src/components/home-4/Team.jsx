@@ -62,7 +62,7 @@ const Team = () => {
 
             <div className="details">
               <h4>
-                <Link href={`/agent-details/${item.id}`}>
+                <Link legacyBehavior href={`/agent-details/${item.id}`}>
                   <a>{item.name}</a>
                 </Link>
               </h4>

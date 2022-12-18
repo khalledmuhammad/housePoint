@@ -46,7 +46,7 @@ const index = ({Properties}) => {
                     discounts.
                   </p>
                 </div>
-              {/*   <GlobalHeroFilter className="home4" /> */}
+            <GlobalHeroFilter className="home4" /> 
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const index = ({Properties}) => {
             <div className="col-lg-12 ">
               <div className="main-title text-center mb40">
                 <h2>Featured Properties</h2>
-                <h3><i class="fa fa-bookmark"></i> Recent Properties in Maadi, Katameya & New Cairo</h3>
+                <h3><i className="fa fa-bookmark"></i> Recent Properties in Maadi, Katameya & New Cairo</h3>
               </div>
             </div>
           </div>

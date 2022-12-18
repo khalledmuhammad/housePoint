@@ -21,7 +21,7 @@ const FavouritProducts = () => {
         <div className="tc_content">
           <h4>
             {" "}
-            <Link href={`/singleProperty/${item.id}`}>
+            <Link legacyBehavior href={`/singleProperty/${item.id}`}>
               <a>{item.title}</a>
             </Link>
           </h4>
