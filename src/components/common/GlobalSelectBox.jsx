@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import {
+  addStatus,
   addBathrooms,
   addBedrooms,
-  addStatus
+  
 } from "../../features/properties/propertiesSlice";
 
 const GlobalSelectBox = () => {
@@ -77,10 +78,8 @@ const GlobalSelectBox = () => {
 
       <li className="list-inline-item">
         <div className="candidate_revew_select">
-          <select
-              onChange={(e) => dispatch.addStatus(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-            >
+        <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addStatus(e.target.value))}  >
+
               <option value="">Property status</option>
               <option value={1}>furnished</option>
               <option value={4}>Modern Furnished</option>
