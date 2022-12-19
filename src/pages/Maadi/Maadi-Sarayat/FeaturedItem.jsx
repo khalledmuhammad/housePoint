@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addLength } from "../../features/properties/propertiesSlice";
+import { addLength } from "../../../features/properties/propertiesSlice";
 import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";

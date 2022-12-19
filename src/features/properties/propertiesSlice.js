@@ -6,7 +6,7 @@ const initialState = {
     location: "",
     price: {
         min: 0,
-        max: 0,
+        max: 10000000,
     },
     amenities: [],
     Furniture_status: "",
@@ -19,6 +19,7 @@ const initialState = {
         max: "",
     },
     length: 0,
+    Property_for : ""
     
 };
 
@@ -28,6 +29,9 @@ export const propertiesSlice = createSlice({
     reducers: {
         addKeyword: (state, action) => {
             state.keyword = action.payload;
+        },
+        addProperty_for: (state, action) => {
+            state.Property_for = action.payload;
         },
         addProperty_type: (state, action) => {
             state.Property_type = action.payload;
@@ -96,5 +100,6 @@ export const {
     addAreaMax,
     addLength,
     resetAmenities,
+    addProperty_for
 } = propertiesSlice.actions;
 export default propertiesSlice.reducer;

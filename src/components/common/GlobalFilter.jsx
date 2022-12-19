@@ -1,7 +1,10 @@
 import Router from "next/router";
 import {
-  addKeyword,
   addLocation,
+  addBathrooms,
+
+  addBedrooms,
+
   addProperty_type
 } from "../../features/properties/propertiesSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
@@ -17,18 +20,9 @@ const GlobalFilter = ({ className = "" }) => {
    const dispatch = useDispatch()
 
   return (
-    <div className={`home1-advnc-search ${className}`}>
+    <div className={`home1-advnc-search ${className} `}>
       <ul className="h1ads_1st_list mb0">
-        <li className="list-inline-item">
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter keyword..."
-              onChange={(e) => dispatch(addKeyword(e.target.value))}
-            />
-          </div>
-        </li>
+      
         {/* End li */}
 
         <li className="list-inline-item">
@@ -66,6 +60,53 @@ const GlobalFilter = ({ className = "" }) => {
           </div>
         </li>
         {/* End li */}
+        <li className="list-inline-item">
+        <div className="candidate_revew_select">
+          <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addBedrooms(e.target.value))}  >
+          <option value="">Bedrooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+          </select>
+        </div>
+      </li>
+      {/* End li */}
+      <li className="list-inline-item">
+        <div className="candidate_revew_select">
+          <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addBathrooms(e.target.value))}  >
+          <option value="">Bathrooms</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+          </select>
+        </div>
+      </li>
+
+        {/* End li */}
 
         <li className="list-inline-item">
           <div className="form-group">
@@ -75,9 +116,7 @@ const GlobalFilter = ({ className = "" }) => {
               placeholder="Location"
               onChange={(e) => dispatch(addLocation(e.target.value))}
             />
-            <label>
-              <span className="flaticon-maps-and-flags"></span>
-            </label>
+          
           </div>
         </li>
         {/* End li */}
@@ -114,7 +153,7 @@ const GlobalFilter = ({ className = "" }) => {
                 data-bs-auto-close="outside"
                 aria-expanded="false"
               >
-                Advanced <i className="flaticon-more pl10 flr-520"></i>
+               <i className="flaticon-more pl10 flr-520"></i>
               </span>
 
               <div className="dropdown-content dropdown-menu ">

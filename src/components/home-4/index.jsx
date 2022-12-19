@@ -41,10 +41,7 @@ const index = ({Properties}) => {
               <div className="home_content home4">
                 <div className="home-text text-center">
                   <h2 className="fz55">Find Your Dream Home</h2>
-                  <p className="fz18 color-white">
-                    From as low as $10 per day with limited time offer
-                    discounts.
-                  </p>
+                
                 </div>
             <GlobalHeroFilter className="home4" /> 
               </div>
@@ -91,7 +88,6 @@ const index = ({Properties}) => {
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
                 <h2>Find Properties in These Cities</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
           </div>
@@ -102,7 +98,7 @@ const index = ({Properties}) => {
       </section>
 
       {/* <!-- Our Blog --> */}
-      <section className="our-blog bgc-f7 pb30">
+    {/*   <section className="our-blog bgc-f7 pb30">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -116,10 +112,10 @@ const index = ({Properties}) => {
             <Blogs />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Team --> */}
-      <section className="our-team">
+     {/*  <section className="our-team">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
@@ -137,7 +133,7 @@ const index = ({Properties}) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Footer --> */}
       <section className="footer_one">

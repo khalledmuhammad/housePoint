@@ -2,8 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   addStatus,
-  addBathrooms,
-  addBedrooms,
+  addKeyword,
   
 } from "../../features/properties/propertiesSlice";
 
@@ -11,52 +10,10 @@ const GlobalSelectBox = () => {
   const dispatch = useDispatch()
   return (
     <>
-      <li className="list-inline-item">
-        <div className="candidate_revew_select">
-          <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addBathrooms(e.target.value))}  >
-          <option value="">Bathrooms</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-          </select>
-        </div>
-      </li>
+  
       {/* End li */}
 
-      <li className="list-inline-item">
-        <div className="candidate_revew_select">
-          <select className="selectpicker w100 show-tick form-select" onChange={(e)=> dispatch(addBedrooms(e.target.value))}  >
-          <option value="">Bedrooms</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-          </select>
-        </div>
-      </li>
+   
       {/* End li */}
 
 {/*       <li className="list-inline-item">
@@ -74,6 +31,8 @@ const GlobalSelectBox = () => {
           </select>
         </div>
       </li> */}
+
+     
       {/* End li */}
 
       <li className="list-inline-item">
@@ -88,6 +47,17 @@ const GlobalSelectBox = () => {
             </select>
         </div>
       </li>
+       {/* keyword search */}
+       <li className="list-inline-item">
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter keyword..."
+              onChange={(e) => dispatch(addKeyword(e.target.value))}
+            />
+          </div>
+        </li>
     </>
   );
 };

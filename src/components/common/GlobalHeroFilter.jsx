@@ -1,10 +1,20 @@
 import GlobalFilter from "./GlobalFilter";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+
+  addProperty_for,
+} from "../../features/properties/propertiesSlice";
+
+
 
 const GlobalHeroFilter = ({ className = "" }) => {
+    const dispatch = useDispatch()
+
     return (
         <div className={`home_adv_srch_opt ${className}`}>
             <ul className="nav nav-pills" id="pills-tab" role="tablist">
-                <li className="nav-item">
+                <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Sale"))} >
                     <a
                         className="nav-link active"
                         id="pills-home-tab"
@@ -14,11 +24,11 @@ const GlobalHeroFilter = ({ className = "" }) => {
                         aria-controls="pills-home"
                         aria-selected="true"
                     >
-                        Buy
+                        Sale
                     </a>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Rent"))} >
                     <a
                         className="nav-link"
                         id="pills-profile-tab"

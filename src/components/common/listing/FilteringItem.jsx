@@ -18,6 +18,7 @@ import {
   addStatus,
   addYearBuilt,
   resetAmenities,
+  
 } from "../../../features/properties/propertiesSlice";
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
@@ -33,8 +34,10 @@ const FilteringItem = () => {
     bedrooms,
     garages,
     yearBuilt,
+    price,
     area,
     amenities,
+    
   } = useSelector((state) => state.properties);
 
   // input state
@@ -76,6 +79,11 @@ const FilteringItem = () => {
   useEffect(() => {
     dispath(addKeyword(getKeyword));
   }, [dispath, addKeyword, getKeyword]);
+
+  // add price
+  useEffect(() => {
+    dispath(addPrice({ min: price.min, max: price.max }));
+  }, [dispath, addPrice, price]);
 
   // location
   useEffect(() => {
@@ -132,7 +140,7 @@ const FilteringItem = () => {
     setLocation("");
     setStatus("");
     setPropertiesType("");
-    dispath(addPrice({ min: 10000, max: 20000 }));
+    dispath(addPrice({ min: 0, max: 10000000 }));
     setBathroom("");
     setBedroom("");
     setBedroom("");

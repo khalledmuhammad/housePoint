@@ -1,12 +1,21 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import InputRange from "react-input-range";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPrice } from "../../features/properties/propertiesSlice";
 
 const RangeSlider = () => {
-    const [price, setPrice] = useState({ value: { min: 0, max: 10000000 } });
+
+    const {
+  
+        price,
+      
+        
+      } = useSelector((state) => state.properties);
+    const [Currprice, setPrice] = useState({ value: { min: price.min, max: price.max } });
     const dispath = useDispatch();
+
+
 
     const handleOnChange = (value) => {
         setPrice({ value });
@@ -16,18 +25,19 @@ const RangeSlider = () => {
     useEffect(() => {
         dispath(
             addPrice({
-                min: price.value.min,
-                max: price.value.max,
+                min: Currprice.value.min,
+                max: Currprice.value.max,
             })
         );
-    }, [dispath, price, addPrice]);
+        
+    }, [dispath, Currprice, addPrice]);
 
     return (
         <div className="nft__filter-price tp-range-slider tp-range-slider-dark mb-20">
-            <div className="nft__filter-price-inner d-flex align-items-center justify-content-between">
+            <div className="nft__filter-price-inner d-flex align-items-center justify-content-around">
                 <div className="nft__filter-price-box">
                     <div className="d-flex align-items-center">
-                        <span>{price.value.min}</span>
+                        <span>{Currprice.value.min}</span>
                     </div>
                     {/* <input
                         value={`${price.value.min}`}
@@ -36,8 +46,8 @@ const RangeSlider = () => {
                     /> */}
                 </div>
                 <div className="nft__filter-price-box">
-                    <div className="d-flex align-items-center">
-                        <span>{price.value.max}</span>
+                    <div className="d-flex align-items-center ">
+                        <span >{Currprice.value.max}</span>
                     </div>
                     {/* <input
                         type="number"
@@ -51,7 +61,7 @@ const RangeSlider = () => {
                 formatLabel={(value) => ``}
                 maxValue={10000000}
                 minValue={0}
-                value={price.value}
+                value={Currprice.value}
                 onChange={(value) => handleOnChange(value)}
             />
 
