@@ -24,7 +24,7 @@ const GlobalHeroFilter = ({ className = "" }) => {
                         aria-controls="pills-home"
                         aria-selected="true"
                     >
-                        Sale
+                        Buy
                     </a>
                 </li>
 
