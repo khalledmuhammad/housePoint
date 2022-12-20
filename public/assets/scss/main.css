@@ -2597,7 +2597,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last {
 }
 
 .home_content.home4 {
-  padding: 55px 0;
+  padding: 90px 0 20px;
 }
 
 .home_content.home5 {
@@ -3588,7 +3588,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   margin: 0 auto;
   position: absolute;
   right: 0;
-  top: 23%;
+  top: 205px;
   z-index: 1;
 }
 
