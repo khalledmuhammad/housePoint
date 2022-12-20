@@ -21,7 +21,8 @@ const FeaturedItem = ({ data }) => {
     yearBuilt,
     area,
     amenities,
-    Property_for
+    Property_for,
+    Sublocation
   } = useSelector((state) => state.properties);
 
   const { statusType, featured, isGridOrList } = useSelector(
@@ -58,6 +59,21 @@ const FeaturedItem = ({ data }) => {
   const bedroomHandler = (item) => {
     if (bedrooms !== "") {
       return item.No_of_bedrooms.includes(bedrooms);
+    }
+    return true;
+  };
+
+  //main locaion handler
+  const locationHandler = (item) => {
+    if (location !== "") {
+      return item.Area === Number(location);
+    }
+    return true;
+  };
+   //sub locaion handler
+   const sublocationHandler = (item) => {
+    if (Sublocation !== "") {
+      return item.Subarea === Number(Sublocation);
     }
     return true;
   };
@@ -135,6 +151,8 @@ const FeaturedItem = ({ data }) => {
     ?.filter(bedroomHandler)
     ?.filter(priceHandler)
     ?.filter(propertiesStartusHandler)
+    ?.filter(locationHandler)
+    ?.filter(sublocationHandler)
     /*  
     ?.filter(garagesHandler)
     ?.filter(builtYearsHandler)

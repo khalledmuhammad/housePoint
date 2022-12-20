@@ -13,7 +13,7 @@ const index = ({ Properties }) => {
 };
 
 export async function getServerSideProps() {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}`;
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/home`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {

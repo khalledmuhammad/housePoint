@@ -16,9 +16,9 @@ import {
   addPrice,
   addProperty_type,
   addStatus,
+  addSubLocation,
   addYearBuilt,
   resetAmenities,
-  
 } from "../../../features/properties/propertiesSlice";
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
@@ -36,13 +36,15 @@ const FilteringItem = () => {
     yearBuilt,
     price,
     area,
+    Sublocation,
     amenities,
-    
   } = useSelector((state) => state.properties);
 
   // input state
   const [getKeyword, setKeyword] = useState(keyword);
   const [getLocation, setLocation] = useState(location);
+  const [getSubLocation, setSubLocation] = useState(Sublocation);
+
   const [getStatus, setStatus] = useState(Furniture_status);
   const [getPropertiesType, setPropertiesType] = useState(Property_type);
   const [getBathroom, setBathroom] = useState(bathrooms);
@@ -51,6 +53,7 @@ const FilteringItem = () => {
   const [getBuiltYear, setBuiltYear] = useState(yearBuilt);
   const [getAreaMin, setAreaMin] = useState(area.min);
   const [getAreaMax, setAreaMax] = useState(area.max);
+
 
   // advanced state
   const [getAdvanced, setAdvanced] = useState([
@@ -89,6 +92,10 @@ const FilteringItem = () => {
   useEffect(() => {
     dispath(addLocation(getLocation));
   }, [dispath, addLocation, getLocation]);
+    //  sub location
+    useEffect(() => {
+      dispath(addSubLocation(getSubLocation));
+    }, [dispath, addSubLocation, getSubLocation]);
 
   // status
   useEffect(() => {
@@ -138,6 +145,7 @@ const FilteringItem = () => {
   const clearAllFilters = () => {
     setKeyword("");
     setLocation("");
+    setSubLocation("");
     setStatus("");
     setPropertiesType("");
     dispath(addPrice({ min: 0, max: 10000000 }));
@@ -200,17 +208,49 @@ const FilteringItem = () => {
 
       <li className="search_area">
         <div className="form-group mb-3">
-          <input
-            type="search"
-            className="form-control"
-            id="exampleInputEmail"
-            placeholder="Location"
+          <select
+            className="selectpicker w100 show-tick form-select"
             value={getLocation}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <label htmlFor="exampleInputEmail">
-            <span className="flaticon-maps-and-flags"></span>
-          </label>
+            onChange={(e) => {
+              setLocation(e.target.value);
+              setSubLocation("")
+            }}
+          >
+            <option value="">location</option>
+            <option value={1}>Maadi</option>
+            <option value={4}>New Cairo</option>
+            <option value={17} className="px-5">
+              Katameya Heights
+            </option>
+          </select>
+          {location == 1 && (
+            <select
+              className="selectpicker w100 show-tick form-select my-3"
+              value={getSubLocation}
+              onChange={(e) => setSubLocation(e.target.value)}
+            >
+              <option value="">sub location</option>
+              <option value={1}>Zahraa Maadi</option>
+              <option value={2}>Maadi Sarayat</option>
+              <option value={4}>New Maadi</option>
+              <option value={5}>Maadi Degla</option>
+              <option value={6}>Old Maadi</option>
+              <option value={3} className="px-5">Cornish Maadi</option>
+            </select>
+          )}
+               {location == 4 && (
+            <select
+              className="selectpicker w100 show-tick form-select my-3"
+              value={getSubLocation}
+              onChange={(e) => setSubLocation(e.target.value)}
+            >
+              <option value="">sub location</option>
+              <option value={7}>chouifat</option>
+              <option value={8}>West Golf</option>
+              <option value={9}>5th Settlement</option>
+           
+            </select>
+          )}
         </div>
       </li>
       {/* End li */}
@@ -354,7 +394,7 @@ const FilteringItem = () => {
       </li>
       {/* End li */}
 
-     {/*  <li>
+      {/*  <li>
         <div className="search_option_two">
           <div className="candidate_revew_select">
             <select
@@ -372,7 +412,7 @@ const FilteringItem = () => {
       </li> */}
       {/* End li */}
 
-     {/*  <li>
+      {/*  <li>
         <div className="search_option_two">
           <div className="candidate_revew_select">
             <select
@@ -395,7 +435,7 @@ const FilteringItem = () => {
       </li> */}
       {/* End li */}
 
-    {/*   <li className="min_area list-inline-item">
+      {/*   <li className="min_area list-inline-item">
         <div className="form-group mb-4">
           <input
             type="number"
@@ -409,7 +449,7 @@ const FilteringItem = () => {
       </li> */}
       {/* End li */}
 
-     {/*  <li className="max_area list-inline-item">
+      {/*  <li className="max_area list-inline-item">
         <div className="form-group mb-4">
           <input
             type="number"
@@ -423,7 +463,6 @@ const FilteringItem = () => {
       </li> */}
       {/* End li */}
 
-    
       {/* End li */}
 
       <li>
