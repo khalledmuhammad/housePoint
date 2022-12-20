@@ -254,7 +254,7 @@ const MobileMenuContent = () => {
           </SubMenu> */}
           {/* End Pages Property */}
 
-          <SubMenu
+        {/*   <SubMenu
             title="Blog"
             className={
               blog.some(
@@ -282,7 +282,7 @@ const MobileMenuContent = () => {
                 </Link>
               </MenuItem>
             ))}
-          </SubMenu>
+          </SubMenu> */}
           {/* End pages Blog */}
 
           {/*   <SubMenu

@@ -134,8 +134,8 @@ const HeaderMenuContent = ({ float = "" }) => {
       </li>
       {/* End .dropitem */}
       <li>
+        <Link           href="/AllProperties" >
         <a
-          href="/AllProperties"
           className={
             listing.some((page) => page.routerPath === route.pathname)
               ? "ui-active"
@@ -144,6 +144,7 @@ const HeaderMenuContent = ({ float = "" }) => {
         >
           <span className="title">All properties</span>
         </a>
+        </Link>
         {/* <!-- Level Two--> */}
       </li>
 
