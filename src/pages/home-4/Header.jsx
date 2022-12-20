@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import HeaderMenuContent from "./HeaderMenuContent";
-import LocaleSwitcher from "../LocalSwitcher";
+import HeaderMenuContent from "../../components/common/header/HeaderMenuContent";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import LocaleSwitcher from "../../components/common/LocalSwitcher";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
+
   const router = useRouter();
 
   const { t } = useTranslation("");
@@ -25,18 +26,19 @@ const Header = () => {
 
   return (
     <header
-      className={`header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu  ${
+      className={`header-nav menu_style_home_one  navbar-scrolltofixed stricky main-menu  ${
         navbar ? "stricky-fixed " : ""
       }`}
     >
       <div className="container-fluid p0">
-        {/* <!-- Menu Toggle btn--> */}
+        {/* <!-- Ace Responsive Menu --> */}
+
         <Link legacyBehavior href="/">
           <a className="navbar_brand float-start dn-smd">
             <img
               className="logo1 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
+              src="/assets/images/header-logo.png"
+              alt="header-logo.png"
             />
             <img
               className="logo2 img-fluid"
@@ -44,14 +46,15 @@ const Header = () => {
               alt="header-logo2.png"
             />
             <span>HousePoint</span>
+            <LocaleSwitcher />
 
+            
           </a>
         </Link>
         {/* site logo brand */}
 
         <nav>
           <HeaderMenuContent />
-          <LocaleSwitcher />
 
 
         </nav>

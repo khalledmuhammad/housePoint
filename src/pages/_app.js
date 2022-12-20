@@ -6,6 +6,8 @@ import "../index.scss";
 import { useRouter } from 'next/router';
 import { useEffect } from "react";
 import NProgress from "nprogress";
+import { appWithTranslation } from "next-i18next";
+
 
 
 if (typeof window !== "undefined") {
@@ -45,4 +47,6 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+
+
+export default appWithTranslation(MyApp);

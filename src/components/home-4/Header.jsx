@@ -1,9 +1,16 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import HeaderMenuContent from "../common/header/HeaderMenuContent";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import LocaleSwitcher from "../common/LocalSwitcher";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
+
+  const router = useRouter();
+
+  const { t } = useTranslation("");
 
   const changeBackground = () => {
     if (window.scrollY >= 95) {
@@ -39,12 +46,15 @@ const Header = () => {
               alt="header-logo2.png"
             />
             <span>HousePoint</span>
+            
           </a>
         </Link>
         {/* site logo brand */}
 
         <nav>
           <HeaderMenuContent />
+          <LocaleSwitcher />
+
         </nav>
         {/* End .navbar */}
       </div>

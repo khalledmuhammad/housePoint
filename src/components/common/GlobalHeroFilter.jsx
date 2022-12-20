@@ -1,5 +1,8 @@
 import GlobalFilter from "./GlobalFilter";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "next-i18next";
+
+
 
 import {
 
@@ -9,6 +12,8 @@ import {
 
 
 const GlobalHeroFilter = ({ className = "" }) => {
+    const { t } = useTranslation();
+
     const dispatch = useDispatch()
 
     return (
@@ -24,7 +29,9 @@ const GlobalHeroFilter = ({ className = "" }) => {
                         aria-controls="pills-home"
                         aria-selected="true"
                     >
-                        Buy
+                        {t("BUY")}
+
+
                     </a>
                 </li>
 
@@ -38,7 +45,8 @@ const GlobalHeroFilter = ({ className = "" }) => {
                         aria-controls="pills-profile"
                         aria-selected="false"
                     >
-                        Rent
+                        
+                        {t("RENT")}
                     </a>
                 </li>
             </ul>
@@ -65,5 +73,6 @@ const GlobalHeroFilter = ({ className = "" }) => {
         </div>
     );
 };
+
 
 export default GlobalHeroFilter;
