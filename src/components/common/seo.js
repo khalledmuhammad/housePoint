@@ -4,7 +4,7 @@ const Seo = ({ pageTitle, font }) => (
   <>
     <Head>
       <title>
-        {pageTitle && `${pageTitle} || FindHouse - Real Estate React Template}`}
+        {pageTitle && `${pageTitle} || housepoint - Real Estate  }`}
       </title>
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta
@@ -20,6 +20,9 @@ const Seo = ({ pageTitle, font }) => (
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
       {font && <link href={font} rel="stylesheet" />}
       <link rel="icon" href="favicon.ico" />

@@ -3,7 +3,6 @@ import HeaderMenuContent from "../../components/common/header/HeaderMenuContent"
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import LocaleSwitcher from "../../components/common/LocalSwitcher";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
@@ -11,6 +10,13 @@ const Header = () => {
   const router = useRouter();
 
   const { t } = useTranslation("");
+
+  useEffect(() => {
+    let dir = router.locale == "ar" ? "rtl" : "ltr";
+    let lang = router.locale == "ar" ? "ar" : "en";
+    document.querySelector("html").setAttribute("dir", dir);
+    document.querySelector("html").setAttribute("lang", lang);
+  }, [router.locale]);
 
   const changeBackground = () => {
     if (window.scrollY >= 95) {
@@ -46,7 +52,6 @@ const Header = () => {
               alt="header-logo2.png"
             />
             <span>HousePoint</span>
-            <LocaleSwitcher />
 
             
           </a>

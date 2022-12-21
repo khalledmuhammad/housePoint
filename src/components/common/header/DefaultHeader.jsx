@@ -11,6 +11,13 @@ const Header = () => {
 
   const { t } = useTranslation("");
 
+  useEffect(() => {
+    let dir = router.locale == "ar" ? "rtl" : "ltr";
+    let lang = router.locale == "ar" ? "ar" : "en";
+    document.querySelector("html").setAttribute("dir", dir);
+    document.querySelector("html").setAttribute("lang", lang);
+  }, [router.locale]);
+
   const changeBackground = () => {
     if (window.scrollY >= 95) {
       setNavbar(true);
@@ -50,8 +57,7 @@ const Header = () => {
         {/* site logo brand */}
 
         <nav>
-          <HeaderMenuContent />
-          <LocaleSwitcher />
+          <HeaderMenuContent dark={true} />
 
 
         </nav>

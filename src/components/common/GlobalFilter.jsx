@@ -4,13 +4,20 @@ import {
   addBathrooms,
   addBedrooms,
   addProperty_type,
+  addSubLocation,
 } from "../../features/properties/propertiesSlice";
 import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
 import GlobalSelectBox from "./GlobalSelectBox";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const GlobalFilter = ({ className = "" }) => {
+
+  const {
+    location,
+      Sublocation,
+  } = useSelector((state) => state.properties);
+
   // submit handler
   const submitHandler = () => {
     Router.push("/AllProperties");
@@ -23,13 +30,12 @@ const GlobalFilter = ({ className = "" }) => {
         {/* End li */}
 
         <li className="list-inline-item">
-          <div className="search_option_two">
             <div className="candidate_revew_select">
               <select
                 onChange={(e) => dispatch(addProperty_type(e.target.value))}
-                className="selectpicker w100 show-tick form-select"
+                className="selectpicker w-80 show-tick form-select"
               >
-                <option value="">Property Type</option>
+                <option value="">Type</option>
                 <option value={1}>Duplex</option>
                 <option value={2}>Apartment</option>
                 <option value={3}>Ground Floors duplex</option>
@@ -54,7 +60,6 @@ const GlobalFilter = ({ className = "" }) => {
                 <option value={23}>Office Adminstration Buildings</option>
               </select>
             </div>
-          </div>
         </li>
         {/* End li */}
         <li className="list-inline-item">
@@ -63,7 +68,7 @@ const GlobalFilter = ({ className = "" }) => {
               className="selectpicker w100 show-tick form-select"
               onChange={(e) => dispatch(addBedrooms(e.target.value))}
             >
-              <option value="">Bedrooms</option>
+              <option value="">beds</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -89,7 +94,7 @@ const GlobalFilter = ({ className = "" }) => {
               className="selectpicker w100 show-tick form-select"
               onChange={(e) => dispatch(addBathrooms(e.target.value))}
             >
-              <option value="">Bathrooms</option>
+              <option value="">baths</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -124,6 +129,46 @@ const GlobalFilter = ({ className = "" }) => {
             </select>
           </div>
         </li>
+        {/* End li */}
+        <li className="list-inline-item">
+          <div className="form-group">
+        {location == 1 && (
+
+            <select
+            className="selectpicker w100 show-tick form-select"
+            onChange={(e) => dispatch(addSubLocation(e.target.value))}
+            >
+              <option value="">sub location</option>
+              <option value={1}>Zahraa Maadi</option>
+              <option value={2}>Maadi Sarayat</option>
+              <option value={4}>New Maadi</option>
+              <option value={5}>Maadi Degla</option>
+              <option value={6}>Old Maadi</option>
+              <option value={3} className="px-5">Cornish Maadi</option>
+            </select>
+          )}
+
+          </div>
+          </li>
+
+          {/* End Li */}
+          <li className="list-inline-item">
+          <div className="form-group">
+               {location == 4 && (
+            <select
+            className="selectpicker w100 show-tick form-select"
+            onChange={(e) => dispatch(addSubLocation(e.target.value))}
+            >
+              <option value="">sub location</option>
+              <option value={7}>chouifat</option>
+              <option value={8}>West Golf</option>
+              <option value={9}>5th Settlement</option>
+           
+            </select>
+          )}
+
+          </div>
+          </li>
         {/* End li */}
 
         <li className="list-inline-item">

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import LocaleSwitcher from "../LocalSwitcher";
 
-const HeaderMenuContent = ({ float = "" }) => {
+const HeaderMenuContent = ({ float = "" , dark }) => {
   const route = useRouter();
 
   const home = [
@@ -241,6 +242,12 @@ const HeaderMenuContent = ({ float = "" }) => {
         </a>
       </li>
       {/* End .dropitem */}
+      <li className={`list-inline-item list_s ${float}`}>
+
+
+      <LocaleSwitcher dark={dark} />
+      </li>
+
 
       <li className={`list-inline-item add_listing ${float}`}>
         <Link legacyBehavior href="/create-listing">

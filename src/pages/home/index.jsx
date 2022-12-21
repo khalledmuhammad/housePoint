@@ -1,32 +1,22 @@
-import Blogs from "../common/Blogs";
-import GlobalHeroFilter from "../common/GlobalHeroFilter";
-import MobileMenu from "../common/header/MobileMenu";
+import Blogs from "../../components/common/Blogs";
+import GlobalHeroFilter from "../../components/common/GlobalHeroFilter";
 import FeaturedProperties from "./FeaturedProperties";
 import FindProperties from "./FindProperties";
-import Header from "./Header";
 import HeroSlider from "./HeroSlider";
 import LookingItem from "./LookingItem";
 import Team from "./Team";
-import CopyrightFooter from "../common/footer/CopyrightFooter";
-import Footer from "../common/footer/Footer";
-import PopupSignInUp from "../common/PopupSignInUp";
+
 import { useTranslation } from "react-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Layout from "../../components/Layout";
 
 const index = ({ Properties }) => {
   const { t } = useTranslation("");
 
   return (
     <>
-      {/* <!-- Main Header Nav --> */}
-      <Header />
 
-      {/* <!--  Mobile Menu --> */}
-      <MobileMenu />
-
-      {/* <!-- Modal --> */}
-      <PopupSignInUp />
-
+<Layout>
       {/* <!-- 4th Home Slider --> */}
       <div className="home-four ">
         <div className="container-fluid p0">
@@ -53,7 +43,7 @@ const index = ({ Properties }) => {
           <div className="row">
             <div className="col-lg-12">
               <h4 className="text-center color-white fw600 mb25 mb0-520">
-                What are you looking for?
+                {t("LOOKINGFOR")}
               </h4>
               <ul className="home4_iconbox mb0">
                 <LookingItem />
@@ -141,21 +131,7 @@ const index = ({ Properties }) => {
         </div>
       </section> */}
 
-      {/* <!-- Our Footer --> */}
-      <section className="footer_one">
-        <div className="container">
-          <div className="row">
-            <Footer />
-          </div>
-        </div>
-      </section>
-
-      {/* <!-- Our Footer Bottom Area --> */}
-      <section className="footer_middle_area pt40 pb40">
-        <div className="container">
-          <CopyrightFooter />
-        </div>
-      </section>
+</Layout>
     </>
   );
 };

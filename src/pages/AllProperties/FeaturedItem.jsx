@@ -5,9 +5,14 @@ import { addLength } from "../../features/properties/propertiesSlice";
 import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
+import { useRouter } from "next/router";
+
 
 const FeaturedItem = ({ data }) => {
   const [properties, setProperties] = useState(data);
+  const router = useRouter();
+
+
 
   const {
     keyword,
@@ -176,7 +181,7 @@ const FeaturedItem = ({ data }) => {
           {isGridOrList ? null : (
             <h4 className="p-2" style={{ background: "rgb(62, 76, 102)" }}>
               <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
-                <a className="text-white">{item.Title}</a>
+<a className="text-white">{router.locale == "ar" ?  item.titlear/* .replace('-','') */ : item.Title } </a>
               </Link>
             </h4>
           )}

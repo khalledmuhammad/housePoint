@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function LocaleSwitcher() {
+export default function LocaleSwitcher({dark}) {
   const router = useRouter();
 
   const { locales, locale: activeLocale } = router;
@@ -17,8 +17,8 @@ export default function LocaleSwitcher() {
         return (
           <span key={"locale-" + locale}>
             <Link href={{ pathname, query }} as={asPath} locale={locale}>
-              <a className="text-white text-center  px-2" >
-                {locale === "en" ? "English" : locale === "ar" ? "عربى" : null}
+              <a className={` ${dark ? "text-dark" : "" }  text-center  px-2` }>
+                {locale === "en" ? "English" : locale === "ar" ? "عربى" : null} < i className="fa fa-globe" />
               </a>
             </Link>
           </span>

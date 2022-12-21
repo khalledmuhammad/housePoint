@@ -16327,6 +16327,16 @@ legend span {
 .w80 {
   width: 80px !important;
 }
+.w-80 {
+  width: 80px !important;
+}
+@media screen and (max-width:1024px) {
+  .w-80 {
+    width: 100% !important;
+  }
+}
+
+
 
 .w100 {
   width: 100% !important;

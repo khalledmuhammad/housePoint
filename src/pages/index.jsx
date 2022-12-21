@@ -1,7 +1,7 @@
 import axios from "axios";
 import dynamic from "next/dynamic";
 import Seo from "../components/common/seo";
-import Home4 from "./home-4";
+import Home4 from "./home";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 
