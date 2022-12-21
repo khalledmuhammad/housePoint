@@ -130,9 +130,9 @@ const GlobalFilter = ({ className = "" }) => {
           </div>
         </li>
         {/* End li */}
-        <li className="list-inline-item">
+        {location == 1 && (  <li className="list-inline-item">
           <div className="form-group">
-        {location == 1 && (
+      
 
             <select
             className="selectpicker w100 show-tick form-select"
@@ -146,15 +146,16 @@ const GlobalFilter = ({ className = "" }) => {
               <option value={6}>Old Maadi</option>
               <option value={3} className="px-5">Cornish Maadi</option>
             </select>
-          )}
+         
 
           </div>
           </li>
+           )}
 
           {/* End Li */}
-          <li className="list-inline-item">
+          {location == 4 && (
+ <li className="list-inline-item">
           <div className="form-group">
-               {location == 4 && (
             <select
             className="selectpicker w100 show-tick form-select"
             onChange={(e) => dispatch(addSubLocation(e.target.value))}
@@ -165,10 +166,12 @@ const GlobalFilter = ({ className = "" }) => {
               <option value={9}>5th Settlement</option>
            
             </select>
-          )}
 
           </div>
           </li>
+
+          )}
+
         {/* End li */}
 
         <li className="list-inline-item">
