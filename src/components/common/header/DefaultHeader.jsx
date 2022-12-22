@@ -12,9 +12,7 @@ const Header = () => {
   const { t } = useTranslation("");
 
   useEffect(() => {
-    let dir = router.locale == "ar" ? "ltr" : "ltr";
     let lang = router.locale == "ar" ? "ar" : "en";
-    document.querySelector("html").setAttribute("dir", dir);
     document.querySelector("html").setAttribute("lang", lang);
   }, [router.locale]);
 
