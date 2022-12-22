@@ -183,7 +183,7 @@ const FeaturedItem = ({ data }) => {
           {isGridOrList ? null : (
             <h4 className="p-2" style={{ background: "rgb(62, 76, 102)" }}>
               <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
-<a className="text-white">{router.locale == "ar" ?  item.titlear/* .replace('-','') */ : item.Title } </a>
+<a className="text-white">{router.locale == "ar" ?  item.Title/* .replace('-','') */ : item.Title } </a>
               </Link>
             </h4>
           )}
