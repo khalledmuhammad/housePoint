@@ -3,6 +3,8 @@ import Head from "next/head";
 const Seo = ({ pageTitle, font }) => (
   <>
     <Head>
+      	<meta charset="utf-8" />
+
       <title>
         {pageTitle && `${pageTitle} || housepoint - Real Estate  }`}
       </title>
@@ -20,8 +22,6 @@ const Seo = ({ pageTitle, font }) => (
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
       {font && <link href={font} rel="stylesheet" />}

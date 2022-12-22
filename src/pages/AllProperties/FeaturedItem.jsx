@@ -38,7 +38,9 @@ const FeaturedItem = ({ data }) => {
 
   // keyword filter
   const keywordHandler = (item) =>
-    item.Title.toLowerCase().includes(keyword?.toLowerCase());
+  router.locale == "ar" ?    item.titlear.toLowerCase().includes(keyword?.toLowerCase())
+  :     item.Title.toLowerCase().includes(keyword?.toLowerCase());
+
 
   // status handler furnished
   const statusHandler = (item) =>
@@ -198,7 +200,7 @@ const FeaturedItem = ({ data }) => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#" className="text-capitalize">
-                    {item.Property_for}
+                    { router.locale == "ar" ? item.Property_for==="Rent" ? "للايجار" : "للبيع"  :   item.Property_for }
                   </a>
                 </li>
               </ul>
@@ -208,6 +210,7 @@ const FeaturedItem = ({ data }) => {
                   {item.Property_for === "Rent"
                     ? `${item.Price} ${item.Price_ex}/month `
                     : `${item.Price} ${item.Price_ex}`}
+                    
                 </a>
               </Link>
             </div>
@@ -215,17 +218,19 @@ const FeaturedItem = ({ data }) => {
           <div className="details">
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
-              <h4>
+              {isGridOrList ?  <h4>
                 <Link
                   legacyBehavior
                   href={`/singleProperty/${item.Id_property}`}
                 >
                   <a>{item.Title}</a>
                 </Link>
-              </h4>
+              </h4> : null}
+             
               <p>
                 <span className="flaticon-placeholder"></span>
-                {item.name} , {item.name2}
+              
+                { router.locale == "ar" ? `${item.namear} , ${item.name2ar}`  : `  ${item.name} ,${ item.name2 } `}
               </p>
             </div>
             {/* End .tc_content */}
@@ -277,8 +282,8 @@ const FeaturedItem = ({ data }) => {
                 </li>
               </ul>
 
-              <div className="fp_pdate float-end">{item.ztype_en}</div>
-              <div className="fp_pdate float-start"> {item.ff_en}</div>
+              <div className="fp_pdate float-end"> { router.locale == "ar"   ? item.type_ar :  item.type_en}</div>
+              <div className="fp_pdate float-start"> { router.locale == "ar"   ? item.ff_ar : item.ff_en  }</div>
             </div>
 
             {/* End .fp_footer */}

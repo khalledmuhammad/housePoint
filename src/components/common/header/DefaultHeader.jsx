@@ -12,7 +12,7 @@ const Header = () => {
   const { t } = useTranslation("");
 
   useEffect(() => {
-    let dir = router.locale == "ar" ? "rtl" : "ltr";
+    let dir = router.locale == "ar" ? "ltr" : "ltr";
     let lang = router.locale == "ar" ? "ar" : "en";
     document.querySelector("html").setAttribute("dir", dir);
     document.querySelector("html").setAttribute("lang", lang);
@@ -37,8 +37,33 @@ const Header = () => {
       }`}
     >
       <div className="container-fluid p0">
-        {/* <!-- Menu Toggle btn--> */}
-        <Link legacyBehavior href="/">
+
+        {
+                  router.locale== "ar" ? 
+                  <>
+                   <Link legacyBehavior href="/">
+          <a className="navbar_brand float-end dn-smd">
+            <img
+              className="logo1 img-fluid"
+              src="/assets/images/header-logo2.png"
+              alt="header-logo2.png"
+            />
+            <img
+              className="logo2 img-fluid"
+              src="/assets/images/header-logo2.png"
+              alt="header-logo2.png"
+            />
+            <span>HousePoint</span>
+          </a>
+        </Link>
+        <nav className="float-start" dir="rtl">
+          <HeaderMenuContent dark={true} />
+        </nav>
+                  
+                  </>
+                  :
+                  <>
+                   <Link legacyBehavior href="/">
           <a className="navbar_brand float-start dn-smd">
             <img
               className="logo1 img-fluid"
@@ -51,17 +76,16 @@ const Header = () => {
               alt="header-logo2.png"
             />
             <span>HousePoint</span>
-
           </a>
         </Link>
-        {/* site logo brand */}
-
         <nav>
           <HeaderMenuContent dark={true} />
-
-
         </nav>
-        {/* End .navbar */}
+                  </>
+
+        }
+       
+        
       </div>
     </header>
     // {/* <!-- /.theme-main-menu --> */}
