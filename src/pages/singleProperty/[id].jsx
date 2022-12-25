@@ -11,6 +11,8 @@ import properties from "../../data/properties";
 import DetailsContent from "../../components/singleProperty/DetailsContent";
 import Sidebar from "../../components/singleProperty/Sidebar";
 import axios from "axios";
+import NotFound from "../../components/404";
+
 
 const ListingDynamicDetailsV1 = ({Properties}) => {
   const router = useRouter();
@@ -32,7 +34,8 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
 
   }, [id]);
 
-  return (
+  if(Properties)
+  {return (
     <>
       {/* <!-- Main Header Nav --> */}
       <Header />
@@ -187,7 +190,9 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
         </div>
       </section>
     </>
-  );
+  );} else{
+    return <NotFound />
+  }
 };
 
 export async function getServerSideProps({params}) {
