@@ -3,7 +3,7 @@ import Head from "next/head";
 const Seo = ({ pageTitle, font }) => (
   <>
     <Head>
-      	<meta charSet="utf-8" />
+      	<meta charSet="latin1" />
 
       <title>
         {pageTitle && `${pageTitle} || housepoint - Real Estate  }`}

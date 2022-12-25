@@ -1,10 +1,13 @@
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 
 const FeaturedProperties = ({ Properties }) => {
+  const router = useRouter();
+
   const settings = {
     dots: true,
     arrows: false,
@@ -49,7 +52,11 @@ const FeaturedProperties = ({ Properties }) => {
                   legacyBehavior
                   href={`/singleProperty/${item.Id_property}`}
                 >
-                  <a className="text-white">{item.Title}</a>
+                  <a className="text-white">
+                    {router.locale == "ar"
+                      ? item.titlear /* .replace('-','') */
+                      : item.Title}{" "}
+                  </a>
                 </Link>
               </h4>
               <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
@@ -66,7 +73,13 @@ const FeaturedProperties = ({ Properties }) => {
                           <a href="#">#{item.Id_property}</a>
                         </li>
                         <li className="list-inline-item  me-4 ">
-                          <a href="#">{item.Property_for}</a>
+                          <a href="#">
+                            {router.locale == "ar"
+                              ? item.Property_for === "Rent"
+                                ? "للايجار"
+                                : "للبيع"
+                              : item.Property_for}
+                          </a>
                         </li>
                       </ul>
 
@@ -86,14 +99,22 @@ const FeaturedProperties = ({ Properties }) => {
               </Link>
               <div className="details">
                 <div className="tc_content">
-                  <p className="text-thm">{item.Property_for}</p>
+                  <p className="text-thm">
+                    {router.locale == "ar"
+                      ? item.Property_for === "Rent"
+                        ? "للايجار"
+                        : "للبيع"
+                      : item.Property_for}
+                  </p>
 
                   <p>
                     <span className="flaticon-placeholder"></span>
-                    {item.name}, {item.name2}
+                    {router.locale == "ar"
+                      ? `${item.namear} , ${item.name2ar}`
+                      : `  ${item.name} ,${item.name2} `}
                   </p>
 
-                  <ul className="row  ">
+                  <ul className="row">
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
