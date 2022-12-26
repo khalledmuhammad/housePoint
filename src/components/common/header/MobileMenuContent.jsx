@@ -10,17 +10,19 @@ import {
 } from "react-pro-sidebar";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import LocaleSwitcher from "../LocalSwitcher";
+import { useTranslation } from "react-i18next";
 
 const home = [
   {
-    name: "Home",
+    name: "HOME",
     routerPath: "/",
   },
 ];
 
 const listing = [
   {
-    name: "All properties",
+    name: "PROPERTIESALL",
     routerPath: "/AllProperties",
   },
 ];
@@ -68,28 +70,7 @@ const property = [
       },
     ],
   },
-  {
-    id: 2,
-    title: "Listing Single",
-    items: [
-      {
-        name: "Single V1",
-        routerPath: "/singleProperty",
-      },
-      {
-        name: "Single V2",
-        routerPath: "/listing-details-v2",
-      },
-      {
-        name: "Single V3",
-        routerPath: "/listing-details-v3",
-      },
-      {
-        name: "Single V4",
-        routerPath: "/listing-details-v4",
-      },
-    ],
-  },
+ 
 ];
 
 const blog = [
@@ -103,45 +84,10 @@ const blog = [
   },
 ];
 
-const pages = [
-  {
-    name: "About Us",
-    routerPath: "/about-us",
-  },
-  {
-    name: "Gallery",
-    routerPath: "/gallery",
-  },
-  {
-    name: "Faq",
-    routerPath: "/faq",
-  },
-  {
-    name: "LogIn",
-    routerPath: "/login",
-  },
-  { name: "Compare", routerPath: "/compare" },
-  { name: "Membership", routerPath: "/membership" },
 
-  {
-    name: "Register",
-    routerPath: "/register",
-  },
-  {
-    name: "Service",
-    routerPath: "/service",
-  },
-  {
-    name: "404 Page",
-    routerPath: "/404",
-  },
-  {
-    name: "Terms & Conditions",
-    routerPath: "/terms",
-  },
-];
 
 const MobileMenuContent = () => {
+  const {t} = useTranslation()
   const route = useRouter();
   return (
     <ProSidebar>
@@ -154,7 +100,7 @@ const MobileMenuContent = () => {
                 src="/assets/images/header-logo2.png"
                 alt="header-logo.png"
               />
-              <span className="brand-text">FindHouse</span>
+              <span className="brand-text">House Point</span>
             </a>
           </Link>
           {/* End .logo */}
@@ -182,7 +128,7 @@ const MobileMenuContent = () => {
                     val.routerPath === route.pathname ? "ui-active" : undefined
                   }
                 >
-                  {val.name}
+                  {t(`${val.name}`)}
                 </a>
               </Link>
             </MenuItem>
@@ -197,119 +143,13 @@ const MobileMenuContent = () => {
                     route.pathname === val.routerPath ? "ui-active" : undefined
                   }
                 >
-                  {val.name}
+                  {t(`${val.name}`)}
                 </a>
               </Link>
             </MenuItem>
           ))}
 
-          {/* End Pages Listing */}
-          {/* 
-          <SubMenu
-            title="Property"
-            className={
-              property.some((parent) => {
-                return parent.items.some(
-                  (page) =>
-                    page.routerPath === route.pathname ||
-                    page.routerPath + "/[id]" === route.pathname
-                );
-              })
-                ? "parent-menu-active"
-                : undefined
-            }
-          >
-            {property.map((item) => (
-              <SubMenu
-                title={item.title}
-                className={
-                  item.items.some(
-                    (page) =>
-                      page.routerPath === route.pathname ||
-                      page.routerPath + "/[id]" === route.pathname
-                  )
-                    ? "ui-active plus alt"
-                    : "plus alt"
-                }
-                key={item.id}
-              >
-                {item.items.map((val, i) => (
-                  <MenuItem key={i}>
-                    <Link legacyBehavior  href={val.routerPath}>
-                      <a
-                        className={
-                          route.pathname === val.routerPath ||
-                          val.routerPath + "/[id]" === route.pathname
-                            ? "ui-active"
-                            : undefined
-                        }
-                      >
-                        {val.name}
-                      </a>
-                    </Link>
-                  </MenuItem>
-                ))}
-              </SubMenu>
-            ))}
-          </SubMenu> */}
-          {/* End Pages Property */}
-
-        {/*   <SubMenu
-            title="Blog"
-            className={
-              blog.some(
-                (page) =>
-                  page.routerPath === route.pathname ||
-                  page.routerPath + "/[id]" === route.pathname
-              )
-                ? "parent-menu-active"
-                : undefined
-            }
-          >
-            {blog.map((val, i) => (
-              <MenuItem key={i}>
-                <Link legacyBehavior href={val.routerPath}>
-                  <a
-                    className={
-                      route.pathname === val.routerPath ||
-                      val.routerPath + "/[id]" === route.pathname
-                        ? "ui-active"
-                        : undefined
-                    }
-                  >
-                    {val.name}
-                  </a>
-                </Link>
-              </MenuItem>
-            ))}
-          </SubMenu> */}
-          {/* End pages Blog */}
-
-          {/*   <SubMenu
-            title="Pages"
-            className={
-              pages.some((page) => page.routerPath === route.pathname)
-                ? "parent-menu-active"
-                : undefined
-            }
-          >
-            {pages.map((val, i) => (
-              <MenuItem key={i}>
-                <Link legacyBehavior  href={val.routerPath}>
-                  <a
-                    className={
-                      route.pathname === val.routerPath
-                        ? "ui-active"
-                        : undefined
-                    }
-                  >
-                    {val.name}
-                  </a>
-                </Link>
-              </MenuItem>
-            ))}
-          </SubMenu> */}
-          {/* End pages Pages */}
+        
 
           <MenuItem>
             <Link legacyBehavior href="/contact">
@@ -318,44 +158,27 @@ const MobileMenuContent = () => {
                   route.pathname === "/contact" ? "ui-active" : undefined
                 }
               >
-                Contact
+                  {t(`CONTACT`)}
               </a>
             </Link>
           </MenuItem>
 
           <MenuItem>
-            <Link legacyBehavior href="/login">
-              <a
-                className={
-                  route.pathname === "/login" ? "ui-active" : undefined
-                }
-              >
-                <span className="flaticon-user"></span> Login
-              </a>
-            </Link>
+          <LocaleSwitcher />
+
           </MenuItem>
 
-          <MenuItem>
-            <Link legacyBehavior href="/register">
-              <a
-                className={
-                  route.pathname === "/register" ? "ui-active" : undefined
-                }
-              >
-                <span className="flaticon-edit"></span> Register
-              </a>
-            </Link>
-          </MenuItem>
+        
         </Menu>
       </SidebarContent>
 
-      <SidebarFooter>
+    {/*   <SidebarFooter>
         <Link legacyBehavior href="/create-listing">
           <a className="btn btn-block btn-lg btn-thm circle">
             <span className="flaticon-plus"></span> Create Listing
           </a>
         </Link>
-      </SidebarFooter>
+      </SidebarFooter> */}
     </ProSidebar>
   );
 };

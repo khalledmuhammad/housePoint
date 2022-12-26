@@ -1,8 +1,35 @@
 {
-    "BUY": "Buy",
-    "RENT":"rent",
-    "FINDHOME" : "Find Your Dream Home",
-    "LOOKINGFOR" : "What are you looking for?"
+  "BUY": "Buy",
+  "RENT": "rent",
+  "FINDHOME": "Find Your Dream Home",
+  "LOOKINGFOR": "What are you looking for?",
+  "HOME": "home",
+  "PROPERTIESALL": "All Properties",
+  "CONTACT": "Contact Us",
+  "BLOGS": "Blog",
+  "PROPFOR": "Property Type",
+  "BEDS": "Beds",
+  "BATHS": "Baths",
+  "PROPSTATUS": "Property Status",
+  "LOCATION": "Location",
+  "SUBLOCATION": "Sub Location",
+  "KEYWORD": "Keyword",
+  "PRICERANGE":"Price Range",
+  "CLEARFILTERS":"Clear filters",
+  "MAADI":"Maadi",
+  "MAADISARAYAT":"Maadi sarayat" ,
+  "MAADIDEGLA":"Maadi Degla",
+  "NEWMAADI":"New Maadi",
+  "OLDMAADI":"Old Maadi",
+  "ZAHRAAMAADI":"Zahraa Maadi",
+  "CORNISHMAADI":"Cornish Maadi",
+  "KATAMYA":"Alkatamya Hights",
+  "NEWCAIRO":"New Cairo",
+  "FEATUREDPROPS": "Featured Properties",
+  "RECENTPROPS":"Recent Properties in Maadi, Katameya & New Cairo",
+  "CITIESPROP" : "Are you looking for these Properties?",
+  "SEARCH" :"Search"
 
 
-  }
+
+}

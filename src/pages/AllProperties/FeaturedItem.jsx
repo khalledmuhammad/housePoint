@@ -7,12 +7,10 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useRouter } from "next/router";
 
-
 const FeaturedItem = ({ data }) => {
   const [properties, setProperties] = useState(data);
+
   const router = useRouter();
-
-
 
   const {
     keyword,
@@ -27,7 +25,7 @@ const FeaturedItem = ({ data }) => {
     area,
     amenities,
     Property_for,
-    Sublocation
+    Sublocation,
   } = useSelector((state) => state.properties);
 
   const { statusType, featured, isGridOrList } = useSelector(
@@ -38,9 +36,9 @@ const FeaturedItem = ({ data }) => {
 
   // keyword filter
   const keywordHandler = (item) =>
-  router.locale == "ar" ?    item.titlear.toLowerCase().includes(keyword?.toLowerCase())
-  :     item.Title.toLowerCase().includes(keyword?.toLowerCase());
-
+    router.locale == "ar"
+      ? item.titlear.toLowerCase().includes(keyword?.toLowerCase())
+      : item.Title.toLowerCase().includes(keyword?.toLowerCase());
 
   // status handler furnished
   const statusHandler = (item) =>
@@ -77,8 +75,8 @@ const FeaturedItem = ({ data }) => {
     }
     return true;
   };
-   //sub locaion handler
-   const sublocationHandler = (item) => {
+  //sub locaion handler
+  const sublocationHandler = (item) => {
     if (Sublocation !== "") {
       return item.Subarea === Number(Sublocation);
     }
@@ -88,7 +86,6 @@ const FeaturedItem = ({ data }) => {
   // sale or ent properties
   const propertiesStartusHandler = (item) =>
     item.Property_for.includes(Property_for);
-  
 
   // garages handler
   const garagesHandler = (item) =>
@@ -181,9 +178,17 @@ const FeaturedItem = ({ data }) => {
           }`}
         >
           {isGridOrList ? null : (
-            <h4 className="p-2" style={{ background: "rgb(62, 76, 102)" }} charSet="latin1"  >
+            <h4
+              className="p-2"
+              style={{ background: "rgb(62, 76, 102)" }}
+              charSet="latin1"
+            >
               <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
-<a className="text-white" charSet="latin1"  >{router.locale == "ar" ?  item.titlear/* .replace('-','') */ : item.Title } </a>
+                <a className="text-white" charSet="latin1">
+                  {router.locale == "ar"
+                    ? item.titlear /* .replace('-','') */
+                    : item.Title}{" "}
+                </a>
               </Link>
             </h4>
           )}
@@ -200,7 +205,11 @@ const FeaturedItem = ({ data }) => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#" className="text-capitalize">
-                    { router.locale == "ar" ? item.Property_for==="Rent" ? "للايجار" : "للبيع"  :   item.Property_for }
+                    {router.locale == "ar"
+                      ? item.Property_for === "Rent"
+                        ? "للايجار"
+                        : "للبيع"
+                      : item.Property_for}
                   </a>
                 </li>
               </ul>
@@ -210,7 +219,6 @@ const FeaturedItem = ({ data }) => {
                   {item.Property_for === "Rent"
                     ? `${item.Price} ${item.Price_ex}/month `
                     : `${item.Price} ${item.Price_ex}`}
-                    
                 </a>
               </Link>
             </div>
@@ -218,19 +226,26 @@ const FeaturedItem = ({ data }) => {
           <div className="details">
             <div className="tc_content">
               <p className="text-thm">{item.type}</p>
-              {isGridOrList ?  <h4>
-                <Link
-                  legacyBehavior
-                  href={`/singleProperty/${item.Id_property}`}
-                >
-                  <a>{item.Title}</a>
-                </Link>
-              </h4> : null}
-             
+              {isGridOrList ? (
+                <h4>
+                  <Link
+                    legacyBehavior
+                    href={`/singleProperty/${item.Id_property}`}
+                  >
+                    <a>
+                    {router.locale == "ar"
+                    ? item.titlear /* .replace('-','') */
+                    : item.Title}{" "}                      </a>
+                  </Link>
+                </h4>
+              ) : null}
+
               <p>
                 <span className="flaticon-placeholder"></span>
-              
-                { router.locale == "ar" ? `${item.namear} , ${item.name2ar}`  : `  ${item.name} ,${ item.name2 } `}
+
+                {router.locale == "ar"
+                  ? `${item.namear} , ${item.name2ar}`
+                  : `  ${item.name} ,${item.name2} `}
               </p>
             </div>
             {/* End .tc_content */}
@@ -282,8 +297,14 @@ const FeaturedItem = ({ data }) => {
                 </li>
               </ul>
 
-              <div className="fp_pdate float-end"> { router.locale == "ar"   ? item.type_ar :  item.type_en}</div>
-              <div className="fp_pdate float-start"> { router.locale == "ar"   ? item.ff_ar : item.ff_en  }</div>
+              <div className="fp_pdate float-end">
+                {" "}
+                {router.locale == "ar" ? item.type_ar : item.type_en}
+              </div>
+              <div className="fp_pdate float-start">
+                {" "}
+                {router.locale == "ar" ? item.ff_ar : item.ff_en}
+              </div>
             </div>
 
             {/* End .fp_footer */}
@@ -320,9 +341,9 @@ const FeaturedItem = ({ data }) => {
           pageClassName={"page-item "}
           pageLinkClassName={"page-link"}
           previousClassName={"page-item"}
-          previousLinkClassName={"page-link flaticon-left-arrow "}
+          previousLinkClassName={`page-link ${router.locale === "ar" ? "flaticon-right-arrow" : "flaticon-left-arrow"} `}
           nextClassName={"page-item"}
-          nextLinkClassName={"page-link flaticon-right-arrow "}
+          nextLinkClassName={`page-link  ${router.locale === "ar" ? "flaticon-left-arrow" : "flaticon-right-arrow"} `}
           breakClassName={"page-item"}
           breakLinkClassName={"page-link"}
           activeClassName={"active"}

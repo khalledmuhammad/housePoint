@@ -23,8 +23,10 @@ import {
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 const FilteringItem = () => {
+  const { t } = useTranslation("");
   const {
     keyword,
     location,
@@ -56,23 +58,6 @@ const FilteringItem = () => {
 
 
   // advanced state
-  const [getAdvanced, setAdvanced] = useState([
-    { id: uuidv4(), name: "Air Conditioning" },
-    { id: uuidv4(), name: "Barbeque" },
-    { id: uuidv4(), name: "Gym" },
-    { id: uuidv4(), name: "Microwave" },
-    { id: uuidv4(), name: "TV Cable" },
-    { id: uuidv4(), name: "Lawn" },
-    { id: uuidv4(), name: "Refrigerator" },
-    { id: uuidv4(), name: "Swimming Pool" },
-    { id: uuidv4(), name: "WiFi" },
-    { id: uuidv4(), name: "Sauna" },
-    { id: uuidv4(), name: "Dryer" },
-    { id: uuidv4(), name: "Washer" },
-    { id: uuidv4(), name: "Laundry" },
-    { id: uuidv4(), name: "Outdoor Shower" },
-    { id: uuidv4(), name: "Window Coverings" },
-  ]);
 
   const dispath = useDispatch();
 
@@ -164,29 +149,8 @@ const FilteringItem = () => {
 
   console.log(Property_type);
   // clear advanced
-  const clearAdvanced = () => {
-    const changed = getAdvanced.map((item) => {
-      item.isChecked = false;
-      return item;
-    });
-    setAdvanced(changed);
-  };
 
-  // add advanced
-  const advancedHandler = (id) => {
-    const data = getAdvanced.map((feature) => {
-      if (feature.id === id) {
-        if (feature.isChecked) {
-          feature.isChecked = false;
-        } else {
-          feature.isChecked = true;
-        }
-      }
-      return feature;
-    });
 
-    setAdvanced(data);
-  };
 
   return (
     <ul className="sasw_list mb0">
@@ -195,7 +159,7 @@ const FilteringItem = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="keyword"
+            placeholder={`${t("KEYWORD")}`}
             value={getKeyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
@@ -216,11 +180,11 @@ const FilteringItem = () => {
               setSubLocation("")
             }}
           >
-            <option value="">location</option>
-            <option value={1}>Maadi</option>
-            <option value={4}>New Cairo</option>
+            <option value="">{t("LOCATION")}</option>
+            <option value={1}>{t("MAADI")}</option>
+            <option value={4}>{t("NEWCAIRO")}</option>
             <option value={17} className="px-5">
-              Katameya Heights
+              {t("KATAMYA")}
             </option>
           </select>
           {location == 1 && (
@@ -229,7 +193,7 @@ const FilteringItem = () => {
               value={getSubLocation}
               onChange={(e) => setSubLocation(e.target.value)}
             >
-              <option value="">sub location</option>
+              <option value="">{t("SUBLOCATION")}</option>
               <option value={1}>Zahraa Maadi</option>
               <option value={2}>Maadi Sarayat</option>
               <option value={4}>New Maadi</option>
@@ -244,7 +208,7 @@ const FilteringItem = () => {
               value={getSubLocation}
               onChange={(e) => setSubLocation(e.target.value)}
             >
-              <option value="">sub location</option>
+              <option value="">{t("SUBLOCATION")}</option>
               <option value={7}>chouifat</option>
               <option value={8}>West Golf</option>
               <option value={9}>5th Settlement</option>
@@ -263,7 +227,7 @@ const FilteringItem = () => {
               className="selectpicker w100 show-tick form-select"
               value={getStatus}
             >
-              <option value="">Property status</option>
+              <option value="">{t("PROPSTATUS")}</option>
               <option value={1}>furnished</option>
               <option value={4}>Modern Furnished</option>
               <option value={2}>semi furnished</option>
@@ -282,7 +246,7 @@ const FilteringItem = () => {
               className="selectpicker w100 show-tick form-select"
               value={getPropertiesType}
             >
-              <option value="">Property Type</option>
+              <option value="">{t("PROPFOR")}</option>
               <option value={1}>Duplex</option>
               <option value={2}>Apartment</option>
               <option value={3}>Ground Floors duplex</option>
@@ -320,7 +284,7 @@ const FilteringItem = () => {
             data-bs-auto-close="outside"
             aria-expanded="false"
           >
-            <span>Price Range</span>
+            <span>{t("PRICERANGE")}</span>
             <label htmlFor="prncgs2">
               <span className="fa fa-angle-down"></span>
             </label>
@@ -342,7 +306,7 @@ const FilteringItem = () => {
               className="selectpicker w100 show-tick form-select"
               value={getBathroom}
             >
-              <option value="">Bathrooms</option>
+              <option value="">{t("BATHS")}</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -372,7 +336,7 @@ const FilteringItem = () => {
               className="selectpicker w100 show-tick form-select"
               value={getBedroom}
             >
-              <option value="">Bedrooms</option>
+              <option value="">{t("BEDS")}</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -392,78 +356,6 @@ const FilteringItem = () => {
           </div>
         </div>
       </li>
-      {/* End li */}
-
-      {/*  <li>
-        <div className="search_option_two">
-          <div className="candidate_revew_select">
-            <select
-              onChange={(e) => setGarages(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-              value={getGarages}
-            >
-              <option value="">Garages</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-              <option value="other">Others</option>
-            </select>
-          </div>
-        </div>
-      </li> */}
-      {/* End li */}
-
-      {/*  <li>
-        <div className="search_option_two">
-          <div className="candidate_revew_select">
-            <select
-              onChange={(e) => setBuiltYear(e.target.value)}
-              className="selectpicker w100 show-tick form-select"
-              value={getBuiltYear}
-            >
-              <option value="">Year built</option>
-              <option value="2013">2013</option>
-              <option value="2014">2014</option>
-              <option value="2015">2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
-            </select>
-          </div>
-        </div>
-      </li> */}
-      {/* End li */}
-
-      {/*   <li className="min_area list-inline-item">
-        <div className="form-group mb-4">
-          <input
-            type="number"
-            className="form-control"
-            id="exampleInputName2"
-            placeholder="Min Area"
-            value={getAreaMin}
-            onChange={(e) => setAreaMin(e.target.value)}
-          />
-        </div>
-      </li> */}
-      {/* End li */}
-
-      {/*  <li className="max_area list-inline-item">
-        <div className="form-group mb-4">
-          <input
-            type="number"
-            className="form-control"
-            id="exampleInputName3"
-            placeholder="Max Area"
-            value={getAreaMax}
-            onChange={(e) => setAreaMax(e.target.value)}
-          />
-        </div>
-      </li> */}
-      {/* End li */}
-
-      {/* End li */}
 
       <li>
         <div className="search_option_button">
@@ -472,7 +364,7 @@ const FilteringItem = () => {
             type="button"
             className="btn btn-block btn-thm w-100"
           >
-            Clear Filters
+            {t("CLEARFILTERS")}
           </button>
         </div>
       </li>

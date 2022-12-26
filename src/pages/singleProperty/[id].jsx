@@ -12,6 +12,7 @@ import DetailsContent from "../../components/singleProperty/DetailsContent";
 import Sidebar from "../../components/singleProperty/Sidebar";
 import axios from "axios";
 import NotFound from "../../components/404";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 
 const ListingDynamicDetailsV1 = ({Properties}) => {
@@ -195,13 +196,15 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
   }
 };
 
-export async function getServerSideProps({params}) {
+export async function getServerSideProps({params , locale}) {
   const apiUrlEndpoint = ` ${process.env.NEXT_PUBLIC_API}/prop/${params.id}`;
   const { data } = await axios.get(apiUrlEndpoint);
   
   return {
     props: {
       Properties: data,
+      ...(await serverSideTranslations(locale, ["common"])),
+
     },
   };
 }

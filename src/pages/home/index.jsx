@@ -9,8 +9,10 @@ import Team from "./Team";
 import { useTranslation } from "react-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../../components/Layout";
+import { useRouter } from "next/router";
 
 const index = ({ Properties }) => {
+  const router = useRouter()
   const { t } = useTranslation("");
 
   return (
@@ -58,11 +60,11 @@ const index = ({ Properties }) => {
         <div className="container ovh">
           <div className="row">
             <div className="col-lg-12 ">
-              <div className="main-title text-center mb40">
-                <h2>Featured Properties</h2>
+              <div className="main-title text-center mb40" dir={`${router.locale === "ar" ? "rtl" : ""}`}>
+                <h2>{t("FEATUREDPROPS")}</h2>
                 <h3>
-                  <i className="fa fa-bookmark"></i> Recent Properties in Maadi,
-                  Katameya & New Cairo
+                  <i className="fa fa-bookmark"></i>{" "}
+                  {t("RECENTPROPS")}  
                 </h3>
               </div>
             </div>
@@ -83,7 +85,7 @@ const index = ({ Properties }) => {
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
               <div className="main-title text-center">
-                <h2>Find Properties in These Cities</h2>
+                <h2>{t("CITIESPROP")}</h2>
               </div>
             </div>
           </div>

@@ -1,7 +1,34 @@
 {
     "BUY": "للبيع",
-    "RENT" : "للايجار",
-    "FINDHOME" : "أحصل علي منزلك المثالي",
-    "LOOKINGFOR" : "عن ماذا تبحث ؟"
+    "RENT": "للإيجار",
+    "FINDHOME": "أحصل علي منزلك المثالي",
+    "LOOKINGFOR": "عن ماذا تبحث ؟",
+    "HOME": "الرئيسيه",
+    "PROPERTIESALL": "جميع العقارات",
+    "CONTACT": "اتصل بنا",
+    "BLOGS": "المدونه",
+    "BEDS": "غرف النوم",
+    "BATHS": "مرحاض",
+    "PROPFOR": "نوع العقار",
+    "PROPSTATUS": "صفة العقار",
+    "LOCATION": "المنطقه",
+    "SUBLOCATION": "المنطقه الفرعيه",
+    "KEYWORD": "كلمه مفتاحيه",
+    "PRICERANGE":"السعر",
+    "CLEARFILTERS":"امسح الفلتر",
+    "MAADI":"المعادي",
+    "MAADISARAYAT":"المعادي سرايات" ,
+    "MAADIDEGLA":"معادي دجله",
+    "NEWMAADI":"معادي جديده",
+    "OLDMAADI":"معادي قديمه",
+    "ZAHRAAMAADI":"زهراء المعادي",
+    "CORNISHMAADI":"كورنيش المعادي",
+    "KATAMYA":"القطاميه هايتس",
+    "NEWCAIRO":"القاهره الجديده",
+    "FEATUREDPROPS": "عقارات مميزه",
+    "RECENTPROPS":"احدث العقارات في المعادي,القطاميه ,القاهره الجديده",
+    "CITIESPROP" : "هل تبحث عن هذه العقارات ؟",
+    "SEARCH" :"ابحث"
 
-  }
+    
+}

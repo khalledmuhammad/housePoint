@@ -9,13 +9,16 @@ import ShowFilter from "../../components/common/listing/ShowFilter";
 import SidebarListing from "../../components/common/listing/SidebarListing";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
 import BreadCrumb2 from "./BreadCrumb2";
-import FeaturedItem from "./FeaturedItem";
+import FeaturedItem from "../AllProperties/FeaturedItem";
 
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
 import axios from "axios";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 
 const index = ({data}) => {
+  const router = useRouter()
   return (
     <>
       <Seo pageTitle="Simple Listing – Grid V1" />
@@ -30,7 +33,7 @@ const index = ({data}) => {
       <PopupSignInUp />
 
       {/* <!-- Listing Grid View --> */}
-      <section className="our-listing bgc-f7 pb30-991 mt85 md-mt0 ">
+      <section className="our-listing bgc-f7 pb30-991 mt85 md-mt0 " dir={`${router.locale === "ar" ? "rtl" : ""}`} >
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -133,12 +136,14 @@ const index = ({data}) => {
 };
 
 
-export async function getServerSideProps() {
+export async function getServerSideProps({locale}) {
   const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/in-maadi`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {
       data: data,
+      ...(await serverSideTranslations(locale, ["common"])),
+
     },
   };
 }

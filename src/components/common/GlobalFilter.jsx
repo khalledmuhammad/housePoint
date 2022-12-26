@@ -1,4 +1,4 @@
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import {
   addLocation,
   addBathrooms,
@@ -10,8 +10,11 @@ import PricingRangeSlider from "./PricingRangeSlider";
 import CheckBoxFilter from "./CheckBoxFilter";
 import GlobalSelectBox from "./GlobalSelectBox";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const GlobalFilter = ({ className = "" }) => {
+  const {t} = useTranslation()
+  const router = useRouter()
 
   const {
     location,
@@ -25,7 +28,7 @@ const GlobalFilter = ({ className = "" }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className={`home1-advnc-search ${className} `}>
+    <div className={`home1-advnc-search ${className} `} dir={`${router.locale === "ar" ? "rtl" : ""}`}>
       <ul className="h1ads_1st_list mb0">
         {/* End li */}
 
@@ -35,7 +38,7 @@ const GlobalFilter = ({ className = "" }) => {
                 onChange={(e) => dispatch(addProperty_type(e.target.value))}
                 className="selectpicker w-80 show-tick form-select"
               >
-                <option value="">Type</option>
+                <option value="">{t("PROPFOR")}</option>
                 <option value={1}>Duplex</option>
                 <option value={2}>Apartment</option>
                 <option value={3}>Ground Floors duplex</option>
@@ -68,7 +71,7 @@ const GlobalFilter = ({ className = "" }) => {
               className="selectpicker w100 show-tick form-select"
               onChange={(e) => dispatch(addBedrooms(e.target.value))}
             >
-              <option value="">beds</option>
+              <option value="">{t("BEDS")}</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -94,7 +97,7 @@ const GlobalFilter = ({ className = "" }) => {
               className="selectpicker w100 show-tick form-select"
               onChange={(e) => dispatch(addBathrooms(e.target.value))}
             >
-              <option value="">baths</option>
+              <option value="">{t("BATHS")}</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -122,10 +125,10 @@ const GlobalFilter = ({ className = "" }) => {
               className="selectpicker w100 show-tick form-select"
               onChange={(e) => dispatch(addLocation(e.target.value))}
             >
-              <option value="">location</option>
-              <option value={1}>Maadi</option>
-              <option value={4}>New Cairo</option>
-              <option value={17} className="px-5" >Katameya Heights</option>
+              <option value="">{t("LOCATION")}</option>
+              <option value={1}>{t("MAADI")}</option>
+              <option value={4}>{t("NEWCAIRO")}</option>
+              <option value={17} className="px-5" >{t("KATAMYA")}</option>
             </select>
           </div>
         </li>
@@ -138,7 +141,7 @@ const GlobalFilter = ({ className = "" }) => {
             className="selectpicker w100 show-tick form-select"
             onChange={(e) => dispatch(addSubLocation(e.target.value))}
             >
-              <option value="">sub location</option>
+              <option value="">{t("SUBLOCATION")}</option>
               <option value={1}>Zahraa Maadi</option>
               <option value={2}>Maadi Sarayat</option>
               <option value={4}>New Maadi</option>
@@ -160,7 +163,7 @@ const GlobalFilter = ({ className = "" }) => {
             className="selectpicker w100 show-tick form-select"
             onChange={(e) => dispatch(addSubLocation(e.target.value))}
             >
-              <option value="">sub location</option>
+              <option value="">{t("SUBLOCATION")}</option>
               <option value={7}>chouifat</option>
               <option value={8}>West Golf</option>
               <option value={9}>5th Settlement</option>
@@ -183,7 +186,7 @@ const GlobalFilter = ({ className = "" }) => {
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-              <span>Price</span>
+              <span>{t("PRICERANGE")}</span>
               <label htmlFor="InputEmail2">
                 <span className="fa fa-angle-down"></span>
               </label>
@@ -239,7 +242,7 @@ const GlobalFilter = ({ className = "" }) => {
               type="submit"
               className="btn btn-thm"
             >
-              Search
+              {t("SEARCH")}
             </button>
           </div>
         </li>

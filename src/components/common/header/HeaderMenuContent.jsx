@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import LocaleSwitcher from "../LocalSwitcher";
 
 const HeaderMenuContent = ({ float = "" , dark }) => {
   const route = useRouter();
+  const { t } = useTranslation("");
+
 
   const home = [
     {
@@ -128,7 +131,7 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
                 : undefined
             }
           >
-            <span className="title  ">Home</span>
+            <span className="title  ">{t("HOME")}</span>
           </a>
           {/* <!-- Level Two--> */}
         </Link>
@@ -143,7 +146,7 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
               : undefined
           }
         >
-          <span className="title">All properties</span>
+          <span className="title">{t("PROPERTIESALL")}</span>
         </a>
         </Link>
         {/* <!-- Level Two--> */}
@@ -225,22 +228,13 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
           <a
             className={route.pathname === "/contact" ? "ui-active" : undefined}
           >
-            Contact
+            {t("CONTACT")}
           </a>
         </Link>
       </li>
       {/* End .dropitem */}
 
-      <li className={`list-inline-item list_s ${float}`}>
-        <a
-          href="#"
-          className="btn flaticon-user"
-          data-bs-toggle="modal"
-          data-bs-target=".bd-example-modal-lg"
-        >
-          <span className="dn-lg">Login/Register</span>
-        </a>
-      </li>
+    
       {/* End .dropitem */}
       <li className={`list-inline-item list_s ${float}`}>
 

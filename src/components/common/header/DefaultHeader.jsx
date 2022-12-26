@@ -9,7 +9,11 @@ const Header = () => {
   const [navbar, setNavbar] = useState(false);
   const router = useRouter();
 
-  const { t } = useTranslation("");
+  const { 
+    
+
+    
+   } = useTranslation("");
 
   useEffect(() => {
     let lang = router.locale == "ar" ? "ar" : "en";

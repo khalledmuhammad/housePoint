@@ -45,7 +45,7 @@ const FeaturedProperties = ({ Properties }) => {
     <>
       <Slider {...settings} arrows={false}>
         {Properties?.slice(0, 12).map((item) => (
-          <div className="item" key={item.Id_property}>
+          <div className="item" key={item.Id_property} dir={`${router.locale === "ar" ? "rtl" : ""}`}>
             <div className="feat_property home3">
               <h4 className="p-2" style={{ background: "rgb(62, 76, 102)" }}>
                 <Link
