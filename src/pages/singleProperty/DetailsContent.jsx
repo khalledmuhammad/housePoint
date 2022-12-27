@@ -7,8 +7,8 @@ import PropertyDetails from "./PropertyDetails";
 const DetailsContent = ({Properties}) => {
   const router = useRouter()
   const {t} = useTranslation()
-  
-  return (
+ if(Properties) 
+ { return (
     <>
       <div className="listing_single_description ">
         <div className="bgc-darkBrown p-3">
@@ -56,7 +56,9 @@ const DetailsContent = ({Properties}) => {
       </div>
       {/* End review and comment area area */}
     </>
-  );
+  );} else{
+    return <h1>...loading</h1>
+  }
 };
 
 export default DetailsContent;
