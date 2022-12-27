@@ -14,7 +14,7 @@ const DetailsContent = ({Properties}) => {
         <h4 className="text-white ">{t("DESC")}</h4>
         </div>
         <p className="mb25 p-2">
-        {router.locale === "ar" ? Properties.titlear : Properties.Title}
+        { Properties.Title && router.locale === "ar" ? Properties.titlear : Properties.Title}
       </p>
       </div>
       {/* End .listing_single_description */}
