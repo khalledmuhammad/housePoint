@@ -88,8 +88,8 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                     <h2 className="text-white">
                       {" "}
                       {router.locale === "ar"
-                        ? property?.titlear
-                        : property?.Title}{" "}
+                        ? property.titlear
+                        : property.Title}{" "}
                     </h2>
                     <p className="text-white">
                       {router.locale == "ar"
