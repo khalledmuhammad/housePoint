@@ -6,8 +6,8 @@ const index = () => {
   return (
     <>
       <Seo pageTitle="house point" />
-      <SingleProperty />
-    </>
+{/*       <SingleProperty />
+ */}    </>
   );
 };
 
