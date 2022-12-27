@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 const PropertyDetails = ({Properties}) => {
   const {t} = useTranslation()
   const router = useRouter()
-  return (
+  if(Properties)
+ { return (
     <>
       <div className="col-md-6 col-lg-6 col-xl-4">
         <ul className="list-inline-item">
@@ -71,7 +72,10 @@ const PropertyDetails = ({Properties}) => {
         </ul>
       </div>
     </>
-  );
+  );}
+  else{
+    return <h1>not found</h1>
+  }
 };
 
 export default PropertyDetails;

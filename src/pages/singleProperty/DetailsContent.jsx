@@ -7,6 +7,7 @@ import PropertyDetails from "./PropertyDetails";
 const DetailsContent = ({Properties}) => {
   const router = useRouter()
   const {t} = useTranslation()
+  
   return (
     <>
       <div className="listing_single_description ">
