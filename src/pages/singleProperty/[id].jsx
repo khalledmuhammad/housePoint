@@ -67,7 +67,7 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
 
   }, [id]);
 
-  if(property)
+  if(Properties)
   {return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -179,7 +179,7 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-lg-8">
-              <DetailsContent property={property} />
+              <DetailsContent Properties={Properties} />
             </div>
             {/* End details content .col-lg-8 */}
 

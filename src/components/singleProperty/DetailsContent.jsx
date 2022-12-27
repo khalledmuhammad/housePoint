@@ -15,7 +15,7 @@ import PropertyVideo from "../common/listing-details/PropertyVideo";
 import WalkScore from "../common/listing-details/WalkScore";
 import WhatsNearby from "../common/listing-details/WhatsNearby";
 
-const DetailsContent = ({property}) => {
+const DetailsContent = ({Properties}) => {
   const router = useRouter()
   const {t} = useTranslation()
   return (
@@ -23,7 +23,7 @@ const DetailsContent = ({property}) => {
       <div className="listing_single_description ">
         <div className="bgc-darkBrown p-3">
         <div className="lsd_list">
-          <PropertyItem property={property} />
+          <PropertyItem property={Properties} />
         </div>
         {/* End .lsd_list */}
 
