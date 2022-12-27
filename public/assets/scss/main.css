@@ -19753,3 +19753,24 @@ button.gm-ui-hover-effect:focus {
 .pro-sidebar .pro-menu a.ui-active {
   color: var(--color-primary) !important;
 }
+
+.Scroll_images{
+  height: 450px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+ .croll_images::-webkit-scrollbar {
+  background: transparent;
+  border-radius: 6px;
+}
+
+ .croll_images::-webkit-scrollbar-track {
+  background-color: #dfdfdf;
+  border-radius: 6px;
+}
+
+ .croll_images::-webkit-scrollbar-thumb {
+  background-color: #a2a2a2 !important;
+  border-radius: 6px;
+}

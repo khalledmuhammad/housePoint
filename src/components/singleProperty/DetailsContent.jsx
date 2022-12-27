@@ -22,11 +22,6 @@ const DetailsContent = ({Properties}) => {
     <>
       <div className="listing_single_description ">
         <div className="bgc-darkBrown p-3">
-        <div className="lsd_list">
-          <PropertyItem property={Properties} />
-        </div>
-        {/* End .lsd_list */}
-
         <h4 className="mb30  text-white ">{t("DESC")}</h4>
         </div>
         <PropertyDescriptions />
