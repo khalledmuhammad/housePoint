@@ -7,14 +7,12 @@ import Footer from "../../components/common/footer/Footer";
 import Header from "../../components/common/header/DefaultHeader";
 import MobileMenu from "../../components/common/header/MobileMenu";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
-import properties from "../../data/properties";
-import DetailsContent from "../../components/singleProperty/DetailsContent";
+import DetailsContent from "./DetailsContent";
 import Sidebar from "../../components/singleProperty/Sidebar";
 import axios from "axios";
 import NotFound from "../../components/404";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
-import Slider from "react-slick";
 import { ShareSocial } from "react-share-social";
 
 
