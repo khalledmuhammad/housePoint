@@ -30,7 +30,19 @@
   "CITIESPROP" : "Are you looking for these Properties?",
   "SEARCH" :"Search",
   "AD" :"Ref. No.",
-  "DESC" :  "Description"
+  "DESC" :  "Description",
+  "PROPDETAILS" : "Property Details",
+  "SHARE" : "Share on :",
+  "PRICE" : "Price",
+  "PROPSIZE":"Property Size",
+  "PROPDATA":"Year Built",
+  "FURNISHED" : "Furnished",
+  "FORENT" : "For Rent"  ,
+  "FORSALE" : "For Sale"
+
+
+
+
 
 
 

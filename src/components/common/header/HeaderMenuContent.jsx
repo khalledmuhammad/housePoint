@@ -102,19 +102,7 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
     },
   ];
 
-  const pages = [
-    { id: 1, name: "About Us", routerPath: "/about-us" },
-    { id: 2, name: "Gallery", routerPath: "/gallery" },
-    { id: 3, name: "Faq", routerPath: "/faq" },
-    { id: 4, name: "LogIn", routerPath: "/login" },
-    { id: 5, name: "Compare", routerPath: "/compare" },
-    { id: 6, name: "Membership", routerPath: "/membership" },
 
-    { id: 7, name: "Register", routerPath: "/register" },
-    { id: 8, name: "Service", routerPath: "/service" },
-    { id: 9, name: "404 Page", routerPath: "/404" },
-    { id: 10, name: "Terms & Conditions", routerPath: "/terms" },
-  ];
 
   return (
     <ul
@@ -147,6 +135,36 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
           }
         >
           <span className="title">{t("PROPERTIESALL")}</span>
+        </a>
+        </Link>
+        {/* <!-- Level Two--> */}
+      </li>
+
+      <li>
+        <Link           href="/for-rent" >
+        <a
+          className={
+            listing.some((page) => page.routerPath === route.pathname)
+              ? "ui-active"
+              : undefined
+          }
+        >
+          <span className="title">{t("FORENT")}</span>
+        </a>
+        </Link>
+        {/* <!-- Level Two--> */}
+      </li>
+
+      <li>
+        <Link           href="/for-sale" >
+        <a
+          className={
+            listing.some((page) => page.routerPath === route.pathname)
+              ? "ui-active"
+              : undefined
+          }
+        >
+          <span className="title">{t("FORSALE")}</span>
         </a>
         </Link>
         {/* <!-- Level Two--> */}

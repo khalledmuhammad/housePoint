@@ -15,6 +15,8 @@ import NotFound from "../../components/404";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
+import { ShareSocial } from "react-share-social";
+
 
 const ListingDynamicDetailsV1 = ({ Properties }) => {
   const settings = {
@@ -227,7 +229,18 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
               {/* End details content .col-lg-8 */}
 
               <div className="col-lg-4 col-xl-4">
-                <Sidebar />
+                <h4 className="bgc-darkBrown text-white p-3" >{t("SHARE")}</h4>
+                <ShareSocial
+                url={process.browser && window.location.href}
+                socialTypes={["facebook", "twitter", "linkedin", "whatsapp"]}
+                style={{
+                  height: "100px",
+                  overflow: "hidden",
+                  background: "none",
+                  textAlign: "center",
+                }}
+              />
+              <Sidebar />
               </div>
               {/* End sidebar content .col-lg-4 */}
             </div>

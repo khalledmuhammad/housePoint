@@ -6604,7 +6604,6 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(235, 235, 235);
   border-radius: 8px 8px 0 0;
-  padding: 30px;
 }
 
 .listing_single_description.style2 {
@@ -19773,4 +19772,7 @@ button.gm-ui-hover-effect:focus {
  .croll_images::-webkit-scrollbar-thumb {
   background-color: #a2a2a2 !important;
   border-radius: 6px;
+}
+.makeStyles-copyContainer-5{
+  display: none !important; 
 }
