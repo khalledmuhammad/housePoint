@@ -8,7 +8,6 @@ const PropertyItem = ({Properties}) => {
   return (
     <ul className="mb0">
       <li className="list-inline-item">
-        <a href="#">{ router.locale === "ar" ? Properties.type_ar  : Properties.type_en}</a>
       </li>
       <li className="list-inline-item">
         <a href="#">{t("BEDS")}:  {Properties.No_of_bedrooms} </a>
