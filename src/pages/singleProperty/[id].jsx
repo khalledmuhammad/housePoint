@@ -63,7 +63,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
     getImageData();
   }, [id]);
 
-  if (property) {
+  if (Properties) {
     return (
       <>
         {/* <!-- Main Header Nav --> */}
