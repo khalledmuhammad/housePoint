@@ -5,7 +5,7 @@ import SingleProperty from "../../components/singleProperty";
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Listing Single – Details V1" />
+      <Seo pageTitle="house point" />
       <SingleProperty />
     </>
   );
