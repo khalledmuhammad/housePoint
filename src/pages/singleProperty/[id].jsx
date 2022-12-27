@@ -13,12 +13,44 @@ import Sidebar from "../../components/singleProperty/Sidebar";
 import axios from "axios";
 import NotFound from "../../components/404";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "react-i18next";
+import Slider from "react-slick";
+
 
 
 const ListingDynamicDetailsV1 = ({Properties}) => {
+  const settings = {
+    dots: false,
+    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    speed: 1500,
+
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   const router = useRouter();
   const [property, setProperty] = useState(Properties);
   const id = router.query.id;
+  const {t} = useTranslation()
 
   const [image , setImage] = useState()
  
@@ -48,49 +80,34 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
       <PopupSignInUp />
 
       {/* <!-- Listing Single Property --> */}
-      <section className="listing-title-area mt85 md-mt0">
+      <section className="listing-title-area mt85 md-mt0" dir={`${router.locale === "ar"  ? "rtl" : "" }`}>
         <div className="container">
           <Gallery>
-            <div className="row mb30">
+            <div className="row mb30 p-3 bgc-darkBrown" >
               <div className="col-lg-7 col-xl-8">
-                <div className="single_property_title mt30-767">
-                  <h2>{property?.Title}</h2>
-                  <p>{property?.location}</p>
+                
+                <div className="single_property_title mt30-767  ">
+              <h2 className="text-white">  {router.locale === "ar" ? property?.titlear :  property?.Title}  </h2>   
+                  <p className="text-white" >
+                  {router.locale == "ar"
+                  ? `${property.namear} , ${property.name2ar}`
+                  : `  ${property.name} ,${property.name2} `}                  
+                  </p>
                 </div>
               </div>
               <div className="col-lg-5 col-xl-4">
                 <div className="single_property_social_share position-static transform-none">
-                  <div className="price float-start fn-400">
-                    <h2>
+                  <div className="price float-start fn-400 ">
+                    <h2 className="text-white">
                       ${property?.Price}
-                      <small>/mo</small>
+                      <small className="text-white">/mo</small>
                     </h2>
+                    <p className="text-white"> 
+                      {t("AD")}:  #{property.Id_property}
+                    </p>
                   </div>
 
-                  <div className="spss style2 mt20 text-end tal-400">
-                    <ul className="mb0">
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-transfer-1"></span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-heart"></span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-share"></span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a href="#">
-                          <span className="flaticon-printer"></span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+              
                   {/* End activity and social sharing */}
                 </div>
               </div>
@@ -158,11 +175,11 @@ const ListingDynamicDetailsV1 = ({Properties}) => {
       </section>
 
       {/* <!-- Agent Single Grid View --> */}
-      <section className="our-agent-single bgc-f7 pb30-991">
+      <section className="our-agent-single bgc-f7 pb30-991" dir={`${router.locale === "ar" ? "rtl" : ""}`} > 
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-lg-8">
-              <DetailsContent />
+              <DetailsContent Properties={Properties} />
             </div>
             {/* End details content .col-lg-8 */}
 

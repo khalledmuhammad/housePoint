@@ -47,7 +47,7 @@ const FeaturedProperties = ({ Properties }) => {
         {Properties?.slice(0, 12).map((item) => (
           <div className="item" key={item.Id_property} dir={`${router.locale === "ar" ? "rtl" : ""}`}>
             <div className="feat_property home3">
-              <h4 className="p-2" style={{ background: "rgb(62, 76, 102)" }}>
+              <h4 className="p-2 bgc-darkBrown">
                 <Link
                   legacyBehavior
                   href={`/singleProperty/${item.Id_property}`}

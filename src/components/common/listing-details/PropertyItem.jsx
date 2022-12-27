@@ -1,17 +1,23 @@
-const PropertyItem = () => {
+import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
+
+const PropertyItem = ({Properties}) => {
+
+  const router = useRouter()
+  const {t} = useTranslation()
   return (
     <ul className="mb0">
       <li className="list-inline-item">
-        <a href="#">Apartment</a>
+        <a href="#">{ router.locale === "ar" ? Properties.type_ar  : Properties.type_en}</a>
       </li>
       <li className="list-inline-item">
-        <a href="#">Beds: 4</a>
+        <a href="#">{t("BEDS")}:  {Properties.No_of_bedrooms} </a>
+      </li>
+      <li className="list-inline-item mx-3">
+        <a href="#">{t("BATHS")}:  {Properties.No_of_bathrooms}  </a>
       </li>
       <li className="list-inline-item">
-        <a href="#">Baths: 2</a>
-      </li>
-      <li className="list-inline-item">
-        <a href="#">Sq Ft: 5280</a>
+        <a href="#">Sq Ft: {Properties.Surface_area}</a>
       </li>
     </ul>
   );

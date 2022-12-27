@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import Comments from "../blog-details/Comments";
 import Ratings from "../blog-details/Ratings";
 import ReviewBox from "../blog-details/ReviewBox";
@@ -13,16 +15,20 @@ import PropertyVideo from "../common/listing-details/PropertyVideo";
 import WalkScore from "../common/listing-details/WalkScore";
 import WhatsNearby from "../common/listing-details/WhatsNearby";
 
-const DetailsContent = () => {
+const DetailsContent = ({Properties}) => {
+  const router = useRouter()
+  const {t} = useTranslation()
   return (
     <>
-      <div className="listing_single_description">
+      <div className="listing_single_description ">
+        <div className="bgc-darkBrown p-3">
         <div className="lsd_list">
-          <PropertyItem />
+          <PropertyItem Properties={Properties} />
         </div>
         {/* End .lsd_list */}
 
-        <h4 className="mb30">Description</h4>
+        <h4 className="mb30  text-white ">{t("DESC")}</h4>
+        </div>
         <PropertyDescriptions />
       </div>
       {/* End .listing_single_description */}

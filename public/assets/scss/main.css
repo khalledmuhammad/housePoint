@@ -15728,6 +15728,9 @@ legend span {
 .bgc-darkblue {
   background-color: #004274;
 }
+.bgc-darkBrown{
+  background: rgb(62, 76, 102);
+}
 
 .bgc-green {
   background-color: #28b928;
