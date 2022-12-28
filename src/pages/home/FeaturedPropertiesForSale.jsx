@@ -43,7 +43,7 @@ const FeaturedProperties = ({ Properties }) => {
 
   return (
     <div className="row">
-        {Properties?.slice(0, 12).map((item) => (
+        {Properties?.slice(0, 8).map((item) => (
           <div className="item col-lg-3 col-md-6  col-sm-6 col-xs-12" key={item.Id_property} dir={`${router.locale === "ar" ? "rtl" : ""}`}>
             <div className="feat_property home3">
               <h4 className="p-2 bgc-darkBrown">
@@ -166,6 +166,5 @@ const FeaturedProperties = ({ Properties }) => {
     </div>
   );
 };
-
 
 export default FeaturedProperties;

@@ -2,6 +2,9 @@ import Blogs from "../../components/common/Blogs";
 import GlobalHeroFilter from "../../components/common/GlobalHeroFilter";
 import FeaturedProperties from "./FeaturedProperties";
 import FindProperties from "./FindProperties";
+import FeaturedPropertiesForSale from "./FeaturedPropertiesForSale";
+import FeaturedPropertiesLatestBlogs from "./FeaturedPropertiesLatestBlogs";
+
 import HeroSlider from "./HeroSlider";
 import LookingItem from "./LookingItem";
 import Team from "./Team";
@@ -11,7 +14,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
 
-const index = ({ Properties }) => {
+const index = ({ Properties , ForBuy ,LatestBlogs }) => {
   const router = useRouter()
   const { t } = useTranslation("");
 
@@ -60,6 +63,9 @@ const index = ({ Properties }) => {
         <div className="container ovh">
           <div className="row">
             <div className="col-lg-12 ">
+
+{/* -----------latest properties ------------------------------ */}
+
               <div className="main-title text-center mb40" dir={`${router.locale === "ar" ? "rtl" : ""}`}>
                 <h2>{t("FEATUREDPROPS")}</h2>
                 <h3>
@@ -69,10 +75,45 @@ const index = ({ Properties }) => {
               </div>
             </div>
           </div>
+
+          
           <div className="row">
             <div className="col-lg-12">
               <div className="best_property_slider gutter-x15">
                 <FeaturedProperties Properties={Properties} />
+              </div>
+            </div>
+          </div>
+
+
+{/* -----------latest for buy ------------------------------ */}
+<br/><hr/><br/>
+<div className="main-title text-center mb40" dir={`${router.locale === "ar" ? "rtl" : ""}`}>
+                <h3>
+                  <i className="fa fa-bookmark"></i>{" "}
+                  {t("RECENTBUY")}  
+                </h3>
+              </div>
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="best_property_slider gutter-x15">
+                <FeaturedPropertiesForSale Properties={ForBuy}  />
+              </div>
+            </div>
+          </div>
+{/* -----------latest blogs ------------------------------ */}
+<br/><hr/><br/>
+
+<div className="main-title text-center mb40" dir={`${router.locale === "ar" ? "rtl" : ""}`}>
+                <h3>
+                  <i className="fa fa-bookmark"></i>{" "}
+                  {t("RECENTBLOGS")}  
+                </h3>
+              </div>
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="best_property_slider gutter-x15">
+                <FeaturedPropertiesLatestBlogs Properties={LatestBlogs}  />
               </div>
             </div>
           </div>
@@ -94,44 +135,9 @@ const index = ({ Properties }) => {
           </div>
         </div>
       </section>
+    
 
-      {/* <!-- Our Blog --> */}
-      {/*   <section className="our-blog bgc-f7 pb30">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>Articles & Tips</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <Blogs />
-          </div>
-        </div>
-      </section> */}
-
-      {/* <!-- Our Team --> */}
-      {/*  <section className="our-team">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>Our Team</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="team_slider gutter-x15">
-                <Team />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+  
 
 </Layout>
     </>
