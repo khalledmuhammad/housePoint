@@ -10,7 +10,7 @@ const Blog = ({data}) => {
 
   return (
     <>
-      {blogContent.map((item) => (
+      {blogContent && blogContent.map((item) => (
         <div className="col-lg-4 col-md-6" key={item.id}>
           <div className="for_blog feat_property">
             <div className="thumb">
