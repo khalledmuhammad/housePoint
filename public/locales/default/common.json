@@ -38,7 +38,12 @@
   "PROPDATA":"Year Built",
   "FURNISHED" : "Furnished",
   "FORENT" : "For Rent"  ,
-  "FORSALE" : "For Sale"
+  "FORSALE" : "For Sale",
+  "PROPIN" : "Property In",
+  "PRIMELOC" : "Prime Locations"
+
+
+
 
 
 

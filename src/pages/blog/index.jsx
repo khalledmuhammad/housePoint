@@ -1,13 +1,17 @@
-import Pagination from "../common/blog/Pagination";
-import CopyrightFooter from "../common/footer/CopyrightFooter";
-import Footer from "../common/footer/Footer";
-import Header from "../common/header/DefaultHeader";
-import MobileMenu from "../common/header/MobileMenu";
-import PopupSignInUp from "../common/PopupSignInUp";
+import CopyrightFooter from "../../components/common/footer/CopyrightFooter";
+import Footer from "../../components/common/footer/Footer";
+import Header from "../../components/common/header/DefaultHeader";
+import MobileMenu from "../../components/common/header/MobileMenu";
+import PopupSignInUp from "../../components/common/PopupSignInUp";
 import BreadCrumbBlog from "./BreadCrumbBlog";
 import Blog from "./Blog";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const index = () => {
+import axios from "axios";
+import { useRouter } from "next/router";
+
+const index = ({data}) => {
+  const router = useRouter()
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -32,19 +36,11 @@ const index = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="row">
-                <Blog />
+                <Blog  data={data} />
                 {/* End blog item */}
               </div>
               {/* End .row */}
 
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="mbp_pagination mt20">
-                    <Pagination />
-                  </div>
-                  {/* End .mbp_pagination */}
-                </div>
-              </div>
               {/* End .row */}
             </div>
             {/* End .col */}
@@ -72,5 +68,16 @@ const index = () => {
     </>
   );
 };
+
+export async function getServerSideProps({ locale }) {
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/blogs`;
+  const { data } = await axios.get(apiUrlEndpoint);
+  return {
+    props: {
+      data: data,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default index;

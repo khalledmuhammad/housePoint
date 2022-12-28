@@ -1,29 +1,35 @@
 import Link from "next/link";
-import blogContent from "../../data/blogs";
+import { useState } from "react";
+import parse from 'html-react-parser';
+import { useRouter } from "next/router";
 
-const Blog = () => {
+
+const Blog = ({data}) => {
+  const [blogContent , setBlogContent] = useState(data)
+  const router = useRouter()
+
   return (
     <>
-      {blogContent.slice(0, 6).map((item) => (
+      {blogContent.map((item) => (
         <div className="col-lg-4 col-md-6" key={item.id}>
           <div className="for_blog feat_property">
             <div className="thumb">
-              <Link legacyBehavior href={`/blog-details/${item.id}`}>
+            <h4 className="mb15 text-center p-2 blog-text-header">
+                  <Link legacyBehavior href={`/blog-details/${item.id}`}>
+                    <a className="text-white"> { router.locale === "ar" ? item.tit2 : item.tit1}</a>
+                  </Link>
+                </h4>
+              <Link legacyBehavior href={`/blog-details/${item.slidid}`}>
                 <a>
-                  <img className="img-whp" src={item.img} alt={item.img} />
+                  <img className="img-whp" src={`https://housepointegypt.com/imgs/${item.img}`} alt={item.img} />
                 </a>
               </Link>
-              <div className="blog_tag">{item.postMeta}</div>
             </div>
             {/* End .thumb */}
 
             <div className="details">
               <div className="tc_content">
-                <h4 className="mb15">
-                  <Link legacyBehavior href={`/blog-details/${item.id}`}>
-                    <a>{item.title}</a>
-                  </Link>
-                </h4>
+                
                 <ul className="bpg_meta mb10">
                   <li className="list-inline-item">
                     <a href="#">
@@ -34,20 +40,13 @@ const Blog = () => {
                     <a href="#">{item.postedDate}</a>
                   </li>
                 </ul>
-                <p>{item.postDescriptions.slice(0, 65)}</p>
+                <p>{parse(item.txt.slice(0, 120))}</p>
               </div>
               {/* End .tc_content */}
 
+
               <div className="fp_footer">
                 <ul className="fp_meta float-start mb0">
-                  <li className="list-inline-item">
-                    <a href="#">
-                      <img src={item.posterAvatar} alt={item.posterAvatar} />
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="#">{item.posterName}</a>
-                  </li>
                 </ul>
                 <a className="fp_pdate float-end text-thm" href="#">
                   Read More <span className="flaticon-next"></span>

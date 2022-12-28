@@ -38,7 +38,9 @@
     "PROPDATA":"تاريخ الانشاء",
     "FURNISHED" : "حالة الشفه",
     "FORENT" : "للإيجار"  ,
-    "FORSALE" : "للبيع"
+    "FORSALE" : "للبيع",
+    "PROPIN" : "عقار بداخل",
+    "PRIMELOC" : "أفضل المناطق"
 
 
 

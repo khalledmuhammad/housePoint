@@ -3,10 +3,9 @@ import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import LocaleSwitcher from "../LocalSwitcher";
 
-const HeaderMenuContent = ({ float = "" , dark }) => {
+const HeaderMenuContent = ({ float = "", dark }) => {
   const route = useRouter();
   const { t } = useTranslation("");
-
 
   const home = [
     {
@@ -102,8 +101,6 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
     },
   ];
 
-
-
   return (
     <ul
       id="respMenu"
@@ -126,120 +123,65 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
       </li>
       {/* End .dropitem */}
       <li>
-        <Link           href="/AllProperties" >
-        <a
-          className={
-            listing.some((page) => page.routerPath === route.pathname)
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">{t("PROPERTIESALL")}</span>
-        </a>
+        <Link href="/AllProperties">
+          <a
+            className={
+              listing.some((page) => page.routerPath === route.pathname)
+                ? "ui-active"
+                : undefined
+            }
+          >
+            <span className="title">{t("PROPERTIESALL")}</span>
+          </a>
         </Link>
         {/* <!-- Level Two--> */}
       </li>
 
       <li>
-        <Link           href="/for-rent" >
-        <a
-          className={
-            listing.some((page) => page.routerPath === route.pathname)
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">{t("FORENT")}</span>
-        </a>
+        <Link href="/for-rent">
+          <a
+            className={
+              listing.some((page) => page.routerPath === route.pathname)
+                ? "ui-active"
+                : undefined
+            }
+          >
+            <span className="title">{t("FORENT")}</span>
+          </a>
         </Link>
         {/* <!-- Level Two--> */}
       </li>
 
       <li>
-        <Link           href="/for-sale" >
-        <a
-          className={
-            listing.some((page) => page.routerPath === route.pathname)
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">{t("FORSALE")}</span>
-        </a>
+        <Link href="/for-sale">
+          <a
+            className={
+              listing.some((page) => page.routerPath === route.pathname)
+                ? "ui-active"
+                : undefined
+            }
+          >
+            <span className="title">{t("FORSALE")}</span>
+          </a>
         </Link>
-        {/* <!-- Level Two--> */}
       </li>
 
-      {/* End .dropitem */}
+      <li>
+        <Link href="/blog">
+          <a
+            className={
+              listing.some((page) => page.routerPath === route.pathname)
+                ? "ui-active"
+                : undefined
+            }
+          >
+            <span className="title">{t("BLOGS")}</span>
+          </a>
+        </Link>
+      </li>
 
-      {/* End .dropitem */}
-
-      {/*  <li className="dropitem">
-        <a
-          href="#"
-          className={
-            pages.some((page) => page.routerPath === route.pathname)
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">Pages</span>
-          <span className="arrow"></span>
-        </a>
-        <ul className="sub-menu ">
-          {pages.map((item) => (
-            <li key={item.id}>
-              <Link legacyBehavior  href={item.routerPath}>
-                <a
-                  className={
-                    route.pathname === item.routerPath ? "ui-active" : undefined
-                  }
-                >
-                  {item.name}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </li> */}
-      {/* End .dropitem */}
-
-      {/*  <li className="dropitem">
-        <a
-          href="#"
-          className={
-            blog.some(
-              (page) =>
-                page.routerPath === route.pathname ||
-                page.routerPath + "/[id]" === route.pathname
-            )
-              ? "ui-active"
-              : undefined
-          }
-        >
-          <span className="title">Blog</span>
-          <span className="arrow"></span>
-        </a>
-        <ul className="sub-menu ">
-          {blog.map((item) => (
-            <li key={item.id}>
-              <Link legacyBehavior  href={item.routerPath}>
-                <a
-                  className={
-                    route.pathname === item.routerPath ||
-                    item.routerPath + "/[id]" === route.pathname
-                      ? "ui-active"
-                      : undefined
-                  }
-                >
-                  {item.name}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </li> */}
-      {/* End .dropitem */}
+    
+    
 
       <li className="last">
         <Link legacyBehavior href="/contact">
@@ -250,16 +192,10 @@ const HeaderMenuContent = ({ float = "" , dark }) => {
           </a>
         </Link>
       </li>
-      {/* End .dropitem */}
 
-    
-      {/* End .dropitem */}
       <li className={`list-inline-item list_s ${float}`}>
-
-
-      <LocaleSwitcher dark={dark} />
+        <LocaleSwitcher dark={dark} />
       </li>
-
 
       <li className={`list-inline-item add_listing ${float}`}>
         <Link legacyBehavior href="/create-listing">
