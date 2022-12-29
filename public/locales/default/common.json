@@ -1,9 +1,9 @@
 {
   "BUY": "Buy",
-  "RENT": "rent",
+  "RENT": "Rent",
   "FINDHOME": "Find Your Dream Home",
   "LOOKINGFOR": "What are you looking for?",
-  "HOME": "home",
+  "HOME": "Home",
   "PROPERTIESALL": "All Properties",
   "CONTACT": "Contact Us",
   "BLOGS": "Blog",
@@ -42,16 +42,30 @@
   "PROPIN" : "Property In",
   "PRIMELOC" : "Prime Locations",
   "RECENTBUY" : "Recent Properties To Buy in Maadi, Katameya & New Cairo",
-  "RECENTBLOGS" : "Latest Blogs"
-
-
-
-
-
-
-
-
-
-
+  "RECENTBLOGS" : "Latest Blogs",
+  "OFFICEBUILD": " Office Adminstration Buildings",
+  "OFFICE": "offices",
+  "COMMSTORE": " Commercial Stores and Shops",
+  "FLATS": "Flats",
+  "LANDS": "lands",
+  "THOUSE": "Town House",
+  "CHALETS": "Chalets",
+  "BUILDING": "Buildings",
+  "TWHOUSE": " Twin Houses",
+  "ADMINBUILD": " Adminstration Buildings",
+  "GFLOORTRIP": "  Ground Floors Triplex",
+  "PENTTRIP": " Penthouses Triplex",
+  "PENTDUPLEX": " Penthouses Duplex",
+  "STUDIOS": "Studios",
+  "ROOFTOP": " Roof Top",
+  "VILLAS": "Villas",
+  "PENTHOUSE": "Penthouses",
+  "GROUNDFLOORS": "Ground Floors",
+  "GROUNDFLOORDUPLEX" :  " Ground Floors duplex",
+  "APARTMENT": "Apartment",
+  "DUPLEX": "Duplex",
+  "CREATELISTING" :"Create Listing",
+  "MIN" : "Min Price " ,
+  "MAX" : "Max Price"
 
 }

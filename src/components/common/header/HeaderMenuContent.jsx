@@ -146,7 +146,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
                 : undefined
             }
           >
-            <span className="title">{t("FORENT")}</span>
+            <span className="title">{t("RENT")}</span>
           </a>
         </Link>
         {/* <!-- Level Two--> */}
@@ -161,7 +161,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
                 : undefined
             }
           >
-            <span className="title">{t("FORSALE")}</span>
+            <span className="title">{t("BUY")}</span>
           </a>
         </Link>
       </li>
@@ -201,7 +201,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
         <Link legacyBehavior href="/create-listing">
           <a>
             <span className="flaticon-plus"></span>
-            <span className="dn-lg"> Create Listing</span>
+            <span className="dn-lg">  {t("CREATELISTING")}</span>
           </a>
         </Link>
       </li>

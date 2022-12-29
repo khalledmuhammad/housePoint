@@ -144,7 +144,6 @@ const FilteringItem = () => {
     dispath(resetAmenities());
     dispath(addStatusType(""));
     dispath(addFeatured(""));
-    clearAdvanced();
   };
 
   console.log(Property_type);
@@ -247,28 +246,28 @@ const FilteringItem = () => {
               value={getPropertiesType}
             >
               <option value="">{t("PROPFOR")}</option>
-              <option value={1}>Duplex</option>
-              <option value={2}>Apartment</option>
-              <option value={3}>Ground Floors duplex</option>
-              <option value={4}>Ground Floors</option>
-              <option value={5}>Penthouses</option>
-              <option value={6}>Villas</option>
-              <option value={7}>Roof Top</option>
-              <option value={8}>Studios</option>
-              <option value={9}>Penthouses Duplex</option>
-              <option value={10}>Penthouses Triplex</option>
-              <option value={11}>Ground Floors Triplex</option>
-              <option value={12}>Adminstration Buildings</option>
+                <option value={1}>{t("APARTMENT")}</option>
+                <option value={2}>{t("DUPLEX")}</option>
+                <option value={3}>{t("GROUNDFLOORDUPLEX")}</option>
+                <option value={4}>{t("GROUNDFLOORS")}</option>
+                <option value={5}>{t("PENTHOUSE")}</option>
+                <option value={6}>{t("VILLAS")}</option>
+                <option value={7}>{t("STUDIOS")}</option>
+                <option value={8}>{t("ROOFTOP")}</option>
+                <option value={9}>{t("PENTDUPLEX")}</option>
+                <option value={10}>{t("PENTTRIP")}</option>
+                <option value={11}>{t("GFLOORTRIP")}</option>
+                <option value={12}>{t("ADMINBUILD")}</option>
 
-              <option value={13}>Twin Houses</option>
-              <option value={14}>Buildings</option>
-              <option value={17}>Chalets</option>
-              <option value={18}>Town House</option>
-              <option value={19}>lands</option>
-              <option value={20}>Flats</option>
-              <option value={21}>Commercial Stores and Shops</option>
-              <option value={22}>offices</option>
-              <option value={23}>Office Adminstration Buildings</option>
+                <option value={13}>{t("TWHOUSE")}</option>
+                <option value={14}>{t("BUILDING")}</option>
+                <option value={17}>{t("CHALETS")}</option>
+                <option value={18}>{t("LANDS")}</option>
+                <option value={19}>{t("THOUSE")}</option>
+                <option value={20}>{t("FLATS")}</option>
+                <option value={21}>{t("COMMSTORE")}</option>
+                <option value={22}>{t("OFFICE")}</option>
+                <option value={23}>{t("OFFICEBUILD")}</option>
             </select>
           </div>
         </div>

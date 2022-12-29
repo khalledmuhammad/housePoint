@@ -149,6 +149,39 @@ const MobileMenuContent = () => {
             </MenuItem>
           ))}
 
+<MenuItem>
+            <Link legacyBehavior href="/for-rent">
+              <a
+                className={
+                  route.pathname === "/for-rent" ? "ui-active" : undefined
+                }
+              >
+                  {t(`RENT`)}
+              </a>
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link legacyBehavior href="/for-sale">
+              <a
+                className={
+                  route.pathname === "/for-sale" ? "ui-active" : undefined
+                }
+              >
+                  {t(`BUY`)}
+              </a>
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link legacyBehavior href="/blog">
+              <a
+                className={
+                  route.pathname === "/blog" ? "ui-active" : undefined
+                }
+              >
+                  {t(`BLOGS`)}
+              </a>
+            </Link>
+          </MenuItem>
         
 
           <MenuItem>

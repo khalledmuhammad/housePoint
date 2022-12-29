@@ -30,96 +30,11 @@ const GlobalFilter = ({ className = "" }) => {
   return (
     <div className={`home1-advnc-search ${className} `} dir={`${router.locale === "ar" ? "rtl" : ""}`}>
       <ul className="h1ads_1st_list mb0">
-        {/* End li */}
 
-        <li className="list-inline-item">
-            <div className="candidate_revew_select">
-              <select
-                onChange={(e) => dispatch(addProperty_type(e.target.value))}
-                className="selectpicker w-80 show-tick form-select"
-              >
-                <option value="">{t("PROPFOR")}</option>
-                <option value={1}>Duplex</option>
-                <option value={2}>Apartment</option>
-                <option value={3}>Ground Floors duplex</option>
-                <option value={4}>Ground Floors</option>
-                <option value={5}>Penthouses</option>
-                <option value={6}>Villas</option>
-                <option value={7}>Roof Top</option>
-                <option value={8}>Studios</option>
-                <option value={9}>Penthouses Duplex</option>
-                <option value={10}>Penthouses Triplex</option>
-                <option value={11}>Ground Floors Triplex</option>
-                <option value={12}>Adminstration Buildings</option>
+                        {/* start location li */}
 
-                <option value={13}>Twin Houses</option>
-                <option value={14}>Buildings</option>
-                <option value={17}>Chalets</option>
-                <option value={18}>Town House</option>
-                <option value={19}>lands</option>
-                <option value={20}>Flats</option>
-                <option value={21}>Commercial Stores and Shops</option>
-                <option value={22}>offices</option>
-                <option value={23}>Office Adminstration Buildings</option>
-              </select>
-            </div>
-        </li>
-        {/* End li */}
-        <li className="list-inline-item">
-          <div className="candidate_revew_select">
-            <select
-              className="selectpicker w100 show-tick form-select"
-              onChange={(e) => dispatch(addBedrooms(e.target.value))}
-            >
-              <option value="">{t("BEDS")}</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-            </select>
-          </div>
-        </li>
-        {/* End li */}
-        <li className="list-inline-item">
-          <div className="candidate_revew_select">
-            <select
-              className="selectpicker w100 show-tick form-select"
-              onChange={(e) => dispatch(addBathrooms(e.target.value))}
-            >
-              <option value="">{t("BATHS")}</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-            </select>
-          </div>
-        </li>
 
-        {/* End li */}
-
-        <li className="list-inline-item">
+                        <li className="list-inline-item">
           <div className="form-group">
             <select
               className="selectpicker w100 show-tick form-select"
@@ -176,6 +91,104 @@ const GlobalFilter = ({ className = "" }) => {
           )}
 
         {/* End li */}
+
+
+                {/* start type li */}
+
+        <li className="list-inline-item">
+            <div className="candidate_revew_select">
+              <select
+                onChange={(e) => dispatch(addProperty_type(e.target.value))}
+                className="selectpicker w-100 show-tick form-select"
+              >
+                <option value="">{t("PROPFOR")}</option>
+                <option value={1}>{t("APARTMENT")}</option>
+                <option value={2}>{t("DUPLEX")}</option>
+                <option value={3}>{t("GROUNDFLOORDUPLEX")}</option>
+                <option value={4}>{t("GROUNDFLOORS")}</option>
+                <option value={5}>{t("PENTHOUSE")}</option>
+                <option value={6}>{t("VILLAS")}</option>
+                <option value={7}>{t("STUDIOS")}</option>
+                <option value={8}>{t("ROOFTOP")}</option>
+                <option value={9}>{t("PENTDUPLEX")}</option>
+                <option value={10}>{t("PENTTRIP")}</option>
+                <option value={11}>{t("GFLOORTRIP")}</option>
+                <option value={12}>{t("ADMINBUILD")}</option>
+
+                <option value={13}>{t("TWHOUSE")}</option>
+                <option value={14}>{t("BUILDING")}</option>
+                <option value={17}>{t("CHALETS")}</option>
+                <option value={18}>{t("LANDS")}</option>
+                <option value={19}>{t("THOUSE")}</option>
+                <option value={20}>{t("FLATS")}</option>
+                <option value={21}>{t("COMMSTORE")}</option>
+                <option value={22}>{t("OFFICE")}</option>
+                <option value={23}>{t("OFFICEBUILD")}</option>
+              </select>
+            </div>
+        </li>
+        {/* End li */}
+                        {/* start beds li */}
+
+
+        <li className="list-inline-item">
+          <div className="candidate_revew_select">
+            <select
+              className="selectpicker w100 show-tick form-select"
+              onChange={(e) => dispatch(addBedrooms(e.target.value))}
+            >
+              <option value="">{t("BEDS")}</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+        </li>
+        {/* End li */}
+                        {/* start baths li */}
+
+        <li className="list-inline-item">
+          <div className="candidate_revew_select">
+            <select
+              className="selectpicker w100 show-tick form-select"
+              onChange={(e) => dispatch(addBathrooms(e.target.value))}
+            >
+              <option value="">{t("BATHS")}</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+        </li>
+
+        {/* End li */}
+
+                {/* start price li */}
+
 
         <li className="list-inline-item">
           <div className="small_dropdown2">
@@ -235,14 +248,15 @@ const GlobalFilter = ({ className = "" }) => {
         </li>
         {/* End li */}
 
-        <li className="list-inline-item">
-          <div className="search_option_button">
+        <li className="list-inline-item ">
+          <div className="search_option_button ">
             <button
               onClick={submitHandler}
               type="submit"
-              className="btn btn-thm"
+              className="btn btn-thm w80"
             >
-              {t("SEARCH")}
+              <i class="fa fa-search" aria-hidden="true"></i>
+
             </button>
           </div>
         </li>

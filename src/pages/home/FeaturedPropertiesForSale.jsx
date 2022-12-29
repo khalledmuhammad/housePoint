@@ -2,11 +2,14 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 
 const FeaturedProperties = ({ Properties }) => {
   const router = useRouter();
+  const {t} = useTranslation()
+
 
   const settings = {
     dots: true,
@@ -87,9 +90,9 @@ const FeaturedProperties = ({ Properties }) => {
                         href={`/singleProperty/${item.Id_property}`}
                       >
                         <a className="fp_price">
-                          {item.Property_for === "Rent"
-                            ? `${item.Price} ${item.Price_ex}/month `
-                            : `${item.Price} ${item.Price_ex}`}
+                        { router.locale === "ar"  ? `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" }/ شهر `
+                            : `${item.Price} ${item.Price_ex}/month `
+                            }
                         </a>
                       </Link>
                     </div>
@@ -113,7 +116,7 @@ const FeaturedProperties = ({ Properties }) => {
                       : `  ${item.name} ,${item.name2} `}
                   </p>
 
-                  <ul className="row">
+                  <ul className="d-flex justify-content-between">
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
@@ -132,10 +135,13 @@ const FeaturedProperties = ({ Properties }) => {
                       >
                         <a className="text-dark">
                           <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
-                          bathrooms
+                          {t("BEDS")}
                         </a>
                       </Link>
                     </li>
+                    </ul>
+                    <ul className="d-flex justify-content-between">
+
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
@@ -143,7 +149,7 @@ const FeaturedProperties = ({ Properties }) => {
                       >
                         <a className="text-dark">
                           <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
-                          bedrooms{" "}
+                         {t("BATHS")}
                         </a>
                       </Link>
                     </li>

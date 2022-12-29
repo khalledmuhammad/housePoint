@@ -6,9 +6,11 @@ import { useState } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 const FeaturedItem = ({ data }) => {
   const [properties, setProperties] = useState(data);
+  const {t} = useTranslation()
 
   const router = useRouter();
 
@@ -50,7 +52,7 @@ const FeaturedItem = ({ data }) => {
 
   // price handler
   const priceHandler = (item) =>
-    item.Price < price?.max && item.Price > price?.min;
+    item.Price <= price?.max && item.Price >= price?.min;
 
   // bathroom handler
   const bathroomHandler = (item) => {
@@ -216,9 +218,13 @@ const FeaturedItem = ({ data }) => {
 
               <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
                 <a className="fp_price">
-                  {item.Property_for === "Rent"
-                    ? `${item.Price} ${item.Price_ex}/month `
-                    : `${item.Price} ${item.Price_ex}`}
+                { router.locale === "ar" ? item.Property_for === "Rent"
+                            ? `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" } /شهر `
+                            : `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" }`    : 
+                            router.locale === "en" && item.Property_for === "Rent"
+                            ? `${item.Price} ${item.Price_ex}/month `
+                            : `${item.Price} ${item.Price_ex}`  
+                            }
                 </a>
               </Link>
             </div>
@@ -251,51 +257,54 @@ const FeaturedItem = ({ data }) => {
             {/* End .tc_content */}
 
             <div className="fp_footer">
-              <ul className="row  ">
-                <li className="col-sm-6">
-                  <Link
-                    legacyBehavior
-                    href={`/singleProperty/${item.Id_property}`}
-                  >
-                    <a className="text-dark">
-                      <i className="fa fa-home "></i>
-                      {item.Surface_area}sqm<sup>2</sup>
-                    </a>
-                  </Link>
-                </li>
-                <li className="col-sm-6">
-                  <Link
-                    legacyBehavior
-                    href={`/singleProperty/${item.Id_property}`}
-                  >
-                    <a className="text-dark">
-                      <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
-                      bathrooms
-                    </a>
-                  </Link>
-                </li>
-                <li className="col-sm-6">
-                  <Link
-                    legacyBehavior
-                    href={`/singleProperty/${item.Id_property}`}
-                  >
-                    <a className="text-dark">
-                      <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
-                      bedrooms{" "}
-                    </a>
-                  </Link>
-                </li>
-                <li className="col-sm-6">
-                  <Link
-                    legacyBehavior
-                    href={`/singleProperty/${item.Id_property}`}
-                  >
-                    <a className="text-dark">
-                      <i className="fa fa-eye"></i> {item.views}{" "}
-                    </a>
-                  </Link>
-                </li>
-              </ul>
+            <ul className="d-flex justify-content-between">
+                    <li className="col-sm-6">
+                      <Link
+                        legacyBehavior
+                        href={`/singleProperty/${item.Id_property}`}
+                      >
+                        <a className="text-dark">
+                          <i className="fa fa-home "></i>
+                          {item.Surface_area}sqm<sup>2</sup>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      <Link
+                        legacyBehavior
+                        href={`/singleProperty/${item.Id_property}`}
+                      >
+                        <a className="text-dark">
+                          <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
+                          {t("BEDS")}
+                        </a>
+                      </Link>
+                    </li>
+                    </ul>
+                    <ul className="d-flex justify-content-between">
+
+                    <li className="col-sm-6">
+                      <Link
+                        legacyBehavior
+                        href={`/singleProperty/${item.Id_property}`}
+                      >
+                        <a className="text-dark">
+                          <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
+                         {t("BATHS")}
+                        </a>
+                      </Link>
+                    </li>
+                    <li className="col-sm-6">
+                      <Link
+                        legacyBehavior
+                        href={`/singleProperty/${item.Id_property}`}
+                      >
+                        <a className="text-dark">
+                          <i className="fa fa-eye"></i> {item.views}{" "}
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
 
               <div className="fp_pdate float-end">
                 {" "}

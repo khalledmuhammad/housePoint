@@ -1,3 +1,5 @@
+import axios from "axios";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -16,10 +18,11 @@ import MobileMenu from "../../components/common/header/MobileMenu";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
 import Seo from "../../components/common/seo";
 import blogs from "../../data/blogs";
+import parse from "html-react-parser";
 
-const BlogDetailsDynamic = () => {
+const BlogDetailsDynamic = ({ data }) => {
   const router = useRouter();
-  const [blog, setBlogItem] = useState({});
+  const [blog, setBlogItem] = useState(data);
   const id = router.query.id;
 
   useEffect(() => {
@@ -49,190 +52,20 @@ const BlogDetailsDynamic = () => {
               <BreadCrumb2 />
             </div>
           </div>
-          {/* End .row */}
 
           <div className="row">
-            <div className="col-lg-8">
-              <div className="main_blog_post_content">
-                <div className="mbp_thumb_post">
-                  <div className="blog_sp_tag">
-                    <a href="#">{blog?.postMeta}</a>
-                  </div>
-                  <h3 className="blog_sp_title">{blog?.title}</h3>
-                  <ul className="blog_sp_post_meta">
-                    <li className="list-inline-item">
-                      <a href="#">
-                        <img
-                          src="/assets/images/property/pposter1.png"
-                          alt="pposter1.png"
-                        />
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">Ali Tufan</a>
-                    </li>
-                    <li className="list-inline-item">
-                      <span className="flaticon-calendar"></span>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">January 16, 2020</a>
-                    </li>
-                    <li className="list-inline-item">
-                      <span className="flaticon-view"></span>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#"> 341 views</a>
-                    </li>
-                    <li className="list-inline-item">
-                      <span className="flaticon-chat"></span>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">15</a>
-                    </li>
-                  </ul>
-                  <div className="thumb">
-                    <img
-                      className="img-fluid w-100"
-                      src={blog?.img}
-                      alt={blog?.img}
-                    />
-                  </div>
-
-                  <div className="details">
-                    <p className="mb30">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Duis mollis et sem sed sollicitudin. Donec non odio neque.
-                      Aliquam hendrerit sollicitudin purus, quis rutrum mi
-                      accumsan nec. Quisque bibendum orci ac nibh facilisis, at
-                      malesuada orci congue. Nullam tempus sollicitudin cursus.
-                      Ut et adipiscing erat. Curabitur this is a text link
-                      libero tempus congue.
-                    </p>
-                    <p className="mb30">
-                      Duis mattis laoreet neque, et ornare neque sollicitudin
-                      at. Proin sagittis dolor sed mi elementum pretium. Donec
-                      et justo ante. Vivamus egestas sodales est, eu rhoncus
-                      urna semper eu. Cum sociis natoque penatibus et magnis dis
-                      parturient montes, nascetur ridiculus mus. Integer
-                      tristique elit lobortis purus bibendum, quis dictum metus
-                      mattis. Phasellus posuere felis sed eros porttitor mattis.
-                      Curabitur massa magna, tempor in blandit id, porta in
-                      ligula. Aliquam laoreet nisl massa, at interdum mauris
-                      sollicitudin et.
-                    </p>
-                    <h4 className="mb15">
-                      Housing Markets That Changed the Most This Decade
-                    </h4>
-                    <p>
-                      Nullam tempus sollicitudin cursus. Nulla elit mauris,
-                      volutpat eu varius malesuada, pulvinar eu ligula. Ut et
-                      adipiscing erat. Curabitur adipiscing erat vel libero
-                      tempus congue. Nam pharetra interdum vestibulum. Aenean
-                      gravida mi non aliquet porttitor. Praesent dapibus, nisi a
-                      faucibus tincidunt, quam dolor condimentum metus, in
-                      convallis libero ligula ut eros.
-                    </p>
-                    <div className="mbp_blockquote">
-                      <div className="blockquote">
-                        <span className="font-italic">
-                          <i className="fa fa-quote-left"></i>
-                        </span>
-                        <br />
-                        <em className="mb-0">
-                          Duis mollis et sem sed sollicitudin. Donec non odio
-                          neque. Aliquam hendrerit sollicitudin purus, quis
-                          rutrum mi accumsan nec.
-                        </em>
-                      </div>
-                    </div>
-                    <p className="mb25">
-                      Curabitur massa magna, tempor in blandit id, porta in
-                      ligula. Aliquam laoreet nisl massa, at interdum mauris
-                      sollicitudin et. Mauris risus lectus, tristique at nisl
-                      at, pharetra tristique enim.
-                    </p>
-                    <p className="mb25">
-                      Nullam this is a link nibh facilisis, at malesuada orci
-                      congue. Nullam tempus sollicitudin cursus. Nulla elit
-                      mauris, volutpat eu varius malesuada, pulvinar eu ligula.
-                      Ut et adipiscing erat. Curabitur adipiscing erat vel
-                      libero tempus congue. Nam pharetra interdum vestibulum.
-                      Aenean gravida mi non aliquet porttitor. Praesent dapibus,
-                      nisi a faucibus tincidunt, quam dolor condimentum metus,
-                      in convallis libero ligula ut eros.
-                    </p>
-                  </div>
-                  <ul className="blog_post_share">
-                    <li>
-                      <p>Share</p>
-                    </li>
-                    <Social />
-                  </ul>
-                  {/* End .blog_post_share */}
-                </div>
-                {/* End .mbp_thumb_post */}
-
-                <div className="mbp_pagination_tab">
-                  <Pagination />
-                </div>
-                {/* End mbp_pagination_tab */}
-
-                <div className="product_single_content mb30">
-                  <div className="mbp_pagination_comments">
-                    <div className="total_review">
-                      <h4>896 Reviews</h4>
-                      <ul className="review_star_list mb0 pl10">
-                        <Ratings />
-                      </ul>
-                      <a className="tr_outoff pl10" href="#">
-                        ( 4.5 out of 5 )
-                      </a>
-                      <a className="write_review float-end fn-xsd" href="#">
-                        Write a Review
-                      </a>
-                    </div>
-                    {/* End .total_review */}
-
-                    <Comments />
-                    <div className="custom_hr"></div>
-                  </div>
-                </div>
-                {/* End .product_single_content  */}
-
-                <div className="bsp_reveiw_wrt">
-                  <h4>Write a Review</h4>
-
-                  <ul className="review_star">
-                    <li className="list-inline-item">
-                      <span className="sspd_review">
-                        <ul>
-                          <Ratings />
-                        </ul>
-                      </span>
-                    </li>
-                    <li className="list-inline-item pr15">
-                      <p>Your Rating & Review</p>
-                    </li>
-                  </ul>
-                  <ReviewBox />
-                </div>
-                {/* End .bsp_reveiw_wrt */}
+            {router.locale === "ar" ? (
+              <div dir="rtl">
+                <h2>{parse(data.tit2)}</h2>
+                {parse(data.txt2)}{" "}
               </div>
-              {/* End .main_blog_post_content */}
-
-              <div className="row">
-                <div className="col-lg-12 mb20">
-                  <h4>Related Posts</h4>
-                </div>
-                <RelatedPost />
-              </div>
-            </div>
-            {/* End .col */}
-
-            <div className="col-lg-4">
-              <BlogSidebar />
-            </div>
-            {/* End Sidebar column */}
+            ) : (
+              <>
+                {" "}
+                <h2>{parse(data.tit1)}</h2>
+                {parse(data.txt)}
+              </>
+            )}
           </div>
           {/* End .row */}
         </div>
@@ -258,6 +91,15 @@ const BlogDetailsDynamic = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(BlogDetailsDynamic), {
-  ssr: false,
-});
+export async function getServerSideProps({ params, locale }) {
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/blogs/${params.id}`;
+  const { data } = await axios.get(apiUrlEndpoint);
+  return {
+    props: {
+      data: data,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
+
+export default BlogDetailsDynamic;

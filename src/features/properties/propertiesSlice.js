@@ -44,7 +44,7 @@ export const propertiesSlice = createSlice({
             state.Sublocation = action.payload;
         },
         addPrice: (state, action) => {
-            state.price.min = action.payload.min;
+            state.price.min = action.payload.min ;
             state.price.max = action.payload.max;
         },
         addAmenities: (state, action) => {

@@ -19,6 +19,20 @@ const GlobalHeroFilter = ({ className = "" }) => {
     return (
         <div className={`home_adv_srch_opt ${className}`}>
             <ul className="nav nav-pills" id="pills-tab" role="tablist">
+            <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Rent"))} >
+                    <a
+                        className="nav-link"
+                        id="pills-profile-tab"
+                        data-bs-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                    >
+                        
+                        {t("RENT")}
+                    </a>
+                </li>
                 <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Sale"))} >
                     <a
                         className="nav-link active"
@@ -35,20 +49,7 @@ const GlobalHeroFilter = ({ className = "" }) => {
                     </a>
                 </li>
 
-                <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Rent"))} >
-                    <a
-                        className="nav-link"
-                        id="pills-profile-tab"
-                        data-bs-toggle="pill"
-                        href="#pills-profile"
-                        role="tab"
-                        aria-controls="pills-profile"
-                        aria-selected="false"
-                    >
-                        
-                        {t("RENT")}
-                    </a>
-                </li>
+             
             </ul>
             {/* End nav-pills */}
 

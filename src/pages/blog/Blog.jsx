@@ -15,7 +15,7 @@ const Blog = ({data}) => {
           <div className="for_blog feat_property">
             <div className="thumb">
             <h4 className="mb15 text-center p-2 blog-text-header">
-                  <Link legacyBehavior href={`/blog-details/${item.id}`}>
+                  <Link legacyBehavior href={`/blog-details/${item.slidid}`}>
                     <a className="text-white"> { router.locale === "ar" ? item.tit2 : item.tit1}</a>
                   </Link>
                 </h4>
