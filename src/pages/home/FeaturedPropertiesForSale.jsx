@@ -90,7 +90,7 @@ const FeaturedProperties = ({ Properties }) => {
                         href={`/singleProperty/${item.Id_property}`}
                       >
                         <a className="fp_price">
-                        { router.locale === "ar"  ? `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" }/ شهر `
+                        { router.locale === "ar"  ? `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" } `
                             : `${item.Price} ${item.Price_ex}/month `
                             }
                         </a>
