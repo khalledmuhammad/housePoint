@@ -66,6 +66,7 @@
   "DUPLEX": "Duplex",
   "CREATELISTING" :"Create Listing",
   "MIN" : "Min Price " ,
-  "MAX" : "Max Price"
+  "MAX" : "Max Price",
+  "BLOGSPOINT" : "House Point Blogs"
 
 }

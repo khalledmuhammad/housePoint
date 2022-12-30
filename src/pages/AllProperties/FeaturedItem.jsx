@@ -185,7 +185,7 @@ const FeaturedItem = ({ data }) => {
               style={{ background: "rgb(62, 76, 102)" }}
               charSet="latin1"
             >
-              <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
+              <Link legacyBehavior href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
                 <a className="text-white" charSet="latin1">
                   {router.locale == "ar"
                     ? item.titlear /* .replace('-','') */
@@ -216,7 +216,7 @@ const FeaturedItem = ({ data }) => {
                 </li>
               </ul>
 
-              <Link legacyBehavior href={`/singleProperty/${item.Id_property}`}>
+              <Link legacyBehavior href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
                 <a className="fp_price">
                 { router.locale === "ar" ? item.Property_for === "Rent"
                             ? `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" } /شهر `
@@ -236,8 +236,8 @@ const FeaturedItem = ({ data }) => {
                 <h4>
                   <Link
                     legacyBehavior
-                    href={`/singleProperty/${item.Id_property}`}
-                  >
+           href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
+                    >
                     <a>
                     {router.locale == "ar"
                     ? item.titlear /* .replace('-','') */
@@ -261,8 +261,8 @@ const FeaturedItem = ({ data }) => {
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
-                        href={`/singleProperty/${item.Id_property}`}
-                      >
+                        href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
+                        >
                         <a className="text-dark">
                           <i className="fa fa-home "></i>
                           {item.Surface_area}sqm<sup>2</sup>
@@ -272,8 +272,8 @@ const FeaturedItem = ({ data }) => {
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
-                        href={`/singleProperty/${item.Id_property}`}
-                      >
+                        href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
+                        >
                         <a className="text-dark">
                           <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
                           {t("BEDS")}
@@ -286,8 +286,8 @@ const FeaturedItem = ({ data }) => {
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
-                        href={`/singleProperty/${item.Id_property}`}
-                      >
+                        href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
+                        >
                         <a className="text-dark">
                           <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
                          {t("BATHS")}
@@ -297,8 +297,8 @@ const FeaturedItem = ({ data }) => {
                     <li className="col-sm-6">
                       <Link
                         legacyBehavior
-                        href={`/singleProperty/${item.Id_property}`}
-                      >
+                        href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
+                        >
                         <a className="text-dark">
                           <i className="fa fa-eye"></i> {item.views}{" "}
                         </a>

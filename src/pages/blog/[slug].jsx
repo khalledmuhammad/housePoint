@@ -22,17 +22,24 @@ import parse from "html-react-parser";
 
 const BlogDetailsDynamic = ({ data }) => {
   const router = useRouter();
-  const [blog, setBlogItem] = useState(data);
+  const [blog, setBlogItem] = useState();
+
   const id = router.query.id;
 
   useEffect(() => {
-    if (!id) <h1>Loading...</h1>;
-    else setBlogItem(blogs.find((item) => item.id == id));
+    setBlogItem(data);
+  }, [data]);
 
-    return () => {};
-  }, [id]);
+  console.log(blog)
+ 
 
-  return (
+
+  if (!blog) {
+    return <h1>Loading...</h1>;
+  }
+
+  else
+{  return (
     <>
       <Seo pageTitle={"Blog Details"} />
       {/* <!-- Main Header Nav --> */}
@@ -88,11 +95,12 @@ const BlogDetailsDynamic = ({ data }) => {
         </div>
       </section>
     </>
-  );
+  );}
 };
 
-export async function getServerSideProps({ params, locale }) {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/blogs/${params.id}`;
+export async function getServerSideProps({ params, locale ,req  }) {
+
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/blogsen/${params.slug}`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {

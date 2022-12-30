@@ -6,7 +6,7 @@ const BreadCrumbBlog = () => {
   return (
     <div className="breadcrumb_content style2">
       <BreadCrumb title="Blog" />
-      <h2 className="breadcrumb_title">{t("BLOGS")}</h2>
+      <h2 className="breadcrumb_title text-center">{t("BLOGSPOINT")}</h2>
     </div>
   );
 };
