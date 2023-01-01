@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    AllProp: [] || null,
     keyword: "",
     Property_type: "",
     Sublocation:"",
@@ -28,6 +29,9 @@ export const propertiesSlice = createSlice({
     name: "properties",
     initialState,
     reducers: {
+        setAllProp: (state, action)=> {
+state.AllProp = action.payload
+        },
         addKeyword: (state, action) => {
             state.keyword = action.payload;
         },
@@ -105,6 +109,7 @@ export const {
     addAreaMax,
     addLength,
     resetAmenities,
-    addProperty_for
+    addProperty_for,
+    setAllProp
 } = propertiesSlice.actions;
 export default propertiesSlice.reducer;

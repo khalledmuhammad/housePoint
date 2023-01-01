@@ -8,8 +8,10 @@ import ReactPaginate from "react-paginate";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
-const FeaturedItem = ({ data }) => {
+const FeaturedItem = ({ data , property_type , property_location , property_subLocation }) => {
   const [properties, setProperties] = useState(data);
+
+  
   const {t} = useTranslation()
 
   const router = useRouter();
@@ -48,7 +50,7 @@ const FeaturedItem = ({ data }) => {
 
   // properties handler
   const propertiesHandler = (item) =>
-    item.Property_type.includes(Property_type);
+    item.Property_type.includes( property_type ?property_type :  Property_type);
 
   // price handler
   const priceHandler = (item) =>
@@ -185,7 +187,8 @@ const FeaturedItem = ({ data }) => {
               style={{ background: "rgb(62, 76, 102)" }}
               charSet="latin1"
             >
-              <Link legacyBehavior href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+              {/*               <Link legacyBehavior href={`/${item.Property_for === "Rent" ? `${router.locale === "ar" ? "للايجار" : "for-rent"}` : `${router.locale === "ar" ? "للبيع" : "for-sale"}` }/${router.locale === "ar" ?    item.type_ar_slug  : item.type_en_slug }/${ router.locale === "ar"  ? item.namear  : item.name}/${ router.locale === "ar" ?  item.name2ar.replace(" ", "-") :  item.name2.replace(" ", "-")}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}> */}
+              <Link legacyBehavior href={`/${item.Property_for === "Rent" && "for-rent"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name}/${ item.name2.replace(" ", "-")}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
                 <a className="text-white" charSet="latin1">
                   {router.locale == "ar"
                     ? item.titlear /* .replace('-','') */
@@ -201,11 +204,11 @@ const FeaturedItem = ({ data }) => {
               alt="fp1.jpg"
             />
             <div className="thmb_cntnt">
-              <ul className="tag mb0">
-                <li className="list-inline-item">
+              <ul className="tag mb0 d-flex gap-5 ">
+                <li className="">
                   <a href="#">#{item.Id_property}</a>
                 </li>
-                <li className="list-inline-item">
+                <li className="">
                   <a href="#" className="text-capitalize">
                     {router.locale == "ar"
                       ? item.Property_for === "Rent"

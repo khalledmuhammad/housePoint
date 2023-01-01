@@ -67,6 +67,24 @@
   "CREATELISTING" :"Create Listing",
   "MIN" : "Min Price " ,
   "MAX" : "Max Price",
-  "BLOGSPOINT" : "House Point Blogs"
+  "BLOGSPOINT" : "House Point Blogs",
+  "MOUNTAINVIEW" : "Mountain View",
+  "LAKEVIEW" : "Lake View",
+  "ARABELLA" :"Arabella",
+  "FIRSTSETTLE":"1st Settelment",
+  "MIRAGECITY":"Mirage City",
+  "MIVIDA" : "Mivida",
+  "MADINTY":"Madinaty",
+  "KATAMEYADUNES" :"Katameya Dunes",
+  "KATAMYARESDENCE" :"Katameya Residence",
+  "KATAMETAHILLS" :"Katameya Hills",
+  "VILLAGEGATE" :"Village Gate",
+  "THEVILLAGE":"The Village",
+  "KATAMYAPLAZA" :"Katameya Plaza",
+  "STONEPARK" :"Stone Park",
+  "CHOUIFAT":"chouifat",
+  "WESTGOLF":"West Golf",
+  "FIFTHSETTLE":"5th Settlement"
+  
 
 }

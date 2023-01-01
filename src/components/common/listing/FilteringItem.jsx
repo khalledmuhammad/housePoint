@@ -56,7 +56,6 @@ const FilteringItem = () => {
   const [getAreaMin, setAreaMin] = useState(area.min);
   const [getAreaMax, setAreaMax] = useState(area.max);
 
-
   // advanced state
 
   const dispath = useDispatch();
@@ -77,10 +76,10 @@ const FilteringItem = () => {
   useEffect(() => {
     dispath(addLocation(getLocation));
   }, [dispath, addLocation, getLocation]);
-    //  sub location
-    useEffect(() => {
-      dispath(addSubLocation(getSubLocation));
-    }, [dispath, addSubLocation, getSubLocation]);
+  //  sub location
+  useEffect(() => {
+    dispath(addSubLocation(getSubLocation));
+  }, [dispath, addSubLocation, getSubLocation]);
 
   // status
   useEffect(() => {
@@ -149,8 +148,6 @@ const FilteringItem = () => {
   console.log(Property_type);
   // clear advanced
 
-
-
   return (
     <ul className="sasw_list mb0">
       <li className="search_area">
@@ -176,7 +173,7 @@ const FilteringItem = () => {
             value={getLocation}
             onChange={(e) => {
               setLocation(e.target.value);
-              setSubLocation("")
+              setSubLocation("");
             }}
           >
             <option value="">{t("LOCATION")}</option>
@@ -193,25 +190,43 @@ const FilteringItem = () => {
               onChange={(e) => setSubLocation(e.target.value)}
             >
               <option value="">{t("SUBLOCATION")}</option>
-              <option value={1}>Zahraa Maadi</option>
-              <option value={2}>Maadi Sarayat</option>
-              <option value={4}>New Maadi</option>
-              <option value={5}>Maadi Degla</option>
-              <option value={6}>Old Maadi</option>
-              <option value={3} className="px-5">Cornish Maadi</option>
+              <option value={1}>{t("ZAHRAAMAADI")}</option>
+              <option value={2}>{t("MAADISARAYAT")}</option>
+              <option value={4}>{t("NEWMAADI")}</option>
+              <option value={5}>{t("MAADIDEGLA")}</option>
+              <option value={6}>{t("OLDMAADI")}</option>
+              <option value={3} className="px-5">
+                {t("CORNISHMAADI")}
+              </option>
             </select>
           )}
-               {location == 4 && (
+          {location == 4 && (
             <select
               className="selectpicker w100 show-tick form-select my-3"
               value={getSubLocation}
               onChange={(e) => setSubLocation(e.target.value)}
             >
               <option value="">{t("SUBLOCATION")}</option>
-              <option value={7}>chouifat</option>
-              <option value={8}>West Golf</option>
-              <option value={9}>5th Settlement</option>
-           
+              <option value={7}>{t("CHOUIFAT")}</option>
+              <option value={8}>{t("WESTGOLF")}</option>
+              <option value={9}>{t("FIFTHSETTLE")}</option>
+
+              <option value={79}>{t("MOUNTAINVIEW")}</option>
+              <option value={78}>{t("LAKEVIEW")}</option>
+              <option value={90}>{t("ARABELLA")}</option>
+              <option value={33}>{t("FIRSTSETTLE")}</option>
+              <option value={91}>{t("MIRAGECITY")}</option>
+              <option value={89}>{t("MIVIDA")}</option>
+
+              <option value={92}>{t("MADINTY")}</option>
+              <option value={81}>{t("KATAMEYADUNES")}</option>
+              <option value={82}>{t("KATAMYARESDENCE")}</option>
+              <option value={83}>{t("KATAMETAHILLS")}</option>
+              <option value={84}>{t("VILLAGEGATE")}</option>
+              <option value={85}>{t("THEVILLAGE")}</option>
+              <option value={86}>{t("KATAMYAPLAZA")}</option>
+
+              <option value={87}>{t("STONEPARK")}</option>
             </select>
           )}
         </div>
@@ -246,28 +261,28 @@ const FilteringItem = () => {
               value={getPropertiesType}
             >
               <option value="">{t("PROPFOR")}</option>
-                <option value={1}>{t("APARTMENT")}</option>
-                <option value={2}>{t("DUPLEX")}</option>
-                <option value={3}>{t("GROUNDFLOORDUPLEX")}</option>
-                <option value={4}>{t("GROUNDFLOORS")}</option>
-                <option value={5}>{t("PENTHOUSE")}</option>
-                <option value={6}>{t("VILLAS")}</option>
-                <option value={7}>{t("STUDIOS")}</option>
-                <option value={8}>{t("ROOFTOP")}</option>
-                <option value={9}>{t("PENTDUPLEX")}</option>
-                <option value={10}>{t("PENTTRIP")}</option>
-                <option value={11}>{t("GFLOORTRIP")}</option>
-                <option value={12}>{t("ADMINBUILD")}</option>
+              <option value={2}>{t("APARTMENT")}</option>
+              <option value={1}>{t("DUPLEX")}</option>
+              <option value={3}>{t("GROUNDFLOORDUPLEX")}</option>
+              <option value={4}>{t("GROUNDFLOORS")}</option>
+              <option value={5}>{t("PENTHOUSE")}</option>
+              <option value={6}>{t("VILLAS")}</option>
+              <option value={7}>{t("STUDIOS")}</option>
+              <option value={8}>{t("ROOFTOP")}</option>
+              <option value={9}>{t("PENTDUPLEX")}</option>
+              <option value={10}>{t("PENTTRIP")}</option>
+              <option value={11}>{t("GFLOORTRIP")}</option>
+              <option value={12}>{t("ADMINBUILD")}</option>
 
-                <option value={13}>{t("TWHOUSE")}</option>
-                <option value={14}>{t("BUILDING")}</option>
-                <option value={17}>{t("CHALETS")}</option>
-                <option value={18}>{t("LANDS")}</option>
-                <option value={19}>{t("THOUSE")}</option>
-                <option value={20}>{t("FLATS")}</option>
-                <option value={21}>{t("COMMSTORE")}</option>
-                <option value={22}>{t("OFFICE")}</option>
-                <option value={23}>{t("OFFICEBUILD")}</option>
+              <option value={13}>{t("TWHOUSE")}</option>
+              <option value={14}>{t("BUILDING")}</option>
+              <option value={17}>{t("CHALETS")}</option>
+              <option value={18}>{t("LANDS")}</option>
+              <option value={19}>{t("THOUSE")}</option>
+              <option value={20}>{t("FLATS")}</option>
+              <option value={21}>{t("COMMSTORE")}</option>
+              <option value={22}>{t("OFFICE")}</option>
+              <option value={23}>{t("OFFICEBUILD")}</option>
             </select>
           </div>
         </div>

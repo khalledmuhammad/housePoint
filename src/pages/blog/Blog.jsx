@@ -19,7 +19,7 @@ const Blog = ({data}) => {
                     <a className="text-white"> { router.locale === "ar" ? item.tit2 : item.tit1}</a>
                   </Link>
                 </h4>
-              <Link legacyBehavior href={`/blog-details/${item.slidid}`}>
+                <Link legacyBehavior href={`blog/${router.locale === "ar" ? item.slug_ar : item.slug_en }`}>
                 <a>
                   <img className="img-whp" src={`https://housepointegypt.com/imgs/${item.img}`} alt={item.img} />
                 </a>

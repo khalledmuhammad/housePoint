@@ -13,13 +13,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 const GlobalFilter = ({ className = "" }) => {
-  const {t} = useTranslation()
-  const router = useRouter()
+  const { t } = useTranslation();
+  const router = useRouter();
 
-  const {
-    location,
-      Sublocation,
-  } = useSelector((state) => state.properties);
+  const { location, Sublocation } = useSelector((state) => state.properties);
 
   // submit handler
   const submitHandler = () => {
@@ -28,13 +25,14 @@ const GlobalFilter = ({ className = "" }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className={`home1-advnc-search ${className} `} dir={`${router.locale === "ar" ? "rtl" : ""}`}>
+    <div
+      className={`home1-advnc-search ${className} `}
+      dir={`${router.locale === "ar" ? "rtl" : ""}`}
+    >
       <ul className="h1ads_1st_list mb0">
+        {/* start location li */}
 
-                        {/* start location li */}
-
-
-                        <li className="list-inline-item">
+        <li className="list-inline-item">
           <div className="form-group">
             <select
               className="selectpicker w100 show-tick form-select"
@@ -43,93 +41,106 @@ const GlobalFilter = ({ className = "" }) => {
               <option value="">{t("LOCATION")}</option>
               <option value={1}>{t("MAADI")}</option>
               <option value={4}>{t("NEWCAIRO")}</option>
-              <option value={17} className="px-5" >{t("KATAMYA")}</option>
+              <option value={17} className="px-5">
+                {t("KATAMYA")}
+              </option>
             </select>
           </div>
         </li>
         {/* End li */}
-        {location == 1 && (  <li className="list-inline-item">
-          <div className="form-group">
-      
-
-            <select
-            className="selectpicker w100 show-tick form-select"
-            onChange={(e) => dispatch(addSubLocation(e.target.value))}
-            >
-              <option value="">{t("SUBLOCATION")}</option>
-              <option value={1}>Zahraa Maadi</option>
-              <option value={2}>Maadi Sarayat</option>
-              <option value={4}>New Maadi</option>
-              <option value={5}>Maadi Degla</option>
-              <option value={6}>Old Maadi</option>
-              <option value={3} className="px-5">Cornish Maadi</option>
-            </select>
-         
-
-          </div>
-          </li>
-           )}
-
-          {/* End Li */}
-          {location == 4 && (
- <li className="list-inline-item">
-          <div className="form-group">
-            <select
-            className="selectpicker w100 show-tick form-select"
-            onChange={(e) => dispatch(addSubLocation(e.target.value))}
-            >
-              <option value="">{t("SUBLOCATION")}</option>
-              <option value={7}>chouifat</option>
-              <option value={8}>West Golf</option>
-              <option value={9}>5th Settlement</option>
-           
-            </select>
-
-          </div>
-          </li>
-
-          )}
-
-        {/* End li */}
-
-
-                {/* start type li */}
-
-        <li className="list-inline-item">
-            <div className="candidate_revew_select">
+        {location == 1 && (
+          <li className="list-inline-item">
+            <div className="form-group">
               <select
-                onChange={(e) => dispatch(addProperty_type(e.target.value))}
-                className="selectpicker w-100 show-tick form-select"
+                className="selectpicker w100 show-tick form-select"
+                onChange={(e) => dispatch(addSubLocation(e.target.value))}
               >
-                <option value="">{t("PROPFOR")}</option>
-                <option value={1}>{t("APARTMENT")}</option>
-                <option value={2}>{t("DUPLEX")}</option>
-                <option value={3}>{t("GROUNDFLOORDUPLEX")}</option>
-                <option value={4}>{t("GROUNDFLOORS")}</option>
-                <option value={5}>{t("PENTHOUSE")}</option>
-                <option value={6}>{t("VILLAS")}</option>
-                <option value={7}>{t("STUDIOS")}</option>
-                <option value={8}>{t("ROOFTOP")}</option>
-                <option value={9}>{t("PENTDUPLEX")}</option>
-                <option value={10}>{t("PENTTRIP")}</option>
-                <option value={11}>{t("GFLOORTRIP")}</option>
-                <option value={12}>{t("ADMINBUILD")}</option>
-
-                <option value={13}>{t("TWHOUSE")}</option>
-                <option value={14}>{t("BUILDING")}</option>
-                <option value={17}>{t("CHALETS")}</option>
-                <option value={18}>{t("LANDS")}</option>
-                <option value={19}>{t("THOUSE")}</option>
-                <option value={20}>{t("FLATS")}</option>
-                <option value={21}>{t("COMMSTORE")}</option>
-                <option value={22}>{t("OFFICE")}</option>
-                <option value={23}>{t("OFFICEBUILD")}</option>
+                <option value="">{t("SUBLOCATION")}</option>
+                <option value={1}>{t("ZAHRAAMAADI")}</option>
+                <option value={2}>{t("MAADISARAYAT")}</option>
+                <option value={4}>{t("NEWMAADI")}</option>
+                <option value={5}>{t("MAADIDEGLA")}</option>
+                <option value={6}>{t("OLDMAADI")}</option>
+                <option value={3} className="px-5">
+                  {t("CORNISHMAADI")}
+                </option>
               </select>
             </div>
+          </li>
+        )}
+
+        {/* End Li */}
+        {location == 4 && (
+          <li className="list-inline-item">
+            <div className="form-group">
+              <select
+                className="selectpicker w-125 show-tick form-select"
+                onChange={(e) => dispatch(addSubLocation(e.target.value))}
+              >
+                <option value="">{t("SUBLOCATION")}</option>
+                <option value={7}>{t("CHOUIFAT")}</option>
+                <option value={8}>{t("WESTGOLF")}</option>
+                <option value={9}>{t("FIFTHSETTLE")}</option>
+
+                <option value={79}>{t("MOUNTAINVIEW")}</option>
+                <option value={78}>{t("LAKEVIEW")}</option>
+                <option value={90}>{t("ARABELLA")}</option>
+                <option value={33}>{t("FIRSTSETTLE")}</option>
+                <option value={91}>{t("MIRAGECITY")}</option>
+                <option value={89}>{t("MIVIDA")}</option>
+
+                <option value={89}>{t("MADINTY")}</option>
+                <option value={81}>{t("KATAMEYADUNES")}</option>
+                <option value={82}>{t("KATAMYARESDENCE")}</option>
+                <option value={83}>{t("KATAMETAHILLS")}</option>
+                <option value={84}>{t("VILLAGEGATE")}</option>
+                <option value={85}>{t("THEVILLAGE")}</option>
+                <option value={86}>{t("KATAMYAPLAZA")}</option>
+
+                <option value={87}>{t("STONEPARK")}</option>
+              </select>
+            </div>
+          </li>
+        )}
+
+        {/* End li */}
+
+        {/* start type li */}
+
+        <li className="list-inline-item">
+          <div className="candidate_revew_select">
+            <select
+              onChange={(e) => dispatch(addProperty_type(e.target.value))}
+              className="selectpicker w-125 show-tick form-select"
+            >
+              <option value="">{t("PROPFOR")}</option>
+              <option value={1}>{t("APARTMENT")}</option>
+              <option value={2}>{t("DUPLEX")}</option>
+              <option value={3}>{t("GROUNDFLOORDUPLEX")}</option>
+              <option value={4}>{t("GROUNDFLOORS")}</option>
+              <option value={5}>{t("PENTHOUSE")}</option>
+              <option value={6}>{t("VILLAS")}</option>
+              <option value={7}>{t("STUDIOS")}</option>
+              <option value={8}>{t("ROOFTOP")}</option>
+              <option value={9}>{t("PENTDUPLEX")}</option>
+              <option value={10}>{t("PENTTRIP")}</option>
+              <option value={11}>{t("GFLOORTRIP")}</option>
+              <option value={12}>{t("ADMINBUILD")}</option>
+
+              <option value={13}>{t("TWHOUSE")}</option>
+              <option value={14}>{t("BUILDING")}</option>
+              <option value={17}>{t("CHALETS")}</option>
+              <option value={18}>{t("LANDS")}</option>
+              <option value={19}>{t("THOUSE")}</option>
+              <option value={20}>{t("FLATS")}</option>
+              <option value={21}>{t("COMMSTORE")}</option>
+              <option value={22}>{t("OFFICE")}</option>
+              <option value={23}>{t("OFFICEBUILD")}</option>
+            </select>
+          </div>
         </li>
         {/* End li */}
-                        {/* start beds li */}
-
+        {/* start beds li */}
 
         <li className="list-inline-item">
           <div className="candidate_revew_select">
@@ -157,7 +168,7 @@ const GlobalFilter = ({ className = "" }) => {
           </div>
         </li>
         {/* End li */}
-                        {/* start baths li */}
+        {/* start baths li */}
 
         <li className="list-inline-item">
           <div className="candidate_revew_select">
@@ -187,8 +198,7 @@ const GlobalFilter = ({ className = "" }) => {
 
         {/* End li */}
 
-                {/* start price li */}
-
+        {/* start price li */}
 
         <li className="list-inline-item">
           <div className="small_dropdown2">
@@ -256,7 +266,6 @@ const GlobalFilter = ({ className = "" }) => {
               className="btn btn-thm w80"
             >
               <i class="fa fa-search" aria-hidden="true"></i>
-
             </button>
           </div>
         </li>

@@ -49,11 +49,11 @@ const FeaturedProperties = ({ Properties }) => {
              <div className="for_blog feat_property">
                <div className="thumb">
                <h4 className="mb15 text-center p-2 blog-text-header">
-                     <Link legacyBehavior href={`/blog-details/${item.slidid}`}>
+               <Link legacyBehavior href={`blog/${router.locale === "ar" ? item.slug_ar : item.slug_en }`}>
                        <a className="text-white"> { router.locale === "ar" ? item.tit2 : item.tit1}</a>
                      </Link>
                    </h4>
-                 <Link legacyBehavior href={`/blog-details/${item.slidid}`}>
+                   <Link legacyBehavior href={`blog/${router.locale === "ar" ? item.slug_ar : item.slug_en }`}>
                    <a>
                      <img className="img-whp" src={`https://housepointegypt.com/imgs/${item.img}`} alt={item.img} />
                    </a>

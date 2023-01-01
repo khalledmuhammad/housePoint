@@ -123,7 +123,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
       {/* End .dropitem */}
       <li>
-        <Link href="/AllProperties">
+        <Link legacyBehavior  href={`${route.locale === "ar" ? "/جميع-العقارات" : "/AllProperties"}`}>
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -138,7 +138,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
 
       <li>
-        <Link href="/for-rent">
+        <Link legacyBehavior href={`${route.locale === "ar" ? "/للايجار" : "/for-rent"}`} >
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -153,7 +153,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
 
       <li>
-        <Link href="/for-sale">
+        <Link legacyBehavior href={`${route.locale === "ar" ? "/للبيع" : "/for-sale"}`}>
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -167,7 +167,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
 
       <li>
-        <Link href="/blog">
+        <Link legacyBehavior href={`${route.locale === "ar" ? "/مدونه" : "/blog"}`}   >
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -184,7 +184,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
     
 
       <li className="last">
-        <Link legacyBehavior href="/contact">
+        <Link legacyBehavior  href={`${route.locale === "ar" ? "اتصل-بنا" : "contact"}`}   >
           <a
             className={route.pathname === "/contact" ? "ui-active" : undefined}
           >

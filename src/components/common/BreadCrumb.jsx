@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
-const BreadCrumb = ({ title = "" , Maadi}) => {
+const BreadCrumb = ({ title = "" , Maadi , locations }) => {
   const { t } = useTranslation("");
 
 
@@ -12,13 +12,20 @@ const BreadCrumb = ({ title = "" , Maadi}) => {
     <>
       <ol className="breadcrumb" >
         <li className="breadcrumb-item">
-        <Link href="/">
+        <Link legacyBehavior href="/">
 
           <a >Home</a>
           </Link>
         </li>
+        {
+         locations && locations.map(item=> <li className="breadcrumb-item">
+         <Link legacyBehavior href={`${item.link}`}>
+           <a >{item.name}</a>
+           </Link>
+         </li>)
+        }
       {Maadi &&  <li className="breadcrumb-item">
-        <Link href="/Maadi">
+        <Link legacyBehavior href="/Maadi">
           <a >Maadi</a>
           </Link>
         </li>}
