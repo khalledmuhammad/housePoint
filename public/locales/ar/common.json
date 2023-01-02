@@ -84,5 +84,7 @@
     "STONEPARK": "ستون بارك",
     "CHOUIFAT":"شويفات",
     "WESTGOLF":"ويست جولف",
-    "FIFTHSETTLE":"التجمع الخامس"
+    "FIFTHSETTLE":"التجمع الخامس",
+    "PROPFORRENT" : "عقارات للايجار",
+    "PROPFORSALE" : "عقارات للبيع"
 }

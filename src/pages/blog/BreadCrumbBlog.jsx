@@ -15,7 +15,7 @@ const BreadCrumb2 = ({length , PropType }) => {
   ]
   return (
     <div className="breadcrumb_content style2">
-      <BreadCrumb title="Blog" locations={locations}  />
+      <BreadCrumb title={t("BLOGS")} locations={locations}  />
       <h2 className="breadcrumb_title my-3"> {t("BLOGSPOINT")}</h2>
     </div>
   );

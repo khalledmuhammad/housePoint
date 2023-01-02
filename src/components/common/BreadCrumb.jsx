@@ -8,13 +8,15 @@ const BreadCrumb = ({ title = "" , Maadi , locations }) => {
 
   const router = useRouter()
   return (
-    router.locale==="ar" ? "" :
     <>
       <ol className="breadcrumb" >
         <li className="breadcrumb-item">
+        
+        </li>
+        <li className="breadcrumb-item">
         <Link legacyBehavior href="/">
 
-          <a >Home</a>
+          <a >{t("HOME")}</a>
           </Link>
         </li>
         {
@@ -26,7 +28,7 @@ const BreadCrumb = ({ title = "" , Maadi , locations }) => {
         }
       {Maadi &&  <li className="breadcrumb-item">
         <Link legacyBehavior href="/Maadi">
-          <a >Maadi</a>
+          <a >{t("MAADI")}</a>
           </Link>
         </li>}
         <li className="breadcrumb-item active" aria-current="page">

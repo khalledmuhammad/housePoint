@@ -40,9 +40,7 @@ const index = ({data}) => {
             {/* End .col */}
 
             <div className="col-lg-6 position-relative">
-              <div className="listing_list_style mb20-xsd tal-991">
-                <GridListButton />
-              </div>
+             
               {/* End list grid */}
 
               <div className="dn db-991 mt30 mb0">

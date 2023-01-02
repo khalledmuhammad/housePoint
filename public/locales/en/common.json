@@ -84,7 +84,9 @@
   "STONEPARK" :"Stone Park",
   "CHOUIFAT":"chouifat",
   "WESTGOLF":"West Golf",
-  "FIFTHSETTLE":"5th Settlement"
+  "FIFTHSETTLE":"5th Settlement",
+  "PROPFORRENT" : "Property for rent",
+  "PROPFORSALE" : "Property for sale"
 
 
 }

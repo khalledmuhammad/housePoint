@@ -6,7 +6,7 @@ const BreadCrumb2 = ({length}) => {
 
   return (
     <div className="breadcrumb_content style2">
-      <BreadCrumb title="Maadi" />
+      <BreadCrumb title={t("MAADI")} />
       <h2 className="breadcrumb_title my-3">{length} {t("PROPIN")} {t("MAADI")}</h2>
     </div>
   );

@@ -5,7 +5,7 @@ const BreadCrumb2 = ({length}) => {
   const {t} = useTranslation()
   return (
     <div className="breadcrumb_content style2">
-      <BreadCrumb title="Katamya" />
+      <BreadCrumb title={t("KATAMYA")}  />
       <h2 className="breadcrumb_title my-3">{length}  {t("PROPIN")} {t("KATAMYA")}  </h2>
     </div>
   );

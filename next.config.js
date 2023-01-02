@@ -53,72 +53,11 @@ const nextConfig = {
       },
       {
 
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9",
+        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1%2F%D8%B4%D9%82%D9%87",
         destination: "/ar/for-rent/Apartment",
         locale: false,
       },
 
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A",
-        destination: "/ar/for-rent/Apartment/Maadi",
-        locale: false,
-      },
-
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A/%D9%85%D8%B9%D8%A7%D8%AF%D9%8A-%D8%AF%D8%AC%D9%84%D9%87",
-        destination: "/ar/for-rent/Apartment/Maadi/Maadi-Degla",
-        locale: false,
-      },
-
-
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A/%D9%83%D9%88%D8%B1%D9%86%D9%8A%D8%B4-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A",
-        destination: "/ar/for-rent/Apartment/Maadi/Cornish-Maadi",
-        locale: false,
-      },
-
-
-  
-
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A/%D9%85%D8%B9%D8%A7%D8%AF%D9%8A-%D8%B3%D8%B1%D8%A7%D9%8A%D8%A7%D8%AA",
-        destination: "/ar/for-rent/Apartment/Maadi/Maadi-Sarayat",
-        locale: false,
-      },
-
-
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87",
-        destination: "/ar/for-rent/Apartment/Maadi/New-Maadi",
-        locale: false,
-      },
-
-
-
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D9%87",
-        destination: "/ar/for-rent/Apartment/Maadi/Old-Maadi",
-        locale: false,
-      },
-
-      {
-        source: "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1/%D8%B4%D9%82%D8%A9/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A/%D8%B2%D9%87%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A",
-        destination: "/ar/for-rent/Apartment/Maadi/Zahraa-Maadi",
-        locale: false,
-      },
-
-      {
-        source: "/ar/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D9%87-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87",
-        destination: "/ar/for-rent/Apartment/Katameya",
-        locale: false,
-      },
-      {
-        source: "/ar/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D9%87-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87",
-        destination: "/ar/for-rent/Apartment/New-Cairo",
-        locale: false,
-      },
-    
-  
     ];
   },
 };

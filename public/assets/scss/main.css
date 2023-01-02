@@ -8833,6 +8833,9 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 .inner_page_breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   color: #ffffff;
   text-transform: capitalize;
+  float: right ;
+  display: none !important;
+
 }
 
 .breadcrumb_content.style2 {
