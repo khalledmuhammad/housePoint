@@ -38,7 +38,7 @@ const index = ({data}) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <BreadCrumb2   length={data?.length} />
+              <BreadCrumb2   length={data?.length}   PropType={router.query.type}  />
             </div>
             {/* End .col */}
 
@@ -97,7 +97,7 @@ const index = ({data}) => {
               {/* End .row */}
 
               <div className="row">
-                <FeaturedItem data={data}/>
+                <FeaturedItem data={data}   />
               </div>
               {/* End .row */}
 

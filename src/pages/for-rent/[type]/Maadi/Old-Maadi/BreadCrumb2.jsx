@@ -22,7 +22,7 @@ const BreadCrumb2 = ({length , PropType}) => {
   return (
     <div className="breadcrumb_content style2">
       <BreadCrumb title="old-maadi" locations={locations}  />
-      <h2 className="breadcrumb_title my-3">{length} Apartment For Rent in Old Maadi</h2>
+      <h2 className="breadcrumb_title my-3">{length}  {PropType}  For Rent in Old Maadi</h2>
     </div>
   );
 };

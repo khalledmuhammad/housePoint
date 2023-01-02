@@ -1,6 +1,6 @@
 import BreadCrumb from "../../../../components/common/BreadCrumb";
 
-const BreadCrumb2 = ({length}) => {
+const BreadCrumb2 = ({length , PropType}) => {
   const locations = [
  
     {
@@ -8,15 +8,15 @@ const BreadCrumb2 = ({length}) => {
       link: "/for-rent"
     },
     {
-      name:"apartment",
-      link: "/for-rent/Apartment"
+      name:`${PropType}`,
+      link: `/for-rent/${PropType}`
     }
  
   ]
   return (
     <div className="breadcrumb_content style2">
-      <BreadCrumb title="Maadi" locations={locations} />
-      <h2 className="breadcrumb_title my-3"> { length && length} Rent Properties In NewCairo</h2>
+      <BreadCrumb title="new-cairo" locations={locations} />
+      <h2 className="breadcrumb_title my-3"> { length && length} {PropType} for Rent In NewCairo</h2>
     </div>
   );
 };

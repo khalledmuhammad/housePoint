@@ -53,12 +53,8 @@ const FeaturedProperties = ({ Properties }) => {
         >
           <div className="feat_property home3">
             <h4 className="p-2 bgc-darkBrown">
-              <Link
-                legacyBehavior
-                href={`/singleProperty/${
-                  router.locale === "ar" ? item.slug_ar : item.slug_en
-                }`}
-              >
+            <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
                 <a className="text-white">
                   {router.locale == "ar"
                     ? item.titlear /* .replace('-','') */
@@ -66,12 +62,8 @@ const FeaturedProperties = ({ Properties }) => {
                 </a>
               </Link>
             </h4>
-            <Link
-              legacyBehavior
-              href={`/singleProperty/${
-                router.locale === "ar" ? item.slug_ar : item.slug_en
-              }`}
-            >
+            <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
               <a>
                 <div className="thumb">
                   <img
@@ -95,10 +87,8 @@ const FeaturedProperties = ({ Properties }) => {
                       </li>
                     </ul>
 
-                    <Link
-                      legacyBehavior
-                      href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
-                      >
+                    <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
                       <a className="fp_price">
                         {router.locale === "ar"
                           ? item.Property_for === "Rent"
@@ -137,10 +127,8 @@ const FeaturedProperties = ({ Properties }) => {
 
                 <ul className="d-flex justify-content-between">
                   <li className="col-sm-6">
-                    <Link
-                      legacyBehavior
-                      href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
-                      >
+                  <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
                       <a className="text-dark">
                         <i className="fa fa-home "></i>
                         {item.Surface_area}sqm<sup>2</sup>
@@ -148,10 +136,8 @@ const FeaturedProperties = ({ Properties }) => {
                     </Link>
                   </li>
                   <li className="col-sm-6">
-                    <Link
-                      legacyBehavior
-                      href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
-                      >
+                  <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
                       <a className="text-dark">
                         <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
                         {t("BEDS")}
@@ -161,10 +147,8 @@ const FeaturedProperties = ({ Properties }) => {
                 </ul>
                 <ul className="d-flex justify-content-between">
                   <li className="col-sm-6">
-                    <Link
-                      legacyBehavior
-                      href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
-                      >
+                  <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
                       <a className="text-dark">
                         <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
                         {t("BATHS")}
@@ -172,10 +156,8 @@ const FeaturedProperties = ({ Properties }) => {
                     </Link>
                   </li>
                   <li className="col-sm-6">
-                    <Link
-                      legacyBehavior
-                      href={`/singleProperty/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}
-                      >
+                  <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+
                       <a className="text-dark">
                         <i className="fa fa-eye"></i> {item.views}{" "}
                       </a>
