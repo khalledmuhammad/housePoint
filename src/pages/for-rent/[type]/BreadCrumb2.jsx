@@ -1,10 +1,12 @@
+import { useTranslation } from "react-i18next";
 import BreadCrumb from "../../../components/common/BreadCrumb";
 
 const BreadCrumb2 = ({length , PropType }) => {
+  const {t} = useTranslation()
   const locations = [
  
     {
-      name: "for-rent",
+      name: `${t("RENT")}`,
       link: "/for-rent"
     },
  
