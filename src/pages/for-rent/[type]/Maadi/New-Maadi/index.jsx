@@ -137,7 +137,7 @@ const index = ({data}) => {
 
 
 export async function getServerSideProps({locale , query}) {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}Property/rent/new-maadi/${query.type}`;
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/Property/rent/new-maadi/${query.type}`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {
