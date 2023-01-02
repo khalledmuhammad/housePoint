@@ -124,13 +124,6 @@ const index = ({ Properties , ForBuy ,LatestBlogs }) => {
       <section id="property-city" className="property-city pb30">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="main-title text-center">
-                <h2>{t("CITIESPROP")}</h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
             <FindProperties />
           </div>
         </div>
