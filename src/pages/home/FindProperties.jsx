@@ -47,7 +47,7 @@ const FindProperties = () => {
           <Link legacyBehavior href="/for-rent/Apartment/Maadi/Maadi-Degla">
             <a className=" d-block">{t("APRENTMAADIDEGLA")}</a>
           </Link>
-          <Link legacyBehavior href="/for-rent/Apartment/Katameya">
+          <Link legacyBehavior href="/for-rent/Apartment/Katameya-Heights">
             <a className=" d-block">{t("APRENTKAT")}</a>
           </Link>
           <Link legacyBehavior href="/for-rent/Apartment/New-Cairo">
@@ -60,10 +60,10 @@ const FindProperties = () => {
             <a className=" d-block">{t("VILLARENTMAADISA")}</a>
           </Link>
 
-          <Link legacyBehavior href="/for-rent/villa/Katameya">
+          <Link legacyBehavior href="/for-rent/villa/Katameya-Heights">
             <a className=" d-block">{t("VILLARENTMAADIDEGLA")}</a>
           </Link>
-          <Link legacyBehavior href="/for-rent/villa/Katameya">
+          <Link legacyBehavior href="/for-rent/villa/Katameya-Heights">
             <a className=" d-block">{t("VILLARENTKAT")}</a>
           </Link>
 
@@ -79,7 +79,7 @@ const FindProperties = () => {
           <Link legacyBehavior href="/for-sale/Apartment/Maadi/Maadi-Sarayat">
             <a className=" d-block">{t("APSALEMAADISA")}</a>
           </Link>
-          <Link legacyBehavior href="/for-sale/Apartment/Katameya">
+          <Link legacyBehavior href="/for-sale/Apartment/Katameya-Heights">
             <a className=" d-block">{t("APSALEMAADIDEGLA")}</a>
           </Link>
 
@@ -97,7 +97,7 @@ const FindProperties = () => {
             <a className=" d-block"> {t("GRRENTMAADIDG")}</a>
           </Link>
 
-          <Link legacyBehavior href="/for-rent/Ground-Floor/Katameya">
+          <Link legacyBehavior href="/for-rent/Ground-Floor/Katameya-Heights">
             <a className=" d-block"> {t("GRRENTKATAMYA")}</a>
           </Link>
 
