@@ -229,6 +229,15 @@ const FilteringItem = () => {
               <option value={87}>{t("STONEPARK")}</option>
             </select>
           )}
+            {location == 17 && (
+            <select
+              className="selectpicker w100 show-tick form-select my-3"
+              value={getSubLocation}
+              onChange={(e) => setSubLocation(e.target.value)}
+            >
+              <option value={76}>{t("KATAMYA")}</option>
+            </select>
+          )}
         </div>
       </li>
       {/* End li */}

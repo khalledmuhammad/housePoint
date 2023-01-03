@@ -20,7 +20,7 @@ const BreadCrumb2 = ({ length, PropType }) => {
   ];
   return (
     <div className="breadcrumb_content style2">
-      <BreadCrumb title="ElKatamya" locations={locations} />
+      <BreadCrumb title="EL-Katameya-Heights" locations={locations} />
       <h2 className="breadcrumb_title my-3">
         {" "}
         {length && length} {PropType} for Sale In Katamya

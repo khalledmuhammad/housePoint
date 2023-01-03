@@ -11,7 +11,7 @@ const BreadCrumb2 = ({ length, PropType }) => {
     },
     {
       name: `${PropType}`,
-      link: `/for-sale/${PropType}`,
+      link: `/for-rent/${PropType}`,
     },
   ];
   return (

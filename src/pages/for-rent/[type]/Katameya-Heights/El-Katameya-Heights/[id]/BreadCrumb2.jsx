@@ -19,7 +19,7 @@ const BreadCrumb2 = ({ length, Title, PropType }) => {
     },
     {
       name: "El-Katameya-Heights",
-      link: `/for-sale/${PropType}/Katameya-Heights/El-Katameya-Heights`,
+      link: `/for-rent/${PropType}/Katameya-Heights/El-Katameya-Heights`,
     },
   ];
   return (
