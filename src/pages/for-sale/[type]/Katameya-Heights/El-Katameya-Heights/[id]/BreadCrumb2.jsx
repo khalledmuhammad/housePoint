@@ -2,12 +2,11 @@ import { useTranslation } from "react-i18next";
 import BreadCrumb from "../../../../../../components/common/BreadCrumb";
 
 const BreadCrumb2 = ({ length, Title, PropType }) => {
-  
   const {t} = useTranslation()
 
   const locations = [
     {
-      name: t("FORSALE"),
+      name: `${t("SALE")}`,
       link: "/for-sale",
     },
     {
@@ -15,12 +14,12 @@ const BreadCrumb2 = ({ length, Title, PropType }) => {
       link: `/for-sale/${PropType}`,
     },
     {
-      name: "new-cairo",
-      link: `/for-sale/${PropType}/New-Cairo`,
+      name: "Katameya-Heights",
+      link: `/for-sale/${PropType}/Katameya-Heights`,
     },
     {
-      name: "Katameya-Dunes",
-      link: `/for-sale/${PropType}/New-Cairo/Katameya-Dunes`,
+      name: "El-Katameya-Heights",
+      link: `/for-sale/${PropType}/Katameya-Heights/El-Katameya-Heights`,
     },
   ];
   return (

@@ -87,7 +87,36 @@
   "FIFTHSETTLE":"5th Settlement",
   "PROPFORRENT" : "Property for rent",
   "PROPFORSALE" : "Property for sale",
-  "MOSTSEARCHES":"Most Popular Searches"
+  "MOSTSEARCHES":"Most Popular Searches",
+
+  "APRENTMAADI" : "Apartments For Rent in Maadi",
+  "APRENTMAADISA": "Apartments For Rent in Maadi Sarayat",
+  "APRENTMAADIDEGLA": "Apartments For Rent in Maadi Degla",
+  "APRENTKAT": "Apartments For Rent In Katameya Heights",
+  "APRENTNEWCAIRO": "Apartments For Rent In New Cairo",
+
+  "VILLARENTMAADI" : "Villas For Rent in Maadi",
+  "VILLARENTMAADISA": "Villas For Rent in Maadi Sarayat",
+  "VILLARENTMAADIDEGLA": "Villas For Rent in Maadi Degla",
+  "VILLARENTKAT": "Villas For Rent In Katameya Heights",
+  "VILLARENTNEWCAIRO": "Villas For Rent In New Cairo",
+
+  "APSALEMAADI": "Apartments For Sale in Maadi",
+  "APSALEMAADISA": "Apartments For Sale in Maadi Sarayat",
+  "APSALEMAADIDEGLA": "Apartments For Sale in Maadi Degla",
+  "APSALENEWCAIRO": "Apartments For Rent In New Cairo",
+
+
+  "GRRENTMAADI" : "Ground Floors For Rent In Maadi",
+  "GRRENTMAADISA": "Ground Floors For Rent in Maadi Saraya",
+  "GRRENTMAADIDG": "Ground Floors For Rent in Maadi Degla",
+  "GRRENTKATAMYA": "Ground Floor For Rent In Katameya Heights",
+  "VILLASALEMAADIDEGLA": "Villas For Sale in Maadi Degla",
+  "VILLASALENEWCAIRO" : "villa for sale new cairo",
+  "PENTRENTMAADI":" Penthouses For Rent in Maadi"
+
+
+
 
 
 }

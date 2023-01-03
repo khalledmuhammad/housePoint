@@ -82,11 +82,36 @@
     "THEVILLAGE": "ذا فيلدج",
     "KATAMYAPLAZA": "القطامية بلازا",
     "STONEPARK": "ستون بارك",
-    "CHOUIFAT":"شويفات",
-    "WESTGOLF":"ويست جولف",
-    "FIFTHSETTLE":"التجمع الخامس",
-    "PROPFORRENT" : "عقارات للايجار",
-    "PROPFORSALE" : "عقارات للبيع",
-    "MOSTSEARCHES":"عمليات البحث الأكثر شعبية"
+    "CHOUIFAT": "شويفات",
+    "WESTGOLF": "ويست جولف",
+    "FIFTHSETTLE": "التجمع الخامس",
+    "PROPFORRENT": "عقارات للايجار",
+    "PROPFORSALE": "عقارات للبيع",
+    "MOSTSEARCHES": "عمليات البحث الأكثر شعبية",
 
+    "APRENTMAADI": " شقق للايجار في المعادي",
+    "APRENTMAADISA": " شقق للايجار في سرايات المعادي",
+    "APRENTMAADIDEGLA": " شقق للايجار في المعادي دجله",
+    "APRENTKAT": " شقق للايجار في القطاميه هايتس",
+    "APRENTNEWCAIRO": " شقق للايجار في القاهرة الجديدة",
+
+    "VILLARENTMAADI" : "فيلات للايجار في المعادي",
+    "VILLARENTMAADISA": "فيلات للايجار في سرايات المعادي",
+    "VILLARENTMAADIDEGLA": "فيلات للايجار في دجله المعادي",
+    "VILLARENTKAT": "فيلا للايجار في القطاميه هايتس",
+    "VILLARENTNEWCAIRO": "فيلا للايجار في القاهرة الجديدة",
+
+
+    "APSALEMAADI": " شقق للبيع في المعادي",
+    "APSALEMAADISA": " شقق للبيع في سرايات المعادي",
+    "APSALEMAADIDEGLA": " شقق للبيع في دجله المعادي",
+    "APSALENEWCAIRO": " شقق للبيع في القاهرة الجديدة ",
+
+    "GRRENTMAADI" : "شقق طابق ارضي للايجار في المعادي",
+    "GRRENTMAADISA": "شقق طابق ارضي للايجار في سرايات المعادي",
+    "GRRENTMAADIDG": "شقق طابق ارضي للايجار في دجله المعادي",
+    "GRRENTKATAMYA": "شقه دورارضي للايجار في القطاميه",
+    "VILLASALEMAADIDEGLA": "فيلات للبيع في القطامية هايتس",
+    "VILLASALENEWCAIRO" : "فيلات للبيع في القاهرة الجديدة",
+    "PENTRENTMAADI":"بنتهاوس للايجار في المعادي"
 }

@@ -1,18 +1,18 @@
-import Pagination from "../../../../components/common/blog/Pagination";
-import CopyrightFooter from "../../../../components/common/footer/CopyrightFooter";
-import Footer from "../../../../components/common/footer/Footer";
-import Header from "../../../../components/common/header/DefaultHeader";
-import MobileMenu from "../../../../components/common/header/MobileMenu";
-import FilterTopBar from "../../../../components/common/listing/FilterTopBar";
-import GridListButton from "../../../../components/common/listing/GridListButton";
-import ShowFilter from "../../../../components/common/listing/ShowFilter";
-import SidebarListing from "../../../../components/common/listing/SidebarListing";
-import PopupSignInUp from "../../../../components/common/PopupSignInUp";
+import Pagination from "../../../../../components/common/blog/Pagination";
+import CopyrightFooter from "../../../../../components/common/footer/CopyrightFooter";
+import Footer from "../../../../../components/common/footer/Footer";
+import Header from "../../../../../components/common/header/DefaultHeader";
+import MobileMenu from "../../../../../components/common/header/MobileMenu";
+import FilterTopBar from "../../../../../components/common/listing/FilterTopBar";
+import GridListButton from "../../../../../components/common/listing/GridListButton";
+import ShowFilter from "../../../../../components/common/listing/ShowFilter";
+import SidebarListing from "../../../../../components/common/listing/SidebarListing";
+import PopupSignInUp from "../../../../../components/common/PopupSignInUp";
 import BreadCrumb2 from "./BreadCrumb2";
-import FeaturedItem from "../../../AllProperties/FeaturedItem";
+import FeaturedItem from "../../../../AllProperties/FeaturedItem";
 
 import dynamic from "next/dynamic";
-import Seo from "../../../../components/common/seo";
+import Seo from "../../../../../components/common/seo";
 import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
@@ -38,7 +38,7 @@ const index = ({data}) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <BreadCrumb2    length={data?.length} />
+              <BreadCrumb2    length={data?.length}  PropType={router.query.type} />
             </div>
             {/* End .col */}
 
@@ -138,7 +138,7 @@ const index = ({data}) => {
 
 
 export async function getServerSideProps({locale , query}) {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/Property/rent/katamya/${query.type}`;
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/Property/sale/katamya-heights-sub/${query.type}`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {

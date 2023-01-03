@@ -6,7 +6,7 @@ const BreadCrumb2 = ({ length, PropType }) => {
 
   const locations = [
     {
-      name: t("FORSALE"),
+      name: `${t("SALE")}`,
       link: "/for-sale",
     },
     {
@@ -14,16 +14,16 @@ const BreadCrumb2 = ({ length, PropType }) => {
       link: `/for-sale/${PropType}`,
     },
     {
-      name: "maadi",
-      link: `/for-sale/${PropType}/Maadi`,
+      name: "Katameya-Heights",
+      link: `/for-sale/${PropType}/Katameya-Heights`,
     },
   ];
-
   return (
     <div className="breadcrumb_content style2">
-      <BreadCrumb title="Stone-Park" locations={locations} />
+      <BreadCrumb title="ElKatamya" locations={locations} />
       <h2 className="breadcrumb_title my-3">
-        {length} {PropType} in Stone Park
+        {" "}
+        {length && length} {PropType} for Sale In Katamya
       </h2>
     </div>
   );

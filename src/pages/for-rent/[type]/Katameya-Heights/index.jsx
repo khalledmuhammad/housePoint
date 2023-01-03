@@ -17,9 +17,9 @@ import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
-const index = ({ data }) => {
-  const router = useRouter();
-
+const index = ({data}) => {
+  const router = useRouter()
+  
   return (
     <>
       <Seo pageTitle="Simple Listing – Grid V1" />
@@ -34,14 +34,11 @@ const index = ({ data }) => {
       <PopupSignInUp />
 
       {/* <!-- Listing Grid View --> */}
-      <section
-        className="our-listing bgc-f7 pb30-991 mt85 md-mt0 "
-        dir={`${router.locale === "ar" ? "rtl" : ""}`}
-      >
+      <section className="our-listing bgc-f7 pb30-991 mt85 md-mt0 " dir={`${router.locale === "ar" ? "rtl" : ""}`} >
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <BreadCrumb2 length={data?.length} />
+              <BreadCrumb2    length={data?.length}  PropType={router.query.type} />
             </div>
             {/* End .col */}
 
@@ -100,7 +97,7 @@ const index = ({ data }) => {
               {/* End .row */}
 
               <div className="row">
-                <FeaturedItem data={data} />
+                <FeaturedItem data={data}   />
               </div>
               {/* End .row */}
 
@@ -139,14 +136,16 @@ const index = ({ data }) => {
   );
 };
 
-export async function getServerSideProps({ locale, query }) {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/Property/Sale/katamya/${query.type}`;
+
+export async function getServerSideProps({locale , query}) {
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/Property/rent/katamya/${query.type}`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {
       data: data,
       ...(await serverSideTranslations(locale, ["common"])),
+
     },
   };
 }
-export default index;
+export default index

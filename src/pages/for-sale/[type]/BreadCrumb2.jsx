@@ -1,18 +1,21 @@
+import { useTranslation } from "react-i18next";
 import BreadCrumb from "../../../components/common/BreadCrumb";
 
-const BreadCrumb2 = ({length , PropType }) => {
+const BreadCrumb2 = ({ length, PropType }) => {
+  const {t} = useTranslation()
+
   const locations = [
- 
     {
-      name: "for-sale",
-      link: "/for-sale"
+      name: t("FORSALE"),
+      link: "/for-sale",
     },
- 
-  ]
+  ];
   return (
     <div className="breadcrumb_content style2">
       <BreadCrumb title={PropType} locations={locations} />
-      <h2 className="breadcrumb_title my-3">{length} {PropType} For Sale</h2>
+      <h2 className="breadcrumb_title my-3">
+        {length} {PropType} For Sale
+      </h2>
     </div>
   );
 };
