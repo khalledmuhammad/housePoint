@@ -31,20 +31,21 @@ const RangeSlider = () => {
 
   return (
 
-        <div className="d-flex align-items-center   flex-column">
+        <div className="d-flex align-items-center   flex-row gap-2 ">
             <input
             className=""
-              value={`${Currpricemin}`}
-              onChange={(e) => setPricemin(e.target.value)}
+/*               value={`${Currpricemin}`}
+ */              onChange={(e) => setPricemin(e.target.value)}
               placeholder={t("MIN")}
               type="number"
             />
-       
+
+       _
             <input
               type="number"
               placeholder={t("MAX")}
-              value={`${Currpricemax}`}
-              onChange={(e) => setPricemax(e.target.value)}
+/*               value={`${Currpricemax}`}
+ */              onChange={(e) => setPricemax(e.target.value)}
             />
         </div>
 

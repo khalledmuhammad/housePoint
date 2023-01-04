@@ -86,7 +86,7 @@ const index = ({data}) => {
             <div className="col-md-12 col-lg-8">
               <div className="grid_list_search_result ">
                 <div className="row align-items-center">
-                  <FilterTopBar />
+                  <FilterTopBar HOME={true} />
                 </div>
               </div>
               {/* End .row */}

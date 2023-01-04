@@ -42,6 +42,8 @@ const FilteringItem = () => {
     amenities,
   } = useSelector((state) => state.properties);
 
+  const router = useRouter();
+
   // input state
   const [getKeyword, setKeyword] = useState(keyword);
   const [getLocation, setLocation] = useState(location);
@@ -229,7 +231,7 @@ const FilteringItem = () => {
               <option value={87}>{t("STONEPARK")}</option>
             </select>
           )}
-            {location == 17 && (
+          {location == 17 && (
             <select
               className="selectpicker w100 show-tick form-select my-3"
               value={getSubLocation}
@@ -302,15 +304,14 @@ const FilteringItem = () => {
         <div className="small_dropdown2">
           <div
             id="prncgs2"
-            className="btn dd_btn"
+            className="btn dd_btn "
             data-bs-toggle="dropdown"
             data-bs-auto-close="outside"
             aria-expanded="false"
           >
-            <span>{t("PRICERANGE")}</span>
-            <label htmlFor="prncgs2">
-              <span className="fa fa-angle-down"></span>
-            </label>
+            <span className={`${router.locale === "ar" ? "float-end" : ""}`}>
+              {t("PRICERANGE")}
+            </span>
           </div>
           <div className="dd_content2 style2 dropdown-menu">
             <div className="pricing_acontent ">

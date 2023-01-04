@@ -3342,6 +3342,9 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   text-align: left;
   width: 150px;
 }
+.small_dropdown2 .dd_btn span {
+  float: left;
+}
 
 .small_dropdown .dd_btn label,
 .small_dropdown2 .dd_btn label {
@@ -3395,14 +3398,16 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
   -o-box-shadow: 0px 0px 50px 0px rgba(32, 32, 32, 0.15);
   box-shadow: 0px 0px 50px 0px rgba(32, 32, 32, 0.15);
   display: none;
-  height: 147px;
+  height: 120px;
   left: auto;
   margin: 0 auto;
   width: 280px;
   padding: 25px 30px;
   position: absolute;
-  right: 26%;
   top: 140px;
+}
+.dd_content2 input {
+  width: 100px;
 }
 
 .dd_content:before,
@@ -13804,6 +13809,9 @@ legend span {
 
 .sasw_list .search_option_two .selectpicker {
   width: 100%;
+}
+.sasw_list .search_option_two .selectpicker option {
+  padding:20px
 }
 
 .sasw_list .panel-heading h4.panel-title {

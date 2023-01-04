@@ -209,13 +209,12 @@ const GlobalFilter = ({ className = "" }) => {
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-              <span>{t("PRICERANGE")}</span>
-              <label htmlFor="InputEmail2">
-                <span className="fa fa-angle-down"></span>
-              </label>
+            <span className={`${router.locale === "ar" ? "float-end" : ""}`}>
+                {t("PRICERANGE")}</span>
+             
             </div>
             <div className="dd_content2 dropdown-menu">
-              <div className="pricing_acontent">
+              <div className="">
                 <PricingRangeSlider />
               </div>
             </div>
