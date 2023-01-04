@@ -11,27 +11,6 @@ const FindProperties = () => {
       className="d-md-flex p-3 gap-5 justify-content-center w-100 align-content-center"
       dir={router.locale === "ar" ? "rtl" : ""}
     >
-      <div className="  border border-dark d-flex flex-column text-left p-4 my-2 ">
-        <h4 className="py-2">
-          {" "}
-          <i className="fa fa-home"></i> {t("PRIMELOC")}
-        </h4>
-        <Link legacyBehavior href="/Maadi">
-          <a className="  d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("MAADI")}</a>
-        </Link>
-        <Link legacyBehavior href="/Maadi/Maadi-Sarayat">
-          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("MAADISARAYAT")}</a>
-        </Link>
-        <Link legacyBehavior href="/Maadi/Maadi-Degla">
-          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("MAADIDEGLA")}</a>
-        </Link>
-        <Link legacyBehavior href="/Katameya-Heights">
-          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("KATAMYA")}</a>
-        </Link>
-        <Link legacyBehavior href="/New-Cairo">
-          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("NEWCAIRO")}</a>
-        </Link>
-      </div>
 
       <div className="text-left border border-dark  row my-2 p-4 ">
         <h4 className="py-2 text-center">
@@ -61,7 +40,7 @@ const FindProperties = () => {
             <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("VILLARENTMAADISA")}</a>
           </Link>
 
-          <Link legacyBehavior href="/for-rent/villa/Katameya-Heights">
+          <Link legacyBehavior href="/for-rent/villa/Maadi/Maadi-Degla">
             <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("VILLARENTMAADIDEGLA")}</a>
           </Link>
           <Link legacyBehavior href="/for-rent/villa/Katameya-Heights">
@@ -80,7 +59,7 @@ const FindProperties = () => {
           <Link legacyBehavior href="/for-sale/Apartment/Maadi/Maadi-Sarayat">
             <a className=" d-block"><i class={`fa fa-caret-${direction}`}></i> {t("APSALEMAADISA")}</a>
           </Link>
-          <Link legacyBehavior href="/for-sale/Apartment/Katameya-Heights">
+          <Link legacyBehavior href="/for-sale/Apartment/Maadi/Maadi-Degla">
             <a className=" d-block"><i class={`fa fa-caret-${direction}`}></i>{t("APSALEMAADIDEGLA")}</a>
           </Link>
 
@@ -102,7 +81,7 @@ const FindProperties = () => {
             <a className=" d-block"><i class={`fa fa-caret-${direction}`}></i> {t("GRRENTKATAMYA")}</a>
           </Link>
 
-          <Link legacyBehavior href="/for-sale/villa/Maadi-Degla">
+          <Link legacyBehavior href="/for-sale/villa/Maadi/Maadi-Degla">
             <a className=" d-block"><i class={`fa fa-caret-${direction}`}></i> {t("VILLASALEMAADIDEGLA")} </a>
           </Link>
           <Link legacyBehavior href="/for-sale/villa/New-Cairo">
@@ -113,6 +92,27 @@ const FindProperties = () => {
             <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("PENTRENTMAADI")}</a>
           </Link>
         </div>
+      </div>
+      <div className="  border border-dark d-flex flex-column text-left p-4 my-2 ">
+        <h4 className="py-2">
+          {" "}
+          <i className="fa fa-home"></i> {t("PRIMELOC")}
+        </h4>
+        <Link legacyBehavior href="/Maadi">
+          <a className="  d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("MAADI")}</a>
+        </Link>
+        <Link legacyBehavior href="/Maadi/Maadi-Sarayat">
+          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("MAADISARAYAT")}</a>
+        </Link>
+        <Link legacyBehavior href="/Maadi/Maadi-Degla">
+          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("MAADIDEGLA")}</a>
+        </Link>
+        <Link legacyBehavior href="/Katameya-Heights">
+          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("KATAMYA")}</a>
+        </Link>
+        <Link legacyBehavior href="/New-Cairo">
+          <a className=" d-block"> <i class={`fa fa-caret-${direction}`}></i> {t("NEWCAIRO")}</a>
+        </Link>
       </div>
     </div>
   );
