@@ -16,8 +16,6 @@ import { useTranslation } from "react-i18next";
 import { ShareSocial } from "react-share-social";
 import BreadCrumb2 from "./BreadCrumb2";
 
-
-
 const ListingDynamicDetailsV1 = ({ Properties }) => {
   const settings = {
     dots: false,
@@ -83,16 +81,19 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
           dir={`${router.locale === "ar" ? "rtl" : ""}`}
         >
           <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <BreadCrumb2
-               PropType={router.query.type} 
-                Title={`   ${
-                  router.locale === "ar" ? property.titlear : property.Title
-                }`}
-              />
+            <div className="row">
+              <div className="col-lg-6">
+                <BreadCrumb2
+                  PropType={router.query.type}
+                  Title={`   ${
+                    router.locale === "ar" ? property.titlear : property.Title
+                  }`}
+                  Slug={`  ${
+                    router.locale === "ar" ? property.slug_ar : property.slug_en
+                  }`}
+                />
+              </div>
             </div>
-          </div>
             <Gallery>
               <div className="row mb30 p-3 bgc-darkBrown">
                 <div className="col-lg-7 col-xl-8">
@@ -160,29 +161,29 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                         <ul className="mb0 p-2 ">
                           <li className="list-inline-item ">
                             <a href="#" className="text-white">
-                            <i className="fa fa-home px-2 "></i>
+                              <i className="fa fa-home px-2 "></i>
                               {Properties && router.locale === "ar"
                                 ? Properties.type_ar
                                 : Properties.type_en}
                             </a>
                           </li>
                           <li className="list-inline-item">
-                            <a href="#"  className="text-white" >
-                            <i className="fa fa-bed px-2 "></i>
+                            <a href="#" className="text-white">
+                              <i className="fa fa-bed px-2 "></i>
                               {t("BEDS")}:{" "}
                               {Properties && Properties.No_of_bedrooms}{" "}
                             </a>
                           </li>
                           <li className="list-inline-item mx-3">
-                            <a href="#"  className="text-white" >
-                            <i className="fa fa-bath px-2 "></i>
+                            <a href="#" className="text-white">
+                              <i className="fa fa-bath px-2 "></i>
                               {t("BATHS")}:{" "}
                               {Properties && Properties.No_of_bathrooms}{" "}
                             </a>
                           </li>
                           <li className="list-inline-item">
-                            <a href="#"  className="text-white" >
-                            <i className="fa fa-home px-2 "></i>
+                            <a href="#" className="text-white">
+                              <i className="fa fa-home px-2 "></i>
                               Sq Ft: {Properties && Properties.Surface_area}
                             </a>
                           </li>
@@ -239,18 +240,18 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
               {/* End details content .col-lg-8 */}
 
               <div className="col-lg-4 col-xl-4">
-                <h4 className="bgc-darkBrown text-white p-3" >{t("SHARE")}</h4>
+                <h4 className="bgc-darkBrown text-white p-3">{t("SHARE")}</h4>
                 <ShareSocial
-                url={process.browser && window.location.href}
-                socialTypes={["facebook", "twitter", "linkedin", "whatsapp"]}
-                style={{
-                  height: "100px",
-                  overflow: "hidden",
-                  background: "none",
-                  textAlign: "center",
-                }}
-              />
-              <Sidebar />
+                  url={process.browser && window.location.href}
+                  socialTypes={["facebook", "twitter", "linkedin", "whatsapp"]}
+                  style={{
+                    height: "100px",
+                    overflow: "hidden",
+                    background: "none",
+                    textAlign: "center",
+                  }}
+                />
+                <Sidebar />
               </div>
               {/* End sidebar content .col-lg-4 */}
             </div>

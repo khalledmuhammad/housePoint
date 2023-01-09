@@ -88,6 +88,9 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                   Title={`   ${
                     router.locale === "ar" ? property.titlear : property.Title
                   }`}
+                  Slug={`  ${
+                    router.locale === "ar" ? property.slug_ar : property.slug_en
+                  }`}
                 />
               </div>
             </div>

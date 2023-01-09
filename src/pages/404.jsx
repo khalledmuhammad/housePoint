@@ -13,9 +13,6 @@ const index = () => {
 };
 
 export async function getStaticProps({ locale }) {
-
-
-
   return {
     props: {
  
