@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import properties from "../../../data/properties";
+import properties from "../../data/properties";
 
 const FavouritProducts = () => {
   let content = properties?.slice(0, 4)?.map((item) => (

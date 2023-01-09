@@ -1,4 +1,4 @@
-import properties from "../../../data/properties";
+import properties from "../../data/properties";
 
 const TableData = () => {
   let theadConent = [

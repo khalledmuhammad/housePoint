@@ -1,5 +1,5 @@
 import { useState } from "react";
-import selectedFiles from "../../../utils/selectedFiles";
+import selectedFiles from "../../utils/selectedFiles";
 
 const PropertyMediaUploader = () => {
   const [propertySelectedImgs, setPropertySelectedImgs] = useState([]);
