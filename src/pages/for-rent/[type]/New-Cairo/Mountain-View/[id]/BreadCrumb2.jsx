@@ -1,6 +1,6 @@
 import BreadCrumb from "../../../../../../components/common/BreadCrumb";
 
-const BreadCrumb2 = ({ length, Title, PropType , Slug }) => {
+const BreadCrumb2 = ({ length, Title, PropType, Slug }) => {
   const locations = [
     {
       name: "for-rent",
@@ -20,7 +20,9 @@ const BreadCrumb2 = ({ length, Title, PropType , Slug }) => {
     },
     {
       name: `${Title}`,
-      link: `/for-rent/${PropType}/New-Cairo/Mountain-View/${Slug.trim(" ")}`,
+      link: `/for-rent/${PropType}/New-Cairo/Mountain-View/${
+        Slug && Slug.trim(" ")
+      }`,
     },
   ];
   return (
