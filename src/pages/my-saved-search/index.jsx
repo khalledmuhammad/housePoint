@@ -1,6 +1,6 @@
-import Header from "../../common/header/dashboard/Header";
-import SidebarMenu from "../../common/header/dashboard/SidebarMenu";
-import MobileMenu from "../../common/header/MobileMenu";
+import Header from "../../components/common/header/dashboard/Header";
+import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
+import MobileMenu from "../../components/common/header/MobileMenu";
 import SearchData from "../my-saved-search/SearchData";
 import SearchBox from "./SearchBox";
 

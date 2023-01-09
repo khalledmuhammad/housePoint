@@ -1,7 +1,10 @@
-import Header from "../../common/header/dashboard/Header";
-import SidebarMenu from "../../common/header/dashboard/SidebarMenu";
-import MobileMenu from "../../common/header/MobileMenu";
-import ChatBox from "./ChatBox";
+import Header from "../../components/common/header/dashboard/Header";
+import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
+import MobileMenu from "../../components/common/header/MobileMenu";
+import TableData from "./TableData";
+import Filtering from "./Filtering";
+import Pagination from "./Pagination";
+import SearchBox from "./SearchBox";
 
 const index = () => {
   return (
@@ -47,17 +50,52 @@ const index = () => {
                 </div>
                 {/* End Dashboard Navigation */}
 
-                <div className="col-lg-12 mb10">
-                  <div className="breadcrumb_content style2">
-                    <h2 className="breadcrumb_title">Message</h2>
+                <div className="col-lg-4 col-xl-4 mb10">
+                  <div className="breadcrumb_content style2 mb30-991">
+                    <h2 className="breadcrumb_title">My Favorites</h2>
                     <p>We are glad to see you again!</p>
                   </div>
                 </div>
+                {/* End .col */}
+
+                <div className="col-lg-8 col-xl-8">
+                  <div className="candidate_revew_select style2 text-end mb30-991">
+                    <ul className="mb0">
+                      <li className="list-inline-item">
+                        <div className="candidate_revew_search_box course fn-520">
+                          <SearchBox />
+                        </div>
+                      </li>
+                      {/* End li */}
+
+                      <li className="list-inline-item">
+                        <Filtering />
+                      </li>
+                      {/* End li */}
+                    </ul>
+                  </div>
+                </div>
+                {/* End .col */}
+
+                <div className="col-lg-12">
+                  <div className="my_dashboard_review mb40">
+                    <div className="property_table">
+                      <div className="table-responsive mt0">
+                        <TableData />
+                      </div>
+                      {/* End .table-responsive */}
+
+                      <div className="mbp_pagination">
+                        <Pagination />
+                      </div>
+                      {/* End .mbp_pagination */}
+                    </div>
+                    {/* End .property_table */}
+                  </div>
+                </div>
+                {/* End .col */}
               </div>
               {/* End .row */}
-
-              <ChatBox />
-              {/* End message box */}
 
               <div className="row mt50">
                 <div className="col-lg-12">

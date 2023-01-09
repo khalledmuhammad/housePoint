@@ -1,9 +1,10 @@
-import Header from "../../common/header/dashboard/Header";
-import SidebarMenu from "../../common/header/dashboard/SidebarMenu";
-import MobileMenu from "../../common/header/MobileMenu";
-import ChangePassword from "./ChangePassword";
-import ProfileInfo from "./ProfileInfo";
-import SocialMedia from "./SocialMedia";
+import Header from "../../components/common/header/dashboard/Header";
+import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
+import MobileMenu from "../../components/common/header/MobileMenu";
+import FavouritProducts from "./FavouritProducts";
+import Filtering from "./Filtering";
+import Pagination from "./Pagination";
+import SearchBox from "./SearchBox";
 
 const index = () => {
   return (
@@ -49,50 +50,45 @@ const index = () => {
                 </div>
                 {/* End Dashboard Navigation */}
 
-                <div className="col-lg-12 mb10">
-                  <div className="breadcrumb_content style2">
-                    <h2 className="breadcrumb_title">My Profile</h2>
+                <div className="col-lg-4 col-xl-4 mb10">
+                  <div className="breadcrumb_content style2 mb30-991">
+                    <h2 className="breadcrumb_title">My Favorites</h2>
                     <p>We are glad to see you again!</p>
                   </div>
                 </div>
                 {/* End .col */}
 
+                <div className="col-lg-8 col-xl-8">
+                  <div className="candidate_revew_select style2 text-end mb30-991">
+                    <ul className="mb0">
+                      <li className="list-inline-item">
+                        <div className="candidate_revew_search_box course fn-520">
+                          <SearchBox />
+                        </div>
+                      </li>
+                      {/* End li */}
+
+                      <li className="list-inline-item">
+                        <Filtering />
+                      </li>
+                      {/* End li */}
+                    </ul>
+                  </div>
+                </div>
+                {/* End .col */}
+
                 <div className="col-lg-12">
-                  <div className="my_dashboard_review">
-                    <div className="row">
-                      <div className="col-xl-2">
-                        <h4>Profile Information</h4>
-                      </div>
-                      <div className="col-xl-10">
-                        <ProfileInfo />
-                      </div>
-                    </div>
-                  </div>
-                  {/* End prifle info wrapper end */}
+                  <div className="my_dashboard_review mb40">
+                    <div className="favorite_item_list">
+                      <FavouritProducts />
 
-                  <div className="my_dashboard_review mt30">
-                    <div className="row">
-                      <div className="col-xl-2">
-                        <h4>Social Media</h4>
-                      </div>
-                      <div className="col-xl-10">
-                        <SocialMedia />
-                      </div>
-                    </div>
-                  </div>
-                  {/* End .SocialMedia */}
-
-                  <div className="my_dashboard_review mt30">
-                    <div className="row">
-                      <div className="col-xl-2">
-                        <h4>Change password</h4>
-                      </div>
-                      <div className="col-xl-10">
-                        <ChangePassword />
+                      <div className="mbp_pagination">
+                        <Pagination />
                       </div>
                     </div>
                   </div>
                 </div>
+                {/* End .col */}
               </div>
               {/* End .row */}
 
