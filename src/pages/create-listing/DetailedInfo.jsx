@@ -1,4 +1,4 @@
-import CheckBoxFilter from "../../component/common/CheckBoxFilter";
+import CheckBoxFilter from "../../components/common//CheckBoxFilter";
 
 const DetailedInfo = () => {
   return (
