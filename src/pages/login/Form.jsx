@@ -24,7 +24,7 @@ try {
   
 
   // Redirect the user to the protected route
-  Router.push('/my-dashboard');
+  Router.push('/create-listing');
   } else {
   console.log(res.data.error);
   }
