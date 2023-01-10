@@ -10,6 +10,7 @@ import SidebarListing from "../../components/common/listing/SidebarListing";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
 import BreadCrumb2 from "./BreadCrumb2";
 import FeaturedItem from "../AllProperties/FeaturedItem";
+import { withTranslation } from 'next-i18next'
 
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
@@ -17,7 +18,7 @@ import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
-const index = ({data}) => {
+const NEWCAIRO = ({data , t }) => {
   const router = useRouter()
   return (
     <>
@@ -37,6 +38,7 @@ const index = ({data}) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
+            <div>The Arabic version of this page is: {t('NEWCAIRO', { lng: 'ar' })}</div>
               <BreadCrumb2 length={data?.length}  />
             </div>
             {/* End .col */}
@@ -147,4 +149,4 @@ export async function getServerSideProps({locale}) {
     },
   };
 }
-export default index
+export default withTranslation('common')(NEWCAIRO)

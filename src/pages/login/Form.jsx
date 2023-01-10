@@ -2,11 +2,14 @@ import Link from "next/link";
 import axios from 'axios';
 import Router from 'next/router';
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addSignedIn } from "../../features/agent/agentSlice";
 
 const Form = () => {
 
   const [email , setEmail] = useState()
   const [password , setPassword] = useState()
+  const dispatch = useDispatch()
 const handleSubmit = async (e) =>{
 e.preventDefault()
 try {
@@ -17,8 +20,11 @@ try {
   if (res.data.success) {
   // Save the token to local storage
   localStorage.setItem('token', res.data.token);
+  dispatch(addSignedIn())
+  
+
   // Redirect the user to the protected route
-  Router.push('/');
+  Router.push('/my-dashboard');
   } else {
   console.log(res.data.error);
   }

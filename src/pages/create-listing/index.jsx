@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Header from "../../components/common/header/dashboard/Header";
 import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../components/common/header/MobileMenu";
@@ -6,8 +7,20 @@ import DetailedInfo from "./DetailedInfo";
 import FloorPlans from "./FloorPlans";
 import LocationField from "./LocationField";
 import PropertyMediaUploader from "./PropertyMediaUploader";
+import Router from 'next/router';
+import { useEffect } from "react";
+
 
 const index = () => {
+
+  const isAuthenticated = useSelector(state => state.agent.signedIn);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      Router.push('/login');
+    }
+  }, [isAuthenticated]);
+
   return (
     <>
       {/* <!-- Main Header Nav --> */}

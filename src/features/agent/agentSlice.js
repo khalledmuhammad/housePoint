@@ -6,6 +6,7 @@ const initialState = {
     city: "",
     listen: "",
     length: 0,
+    signedIn : false
 };
 
 export const agentSlice = createSlice({
@@ -27,9 +28,12 @@ export const agentSlice = createSlice({
         addAgentItemLength: (state, action) => {
             state.length = action.payload;
         },
+        addSignedIn: (state, action) => {
+            state.signedIn = true;
+        }
     },
 });
 
-export const { addName, addCategory, addCity, addListen, addAgentItemLength } =
+export const { addName, addCategory, addCity, addListen, addAgentItemLength, addSignedIn } =
     agentSlice.actions;
 export default agentSlice.reducer;

@@ -1,18 +1,33 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Header from "../../components/common/header/dashboard/Header";
 import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../components/common/header/MobileMenu";
 import Activities from "./Activities";
 import AllStatistics from "./AllStatistics";
 import StatisticsChart from "./StatisticsChart";
+import Router from 'next/router';
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+
 
 const index = () => {
-  return (
-    <>
-      {/* <!-- Main Header Nav --> */}
-      <Header />
+  const isAuthenticated = useSelector(state => state.agent.signedIn);
 
-      {/* <!--  Mobile Menu --> */}
-      <MobileMenu />
+  useEffect(() => {
+    if (!isAuthenticated) {
+      Router.push('/login');
+    }
+  }, [isAuthenticated]);
+  if(isAuthenticated)
+
+  {return (
+    <>
+         {/* <!-- Main Header Nav --> */}
+         <Header />
+
+{/* <!--  Mobile Menu --> */}
+<MobileMenu />
 
       <div className="dashboard_sidebar_menu">
         <div
@@ -35,23 +50,14 @@ const index = () => {
                 {/* Start Dashboard Navigation */}
                 <div className="col-lg-12">
                   <div className="dashboard_navigationbar dn db-1024">
-                    <div className="dropdown">
-                      <button
-                        className="dropbtn"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#DashboardOffcanvasMenu"
-                        aria-controls="DashboardOffcanvasMenu"
-                      >
-                        <i className="fa fa-bars pr10"></i> Dashboard Navigation
-                      </button>
-                    </div>
+                   
                   </div>
                 </div>
                 {/* End Dashboard Navigation */}
 
                 <div className="col-lg-12 mb10">
                   <div className="breadcrumb_content style2">
-                    <h2 className="breadcrumb_title">Howdy, Hasan</h2>
+                    <h2 className="breadcrumb_title">Howdy, Hazem</h2>
                     <p>We are glad to see you again!</p>
                   </div>
                 </div>
@@ -95,7 +101,20 @@ const index = () => {
         </div>
       </section>
     </>
-  );
+  );}
+  else{
+    <h1>..loading</h1>
+
+  }
 };
 
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+ 
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 export default index;

@@ -3,8 +3,21 @@ import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../components/common/header/MobileMenu";
 import PackageData from "./PackageData";
 import SearchBox from "./SearchBox";
+import Router from 'next/router';
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const index = () => {
+
+  const isAuthenticated = useSelector(state => state.agent.signedIn);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      Router.push('/login');
+    }
+  }, [isAuthenticated]);
+  if(isAuthenticated)
+
   return (
     <>
       {/* <!-- Main Header Nav --> */}

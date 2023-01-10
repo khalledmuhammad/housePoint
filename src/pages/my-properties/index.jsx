@@ -5,8 +5,21 @@ import TableData from "./TableData";
 import Filtering from "./Filtering";
 import Pagination from "./Pagination";
 import SearchBox from "./SearchBox";
+import Router from 'next/router';
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const index = () => {
+
+  const isAuthenticated = useSelector(state => state.agent.signedIn);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      Router.push('/login');
+    }
+  }, [isAuthenticated]);
+  if(isAuthenticated)
+
   return (
     <>
       {/* <!-- Main Header Nav --> */}
