@@ -9,6 +9,8 @@ import LocationField from "./LocationField";
 import PropertyMediaUploader from "./PropertyMediaUploader";
 import Router from 'next/router';
 import { useEffect } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 
 
 const index = () => {
@@ -131,5 +133,13 @@ const index = () => {
     </>
   );
 };
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+ 
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default index;
