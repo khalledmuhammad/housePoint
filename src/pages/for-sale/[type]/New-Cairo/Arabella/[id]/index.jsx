@@ -115,8 +115,18 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                   <div className="single_property_social_share position-static transform-none">
                     <div className="price float-start fn-400 ">
                       <h2 className="text-white">
-                        ${property?.Price}
-                        <small className="text-white">/mo</small>
+                        {router.locale === "ar"
+                          ? property.Property_for === "Rent"
+                            ? `${property.Price} ${
+                                property.Price_ex === "EGP" ? "جم" : "دولار"
+                              } / شهر `
+                            : `${property.Price} ${
+                                property.Price_ex === "EGP" ? "جم" : "دولار"
+                              }`
+                          : router.locale === "en" &&
+                            property.Property_for === "Rent"
+                          ? `${property.Price} ${property.Price_ex} / Month `
+                          : `${property.Price} ${property.Price_ex}`}
                       </h2>
                       <p className="text-white">
                         {t("AD")}: #{property.Id_property}

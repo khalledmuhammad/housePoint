@@ -10,6 +10,7 @@ import { appWithTranslation } from "next-i18next";
 
 
 
+
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }

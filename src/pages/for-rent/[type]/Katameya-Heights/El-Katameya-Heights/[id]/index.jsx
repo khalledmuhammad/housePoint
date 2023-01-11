@@ -15,6 +15,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 import { ShareSocial } from "react-share-social";
 import BreadCrumb2 from "./BreadCrumb2";
+import WhatsAppButton from "../../../../../../components/Whatsapp/whatsapp";
 
 const ListingDynamicDetailsV1 = ({ Properties }) => {
   const settings = {
@@ -99,6 +100,8 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                 <div className="col-lg-7 col-xl-8">
                   <div className="single_property_title mt30-767  ">
                     <h2 className="text-white">
+                    <WhatsAppButton />
+
                       {" "}
                       {router.locale === "ar"
                         ? property.titlear
@@ -115,8 +118,18 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                   <div className="single_property_social_share position-static transform-none">
                     <div className="price float-start fn-400 ">
                       <h2 className="text-white">
-                        ${property?.Price}
-                        <small className="text-white">/mo</small>
+                        {router.locale === "ar"
+                          ? property.Property_for === "Rent"
+                            ? `${property.Price} ${
+                                property.Price_ex === "EGP" ? "جم" : "دولار"
+                              } / شهر `
+                            : `${property.Price} ${
+                                property.Price_ex === "EGP" ? "جم" : "دولار"
+                              }`
+                          : router.locale === "en" &&
+                            property.Property_for === "Rent"
+                          ? `${property.Price} ${property.Price_ex} / Month `
+                          : `${property.Price} ${property.Price_ex}`}
                       </h2>
                       <p className="text-white">
                         {t("AD")}: #{property.Id_property}
