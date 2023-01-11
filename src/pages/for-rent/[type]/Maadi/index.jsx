@@ -1,4 +1,3 @@
-import Pagination from "../../../../components/common/blog/Pagination";
 import CopyrightFooter from "../../../../components/common/footer/CopyrightFooter";
 import Footer from "../../../../components/common/footer/Footer";
 import Header from "../../../../components/common/header/DefaultHeader";
