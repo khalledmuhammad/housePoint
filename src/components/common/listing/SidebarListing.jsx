@@ -1,6 +1,4 @@
-import Categorie from "./Categorie";
-import FeaturedListings from "./FeaturedListings";
-import FeatureProperties from "./FeatureProperties";
+
 import FilteringItem from "./FilteringItem";
 
 const SidebarListing = () => {
