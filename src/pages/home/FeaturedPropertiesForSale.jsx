@@ -64,7 +64,7 @@ const FeaturedProperties = ({ Properties }) => {
                   <div className="thumb">
                     <img
                       className="img-whp"
-                      src={`https://housepointegypt.com/photos/${item.file_image}`}
+                      src={`https://housepointegypt.com/thumbs/${item.file_image}`}
                       alt="fp1.jpg"
                     />
                     <div className="thmb_cntnt">

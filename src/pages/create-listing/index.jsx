@@ -7,19 +7,16 @@ import DetailedInfo from "./DetailedInfo";
 import FloorPlans from "./FloorPlans";
 import LocationField from "./LocationField";
 import PropertyMediaUploader from "./PropertyMediaUploader";
-import Router from 'next/router';
+import Router from "next/router";
 import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-
-
 const index = () => {
-
-  const isAuthenticated = useSelector(state => state.agent.signedIn);
+  const isAuthenticated = useSelector((state) => state.agent.signedIn);
 
   useEffect(() => {
     if (!isAuthenticated) {
-      Router.push('/login');
+      Router.push("/login");
     }
   }, [isAuthenticated]);
 
@@ -85,32 +82,10 @@ const index = () => {
                     </div>
                   </div>
                   <div className="my_dashboard_review mt30">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <h3 className="mb30">Location</h3>
-                      </div>
-
-                      <LocationField />
-                    </div>
-                  </div>
-                  <div className="my_dashboard_review mt30">
-                    <div className="col-lg-12">
-                      <h3 className="mb30">Detailed Information</h3>
-                    </div>
-                    <DetailedInfo />
-                  </div>
-                  <div className="my_dashboard_review mt30">
                     <div className="col-lg-12">
                       <h3 className="mb30">Property media</h3>
                     </div>
                     <PropertyMediaUploader />
-                  </div>
-                  <div className="my_dashboard_review mt30">
-                    <div className="col-lg-12">
-                      <h3 className="mb30">Floor Plans</h3>
-                      <button className="btn admore_btn mb30">Add More</button>
-                    </div>
-                    <FloorPlans />
                   </div>
                 </div>
                 {/* End .col */}
@@ -136,7 +111,6 @@ const index = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
- 
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
