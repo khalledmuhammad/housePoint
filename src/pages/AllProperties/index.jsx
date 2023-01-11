@@ -1,4 +1,3 @@
-import Pagination from "../../components/common/blog/Pagination";
 import CopyrightFooter from "../../components/common/footer/CopyrightFooter";
 import Footer from "../../components/common/footer/Footer";
 import Header from "../../components/common/header/DefaultHeader";
@@ -15,8 +14,8 @@ import Seo from "../../components/common/seo";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const index = ({data}) => {
-  const router = useRouter()
+const index = ({ data }) => {
+  const router = useRouter();
   return (
     <>
       <Seo pageTitle="Simple Listing – Grid V1" />
@@ -31,7 +30,10 @@ const index = ({data}) => {
       <PopupSignInUp />
 
       {/* <!-- Listing Grid View --> */}
-      <section className="our-listing bgc-f7 pb30-991 mt85 md-mt0 " dir={`${router.locale === "ar" ? "rtl" : ""}`}>
+      <section
+        className="our-listing bgc-f7 pb30-991 mt85 md-mt0 "
+        dir={`${router.locale === "ar" ? "rtl" : ""}`}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -40,7 +42,6 @@ const index = ({data}) => {
             {/* End .col */}
 
             <div className="col-lg-6 position-relative">
-             
               {/* End list grid */}
 
               <div className="dn db-991 mt30 mb0">
@@ -92,7 +93,7 @@ const index = ({data}) => {
               {/* End .row */}
 
               <div className="row">
-                <FeaturedItem data={data}  />
+                <FeaturedItem data={data} />
               </div>
               {/* End .row */}
 
@@ -131,7 +132,6 @@ const index = ({data}) => {
   );
 };
 
-
 export async function getServerSideProps({ locale }) {
   const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}`;
   const { data } = await axios.get(apiUrlEndpoint);
@@ -139,8 +139,7 @@ export async function getServerSideProps({ locale }) {
     props: {
       data: data,
       ...(await serverSideTranslations(locale, ["common"])),
-
     },
   };
 }
-export default index
+export default index;

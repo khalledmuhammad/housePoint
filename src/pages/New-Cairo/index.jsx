@@ -1,4 +1,3 @@
-import Pagination from "../../components/common/blog/Pagination";
 import CopyrightFooter from "../../components/common/footer/CopyrightFooter";
 import Footer from "../../components/common/footer/Footer";
 import Header from "../../components/common/header/DefaultHeader";
@@ -10,7 +9,7 @@ import SidebarListing from "../../components/common/listing/SidebarListing";
 import PopupSignInUp from "../../components/common/PopupSignInUp";
 import BreadCrumb2 from "./BreadCrumb2";
 import FeaturedItem from "../AllProperties/FeaturedItem";
-import { withTranslation } from 'next-i18next'
+import { withTranslation } from "next-i18next";
 
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/seo";
@@ -18,8 +17,8 @@ import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
-const NEWCAIRO = ({data , t }) => {
-  const router = useRouter()
+const NEWCAIRO = ({ data, t }) => {
+  const router = useRouter();
   return (
     <>
       <Seo pageTitle="Simple Listing – Grid V1" />
@@ -34,12 +33,18 @@ const NEWCAIRO = ({data , t }) => {
       <PopupSignInUp />
 
       {/* <!-- Listing Grid View --> */}
-      <section className="our-listing bgc-f7 pb30-991 mt85 md-mt0 " dir={`${router.locale === "ar" ? "rtl" : ""}`} >
+      <section
+        className="our-listing bgc-f7 pb30-991 mt85 md-mt0 "
+        dir={`${router.locale === "ar" ? "rtl" : ""}`}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-            <div>The Arabic version of this page is: {t('NEWCAIRO', { lng: 'ar' })}</div>
-              <BreadCrumb2 length={data?.length}  />
+              <div>
+                The Arabic version of this page is:{" "}
+                {t("NEWCAIRO", { lng: "ar" })}
+              </div>
+              <BreadCrumb2 length={data?.length} />
             </div>
             {/* End .col */}
 
@@ -92,13 +97,13 @@ const NEWCAIRO = ({data , t }) => {
             <div className="col-md-12 col-lg-8">
               <div className="grid_list_search_result ">
                 <div className="row align-items-center">
-                <FilterTopBar HOME={true} />
+                  <FilterTopBar HOME={true} />
                 </div>
               </div>
               {/* End .row */}
 
               <div className="row">
-                <FeaturedItem data={data}  />
+                <FeaturedItem data={data} />
               </div>
               {/* End .row */}
 
@@ -137,16 +142,14 @@ const NEWCAIRO = ({data , t }) => {
   );
 };
 
-
-export async function getServerSideProps({locale}) {
+export async function getServerSideProps({ locale }) {
   const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/in-new-cairo`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {
       data: data,
       ...(await serverSideTranslations(locale, ["common"])),
-
     },
   };
 }
-export default withTranslation('common')(NEWCAIRO)
+export default withTranslation("common")(NEWCAIRO);
