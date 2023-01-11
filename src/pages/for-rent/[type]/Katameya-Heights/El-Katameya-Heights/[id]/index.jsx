@@ -97,11 +97,10 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
             </div>
             <Gallery>
               <div className="row mb30 p-3 bgc-darkBrown">
+                <WhatsAppButton />
                 <div className="col-lg-7 col-xl-8">
                   <div className="single_property_title mt30-767  ">
                     <h2 className="text-white">
-                    <WhatsAppButton />
-
                       {" "}
                       {router.locale === "ar"
                         ? property.titlear

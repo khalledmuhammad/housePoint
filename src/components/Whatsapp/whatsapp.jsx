@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 
 const WhatsAppButton = () => {
     const router = useRouter()
-    const currentUrl = `${router.pathname}${router.asPath}`;
-        const phoneNumber = '01115331035';
+    const currentUrl = `https://house-point.vercel.app${router.asPath}`;
+        const phoneNumber = '+201115331035';
     const message = `Hello, I found this link on your website ${currentUrl}`;
 
     return (
