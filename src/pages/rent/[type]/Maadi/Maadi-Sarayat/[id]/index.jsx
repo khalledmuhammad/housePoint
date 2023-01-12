@@ -112,7 +112,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                 </div>
                 <div className="col-lg-5 col-xl-4">
                   <div className="single_property_social_share position-static transform-none">
-                    <div className="price float-start fn-400 ">
+                  <div className="price d-flex flex-column ">
                       <h2 className="text-white">
                         {router.locale === "ar"
                           ? property.Property_for === "Rent"
@@ -124,11 +124,21 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                               }`
                           : router.locale === "en" &&
                             property.Property_for === "Rent"
-                          ? `${property.Price} ${property.Price_ex} / Month `
-                          : `${property.Price} ${property.Price_ex}`}
+                          ? `${property.Price} ${
+                              property.Price_ex === "EGP" ? "Egp" : "Usd"
+                            }/month  `
+                          : `${property.Price} ${
+                              property.Price_ex === "EGP" ? "Egp" : "Usd"
+                            }`}
                       </h2>
+                      <p className="text-white" >last updated: {property.Date} </p>
                       <p className="text-white">
                         {t("AD")}: #{property.Id_property}
+                        
+                      </p>
+                      <p className="text-white">
+                      ⭐⭐⭐⭐
+                        
                       </p>
                     </div>
 

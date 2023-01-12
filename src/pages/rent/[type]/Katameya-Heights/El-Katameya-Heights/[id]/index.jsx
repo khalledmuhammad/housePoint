@@ -112,7 +112,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                 </div>
                 <div className="col-lg-5 col-xl-4">
                   <div className="single_property_social_share position-static transform-none">
-                    <div className="price float-start fn-400 ">
+                    <div className="price d-flex flex-column ">
                       <h2 className="text-white">
                         {router.locale === "ar"
                           ? property.Property_for === "Rent"
@@ -132,8 +132,12 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                             }`}
                       </h2>
                       <p className="text-white">
+                        last updated: {property.Date}{" "}
+                      </p>
+                      <p className="text-white">
                         {t("AD")}: #{property.Id_property}
                       </p>
+                      <p className="text-white">⭐⭐⭐⭐</p>
                     </div>
 
                     {/* End activity and social sharing */}
@@ -254,7 +258,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
 
               <div className="col-lg-4 col-xl-4">
                 <h4 className="bgc-darkBrown text-white p-3">{t("SHARE")}</h4>
-                 <ShareSocial
+                <ShareSocial
                   url={process.browser && window.location.href}
                   socialTypes={["facebook", "twitter", "linkedin"]}
                   style={{
@@ -264,12 +268,13 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                     textAlign: "center",
                   }}
                 />
- <div className="col-lg-4 col-xl-4 w-100 bg-white">
+                <div className="col-lg-4 col-xl-4 w-100 bg-white">
+                  <h4 className="bgc-darkBrown text-white p-3 d-flex">
+                    {t("CONTACT")}
+                  </h4>
 
-                                <h4 className="bgc-darkBrown text-white p-3 d-flex">{t("CONTACT")}</h4>
-
-                                <WhatsAppButton />
-                                </div>
+                  <WhatsAppButton />
+                </div>
 
                 <Sidebar />
               </div>

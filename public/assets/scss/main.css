@@ -8873,7 +8873,13 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 
 .breadcrumb_content.style2 {
   margin-bottom: 30px;
+  width: 100vw !important;
 }
+.breadcrumb-item:last-child::before{
+  display: none !important;
+}
+
+
 
 .breadcrumb_content.style2 ol.breadcrumb {
   background-color: transparent;

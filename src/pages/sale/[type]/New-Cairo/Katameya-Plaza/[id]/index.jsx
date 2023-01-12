@@ -113,7 +113,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                 </div>
                 <div className="col-lg-5 col-xl-4">
                   <div className="single_property_social_share position-static transform-none">
-                    <div className="price float-start fn-400 ">
+                    <div className="price d-flex flex-column ">
                       <h2 className="text-white">
                         {router.locale === "ar"
                           ? property.Property_for === "Rent"
@@ -133,8 +133,12 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                             }`}
                       </h2>
                       <p className="text-white">
+                        last updated: {property.Date}{" "}
+                      </p>
+                      <p className="text-white">
                         {t("AD")}: #{property.Id_property}
                       </p>
+                      <p className="text-white">⭐⭐⭐⭐</p>
                     </div>
 
                     {/* End activity and social sharing */}
