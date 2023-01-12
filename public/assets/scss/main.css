@@ -148,7 +148,9 @@ body {
 .makeStyles-copyContainer-29,.makeStyles-copyContainer-45{
   display: none !important;
 }
-
+.p-2{
+  height: 70px !important;
+}
 
 input:focus:required:invalid {
   border: none;
@@ -5263,7 +5265,7 @@ form.home5_advanced_search_form .form-group input.form-control::-ms-input-placeh
 }
 
 .feat_property .thumb img {
-  opacity: 0.6;
+  opacity: 1;
   object-fit: fill;
   height: 220px;
 }

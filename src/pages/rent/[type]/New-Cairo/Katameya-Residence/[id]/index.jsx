@@ -55,7 +55,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
 
   useEffect(() => {
     async function getImageData() {
-      const apiUrlEndpoint = ` ${process.env.NEXT_PUBLIC_API}/image/${id}`;
+      const apiUrlEndpoint = ` ${process.env.NEXT_PUBLIC_API}/image/${property.Id_property}`;
       const { data } = await axios.get(apiUrlEndpoint);
       console.log(data);
       setImage(data);
@@ -262,7 +262,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                     overflow: "hidden",
                     background: "none",
                     textAlign: "center",
-                   }}
+                  }}
                 />
                 <Sidebar />
               </div>
