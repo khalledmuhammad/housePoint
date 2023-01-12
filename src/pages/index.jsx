@@ -7,13 +7,12 @@ import { useDispatch } from "react-redux";
 import { setAllProp } from "../features/properties/propertiesSlice";
 import { useEffect } from "react";
 
-const index = ({ Properties,ForBuy, LatestBlogs }) => {
-const dispatch = useDispatch()
+const index = ({ Properties, ForBuy, LatestBlogs }) => {
+  const dispatch = useDispatch();
 
-useEffect(() => {
-  dispatch(setAllProp(Properties))
-}, [])
-
+  useEffect(() => {
+    dispatch(setAllProp(Properties));
+  }, []);
 
   return (
     <>
@@ -34,7 +33,7 @@ export async function getServerSideProps({ locale }) {
     fetch(`${process.env.NEXT_PUBLIC_API}/blogs`),
   ]);
 
-  const [data, ForBuy, LatestBlogs] =  await Promise.all([
+  const [data, ForBuy, LatestBlogs] = await Promise.all([
     apiUrlEndpoint.json(),
     apiUrlForBuy.json(),
     apiUrlLatesBlogs.json(),
@@ -43,7 +42,7 @@ export async function getServerSideProps({ locale }) {
   return {
     props: {
       Properties: data,
-      ForBuy :ForBuy,
+      ForBuy: ForBuy,
       LatestBlogs,
       ...(await serverSideTranslations(locale, ["common"])),
     },

@@ -8,11 +8,15 @@ import ReactPaginate from "react-paginate";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
-const FeaturedItem = ({ data , property_type , property_location , property_subLocation }) => {
+const FeaturedItem = ({
+  data,
+  property_type,
+  property_location,
+  property_subLocation,
+}) => {
   const [properties, setProperties] = useState(data);
 
-  
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   const router = useRouter();
 
@@ -50,7 +54,7 @@ const FeaturedItem = ({ data , property_type , property_location , property_subL
 
   // properties handler
   const propertiesHandler = (item) =>
-    item.Property_type.includes( property_type ?property_type :  Property_type);
+    item.Property_type.includes(property_type ? property_type : Property_type);
 
   // price handler
   const priceHandler = (item) =>
@@ -187,8 +191,15 @@ const FeaturedItem = ({ data , property_type , property_location , property_subL
               style={{ background: "rgb(62, 76, 102)" }}
               charSet="latin1"
             >
-              {/*               <Link legacyBehavior href={`/${item.Property_for === "Rent" ? `${router.locale === "ar" ? "للايجار" : "for-rent"}` : `${router.locale === "ar" ? "للبيع" : "for-sale"}` }/${router.locale === "ar" ?    item.type_ar_slug  : item.type_en_slug }/${ router.locale === "ar"  ? item.namear  : item.name}/${ router.locale === "ar" ?  item.name2ar.replace(" ", "-") :  item.name2.replace(" ", "-")}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}> */}
-              <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+              {/*               <Link legacyBehavior href={`/${item.Property_for === "Rent" ? `${router.locale === "ar" ? "للايجار" : "for-rent"}` : `${router.locale === "ar" ? "للبيع" : "sale"}` }/${router.locale === "ar" ?    item.type_ar_slug  : item.type_en_slug }/${ router.locale === "ar"  ? item.namear  : item.name}/${ router.locale === "ar" ?  item.name2ar.replace(" ", "-") :  item.name2.replace(" ", "-")}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}> */}
+              <Link
+                legacyBehavior
+                href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                  router.locale === "ar" ? item.type_en_slug : item.type_en_slug
+                }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                  router.locale === "ar" ? item.slug_ar : item.slug_en
+                }`}
+              >
                 <a className="text-white" charSet="latin1">
                   {router.locale == "ar"
                     ? item.titlear /* .replace('-','') */
@@ -219,15 +230,26 @@ const FeaturedItem = ({ data , property_type , property_location , property_subL
                 </li>
               </ul>
 
-              <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
+              <Link
+                legacyBehavior
+                href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                  router.locale === "ar" ? item.type_en_slug : item.type_en_slug
+                }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                  router.locale === "ar" ? item.slug_ar : item.slug_en
+                }`}
+              >
                 <a className="fp_price">
-                { router.locale === "ar" ? item.Property_for === "Rent"
-                            ? `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" } /شهر `
-                            : `${item.Price} ${item.Price_ex === "EGP" ? "جم" : "دولار" }`    : 
-                            router.locale === "en" && item.Property_for === "Rent"
-                            ? `${item.Price} ${item.Price_ex}/month `
-                            : `${item.Price} ${item.Price_ex}`  
-                            }
+                  {router.locale === "ar"
+                    ? item.Property_for === "Rent"
+                      ? `${item.Price} ${
+                          item.Price_ex === "EGP" ? "جم" : "دولار"
+                        } /شهر `
+                      : `${item.Price} ${
+                          item.Price_ex === "EGP" ? "جم" : "دولار"
+                        }`
+                    : router.locale === "en" && item.Property_for === "Rent"
+                    ? `${item.Price} ${item.Price_ex}/month `
+                    : `${item.Price} ${item.Price_ex}`}
                 </a>
               </Link>
             </div>
@@ -237,12 +259,21 @@ const FeaturedItem = ({ data , property_type , property_location , property_subL
               <p className="text-thm">{item.type}</p>
               {isGridOrList ? (
                 <h4>
-                        <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
-
+                  <Link
+                    legacyBehavior
+                    href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                      router.locale === "ar"
+                        ? item.type_en_slug
+                        : item.type_en_slug
+                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }`}
+                  >
                     <a>
-                    {router.locale == "ar"
-                    ? item.titlear /* .replace('-','') */
-                    : item.Title}{" "}                      </a>
+                      {router.locale == "ar"
+                        ? item.titlear /* .replace('-','') */
+                        : item.Title}{" "}
+                    </a>
                   </Link>
                 </h4>
               ) : null}
@@ -258,46 +289,77 @@ const FeaturedItem = ({ data , property_type , property_location , property_subL
             {/* End .tc_content */}
 
             <div className="fp_footer">
-            <ul className="d-flex justify-content-between">
-                    <li className="col-sm-6">
-                    <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
-
-                        <a className="text-dark">
-                          <i className="fa fa-home "></i>
-                          {item.Surface_area}sqm<sup>2</sup>
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                    <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
-
-                        <a className="text-dark">
-                          <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
-                          {t("BEDS")}
-                        </a>
-                      </Link>
-                    </li>
-                    </ul>
-                    <ul className="d-flex justify-content-between">
-
-                    <li className="col-sm-6">
-                    <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
-
-                        <a className="text-dark">
-                          <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
-                         {t("BATHS")}
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="col-sm-6">
-                    <Link legacyBehavior href={`/${item.Property_for === "Rent" ? "for-rent" : "for-sale"}/${router.locale === "ar" ?    item.type_en_slug  : item.type_en_slug }/${item.name.replace(" " , "-")}/${ item.subPropEn}/${router.locale === "ar" ?  item.slug_ar : item.slug_en}`}>
-
-                        <a className="text-dark">
-                          <i className="fa fa-eye"></i> {item.views}{" "}
-                        </a>
-                      </Link>
-                    </li>
-                  </ul>
+              <ul className="d-flex justify-content-between">
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                      router.locale === "ar"
+                        ? item.type_en_slug
+                        : item.type_en_slug
+                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-home "></i>
+                      {item.Surface_area}sqm<sup>2</sup>
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                      router.locale === "ar"
+                        ? item.type_en_slug
+                        : item.type_en_slug
+                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-bath"></i> {item.No_of_bathrooms}{" "}
+                      {t("BEDS")}
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+              <ul className="d-flex justify-content-between">
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                      router.locale === "ar"
+                        ? item.type_en_slug
+                        : item.type_en_slug
+                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-bed"></i> {item.No_of_bedrooms}{" "}
+                      {t("BATHS")}
+                    </a>
+                  </Link>
+                </li>
+                <li className="col-sm-6">
+                  <Link
+                    legacyBehavior
+                    href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
+                      router.locale === "ar"
+                        ? item.type_en_slug
+                        : item.type_en_slug
+                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
+                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }`}
+                  >
+                    <a className="text-dark">
+                      <i className="fa fa-eye"></i> {item.views}{" "}
+                    </a>
+                  </Link>
+                </li>
+              </ul>
 
               <div className="fp_pdate float-end">
                 {" "}
@@ -343,9 +405,17 @@ const FeaturedItem = ({ data , property_type , property_location , property_subL
           pageClassName={"page-item "}
           pageLinkClassName={"page-link"}
           previousClassName={"page-item"}
-          previousLinkClassName={`page-link ${router.locale === "ar" ? "flaticon-right-arrow" : "flaticon-left-arrow"} `}
+          previousLinkClassName={`page-link ${
+            router.locale === "ar"
+              ? "flaticon-right-arrow"
+              : "flaticon-left-arrow"
+          } `}
           nextClassName={"page-item"}
-          nextLinkClassName={`page-link  ${router.locale === "ar" ? "flaticon-left-arrow" : "flaticon-right-arrow"} `}
+          nextLinkClassName={`page-link  ${
+            router.locale === "ar"
+              ? "flaticon-left-arrow"
+              : "flaticon-right-arrow"
+          } `}
           breakClassName={"page-item"}
           breakLinkClassName={"page-link"}
           activeClassName={"active"}

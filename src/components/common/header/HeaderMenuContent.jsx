@@ -123,7 +123,12 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
       {/* End .dropitem */}
       <li>
-        <Link legacyBehavior  href={`${route.locale === "ar" ? "/جميع-العقارات" : "/AllProperties"}`}>
+        <Link
+          legacyBehavior
+          href={`${
+            route.locale === "ar" ? "/جميع-العقارات" : "/AllProperties"
+          }`}
+        >
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -138,7 +143,10 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
 
       <li>
-        <Link legacyBehavior href={`${route.locale === "ar" ? "/للايجار" : "/for-rent"}`} >
+        <Link
+          legacyBehavior
+          href={`${route.locale === "ar" ? "/للايجار" : "/rent"}`}
+        >
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -153,7 +161,10 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
 
       <li>
-        <Link legacyBehavior href={`${route.locale === "ar" ? "/للبيع" : "/for-sale"}`}>
+        <Link
+          legacyBehavior
+          href={`${route.locale === "ar" ? "/للبيع" : "/sale"}`}
+        >
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -167,7 +178,10 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       </li>
 
       <li>
-        <Link legacyBehavior href={`${route.locale === "ar" ? "/مدونه" : "/blog"}`}   >
+        <Link
+          legacyBehavior
+          href={`${route.locale === "ar" ? "/مدونه" : "/blog"}`}
+        >
           <a
             className={
               listing.some((page) => page.routerPath === route.pathname)
@@ -180,11 +194,11 @@ const HeaderMenuContent = ({ float = "", dark }) => {
         </Link>
       </li>
 
-    
-    
-
       <li className="last">
-        <Link legacyBehavior  href={`${route.locale === "ar" ? "اتصل-بنا" : "contact"}`}   >
+        <Link
+          legacyBehavior
+          href={`${route.locale === "ar" ? "اتصل-بنا" : "contact"}`}
+        >
           <a
             className={route.pathname === "/contact" ? "ui-active" : undefined}
           >
@@ -201,7 +215,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
         <Link legacyBehavior href="/create-listing">
           <a>
             <span className="flaticon-plus"></span>
-            <span className="dn-lg">  {t("CREATELISTING")}</span>
+            <span className="dn-lg"> {t("CREATELISTING")}</span>
           </a>
         </Link>
       </li>

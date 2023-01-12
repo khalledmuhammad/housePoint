@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
+
+
 
 const CreateList = () => {
   const [title, setPropertyTitle] = useState("");
@@ -23,6 +27,7 @@ const CreateList = () => {
   const [owner_address, setowner_address] = useState("");
 
   const { t } = useTranslation();
+  const router = useRouter();
   const handlSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -46,8 +51,11 @@ const CreateList = () => {
       };
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API}/add-Property`,
-        data
-      );
+        data)
+        .then((response) => {
+        toast.success("successfully added property");
+        router.push("/")
+      })
     } catch (error) {}
   };
 

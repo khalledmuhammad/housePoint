@@ -70,7 +70,6 @@ const property = [
       },
     ],
   },
- 
 ];
 
 const blog = [
@@ -84,10 +83,8 @@ const blog = [
   },
 ];
 
-
-
 const MobileMenuContent = () => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const route = useRouter();
   return (
     <ProSidebar>
@@ -149,40 +146,33 @@ const MobileMenuContent = () => {
             </MenuItem>
           ))}
 
-<MenuItem>
-            <Link legacyBehavior href="/for-rent">
+          <MenuItem>
+            <Link legacyBehavior href="/rent">
               <a
-                className={
-                  route.pathname === "/for-rent" ? "ui-active" : undefined
-                }
+                className={route.pathname === "/rent" ? "ui-active" : undefined}
               >
-                  {t(`RENT`)}
+                {t(`RENT`)}
               </a>
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link legacyBehavior href="/for-sale">
+            <Link legacyBehavior href="/sale">
               <a
-                className={
-                  route.pathname === "/for-sale" ? "ui-active" : undefined
-                }
+                className={route.pathname === "/sale" ? "ui-active" : undefined}
               >
-                  {t(`BUY`)}
+                {t(`BUY`)}
               </a>
             </Link>
           </MenuItem>
           <MenuItem>
             <Link legacyBehavior href="/blog">
               <a
-                className={
-                  route.pathname === "/blog" ? "ui-active" : undefined
-                }
+                className={route.pathname === "/blog" ? "ui-active" : undefined}
               >
-                  {t(`BLOGS`)}
+                {t(`BLOGS`)}
               </a>
             </Link>
           </MenuItem>
-        
 
           <MenuItem>
             <Link legacyBehavior href="/contact">
@@ -191,21 +181,18 @@ const MobileMenuContent = () => {
                   route.pathname === "/contact" ? "ui-active" : undefined
                 }
               >
-                  {t(`CONTACT`)}
+                {t(`CONTACT`)}
               </a>
             </Link>
           </MenuItem>
 
           <MenuItem>
-          <LocaleSwitcher />
-
+            <LocaleSwitcher />
           </MenuItem>
-
-        
         </Menu>
       </SidebarContent>
 
-    {/*   <SidebarFooter>
+      {/*   <SidebarFooter>
         <Link legacyBehavior href="/create-listing">
           <a className="btn btn-block btn-lg btn-thm circle">
             <span className="flaticon-plus"></span> Create Listing
