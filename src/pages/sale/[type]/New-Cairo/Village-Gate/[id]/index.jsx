@@ -134,7 +134,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                       <p className="text-white">
                         {t("AD")}: #{property.Id_property}
                       </p>
-                      <p className="text-white">⭐⭐⭐⭐</p>
+                      <p className="text-white">⭐⭐⭐⭐⭐</p>
                     </div>
 
                     {/* End activity and social sharing */}
