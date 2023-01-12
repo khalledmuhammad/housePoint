@@ -96,7 +96,6 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
 
             <Gallery>
               <div className="row mb30 p-3 bgc-darkBrown">
-                <WhatsAppButton />
                 <div className="col-lg-7 col-xl-8">
                   <div className="single_property_title mt30-767  ">
                     <h2 className="text-white">
@@ -126,8 +125,12 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                               }`
                           : router.locale === "en" &&
                             property.Property_for === "Rent"
-                          ? `${property.Price} ${property.Price_ex} / Month `
-                          : `${property.Price} ${property.Price_ex}`}
+                          ? `${property.Price} ${
+                              property.Price_ex === "EGP" ? "Egp" : "Usd"
+                            }/month  `
+                          : `${property.Price} ${
+                              property.Price_ex === "EGP" ? "Egp" : "Usd"
+                            }`}
                       </h2>
                       <p className="text-white">
                         {t("AD")}: #{property.Id_property}
@@ -262,6 +265,14 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                     textAlign: "center",
                   }}
                 />
+                <div className="col-lg-4 col-xl-4 w-100 bg-white">
+                  <h4 className="bgc-darkBrown text-white p-3 d-flex">
+                    {t("CONTACT")}
+                  </h4>
+
+                  <WhatsAppButton />
+                </div>
+
                 <Sidebar />
               </div>
               {/* End sidebar content .col-lg-4 */}

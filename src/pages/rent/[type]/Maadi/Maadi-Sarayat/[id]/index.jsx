@@ -95,7 +95,6 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
             </div>
             <Gallery>
               <div className="row mb30 p-3 bgc-darkBrown">
-                <WhatsAppButton />
                 <div className="col-lg-7 col-xl-8">
                   <div className="single_property_title mt30-767  ">
                     <h2 className="text-white">
@@ -261,6 +260,14 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                     textAlign: "center",
                   }}
                 />
+                <div className="col-lg-4 col-xl-4 w-100 bg-white">
+                  <h4 className="bgc-darkBrown text-white p-3 d-flex">
+                    {t("CONTACT")}
+                  </h4>
+
+                  <WhatsAppButton />
+                </div>
+
                 <Sidebar />
               </div>
               {/* End sidebar content .col-lg-4 */}
