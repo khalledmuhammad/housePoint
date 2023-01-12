@@ -113,10 +113,10 @@ const FeaturedProperties = ({ Properties }) => {
                     >
                       <a className="fp_price">
                         {router.locale === "ar"
-                          ? `${item.Price} ${
+                          ? `${item.Price.toLocaleString()} ${
                               item.Price_ex === "EGP" ? "جم" : "دولار"
                             } `
-                          : `${item.Price} ${item.Price_ex}/month `}
+                          : `${item.Price.toLocaleString()} ${item.Price_ex}/month `}
                       </a>
                     </Link>
                   </div>

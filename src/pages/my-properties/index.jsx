@@ -8,17 +8,20 @@ import SearchBox from "./SearchBox";
 import Router from 'next/router';
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import axios from "axios";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const index = () => {
+const index = ({data}) => {
 
-  const isAuthenticated = useSelector(state => state.agent.signedIn);
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      Router.push('/login');
-    }
-  }, [isAuthenticated]);
-  if(isAuthenticated)
+      if (localStorage.getItem('token')) {
+
+      } else {
+        Router.push('/login');
+      }
+      
+  }, []);
 
   return (
     <>
@@ -65,8 +68,8 @@ const index = () => {
 
                 <div className="col-lg-4 col-xl-4 mb10">
                   <div className="breadcrumb_content style2 mb30-991">
-                    <h2 className="breadcrumb_title">My Favorites</h2>
-                    <p>We are glad to see you again!</p>
+                    <h2 className="breadcrumb_title">My Properties</h2>
+                 
                   </div>
                 </div>
                 {/* End .col */}
@@ -80,10 +83,6 @@ const index = () => {
                         </div>
                       </li>
                       {/* End li */}
-
-                      <li className="list-inline-item">
-                        <Filtering />
-                      </li>
                       {/* End li */}
                     </ul>
                   </div>
@@ -94,7 +93,7 @@ const index = () => {
                   <div className="my_dashboard_review mb40">
                     <div className="property_table">
                       <div className="table-responsive mt0">
-                        <TableData />
+                        <TableData data={data} />
                       </div>
                       {/* End .table-responsive */}
 
@@ -126,5 +125,16 @@ const index = () => {
     </>
   );
 };
+
+export async function getServerSideProps({ locale }) {
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/`;
+  const { data } = await axios.get(apiUrlEndpoint);
+  return {
+    props: {
+      data: data,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default index;

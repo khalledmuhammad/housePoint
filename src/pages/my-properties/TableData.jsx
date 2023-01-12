@@ -1,6 +1,16 @@
-import properties from "../../data/properties";
+import { useState } from "react";
 
-const TableData = () => {
+const TableData = ({ data }) => {
+
+  const handleEdit = (val) => {
+    
+  };
+  const handleDelete = (val) => {
+
+
+  };
+
+  const [properties, setproperties] = useState(data);
   let theadConent = [
     "Listing Title",
     "Date published",
@@ -8,16 +18,18 @@ const TableData = () => {
     "View",
     "Action",
   ];
-  let tbodyContent = properties?.slice(0, 4)?.map((item) => (
-    <tr key={item.id}>
+  let tbodyContent = properties?.slice(0, 15)?.map((item) => (
+    <tr key={item.Id_property}>
       <td scope="row">
         <div className="feat_property list favorite_page style2">
-          <div className="thumb">
-            <img className="img-whp cover" src={item.img} alt="fp1.jpg" />
+          <div>
+            <p>{item.Title}</p>
+            <p>{item.titlear}</p>
+
             <div className="thmb_cntnt">
               <ul className="tag mb0">
                 <li className="list-inline-item">
-                  <a href="#">For Rent</a>
+                  <a href="#">{item.Property_for}</a>
                 </li>
               </ul>
             </div>
@@ -27,10 +39,10 @@ const TableData = () => {
               <h4>{item.title}</h4>
               <p>
                 <span className="flaticon-placeholder"></span>
-                {item.location}
+                {item.name} , {item.name2}
               </p>
               <a className="fp_price text-thm" href="#">
-                ${item.price}
+                ${item.Price}
                 <small>/mo</small>
               </a>
             </div>
@@ -39,11 +51,11 @@ const TableData = () => {
       </td>
       {/* End td */}
 
-      <td>30 December, 2020</td>
+      <td>{item.Date}</td>
       {/* End td */}
 
       <td>
-        <span className="status_tag badge">Pending</span>
+        <span className="status_tag badge">{item.Property_for}</span>
       </td>
       {/* End td */}
 
@@ -58,9 +70,9 @@ const TableData = () => {
             data-placement="top"
             title="Edit"
           >
-            <a href="#">
+            <button className="btn btn-blue" onClick={()=>handleEdit(item.Id_property)}>
               <span className="flaticon-edit"></span>
-            </a>
+            </button>
           </li>
           {/* End li */}
 
@@ -70,9 +82,9 @@ const TableData = () => {
             data-placement="top"
             title="Delete"
           >
-            <a href="#">
+            <button className="btn btn-danger" onClick={()=>handleDelete(item.Id_property)}>
               <span className="flaticon-garbage"></span>
-            </a>
+            </button>
           </li>
         </ul>
       </td>

@@ -15,12 +15,6 @@ const Sidebar = () => {
 
    
       {/* End .Featured Properties */}
-
-      <div className="terms_condition_widget">
-        <div className="widget_list">
-       
-        </div>
-      </div>
       {/* End .Categories Property */}
     </>
   );

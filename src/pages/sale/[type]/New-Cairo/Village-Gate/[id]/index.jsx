@@ -113,18 +113,18 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                       <h2 className="text-white">
                         {router.locale === "ar"
                           ? property.Property_for === "Rent"
-                            ? `${property.Price} ${
+                            ? `${property.Price.toLocaleString()} ${
                                 property.Price_ex === "EGP" ? "جم" : "دولار"
                               } / شهر `
-                            : `${property.Price} ${
+                            : `${property.Price.toLocaleString()} ${
                                 property.Price_ex === "EGP" ? "جم" : "دولار"
                               }`
                           : router.locale === "en" &&
                             property.Property_for === "Rent"
-                          ? `${property.Price} ${
+                          ? `${property.Price.toLocaleString()} ${
                               property.Price_ex === "EGP" ? "Egp" : "Usd"
                             }/month  `
-                          : `${property.Price} ${
+                          : `${property.Price.toLocaleString()} ${
                               property.Price_ex === "EGP" ? "Egp" : "Usd"
                             }`}
                       </h2>
@@ -254,6 +254,15 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
               {/* End details content .col-lg-8 */}
 
               <div className="col-lg-4 col-xl-4">
+                <div className="col-lg-4 col-xl-4 w-100 bg-white">
+                  <h4 className="bgc-darkBrown text-white p-3 d-flex">
+                    {t("CONTACT")}
+                  </h4>
+
+                  <WhatsAppButton />
+                </div>
+
+                <Sidebar />
                 <h4 className="bgc-darkBrown text-white p-3">{t("SHARE")}</h4>
                 <ShareSocial
                   url={process.browser && window.location.href}
@@ -265,15 +274,6 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                     textAlign: "center",
                   }}
                 />
-                <div className="col-lg-4 col-xl-4 w-100 bg-white">
-                  <h4 className="bgc-darkBrown text-white p-3 d-flex">
-                    {t("CONTACT")}
-                  </h4>
-
-                  <WhatsAppButton />
-                </div>
-
-                <Sidebar />
               </div>
               {/* End sidebar content .col-lg-4 */}
             </div>

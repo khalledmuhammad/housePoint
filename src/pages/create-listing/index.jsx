@@ -12,13 +12,15 @@ import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const index = () => {
-  const isAuthenticated = useSelector((state) => state.agent.signedIn);
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      Router.push("/login");
+    if (localStorage.getItem('token')) {
+      
+    } else {
+      Router.push('/login');
     }
-  }, [isAuthenticated]);
+    
+}, []);
 
   return (
     <>

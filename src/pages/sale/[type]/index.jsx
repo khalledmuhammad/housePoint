@@ -140,7 +140,7 @@ const index = ({ data }) => {
 };
 
 export async function getServerSideProps({ locale, params }) {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/for-sale/${params.type}`;
+  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/sale/${params.type}`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
     props: {
