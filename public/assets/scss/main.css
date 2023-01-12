@@ -139,12 +139,16 @@ body {
 .whatsapp-button {
   position: fixed;
   bottom: 16px;
-  right: 22px;
-  top: 87%;
+  right: -21px;
+  top: 80%;
   /* height: 100%; */
-  width: 8%;
+  width: 150px;
   z-index: 1000;
 }
+.makeStyles-copyContainer-29,.makeStyles-copyContainer-45{
+  display: none !important;
+}
+
 
 input:focus:required:invalid {
   border: none;

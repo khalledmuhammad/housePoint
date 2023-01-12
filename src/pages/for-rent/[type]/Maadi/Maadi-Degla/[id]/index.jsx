@@ -256,7 +256,7 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                 <h4 className="bgc-darkBrown text-white p-3">{t("SHARE")}</h4>
                 <ShareSocial
                   url={process.browser && window.location.href}
-                  socialTypes={["facebook", "twitter", "linkedin", "whatsapp"]}
+                  socialTypes={["facebook", "twitter", "linkedin"]}
                   style={{
                     height: "100px",
                     overflow: "hidden",
