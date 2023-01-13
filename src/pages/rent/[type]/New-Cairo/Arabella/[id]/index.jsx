@@ -251,18 +251,30 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
         >
           <div className="container">
             <div className="row">
-              <div className="col-md-12 col-lg-8">
+              <div className="col-md-12 col-lg-8 detailedContent">
                 <DetailsContent Properties={property} />
               </div>
               {/* End details content .col-lg-8 */}
 
-              <div className="col-lg-4 col-xl-4">
+              <div className="col-lg-4 col-xl-4 contactContent">
                 <div className="col-lg-4 col-xl-4 w-100 bg-white">
                   <h4 className="bgc-darkBrown text-white p-3 d-flex">
                     {t("CONTACT")}
                   </h4>
-
-                  <WhatsAppButton />
+                  <div className="socialContat d-flex  align-items-center gap-2 p-2 ">
+                    <a
+                      className="ActionButton btn d-flex gap-2 justify-content-center align-items-center"
+                      href="tel:+201064474739"
+                    >
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      Call
+                    </a>
+                    <button className="ActionButton btn d-flex gap-2 justify-content-center align-items-center">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      Email
+                    </button>
+                    <WhatsAppButton />
+                  </div>
                 </div>
 
                 <Sidebar />

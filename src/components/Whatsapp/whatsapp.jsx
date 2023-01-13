@@ -10,8 +10,10 @@ const WhatsAppButton = () => {
     ${currentUrl}`;
 
     return (
-        <a href={`https://wa.me/${phoneNumber}?text=${message}`} className="whatsapp-button">
-            <img src='/assets/images/whatsapp.png'  alt='Share on WhatsApp' />
+        <a href={`https://wa.me/${phoneNumber}?text=${message}`} className="d-flex gap-2 justify-content-center align-items-center btn ActionButton">
+<i class="fa fa-whatsapp" aria-hidden="true"></i>
+WhatsApp
+
         </a>
     );
 };

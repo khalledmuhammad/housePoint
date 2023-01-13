@@ -144,9 +144,31 @@ body {
 .makeStyles-copyContainer-29,.makeStyles-copyContainer-45{
   display: none !important;
 }
+
+.ActionButton{
+  color:white !important;
+  font-weight: 700;
+
+  background-color: red;
+}
+.ActionButton:hover{
+color: black !important;
+}
+.ActionButton:nth-child(3){
+  background-color: green  !important;
+}
+.ActionButton:nth-child(3):hover{
+  background-color: white  !important;
+
+}
 .feat_property h4{
   height: 70px !important;
 } 
+@media screen and (max-width: 768px) {
+  .detailedContent{
+    order: 2;
+  }
+}
 .pswp__img{
 object-fit: contain !important;
 }
