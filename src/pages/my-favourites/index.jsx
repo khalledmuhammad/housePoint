@@ -9,7 +9,7 @@ import Router from "next/router";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const index = () => {
+const Index = () => {
   const isAuthenticated = useSelector((state) => state.agent.signedIn);
 
   useEffect(() => {
@@ -121,4 +121,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;

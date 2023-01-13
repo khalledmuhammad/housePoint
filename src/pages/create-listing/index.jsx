@@ -11,16 +11,13 @@ import Router from "next/router";
 import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const index = () => {
-
+const Index = () => {
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      
+    if (localStorage.getItem("token")) {
     } else {
-      Router.push('/login');
+      Router.push("/login");
     }
-    
-}, []);
+  }, []);
 
   return (
     <>
@@ -118,4 +115,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default index;
+export default Index;

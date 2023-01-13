@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { setAllProp } from "../features/properties/propertiesSlice";
 import { useEffect } from "react";
 
-const index = ({ Properties, ForBuy, LatestBlogs }) => {
+const Index = ({ Properties, ForBuy, LatestBlogs }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,4 +48,4 @@ export async function getServerSideProps({ locale }) {
     },
   };
 }
-export default dynamic(() => Promise.resolve(index), { ssr: false });
+export default dynamic(() => Promise.resolve(Index), { ssr: false });

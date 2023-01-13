@@ -14,7 +14,7 @@ import Seo from "../../components/common/seo";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const index = ({ data }) => {
+const Index = ({ data }) => {
   const router = useRouter();
   return (
     <>
@@ -142,4 +142,4 @@ export async function getServerSideProps({ locale }) {
     },
   };
 }
-export default index;
+export default Index;

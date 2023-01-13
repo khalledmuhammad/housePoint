@@ -8,7 +8,7 @@ import AddressSidebar from "./AddressSidebar";
 import BreadCrumbBanner from "./BreadCrumbBanner";
 import Form from "./Form";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -100,4 +100,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

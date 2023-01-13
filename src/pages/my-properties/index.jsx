@@ -5,22 +5,18 @@ import TableData from "./TableData";
 import Filtering from "./Filtering";
 import Pagination from "./Pagination";
 import SearchBox from "./SearchBox";
-import Router from 'next/router';
+import Router from "next/router";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const index = ({data}) => {
-
-
+const Index = ({ data }) => {
   useEffect(() => {
-      if (localStorage.getItem('token')) {
-
-      } else {
-        Router.push('/login');
-      }
-      
+    if (localStorage.getItem("token")) {
+    } else {
+      Router.push("/login");
+    }
   }, []);
 
   return (
@@ -69,7 +65,6 @@ const index = ({data}) => {
                 <div className="col-lg-4 col-xl-4 mb10">
                   <div className="breadcrumb_content style2 mb30-991">
                     <h2 className="breadcrumb_title">My Properties</h2>
-                 
                   </div>
                 </div>
                 {/* End .col */}
@@ -137,4 +132,4 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-export default index;
+export default Index;

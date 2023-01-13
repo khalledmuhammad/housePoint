@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Seo from "../components/common/seo";
 import Contact from "../components/contact";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       <Seo pageTitle="Contact" />
@@ -12,17 +12,12 @@ const index = () => {
   );
 };
 
-
 export async function getServerSideProps({ locale }) {
-
-
-
   return {
     props: {
- 
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
 
-export default index;
+export default Index;

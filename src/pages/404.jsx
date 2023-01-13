@@ -3,7 +3,7 @@ import Seo from "../components/common/seo";
 import NotFound from "../components/404";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       <Seo pageTitle="404 Not Found" />
@@ -15,11 +15,9 @@ const index = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
- 
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
 
-
-export default index;
+export default Index;

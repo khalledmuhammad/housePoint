@@ -5,7 +5,7 @@ import Activities from "./Activities";
 import AllStatistics from "./AllStatistics";
 import StatisticsChart from "./StatisticsChart";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -98,4 +98,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

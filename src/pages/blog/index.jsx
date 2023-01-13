@@ -10,8 +10,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const index = ({data}) => {
-  const router = useRouter()
+const Index = ({ data }) => {
+  const router = useRouter();
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -36,7 +36,7 @@ const index = ({data}) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="row">
-                <Blog  data={data} />
+                <Blog data={data} />
                 {/* End blog item */}
               </div>
               {/* End .row */}
@@ -80,4 +80,4 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-export default index;
+export default Index;

@@ -16,7 +16,7 @@ import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
-const index = ({ data }) => {
+const Index = ({ data }) => {
   const router = useRouter();
   console.log(router.query);
 
@@ -149,4 +149,4 @@ export async function getServerSideProps({ locale, params }) {
     },
   };
 }
-export default index;
+export default Index;

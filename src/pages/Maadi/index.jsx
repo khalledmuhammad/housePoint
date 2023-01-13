@@ -16,7 +16,7 @@ import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 
-const index = ({ data }) => {
+const Index = ({ data }) => {
   const router = useRouter();
   return (
     <>
@@ -147,4 +147,4 @@ export async function getServerSideProps({ locale }) {
     },
   };
 }
-export default index;
+export default Index;

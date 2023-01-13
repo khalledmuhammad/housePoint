@@ -7,7 +7,7 @@ import PopupSignInUp from "../../components/common/PopupSignInUp";
 import BreadCrumbBanner from "./BreadCrumbBanner";
 import Form from "./Form";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -55,10 +55,9 @@ const index = () => {
 export async function getStaticProps({ locale }) {
   return {
     props: {
- 
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
 
-export default index;
+export default Index;
