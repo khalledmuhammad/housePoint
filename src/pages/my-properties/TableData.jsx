@@ -1,28 +1,32 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const TableData = ({ data }) => {
+  const router = useRouter();
 
   const handleEdit = (val) => {
-    
+    router.push({ pathname: "/EditProperty", query: { val: val } });
   };
-  const handleDelete = async(val) => {
+  const handleDelete = async (val) => {
     try {
       // Make the DELETE request to the server to delete the property
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API}/delete-property/${val}`, {
-        method: 'DELETE'
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API}/delete-property/${val}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       // If the request was successful, show a success message
       if (response.ok) {
         toast.success(`Successfully deleted property with id_property: ${val}`);
       } else {
-        throw new Error('Failed to delete property');
+        throw new Error("Failed to delete property");
       }
     } catch (err) {
       toast.danger(err);
     }
-
   };
 
   const [properties, setproperties] = useState(data);
@@ -74,7 +78,7 @@ const TableData = ({ data }) => {
       </td>
       {/* End td */}
 
-      <td>2,345</td>
+      <td>{item.Id_property}</td>
       {/* End td */}
 
       <td>
@@ -85,7 +89,10 @@ const TableData = ({ data }) => {
             data-placement="top"
             title="Edit"
           >
-            <button className="btn btn-blue" onClick={()=>handleEdit(item.Id_property)}>
+            <button
+              className="btn btn-blue"
+              onClick={() => handleEdit(item.Id_property)}
+            >
               <span className="flaticon-edit"></span>
             </button>
           </li>
@@ -97,7 +104,10 @@ const TableData = ({ data }) => {
             data-placement="top"
             title="Delete"
           >
-            <button className="btn btn-danger" onClick={()=>handleDelete(item.Id_property)}>
+            <button
+              className="btn btn-danger"
+              onClick={() => handleDelete(item.Id_property)}
+            >
               <span className="flaticon-garbage"></span>
             </button>
           </li>

@@ -1,23 +1,24 @@
+import { useSelector } from "react-redux";
 import Header from "../../components/common/header/dashboard/Header";
 import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../components/common/header/MobileMenu";
-import TableData from "./TableData";
-import Pagination from "./Pagination";
-import SearchBox from "./SearchBox";
+import CreateList from "./CreateList";
+import PropertyMediaUploader from "./PropertyMediaUploader";
 import Router from "next/router";
 import { useEffect } from "react";
-import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const Index = ({ data }) => {
+const Index = ({val}) => {
   useEffect(() => {
+    
     if (localStorage.getItem("token")) {
     } else {
       Router.push("/login");
     }
   }, []);
 
-  return (
+  if(val)
+  {return (
     <>
       {/* <!-- Main Header Nav --> */}
       <Header />
@@ -60,42 +61,29 @@ const Index = ({ data }) => {
                 </div>
                 {/* End Dashboard Navigation */}
 
-                <div className="col-lg-4 col-xl-4 mb10">
-                  <div className="breadcrumb_content style2 mb30-991">
-                    <h2 className="breadcrumb_title">My Properties</h2>
-                  </div>
-                </div>
-                {/* End .col */}
-
-                <div className="col-lg-8 col-xl-8">
-                  <div className="candidate_revew_select style2 text-end mb30-991">
-                    <ul className="mb0">
-                      <li className="list-inline-item">
-                        <div className="candidate_revew_search_box course fn-520">
-                          <SearchBox />
-                        </div>
-                      </li>
-                      {/* End li */}
-                      {/* End li */}
-                    </ul>
+                <div className="col-lg-12 mb10">
+                  <div className="breadcrumb_content style2">
+                    <h2 className="breadcrumb_title">Add New Property</h2>
+                    <p>We are glad to see you again!</p>
                   </div>
                 </div>
                 {/* End .col */}
 
                 <div className="col-lg-12">
-                  <div className="my_dashboard_review mb40">
-                    <div className="property_table">
-                      <div className="table-responsive mt0">
-                        <TableData data={data} />
+                  <div className="my_dashboard_review">
+                    <div className="row">
+                      <div className="col-lg-12">
+                        <h3 className="mb30">Create Listing</h3>
                       </div>
-                      {/* End .table-responsive */}
 
-                      <div className="mbp_pagination">
-                        <Pagination />
-                      </div>
-                      {/* End .mbp_pagination */}
+                      <CreateList val={val} />
                     </div>
-                    {/* End .property_table */}
+                  </div>
+                  <div className="my_dashboard_review mt30">
+                    <div className="col-lg-12">
+                      <h3 className="mb30">Property media</h3>
+                    </div>
+                    <PropertyMediaUploader />
                   </div>
                 </div>
                 {/* End .col */}
@@ -116,16 +104,23 @@ const Index = ({ data }) => {
         </div>
       </section>
     </>
-  );
+  );}else{
+    <h1>ddd</h1>
+  }
 };
+export async function getServerSideProps(context) {
+  const {val} = context.query 
+  if (!val) {
+    context.res.writeHead(302, { Location: '/' });
+    context.res.end();
+    return { props: {} };
+  }
 
-export async function getServerSideProps({ locale }) {
-  const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/AllProp`;
-  const { data } = await axios.get(apiUrlEndpoint);
+
   return {
     props: {
-      data: data,
-      ...(await serverSideTranslations(locale, ["common"])),
+      val,
+      ...(await serverSideTranslations(context.locale, ["common"])),
     },
   };
 }
