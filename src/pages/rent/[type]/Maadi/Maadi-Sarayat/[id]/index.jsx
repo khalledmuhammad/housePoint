@@ -264,15 +264,15 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
                   <div className="socialContat d-flex  align-items-center gap-2 p-2 ">
                     <a
                       className="ActionButton btn d-flex gap-2 justify-content-center align-items-center"
-                      href="tel:+201064474739"
+                      href="tel:+201221409530"
                     >
                       <i class="fa fa-phone" aria-hidden="true"></i>
                       Call
                     </a>
-                    <button className="ActionButton btn d-flex gap-2 justify-content-center align-items-center">
+                    <a  href="mailto:info@housepointegypt.com"  className="ActionButton btn d-flex gap-2 justify-content-center align-items-center">
                       <i class="fa fa-envelope" aria-hidden="true"></i>
-                      Email
-                    </button>
+                      Email 
+                    </a>
                     <WhatsAppButton />
                   </div>
                 </div>
