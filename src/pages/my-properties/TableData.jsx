@@ -1,12 +1,27 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const TableData = ({ data }) => {
 
   const handleEdit = (val) => {
     
   };
-  const handleDelete = (val) => {
+  const handleDelete = async(val) => {
+    try {
+      // Make the DELETE request to the server to delete the property
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API}/delete-property/${val}`, {
+        method: 'DELETE'
+      });
 
+      // If the request was successful, show a success message
+      if (response.ok) {
+        toast.success(`Successfully deleted property with id_property: ${val}`);
+      } else {
+        throw new Error('Failed to delete property');
+      }
+    } catch (err) {
+      toast.danger(err);
+    }
 
   };
 

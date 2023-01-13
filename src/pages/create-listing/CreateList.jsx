@@ -107,8 +107,8 @@ const CreateList = () => {
             >
               <option value="">Select</option>
 
-              <option value={0}>EGP</option>
-              <option value={1}>USD</option>
+              <option value={`"EGP"`}>EGP</option>
+              <option value={`"USD"`}>USD</option>
             </select>
           </div>
         </div>

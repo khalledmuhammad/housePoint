@@ -9,9 +9,8 @@ const SidebarMenu = () => {
   const route = useRouter();
 
   const myProperties = [
-    { id: 1, name: "General Elements", route: "/my-properties" },
-    { id: 2, name: "Advanced Elements", route: "/my-properties" },
-    { id: 3, name: "Editors", route: "/my-properties" },
+    { id: 1, name: "My properties", route: "/my-properties" },
+   
   ];
 
 
