@@ -37,7 +37,7 @@ const TableData = ({ data }) => {
     "View",
     "Action",
   ];
-  let tbodyContent = properties.map((item) => (
+  let tbodyContent = properties &&  properties.map((item) => (
     <tr key={item.Id_property}>
       <td scope="row">
         <div className="feat_property list favorite_page style2">
