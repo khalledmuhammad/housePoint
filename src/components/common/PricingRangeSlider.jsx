@@ -37,7 +37,7 @@ const RangeSlider = () => {
   }, [dispath, Currpricemax, Currpricemin, addPrice]);
 
   return (
-    <div className="d-flex align-items-center   flex-row gap-2 " >
+    <div className="d-flex align-items-center   flex-row gap-2 ">
       <input
         className=""
         list="pricemin-suggestions"
@@ -46,11 +46,11 @@ const RangeSlider = () => {
         placeholder={t("MIN")}
         type="number"
       />
-      <datalist id="pricemin-suggestions" >
-  {priceValues.map((value) => (
-    <option key={value} value={value} />
-  ))}
-</datalist>
+      <datalist id="pricemin-suggestions">
+        {priceValues.map((value) => (
+          <option key={value} value={value} />
+        ))}
+      </datalist>
       _
       <input
         type="number"
@@ -59,11 +59,11 @@ const RangeSlider = () => {
         /*               value={`${Currpricemax}`}
          */ onChange={(e) => setPricemax(e.target.value)}
       />
-    <datalist id="pricemax-suggestions">
-  {priceValues.map((value) => (
-    <option key={value} value={value} />
-  ))}
-</datalist>
+      <datalist id="pricemax-suggestions">
+        {priceValues.map((value) => (
+          <option key={value} value={value} />
+        ))}
+      </datalist>
     </div>
   );
 };
