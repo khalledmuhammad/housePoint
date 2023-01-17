@@ -12,7 +12,7 @@ const SearchBox = () => {
       <input
         className="form-control mr-sm-2"
         type="search"
-        placeholder="Search "
+        placeholder="Search by Ref "
         aria-label="Search"
         onChange={(e) => dispatch(addDashboardSearch(e.target.value))}
 
