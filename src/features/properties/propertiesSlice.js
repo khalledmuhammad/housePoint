@@ -7,8 +7,8 @@ const initialState = {
     Sublocation:"",
     location: "",
     price: {
-        min: 0,
-        max: 10000000,
+        min: "",
+        max: "",
     },
     amenities: [],
     Furniture_status: "",

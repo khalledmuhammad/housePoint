@@ -153,6 +153,49 @@ body {
 
   background-color: red;
 }
+
+.priceSuggest {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.priceSuggest ul {
+  top: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 100px;
+  padding: 3px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  
+}
+.pricemax-suggestions {
+  right: -6px;
+}
+
+.priceSuggest ul::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+.priceSuggest ul::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 10px;
+}
+
+.priceSuggest ul li {
+  text-align: center !important;
+  align-self: center;
+  margin: 0 auto;
+  padding-left: 3px;
+}
+
+
 .ActionButton:hover {
   color: black !important;
 }

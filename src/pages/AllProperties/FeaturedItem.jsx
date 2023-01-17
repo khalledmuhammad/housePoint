@@ -161,17 +161,14 @@ const FeaturedItem = ({
     ?.filter(statusHandler)
     ?.filter(bathroomHandler)
     ?.filter(bedroomHandler)
-    ?.filter(priceHandler)
+    if (price.min!="" && price.max!="") {
+      content = content.filter(priceHandler);
+  }
+      content = content
     ?.filter(propertiesStartusHandler)
     ?.filter(locationHandler)
     ?.filter(sublocationHandler)
-    /*  
-    ?.filter(garagesHandler)
-    ?.filter(builtYearsHandler)
-    ?.filter(areaHandler)
-    ?.filter(advanceHandler)
-    ?.sort(statusTypeHandler)
-    ?.filter(featuredHandler) */
+    ?.filter(featuredHandler)
     ?.slice(pageVisited, pageVisited + propertiesperPage)
     .map((item) => (
       <div
