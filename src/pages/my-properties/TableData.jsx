@@ -38,7 +38,7 @@ const TableData = ({ data }) => {
     "Listing Title",
     "Date published",
     "Status",
-    "View",
+    "Ref",
     "Action",
   ];
 
@@ -70,27 +70,12 @@ return true
             <div className="feat_property list favorite_page style2">
               <div>
                 <p>{item.Title}</p>
-                <p>{item.titlear}</p>
-
                 <div className="thmb_cntnt">
                   <ul className="tag mb0">
                     <li className="list-inline-item">
                       <a href="#">{item.Property_for}</a>
                     </li>
                   </ul>
-                </div>
-              </div>
-              <div className="details">
-                <div className="tc_content">
-                  <h4>{item.title}</h4>
-                  <p>
-                    <span className="flaticon-placeholder"></span>
-                    {item.name} , {item.name2}
-                  </p>
-                  <a className="fp_price text-thm" href="#">
-                    ${item.Price}
-                    <small>/mo</small>
-                  </a>
                 </div>
               </div>
             </div>
