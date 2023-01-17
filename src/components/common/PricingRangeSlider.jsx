@@ -21,8 +21,8 @@ const RangeSlider = () => {
     1000000, 1100000, 1200000, 1300000, 1400000, 1500000, 1600000, 1700000,
     1800000, 1900000, 2000000, 2100000, 2200000, 2300000, 2400000, 2500000,
     2600000, 2700000, 2800000, 2900000, 3000000, 3250000, 3500000, 3750000,
-    4000000, 4250000, 4500000, 5000000,5500000,6000000,7000000,8000000,
-    9000000,1000000,12000000,13000000,14000000,15000000
+    4000000, 4250000, 4500000, 5000000, 5500000, 6000000, 7000000, 8000000,
+    9000000, 1000000, 12000000, 13000000, 14000000, 15000000,
   ];
 
   // price add to state
@@ -39,7 +39,10 @@ const RangeSlider = () => {
     <div className="d-flex align-items-center priceSuggest   flex-row gap-2 ">
       <input
         value={`${Currpricemin}`}
-        onChange={(e) => setPricemin(e.target.value)}
+        onChange={(e) => {
+          setPricemin(e.target.value);
+          setOpen(false);
+        }}
         onClick={() => {
           setOpen(!open);
           setOpenMax(false);
@@ -69,7 +72,10 @@ const RangeSlider = () => {
         list="pricemax-suggestions"
         placeholder={t("MAX")}
         value={`${Currpricemax}`}
-        onChange={(e) => setPricemax(e.target.value)}
+        onChange={(e) => {
+          setPricemax(e.target.value);
+          setOpenMax(false)
+        }}
         onClick={() => {
           setOpenMax(!openMax);
           setOpen(false);
