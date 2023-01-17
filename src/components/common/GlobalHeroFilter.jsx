@@ -15,13 +15,15 @@ const GlobalHeroFilter = ({ className = "" }) => {
     const { t } = useTranslation();
 
     const dispatch = useDispatch()
+    const PropetyFor = useSelector(state=>state.properties.Property_for)
+    console.log(PropetyFor)
 
     return (
         <div className={`home_adv_srch_opt ${className}`}>
             <ul className="nav nav-pills" id="pills-tab" role="tablist">
             <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Rent"))} >
                     <a
-                        className="nav-link"
+                        className={`nav-link ${PropetyFor === "Rent" && "active"} `}
                         id="pills-profile-tab"
                         data-bs-toggle="pill"
                         href="#pills-profile"
@@ -35,7 +37,7 @@ const GlobalHeroFilter = ({ className = "" }) => {
                 </li>
                 <li className="nav-item"  onClick={()=>dispatch(addProperty_for("Sale"))} >
                     <a
-                        className="nav-link active"
+                        className={`nav-link ${PropetyFor === "Sale" && "active"} `}
                         id="pills-home-tab"
                         data-bs-toggle="pill"
                         href="#pills-home"

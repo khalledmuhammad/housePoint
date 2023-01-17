@@ -16,13 +16,22 @@ const RangeSlider = () => {
 
   const dispath = useDispatch();
   const { t } = useTranslation();
-  const priceValues = [
+  const { Property_for } = useSelector((state) => state.properties);
+
+  const priceValuesSale = [
     100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000,
     1000000, 1100000, 1200000, 1300000, 1400000, 1500000, 1600000, 1700000,
     1800000, 1900000, 2000000, 2100000, 2200000, 2300000, 2400000, 2500000,
     2600000, 2700000, 2800000, 2900000, 3000000, 3250000, 3500000, 3750000,
     4000000, 4250000, 4500000, 5000000, 5500000, 6000000, 7000000, 8000000,
-    9000000, 1000000, 12000000, 13000000, 14000000, 15000000,
+    9000000, 1000000, 12000000, 13000000, 14000000, 15000000, 20000000,
+    40000000,
+  ];
+  const priceValueRent = [
+    5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000,
+    16000, 17000, 18000, 19000, 20000, 22000, 25000, 27500, 30000, 32000, 35000,
+    37500, 40000, 45000, 47500, 50000, 55000, 60000, 65000, 70000, 75000, 80000,
+    85000, 90000, 95000, 100000, 200000, 300000,
   ];
 
   // price add to state
@@ -52,7 +61,8 @@ const RangeSlider = () => {
       />
       {open && (
         <ul class="pricemin-suggestions">
-          {priceValues.map((value) => (
+          { Property_for === "Sale" ? 
+          priceValuesSale.map((value) => (
             <li
               key={value}
               onClick={() => {
@@ -63,7 +73,22 @@ const RangeSlider = () => {
               {" "}
               {value.toLocaleString()}
             </li>
-          ))}{" "}
+          ))
+          : 
+          priceValueRent.map((value) => (
+            <li
+              key={value}
+              onClick={() => {
+                setPricemin(value);
+                setOpen(!open);
+              }}
+            >
+              {" "}
+              {value.toLocaleString()}
+            </li>
+          ))
+        
+        }
         </ul>
       )}
       _
@@ -74,7 +99,7 @@ const RangeSlider = () => {
         value={`${Currpricemax}`}
         onChange={(e) => {
           setPricemax(e.target.value);
-          setOpenMax(false)
+          setOpenMax(false);
         }}
         onClick={() => {
           setOpenMax(!openMax);
@@ -83,7 +108,8 @@ const RangeSlider = () => {
       />
       {openMax && (
         <ul class="pricemax-suggestions">
-          {priceValues.map((value) => (
+          { Property_for === "Sale" ? 
+          priceValuesSale.map((value) => (
             <li
               key={value}
               onClick={() => {
@@ -94,7 +120,22 @@ const RangeSlider = () => {
               {" "}
               {value.toLocaleString()}
             </li>
-          ))}
+          ))
+          :
+          priceValueRent.map((value) => (
+            <li
+              key={value}
+              onClick={() => {
+                setPricemax(value);
+                setOpenMax(!openMax);
+              }}
+            >
+              {" "}
+              {value.toLocaleString()}
+            </li>
+          ))
+        
+        }
         </ul>
       )}
     </div>

@@ -21,7 +21,9 @@ const initialState = {
         max: "",
     },
     length: 0,
-    Property_for : ""
+    Property_for : "Sale",
+    dashboard_search : ""
+
     
 };
 
@@ -34,6 +36,9 @@ state.AllProp = action.payload
         },
         addKeyword: (state, action) => {
             state.keyword = action.payload;
+        },
+        addDashboardSearch: (state, action) => {
+            state.dashboard_search = action.payload;
         },
         addProperty_for: (state, action) => {
             state.Property_for = action.payload;
@@ -110,6 +115,7 @@ export const {
     addLength,
     resetAmenities,
     addProperty_for,
-    setAllProp
+    setAllProp,
+    addDashboardSearch
 } = propertiesSlice.actions;
 export default propertiesSlice.reducer;

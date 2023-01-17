@@ -16,6 +16,8 @@ const FilterTopBar = ({RENT , SALE , HOME }) => {
 
   const dispatch = useDispatch();
 
+
+
   // add status
   useEffect(() => {
     dispatch(addStatusType(getStatus));
@@ -32,7 +34,6 @@ const FilterTopBar = ({RENT , SALE , HOME }) => {
     featured === "" && setFeatured(Property_for);
     RENT && setFeatured("Rent")
     SALE && setFeatured("Sale")
-    HOME && setFeatured("")
 
 
   }, [statusType, setStatus, featured, setFeatured]);

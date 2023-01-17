@@ -1,4 +1,12 @@
+import { useDispatch } from "react-redux";
+import {
+  addDashboardSearch,
+  
+} from "../../features/properties/propertiesSlice";
+
 const SearchBox = () => {
+  const dispatch = useDispatch()
+
   return (
     <form className="d-flex flex-wrap align-items-center my-2">
       <input
@@ -6,6 +14,8 @@ const SearchBox = () => {
         type="search"
         placeholder="Search "
         aria-label="Search"
+        onChange={(e) => dispatch(addDashboardSearch(e.target.value))}
+
       />
       <button className=" my-2 my-sm-0" type="submit">
         <span className="flaticon-magnifying-glass"></span>

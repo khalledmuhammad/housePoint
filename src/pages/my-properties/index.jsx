@@ -2,7 +2,6 @@ import Header from "../../components/common/header/dashboard/Header";
 import SidebarMenu from "../../components/common/header/dashboard/SidebarMenu";
 import MobileMenu from "../../components/common/header/MobileMenu";
 import TableData from "./TableData";
-import Pagination from "./Pagination";
 import SearchBox from "./SearchBox";
 import Router from "next/router";
 import { useEffect } from "react";
@@ -90,10 +89,7 @@ const Index = ({ data }) => {
                       </div>
                       {/* End .table-responsive */}
 
-                      <div className="mbp_pagination">
-                        <Pagination />
-                      </div>
-                      {/* End .mbp_pagination */}
+                
                     </div>
                     {/* End .property_table */}
                   </div>
