@@ -18,6 +18,8 @@ import { useRouter } from "next/router";
 
 const Index = ({ data }) => {
   const router = useRouter();
+
+  
   return (
     <>
       <Seo pageTitle="Simple Listing – Grid V1" />
