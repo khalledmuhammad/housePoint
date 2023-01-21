@@ -7,7 +7,7 @@ import {
 } from "../../../features/filter/filterSlice";
 import { addProperty_for } from "../../../features/properties/propertiesSlice";
 
-const FilterTopBar = ({RENT , SALE , HOME }) => {
+const FilterTopBar = ({RENT , SALE , disable  }) => {
   const { Property_for } = useSelector((state) => state.properties);
   const { length } = useSelector((state) => state.properties);
   const { statusType, featured } = useSelector((state) => state.filter);
@@ -34,6 +34,9 @@ const FilterTopBar = ({RENT , SALE , HOME }) => {
     featured === "" && setFeatured(Property_for);
     RENT && setFeatured("Rent")
     SALE && setFeatured("Sale")
+    disable && setFeatured("")
+    
+    
 
 
   }, [statusType, setStatus, featured, setFeatured]);

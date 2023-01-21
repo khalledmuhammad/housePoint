@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
-const PropertyDetails = ({Properties}) => {
-  const {t} = useTranslation()
-  const router = useRouter()
+const PropertyDetails = ({ Properties }) => {
+  const { t } = useTranslation();
+  const router = useRouter();
   return (
     <>
       <div className="col-md-6 col-lg-6 col-xl-4">
@@ -15,7 +16,11 @@ const PropertyDetails = ({Properties}) => {
           </li>
           <li>
             <p>
-              {t("PRICE")} : <span> {Properties.Price} {Properties.Price_ex} </span>
+              {t("PRICE")} :{" "}
+              <span>
+                {" "}
+                {Properties.Price} {Properties.Price_ex}{" "}
+              </span>
             </p>
           </li>
           <li>
@@ -23,7 +28,6 @@ const PropertyDetails = ({Properties}) => {
               {t("PROPSIZE")} : <span>{Properties.Surface_area} Sq Ft</span>
             </p>
           </li>
-         
         </ul>
       </div>
       {/* End .col */}
@@ -32,26 +36,38 @@ const PropertyDetails = ({Properties}) => {
         <ul className="list-inline-item">
           <li>
             <p>
-            {t("BEDS")} : <span>{Properties.No_of_bedrooms ? Properties.No_of_bedrooms : 0}</span>
+              {t("BEDS")} :{" "}
+              <span>
+                {Properties.No_of_bedrooms ? Properties.No_of_bedrooms : 0}
+              </span>
             </p>
           </li>
           <li>
             <p>
-            {t("BATHS")} : <span>{Properties.No_of_bathroom ? Properties.No_of_bathroom  : 0}</span>
+              {t("BATHS")} :{" "}
+              <span>
+                {Properties.No_of_bathroom ? Properties.No_of_bathroom : 0}
+              </span>
             </p>
           </li>
           <li>
             <p>
-            {t("FURNISHED")} : <span>{ router.locale === "ar" ?  Properties.ff_ar : Properties.ff_en}</span>
+              {t("FURNISHED")} :{" "}
+              <span>
+                {router.locale === "ar" ? Properties.ff_ar : Properties.ff_en}
+              </span>
             </p>
           </li>
           <li>
             <p>
-            {t("PROPFOR")} : <span>{ router.locale === "ar" ?  Properties.type_ar : Properties.type_en}</span>
+              {t("PROPFOR")} :{" "}
+              <span>
+                {router.locale === "ar"
+                  ? Properties.type_ar
+                  : Properties.type_en}
+              </span>
             </p>
           </li>
-         
-          
         </ul>
       </div>
       {/* End .col */}
@@ -60,7 +76,7 @@ const PropertyDetails = ({Properties}) => {
         <ul className="list-inline-item">
           <li>
             <p>
-            {t("PROPSTATUS")} : <span>For Sale</span>
+              {t("PROPSTATUS")} : <span>{Properties.Property_for}</span>
             </p>
           </li>
           <li>

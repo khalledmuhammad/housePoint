@@ -10139,15 +10139,15 @@ form.home5_advanced_search_form
   color: #ffffff;
   text-transform: capitalize;
   float: right;
-  display: none !important;
 }
 
 .breadcrumb_content.style2 {
   margin-bottom: 30px;
   width: 100vw !important;
 }
-.breadcrumb-item:last-child::before {
+.breadcrumb-item:last-child::before[dir="rtl"] {
   display: none !important;
+
 }
 
 .breadcrumb_content.style2 ol.breadcrumb {
@@ -21325,4 +21325,22 @@ button.gm-ui-hover-effect:focus {
 }
 .makeStyles-copyContainer-5 {
   display: none !important;
+}
+
+.Tags{
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+}
+
+.Tags a{
+  font-size: 14px;
+  font-family: "Nunito";
+  color: white;
+  font-weight: 700;
+  background-color: rgb(62, 76, 102);
+ text-align: center;
+  padding: 5px 6px;
+  border-radius: 4px;
+  line-height: 1.2;
 }

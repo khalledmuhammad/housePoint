@@ -20,64 +20,69 @@ const FindProperties = () => {
           <Link legacyBehavior href="/rent/Apartment/Maadi">
             <a className="  d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("APRENTMAADI")}
+              <i className={`fa fa-caret-${direction}`}></i> {t("APRENTMAADI")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/Apartment/Maadi/Maadi-Sarayat">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("APRENTMAADISA")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("APRENTMAADISA")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/Apartment/Maadi/Maadi-Degla">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("APRENTMAADIDEGLA")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("APRENTMAADIDEGLA")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/Apartment/Katameya-Heights">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("APRENTKAT")}
+              <i className={`fa fa-caret-${direction}`}></i> {t("APRENTKAT")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/Apartment/New-Cairo">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("APRENTNEWCAIRO")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("APRENTNEWCAIRO")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/villa/Maadi">
             <a className="  d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("VILLARENTMAADI")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("VILLARENTMAADI")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/villa/Maadi/Maadi-Sarayat">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("VILLARENTMAADISA")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("VILLARENTMAADISA")}
             </a>
           </Link>
 
           <Link legacyBehavior href="/rent/villa/Maadi/Maadi-Degla">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i>{" "}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
               {t("VILLARENTMAADIDEGLA")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/villa/Katameya-Heights">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("VILLARENTKAT")}
+              <i className={`fa fa-caret-${direction}`}></i> {t("VILLARENTKAT")}
             </a>
           </Link>
 
           <Link legacyBehavior href="/rent/villa/New-Cairo">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i>{" "}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
               {t("VILLARENTNEWCAIRO")}
             </a>
           </Link>
@@ -87,54 +92,58 @@ const FindProperties = () => {
           <Link legacyBehavior href="/sale/Apartment/Maadi">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("APSALEMAADI")}
+              <i className={`fa fa-caret-${direction}`}></i> {t("APSALEMAADI")}
             </a>
           </Link>
           <Link legacyBehavior href="/sale/Apartment/Maadi/Maadi-Sarayat">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i> {t("APSALEMAADISA")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("APSALEMAADISA")}
             </a>
           </Link>
           <Link legacyBehavior href="/sale/Apartment/Maadi/Maadi-Degla">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i>
+              <i className={`fa fa-caret-${direction}`}></i>
               {t("APSALEMAADIDEGLA")}
             </a>
           </Link>
 
           <Link legacyBehavior href="/rent/Ground-Floor/Maadi">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i>
+              <i className={`fa fa-caret-${direction}`}></i>
               {t("GRRENTMAADI")}
             </a>
           </Link>
           <Link legacyBehavior href="/rent/Ground-Floor/Maadi/Maadi-Sarayat">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i> {t("GRRENTMAADISA")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("GRRENTMAADISA")}
             </a>
           </Link>
 
           <Link legacyBehavior href="/rent/Ground-Floor/Maadi/Maadi-Degla">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i> {t("GRRENTMAADIDG")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("GRRENTMAADIDG")}
             </a>
           </Link>
 
           <Link legacyBehavior href="/rent/Ground-Floor/Katameya-Heights">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i> {t("GRRENTKATAMYA")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("GRRENTKATAMYA")}
             </a>
           </Link>
 
           <Link legacyBehavior href="/sale/villa/Maadi/Maadi-Degla">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i>{" "}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
               {t("VILLASALEMAADIDEGLA")}{" "}
             </a>
           </Link>
           <Link legacyBehavior href="/sale/villa/New-Cairo">
             <a className=" d-block">
-              <i class={`fa fa-caret-${direction}`}></i>{" "}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
               {t("VILLASALENEWCAIRO")}
             </a>
           </Link>
@@ -142,7 +151,8 @@ const FindProperties = () => {
           <Link legacyBehavior href="/rent/Penthouse/Maadi">
             <a className=" d-block">
               {" "}
-              <i class={`fa fa-caret-${direction}`}></i> {t("PENTRENTMAADI")}
+              <i className={`fa fa-caret-${direction}`}></i>{" "}
+              {t("PENTRENTMAADI")}
             </a>
           </Link>
         </div>
@@ -155,31 +165,31 @@ const FindProperties = () => {
         <Link legacyBehavior href="/Maadi">
           <a className="  d-block">
             {" "}
-            <i class={`fa fa-caret-${direction}`}></i> {t("MAADI")}
+            <i className={`fa fa-caret-${direction}`}></i> {t("MAADI")}
           </a>
         </Link>
         <Link legacyBehavior href="/Maadi/Maadi-Sarayat">
           <a className=" d-block">
             {" "}
-            <i class={`fa fa-caret-${direction}`}></i> {t("MAADISARAYAT")}
+            <i className={`fa fa-caret-${direction}`}></i> {t("MAADISARAYAT")}
           </a>
         </Link>
         <Link legacyBehavior href="/Maadi/Maadi-Degla">
           <a className=" d-block">
             {" "}
-            <i class={`fa fa-caret-${direction}`}></i> {t("MAADIDEGLA")}
+            <i className={`fa fa-caret-${direction}`}></i> {t("MAADIDEGLA")}
           </a>
         </Link>
         <Link legacyBehavior href="/Katameya-Heights">
           <a className=" d-block">
             {" "}
-            <i class={`fa fa-caret-${direction}`}></i> {t("KATAMYA")}
+            <i className={`fa fa-caret-${direction}`}></i> {t("KATAMYA")}
           </a>
         </Link>
         <Link legacyBehavior href="/New-Cairo">
           <a className=" d-block">
             {" "}
-            <i class={`fa fa-caret-${direction}`}></i> {t("NEWCAIRO")}
+            <i className={`fa fa-caret-${direction}`}></i> {t("NEWCAIRO")}
           </a>
         </Link>
       </div>

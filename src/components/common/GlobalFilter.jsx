@@ -209,9 +209,9 @@ const GlobalFilter = ({ className = "" }) => {
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-            <span className={`${router.locale === "ar" ? "float-end" : ""}`}>
-                {t("PRICERANGE")}</span>
-             
+              <span className={`${router.locale === "ar" ? "float-end" : ""}`}>
+                {t("PRICERANGE")}
+              </span>
             </div>
             <div className="dd_content2 dropdown-menu">
               <div className="">
@@ -264,7 +264,7 @@ const GlobalFilter = ({ className = "" }) => {
               type="submit"
               className="btn btn-thm w80"
             >
-              <i class="fa fa-search" aria-hidden="true"></i>
+              <i className="fa fa-search" aria-hidden="true"></i>
             </button>
           </div>
         </li>

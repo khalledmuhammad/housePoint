@@ -60,35 +60,32 @@ const RangeSlider = () => {
         type="number"
       />
       {open && (
-        <ul class="pricemin-suggestions">
-          { Property_for === "Sale" ? 
-          priceValuesSale.map((value) => (
-            <li
-              key={value}
-              onClick={() => {
-                setPricemin(value);
-                setOpen(!open);
-              }}
-            >
-              {" "}
-              {value.toLocaleString()}
-            </li>
-          ))
-          : 
-          priceValueRent.map((value) => (
-            <li
-              key={value}
-              onClick={() => {
-                setPricemin(value);
-                setOpen(!open);
-              }}
-            >
-              {" "}
-              {value.toLocaleString()}
-            </li>
-          ))
-        
-        }
+        <ul className="pricemin-suggestions">
+          {Property_for === "Sale"
+            ? priceValuesSale.map((value) => (
+                <li
+                  key={value}
+                  onClick={() => {
+                    setPricemin(value);
+                    setOpen(!open);
+                  }}
+                >
+                  {" "}
+                  {value.toLocaleString()}
+                </li>
+              ))
+            : priceValueRent.map((value) => (
+                <li
+                  key={value}
+                  onClick={() => {
+                    setPricemin(value);
+                    setOpen(!open);
+                  }}
+                >
+                  {" "}
+                  {value.toLocaleString()}
+                </li>
+              ))}
         </ul>
       )}
       _
@@ -107,35 +104,32 @@ const RangeSlider = () => {
         }}
       />
       {openMax && (
-        <ul class="pricemax-suggestions">
-          { Property_for === "Sale" ? 
-          priceValuesSale.map((value) => (
-            <li
-              key={value}
-              onClick={() => {
-                setPricemax(value);
-                setOpenMax(!openMax);
-              }}
-            >
-              {" "}
-              {value.toLocaleString()}
-            </li>
-          ))
-          :
-          priceValueRent.map((value) => (
-            <li
-              key={value}
-              onClick={() => {
-                setPricemax(value);
-                setOpenMax(!openMax);
-              }}
-            >
-              {" "}
-              {value.toLocaleString()}
-            </li>
-          ))
-        
-        }
+        <ul className="pricemax-suggestions">
+          {Property_for === "Sale"
+            ? priceValuesSale.map((value) => (
+                <li
+                  key={value}
+                  onClick={() => {
+                    setPricemax(value);
+                    setOpenMax(!openMax);
+                  }}
+                >
+                  {" "}
+                  {value.toLocaleString()}
+                </li>
+              ))
+            : priceValueRent.map((value) => (
+                <li
+                  key={value}
+                  onClick={() => {
+                    setPricemax(value);
+                    setOpenMax(!openMax);
+                  }}
+                >
+                  {" "}
+                  {value.toLocaleString()}
+                </li>
+              ))}
         </ul>
       )}
     </div>
