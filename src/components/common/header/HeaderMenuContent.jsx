@@ -197,7 +197,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
       <li className="last">
         <Link
           legacyBehavior
-          href={`${route.locale === "ar" ? "اتصل-بنا" : "contact"}`}
+          href={`${route.locale === "ar" ? "/اتصل-بنا" : "/contact"}`}
         >
           <a
             className={route.pathname === "/contact" ? "ui-active" : undefined}

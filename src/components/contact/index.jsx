@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import CallToAction from "../common/CallToAction";
 import CopyrightFooter from "../common/footer/CopyrightFooter";
 import Footer from "../common/footer/Footer";
@@ -7,8 +8,11 @@ import PopupSignInUp from "../common/PopupSignInUp";
 import AddressSidebar from "./AddressSidebar";
 import BreadCrumbBanner from "./BreadCrumbBanner";
 import Form from "./Form";
+import {useRouter} from "next/router"
 
 const Index = () => {
+  const {t} = useTranslation()
+  const router = useRouter()
   return (
     <>
       {/* <!-- Main Header Nav --> */}
@@ -17,26 +21,15 @@ const Index = () => {
       {/* <!--  Mobile Menu --> */}
       <MobileMenu />
 
-      {/* <!-- Modal --> */}
-      <PopupSignInUp />
-
-      {/* <!-- Inner Page Breadcrumb --> */}
-      <BreadCrumbBanner />
+  
 
       {/* <!-- Our Contact --> */}
-      <section className="our-contact pb0 bgc-f7">
+      <section className="our-contact pb0 bgc-f7 mt-5" dir={router.locale === "en" ? "" : "rtl"}>
         <div className="container">
+                <h1 className="mb5 text-center">{t("CONTACTUS")}</h1>
           <div className="row">
             <div className="col-lg-7 col-xl-8">
               <div className="form_grid">
-                <h4 className="mb5">Send Us An Email</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                  gravida quis libero eleifend ornare. Maecenas mattis enim at
-                  arcu feugiat, sit amet blandit nisl iaculis. Donec lacus odio,
-                  malesuada eu libero sit amet, congue aliquam leo. In hac
-                  habitasse platea dictumst.
-                </p>
                 <Form />
               </div>
             </div>
@@ -75,11 +68,7 @@ const Index = () => {
       </section>
 
       {/* <!-- Start Call to Action --> */}
-      <section className="start-partners bgc-thm pt50 pb50">
-        <div className="container">
-          <CallToAction />
-        </div>
-      </section>
+     
 
       {/* <!-- Our Footer --> */}
       <section className="footer_one">
