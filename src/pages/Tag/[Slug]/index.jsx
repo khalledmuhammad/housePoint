@@ -134,6 +134,8 @@ const Index = ({ data }) => {
 };
 
 export async function getServerSideProps({ locale , query }) {
+
+  
   const { property_for ,name  , namear , type_en_slug , type_ar_slug } = query;
  
   let apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/properties?`;
