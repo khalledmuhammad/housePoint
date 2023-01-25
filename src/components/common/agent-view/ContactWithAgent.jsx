@@ -2,20 +2,19 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-import { getAlpha2Codes } from 'i18n-iso-countries';
 import Recaptcha from "react-google-recaptcha";
-import { Form,Select, Input, Button, Checkbox } from "antd";
-
-/* const countryCodes = getAlpha2Codes("en");
- */
+import { Form, Select, Input, Button } from "antd";
 
 const ContactWithAgent = () => {
+
   const [formData, setFormData] = useState({
     name: "",
-    countryCode: "",
+    selectedValue: "",
     mobile: "",
     email: "",
     message: "",
+    Url :  process.browser && window.location.href,
+
     captcha: null,
   });
   const [countryCodes, setCountryCodes] = useState([]);
@@ -23,24 +22,33 @@ const ContactWithAgent = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+
   const router = useRouter();
   const [form] = Form.useForm();
 
-   useEffect(() => {
+  useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API}/get-country`)
-    .then(response => response.json())
-    .then(data => {
-      // Update the component's state with the country codes
-      setCountryCodes(data);
-      console.log(countryCodes)
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });}, [])
-   
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data) {
+          console.error("Error: No data received from API");
+          return;
+        }
+        setCountryCodes(data);
+        console.log(countryCodes);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
 
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+      selectedValue: selectedValue,
+    });
   };
 
   const handleCaptcha = (value) => {
@@ -52,8 +60,12 @@ const ContactWithAgent = () => {
     setErrors({});
     try {
       form.validateFields();
-      /*       const response = await axios.post('/api/submit', formData);
-       */ console.log(formData);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API}/send-email`,
+        formData
+      );
+
+      console.log(formData);
       setLoading(false);
       toast.success(
         "Thank you for your message, We will get back to you soon.",
@@ -72,6 +84,10 @@ const ContactWithAgent = () => {
     }
     setIsSubmitting(false);
   };
+
+  if (!countryCodes || Object.values(countryCodes).length === 0) {
+    return <p>No country codes available</p>;
+  }
 
   return (
     <>
@@ -104,29 +120,35 @@ const ContactWithAgent = () => {
             },
           ]}
           hasFeedback
-          validateStatus={errors.name ? "error" : ""}
-          help={errors.name}
         >
           <Input name="name" placeholder="Name" />
         </Form.Item>
         <Form.Item
-        label="Country Code"
-        name="countryCode"
-        rules={[
-          {
-            required: true,
-            message: 'Please select your country code!',
-          },
-        ]}
-      >
-        <Select placeholder="Select a country code" name="countryCode">
-          {Object.values(countryCodes).map((item) => (
-            <Select.Option key={item.iso} value={item.nicename + item.phonecode}>
-              {`${item.phonecode} ${item.nicename}`}
-            </Select.Option>
-          ))}
-        </Select>
-      </Form.Item>
+          name="selectedValue"
+          label="Country Code"
+          rules={[
+            { required: true, message: "Please select your country code!" },
+          ]}
+        >
+          <Select
+            placeholder="Select a country code"
+            name="selectedValue"
+            value={selectedValue}
+            onChange={(value) => {
+              setSelectedValue(value);
+              console.log(value);
+            }}
+          >
+            {Object.values(countryCodes).map((item) => (
+              <Select.Option
+                key={item.iso}
+                value={item.nicename + item.phonecode}
+              >
+                {`${item.phonecode} ${item.nicename}`}
+              </Select.Option>
+            ))}
+          </Select>
+        </Form.Item>
         <Form.Item
           label="Mobile"
           name="mobile"
@@ -137,8 +159,6 @@ const ContactWithAgent = () => {
             },
           ]}
           hasFeedback
-          validateStatus={errors.mobile ? "error" : ""}
-          help={errors.mobile}
         >
           <Input name="mobile" placeholder="Mobile" />
         </Form.Item>
@@ -156,8 +176,6 @@ const ContactWithAgent = () => {
             },
           ]}
           hasFeedback
-          validateStatus={errors.email ? "error" : ""}
-          help={errors.email}
         >
           <Input name="email" placeholder="Email" />
         </Form.Item>
@@ -171,8 +189,6 @@ const ContactWithAgent = () => {
             },
           ]}
           hasFeedback
-          validateStatus={errors.message ? "error" : ""}
-          help={errors.message}
         >
           <Input.TextArea name="message" placeholder="Message" />
         </Form.Item>
@@ -182,7 +198,6 @@ const ContactWithAgent = () => {
             onChange={handleCaptcha}
           />
         </Form.Item>
-        {errors.global && <p className="global-error">{errors.global}</p>}
         <Form.Item>
           <Button
             type="primary"
