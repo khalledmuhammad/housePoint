@@ -52,8 +52,10 @@ const BlogDetailsDynamic = ({ data }) => {
       <PopupSignInUp />
 
       {/* <!-- Main Blog Post Content --> */}
-      <section className="blog_post_container bgc-f7">
+      <section className="blog_post_container bgc-f7 bgc-white">
+
         <div className="container">
+
           <div className="row">
             <div className="col-xl-6">
               <BreadCrumb2     Title={`   ${
@@ -62,7 +64,9 @@ const BlogDetailsDynamic = ({ data }) => {
             </div>
           </div>
 
+          <img className="img-whp w-100 m-3" src={`https://housepointegypt.com/imgs/${data.img}`} alt={data.img} />
           <div className="row">
+
             {router.locale === "ar" ? (
               <div dir="rtl">
                 <h2>{parse(data.tit2)}</h2>
