@@ -8,6 +8,22 @@ const Seo = ({ pageTitle, font, pageDesc , Keyword  }) => {
     <>
       <Head>
         <meta charSet="latin1" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "House Point Egypt",
+      "url": "https://house-point.vercel.app/",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=100084298338831",
+        "https://www.instagram.com/housepointegypt/",
+        "https://twitter.com/housepointegypt",
+        "https://www.youtube.com/channel/UC5029dOLeVYEtDSl20_CKeQ",
+        "https://www.linkedin.com/in/house-point-egypt-7a856310a/"
+      ]
+    }`}} ></script>
+
+
 
         <title>
           {pageTitle ? pageTitle : "Apartments And Villas For Rent and Sale in Maadi, Katameya and New Cairo | House Point Egypt"}
