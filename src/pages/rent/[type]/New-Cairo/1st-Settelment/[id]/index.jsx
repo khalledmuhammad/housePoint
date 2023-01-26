@@ -18,6 +18,7 @@ import BreadCrumb2 from "./BreadCrumb2";
 import WhatsAppButton from "../../../../../../components/Whatsapp/whatsapp";
 import Seo from "../../../../../../components/common/seo";
 
+
 const ListingDynamicDetailsV1 = ({ Properties }) => {
   const settings = {
     dots: false,
