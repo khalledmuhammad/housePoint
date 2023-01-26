@@ -27,6 +27,68 @@ const Seo = ({ pageTitle, font, pageDesc, Keyword }) => {
     }`,
           }}
         ></script>
+        <script type="application/Id+json" 
+         dangerouslySetInnerHTML={{
+          __html: `
+          {
+            "@context": "http://schema.org/",
+            "@type": "Product",
+            "name": "",
+            "description": "",
+            "image":[ "" ],
+            "sku": "REF5654",
+            "mpn": "5654",
+            "brand": {
+                "name": "House Point Egypt",
+                "@type": "RealEstateAgent",
+                "image": "",
+                 "address": {
+                    "@type": "PostalAddress",
+                        "addressLocality": "Maadi",
+                        "addressRegion": "Cairo",
+                        "postalCode": "11728",
+                        "streetAddress": "Building #29 Road 13 Cross 86 - Ground floor, office no.1 - Maadi Sarayat, Cairo. Egypt",
+                        "addressCountry": "Egypt"
+                      },
+                      "priceRange": "$$",
+                      "telephone": "01221187659"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount":  "1"         },
+        "offers": {
+          "@type": "Offer",
+            "url" : "https://housepointegypt.com",
+                    "priceCurrency": "Egp",
+                      "price": "30000",
+                        "priceValidUntil": "2021-01-01",
+                          "itemCondition": "http://schema.org/UsedCondition",
+                            "availability": "http://schema.org/InStock",
+                              "seller": {
+                  "@type": "Organization",
+                    "name": "House point Egypt"
+                }
+              },
+               "review":
+                {
+                    "@type": "Review",
+                    "reviewRating":
+                    {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "author": {
+                        "@type": "Person",
+                        "name": "House point Egypt"
+                    }
+                }
+        }
+  `,
+        }}
+      ></script>
+
 
         <title>
           {pageTitle
