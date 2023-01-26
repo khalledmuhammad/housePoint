@@ -1,14 +1,17 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const Seo = ({ pageTitle, font, pageDesc , Keyword  }) => {
+const Seo = ({ pageTitle, font, pageDesc, Keyword }) => {
   const router = useRouter();
 
   return (
     <>
       <Head>
         <meta charSet="latin1" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -21,30 +24,54 @@ const Seo = ({ pageTitle, font, pageDesc , Keyword  }) => {
         "https://www.youtube.com/channel/UC5029dOLeVYEtDSl20_CKeQ",
         "https://www.linkedin.com/in/house-point-egypt-7a856310a/"
       ]
-    }`}} ></script>
-
-
+    }`,
+          }}
+        ></script>
 
         <title>
-          {pageTitle ? pageTitle : "Apartments And Villas For Rent and Sale in Maadi, Katameya and New Cairo | House Point Egypt"}
+          {pageTitle
+            ? pageTitle
+            : "Apartments And Villas For Rent and Sale in Maadi, Katameya and New Cairo | House Point Egypt"}
         </title>
-        <meta name="description" content={pageDesc ? pageDesc :  "Apartments and Villas For Rent and Sale in Maadi, Katameya in Cairo Egypt. Our Company House Point Egypt Real Estate in Maadi provide You Furnished Apartments, Villas, Penthouses and Ground Floors in Maadi Sarayat, Maadi Degla and Old Maadi."} />
+        <meta
+          name="description"
+          content={
+            pageDesc
+              ? pageDesc
+              : "Apartments and Villas For Rent and Sale in Maadi, Katameya in Cairo Egypt. Our Company House Point Egypt Real Estate in Maadi provide You Furnished Apartments, Villas, Penthouses and Ground Floors in Maadi Sarayat, Maadi Degla and Old Maadi."
+          }
+        />
 
         <link rel="canonical" href={`${router.asPath}`} />
 
         <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={router.asPath} />
         <meta
-          property="twitter:url"
-          content="https://yourappitunity.co.uk/creative-design"
+          property="twitter:title"
+          content={
+            pageTitle
+              ? pageTitle
+              : "Apartments And Villas For Rent and Sale in Maadi, Katameya and New Cairo | House Point Egypt"
+          }
         />
-        <meta property="twitter:title" content={pageTitle} />
-        <meta property="twitter:description" content={pageDesc} />
+        <meta
+          property="twitter:description"
+          content={
+            pageDesc
+              ? pageDesc
+              : "Apartments and Villas For Rent and Sale in Maadi, Katameya in Cairo Egypt. Our Company House Point Egypt Real Estate in Maadi provide You Furnished Apartments, Villas, Penthouses and Ground Floors in Maadi Sarayat, Maadi Degla and Old Maadi."
+          }
+        />
         <meta property="twitter:image" />
 
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="keywords"
-          content={Keyword ? Keyword : "maadi, rent maadi, rent in maadi, katameya heights, rent, apartment, villa, ground-floor, penthouse, rentals, maadi sarayat, maadi degla, apartment for rent in maadi, villa for rent in maadi, villa for rent in katameya heights,villa for sale in katameya heights, office space, maadi rentals,katameya heights rentals, maadi for rent, ktameya heights for rent, Cairo Governorate, Egypt"}
+          content={
+            Keyword
+              ? Keyword
+              : "maadi, rent maadi, rent in maadi, katameya heights, rent, apartment, villa, ground-floor, penthouse, rentals, maadi sarayat, maadi degla, apartment for rent in maadi, villa for rent in maadi, villa for rent in katameya heights,villa for sale in katameya heights, office space, maadi rentals,katameya heights rentals, maadi for rent, ktameya heights for rent, Cairo Governorate, Egypt"
+          }
         />
         <meta name="ibthemes" content="ATFN" />
         <meta
