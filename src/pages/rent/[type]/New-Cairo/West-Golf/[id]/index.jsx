@@ -16,6 +16,8 @@ import { useTranslation } from "react-i18next";
 import { ShareSocial } from "react-share-social";
 import BreadCrumb2 from "./BreadCrumb2";
 import WhatsAppButton from "../../../../../../components/Whatsapp/whatsapp";
+import Seo from "../../../../../../components/common/seo";
+import Seo from "../../../../../../components/common/seo";
 
 const ListingDynamicDetailsV1 = ({ Properties }) => {
   const settings = {
@@ -65,6 +67,18 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
   if (Properties) {
     return (
       <>
+        <Seo
+          pageTitle={
+            router.locale === "ar"
+              ? `${property.titlear} `
+              : `  ${property.Title} `
+          }
+          pageDesc={
+            router.locale === "ar"
+              ? ` ${property.titlear} `
+              : `  ${property.Title} `
+          }
+        />
         {/* <!-- Main Header Nav --> */}
         <Header />
 

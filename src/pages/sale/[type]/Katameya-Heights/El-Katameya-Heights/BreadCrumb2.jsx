@@ -15,7 +15,7 @@ const BreadCrumb2 = ({ length, PropType }) => {
     },
     {
       name: "Katameya-Heights",
-      link: `/sale/${PropType}/Katameya-Heights`,
+      link: `/sale/${PropType}/katameya-heights`,
     },
   ];
   return (

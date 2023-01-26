@@ -22,8 +22,11 @@ const Index = ({ data }) => {
   
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
-
+  <Seo 
+      pageTitle={ router.locale === "ar" ? "عقارات للبيع في القاهرة، مصر | House Point " :"Properties For sale In Cairo, Egypt | House Point" }
+      pageDesc={router.locale === "ar" ?"شقق وفيلات فاخره للبيع في المعادي اذا كنت تبحث علي عقارات للايجار في المعادي فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل العقارات بافضل الاسعار"  : "more properties for sale in maadi, cairo, egypt. house point real estate in maadi we will help you to find excellent properties apartments, homes, villas to rent in maadi "}
+      
+      />
       {/* <!-- Main Header Nav --> */}
       <Header />
 

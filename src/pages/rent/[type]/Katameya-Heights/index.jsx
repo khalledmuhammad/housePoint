@@ -21,8 +21,11 @@ const Index = ({ data }) => {
 
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
-
+  <Seo 
+      pageTitle={ router.locale === "ar" ? `${router.query.type} للايجار في القطاميه هاياتس مصر | House Point ` :`${router.query.type} For rent In katamyeya hrights, Egypt | House Point` }
+      pageDesc={router.locale === "ar" ?`شقق وفيلات فاخره للايجار اذا كنت تبحث علي ${router.query.type} للايجار في القطاميه هاياتس فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل ال${router.query.type} بافضل الاسعار`  : `more properties for rent in katamyeya hrights, cairo, egypt. house point real estate in katamyeya hrights we will help you to find excellent properties apartments, homes, villas to rent in katamyeya hrights `}
+      
+      />
       {/* <!-- Main Header Nav --> */}
       <Header />
 

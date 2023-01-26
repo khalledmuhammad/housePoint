@@ -1,40 +1,54 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-const Seo = ({ pageTitle, font }) => (
-  <>
-    <Head>
-      	<meta charSet="latin1" />
+const Seo = ({ pageTitle, font, pageDesc , Keyword  }) => {
+  const router = useRouter();
 
-      <title>
-        {pageTitle && `${pageTitle} || housepoint - Real Estate  }`}
-      </title>
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="keywords"
-        content="advanced custom search, agency, agent, business, clean, corporate, directory, google maps, homes, idx agent, listing properties, membership packages, property, real broker, real estate, real estate agent, real estate agency, realtor"
-      />
-      <meta
-        name="description"
-        content="FindHouse - Real Estate React Template"
-      />
-      <meta name="ibthemes" content="ATFN" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  return (
+    <>
+      <Head>
+        <meta charSet="latin1" />
 
-      {font && <link href={font} rel="stylesheet" />}
-      <link rel="icon" href="favicon.ico" />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-        integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      />
-    </Head>
-  </>
-);
+        <title>
+          {pageTitle ? pageTitle : "Apartments And Villas For Rent and Sale in Maadi, Katameya and New Cairo | House Point Egypt"}
+        </title>
+        <meta name="description" content={pageDesc ? pageDesc :  "Apartments and Villas For Rent and Sale in Maadi, Katameya in Cairo Egypt. Our Company House Point Egypt Real Estate in Maadi provide You Furnished Apartments, Villas, Penthouses and Ground Floors in Maadi Sarayat, Maadi Degla and Old Maadi."} />
 
+        <link rel="canonical" href={`${router.asPath}`} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://yourappitunity.co.uk/creative-design"
+        />
+        <meta property="twitter:title" content={pageTitle} />
+        <meta property="twitter:description" content={pageDesc} />
+        <meta property="twitter:image" />
+
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="keywords"
+          content={Keyword ? Keyword : "maadi, rent maadi, rent in maadi, katameya heights, rent, apartment, villa, ground-floor, penthouse, rentals, maadi sarayat, maadi degla, apartment for rent in maadi, villa for rent in maadi, villa for rent in katameya heights,villa for sale in katameya heights, office space, maadi rentals,katameya heights rentals, maadi for rent, ktameya heights for rent, Cairo Governorate, Egypt"}
+        />
+        <meta name="ibthemes" content="ATFN" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {font && <link href={font} rel="stylesheet" />}
+        <link rel="icon" href="favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+          integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </Head>
+    </>
+  );
+};
 export default Seo;

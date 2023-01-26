@@ -19,11 +19,15 @@ import { useRouter } from "next/router";
 const Index = ({ data }) => {
   const router = useRouter();
   console.log(router.query);
+  console.log(data)
 
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
-
+  <Seo 
+      pageTitle={ router.locale === "ar" ? `${router.query.type} للايجار في القاهرة، مصر | House Point ` :`${router.query.type} For rent In Cairo, Egypt | House Point` }
+      pageDesc={router.locale === "ar" ?`شقق وفيلات فاخره للايجار اذا كنت تبحث علي ${router.query.type} للايجار في القاهره فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل ال${router.query.type} بافضل الاسعار`  : `more properties for rent in maadi, cairo, egypt. house point real estate in maadi we will help you to find excellent properties apartments, homes, villas to rent in maadi `}
+      
+      />
       {/* <!-- Main Header Nav --> */}
       <Header />
 

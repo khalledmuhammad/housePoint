@@ -57,8 +57,12 @@ const FeaturedProperties = ({ Properties }) => {
                 legacyBehavior
                 href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
                   router.locale === "ar" ? item.type_en_slug : item.type_en_slug
-                }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                  router.locale === "ar" ? item.slug_ar : item.slug_en
+                }/${item.name
+                  .replace(" ", "-")
+                  .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                  router.locale === "ar"
+                    ? item.slug_ar
+                    : item.slug_en.toLowerCase()
                 }`}
               >
                 <a className="text-white">
@@ -72,8 +76,12 @@ const FeaturedProperties = ({ Properties }) => {
               legacyBehavior
               href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
                 router.locale === "ar" ? item.type_en_slug : item.type_en_slug
-              }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                router.locale === "ar" ? item.slug_ar : item.slug_en
+              }/${item.name
+                .replace(" ", "-")
+                .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                router.locale === "ar"
+                  ? item.slug_ar
+                  : item.slug_en.toLowerCase()
               }`}
             >
               <a>
@@ -107,8 +115,12 @@ const FeaturedProperties = ({ Properties }) => {
                         router.locale === "ar"
                           ? item.type_en_slug
                           : item.type_en_slug
-                      }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                        router.locale === "ar" ? item.slug_ar : item.slug_en
+                      }/${item.name
+                        .replace(" ", "-")
+                        .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                        router.locale === "ar"
+                          ? item.slug_ar
+                          : item.slug_en.toLowerCase()
                       }`}
                     >
                       <a className="fp_price">
@@ -122,7 +134,9 @@ const FeaturedProperties = ({ Properties }) => {
                               }`
                           : router.locale === "en" &&
                             item.Property_for === "Rent"
-                          ? `${item.Price.toLocaleString()} ${item.Price_ex} / Month `
+                          ? `${item.Price.toLocaleString()} ${
+                              item.Price_ex
+                            } / Month `
                           : `${item.Price.toLocaleString()} ${item.Price_ex}`}
                       </a>
                     </Link>
@@ -157,8 +171,12 @@ const FeaturedProperties = ({ Properties }) => {
                         router.locale === "ar"
                           ? item.type_en_slug
                           : item.type_en_slug
-                      }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                        router.locale === "ar" ? item.slug_ar : item.slug_en
+                      }/${item.name
+                        .replace(" ", "-")
+                        .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                        router.locale === "ar"
+                          ? item.slug_ar
+                          : item.slug_en.toLowerCase()
                       }`}
                     >
                       <a className="text-dark">
@@ -176,8 +194,12 @@ const FeaturedProperties = ({ Properties }) => {
                         router.locale === "ar"
                           ? item.type_en_slug
                           : item.type_en_slug
-                      }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                        router.locale === "ar" ? item.slug_ar : item.slug_en
+                      }/${item.name
+                        .replace(" ", "-")
+                        .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                        router.locale === "ar"
+                          ? item.slug_ar
+                          : item.slug_en.toLowerCase()
                       }`}
                     >
                       <a className="text-dark">
@@ -197,8 +219,12 @@ const FeaturedProperties = ({ Properties }) => {
                         router.locale === "ar"
                           ? item.type_en_slug
                           : item.type_en_slug
-                      }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                        router.locale === "ar" ? item.slug_ar : item.slug_en
+                      }/${item.name
+                        .replace(" ", "-")
+                        .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                        router.locale === "ar"
+                          ? item.slug_ar
+                          : item.slug_en.toLowerCase()
                       }`}
                     >
                       <a className="text-dark">
@@ -216,8 +242,12 @@ const FeaturedProperties = ({ Properties }) => {
                         router.locale === "ar"
                           ? item.type_en_slug
                           : item.type_en_slug
-                      }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                        router.locale === "ar" ? item.slug_ar : item.slug_en
+                      }/${item.name
+                        .replace(" ", "-")
+                        .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                        router.locale === "ar"
+                          ? item.slug_ar
+                          : item.slug_en.toLowerCase()
                       }`}
                     >
                       <a className="text-dark">

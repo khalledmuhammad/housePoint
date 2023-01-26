@@ -160,11 +160,11 @@ const FeaturedItem = ({
     ?.filter(propertiesHandler)
     ?.filter(statusHandler)
     ?.filter(bathroomHandler)
-    ?.filter(bedroomHandler)
-    if (price.min!="" && price.max!="") {
-      content = content.filter(priceHandler);
+    ?.filter(bedroomHandler);
+  if (price.min != "" && price.max != "") {
+    content = content.filter(priceHandler);
   }
-      content = content
+  content = content
     ?.filter(propertiesStartusHandler)
     ?.filter(locationHandler)
     ?.filter(sublocationHandler)
@@ -193,8 +193,12 @@ const FeaturedItem = ({
                 legacyBehavior
                 href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
                   router.locale === "ar" ? item.type_en_slug : item.type_en_slug
-                }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                  router.locale === "ar" ? item.slug_ar : item.slug_en
+                }/${item.name
+                  .replace(" ", "-")
+                  .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                  router.locale === "ar"
+                    ? item.slug_ar
+                    : item.slug_en.toLowerCase()
                 }`}
               >
                 <a className="text-white" charSet="latin1">
@@ -231,8 +235,12 @@ const FeaturedItem = ({
                 legacyBehavior
                 href={`/${item.Property_for === "Rent" ? "rent" : "sale"}/${
                   router.locale === "ar" ? item.type_en_slug : item.type_en_slug
-                }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                  router.locale === "ar" ? item.slug_ar : item.slug_en
+                }/${item.name
+                  .replace(" ", "-")
+                  .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                  router.locale === "ar"
+                    ? item.slug_ar
+                    : item.slug_en.toLowerCase()
                 }`}
               >
                 <a className="fp_price">
@@ -262,8 +270,12 @@ const FeaturedItem = ({
                       router.locale === "ar"
                         ? item.type_en_slug
                         : item.type_en_slug
-                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }/${item.name
+                      .replace(" ", "-")
+                      .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                      router.locale === "ar"
+                        ? item.slug_ar
+                        : item.slug_en.toLowerCase()
                     }`}
                   >
                     <a>
@@ -294,8 +306,12 @@ const FeaturedItem = ({
                       router.locale === "ar"
                         ? item.type_en_slug
                         : item.type_en_slug
-                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }/${item.name
+                      .replace(" ", "-")
+                      .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                      router.locale === "ar"
+                        ? item.slug_ar
+                        : item.slug_en.toLowerCase()
                     }`}
                   >
                     <a className="text-dark">
@@ -311,8 +327,12 @@ const FeaturedItem = ({
                       router.locale === "ar"
                         ? item.type_en_slug
                         : item.type_en_slug
-                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }/${item.name
+                      .replace(" ", "-")
+                      .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                      router.locale === "ar"
+                        ? item.slug_ar
+                        : item.slug_en.toLowerCase()
                     }`}
                   >
                     <a className="text-dark">
@@ -330,8 +350,12 @@ const FeaturedItem = ({
                       router.locale === "ar"
                         ? item.type_en_slug
                         : item.type_en_slug
-                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }/${item.name
+                      .replace(" ", "-")
+                      .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                      router.locale === "ar"
+                        ? item.slug_ar
+                        : item.slug_en.toLowerCase()
                     }`}
                   >
                     <a className="text-dark">
@@ -347,8 +371,12 @@ const FeaturedItem = ({
                       router.locale === "ar"
                         ? item.type_en_slug
                         : item.type_en_slug
-                    }/${item.name.replace(" ", "-")}/${item.subPropEn}/${
-                      router.locale === "ar" ? item.slug_ar : item.slug_en
+                    }/${item.name
+                      .replace(" ", "-")
+                      .toLowerCase()}/${item.subPropEn.toLowerCase()}/${
+                      router.locale === "ar"
+                        ? item.slug_ar
+                        : item.slug_en.toLowerCase()
                     }`}
                   >
                     <a className="text-dark">

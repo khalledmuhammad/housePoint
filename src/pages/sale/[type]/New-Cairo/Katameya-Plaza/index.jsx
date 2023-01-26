@@ -21,7 +21,18 @@ const Index = ({ data }) => {
 
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
+      <Seo
+        pageTitle={
+          router.locale === "ar"
+            ? `${router.query.type} للبيع في  القاهرة الجديده، مصر | House Point `
+            : `${router.query.type} For sale In Cairo, Egypt | House Point`
+        }
+        pageDesc={
+          router.locale === "ar"
+            ? `شقق وفيلات فاخره للبيع اذا كنت تبحث علي ${router.query.type} للبيع في القاهره فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل ال${router.query.type} بافضل الاسعار`
+            : `more properties for sale in new cairo, egypt. house point real estate in new cairo we will help you to find excellent properties apartments, homes, villas to sale in new cairo `
+        }
+      />
 
       {/* <!-- Main Header Nav --> */}
       <Header />

@@ -15,11 +15,11 @@ const BreadCrumb2 = ({ length, Title, PropType }) => {
     },
     {
       name: "maadi",
-      link: `/sale/${PropType}/Maadi`,
+      link: `/sale/${PropType}/maadi`,
     },
     {
       name: "New-Maadi",
-      link: `/sale/${PropType}/Maadi/New-Maadi`,
+      link: `/sale/${PropType}/maadi/new-maadi`,
     },
   ];
   return (

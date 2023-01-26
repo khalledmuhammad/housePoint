@@ -21,7 +21,18 @@ const NEWCAIRO = ({ data, t }) => {
   const router = useRouter();
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
+      <Seo
+        pageTitle={
+          router.locale === "ar"
+            ? `عقارات في  القاهرة الجديده، مصر  | House Point `
+            : ` properties In new Cairo, Egypt | House Point`
+        }
+        pageDesc={
+          router.locale === "ar"
+            ? `شقق وفيلات فاخره  اذا كنت تبحث علي عقارات في القاهره فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل البافضل الاسعار`
+            : `more properties in new cairo, egypt. house point real estate in new cairo we will help you to find excellent properties apartments, homes, villas in new cairo `
+        }
+      />
 
       {/* <!-- Main Header Nav --> */}
       <Header />

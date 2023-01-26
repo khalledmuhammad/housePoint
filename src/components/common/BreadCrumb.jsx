@@ -21,7 +21,7 @@ const BreadCrumb = ({ title = "" , Maadi , locations }) => {
         </li>
         {
          locations && locations.map(item=> <li key={Math.random()} className="breadcrumb-item">
-         <Link legacyBehavior  href={`${item.link}`}>
+         <Link legacyBehavior  href={`${item.link.toLowerCase()}`}>
            <a >{item.name}</a>
            </Link>
          </li>)
