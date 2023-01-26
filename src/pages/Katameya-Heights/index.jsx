@@ -20,8 +20,11 @@ const Index = ({ data }) => {
   const router = useRouter();
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
-
+<Seo 
+      pageTitle={ router.locale === "ar" ? `عقارات في القطاميه هايتس مصر ${data?.length} | House Point ` :` ${data?.length}  Properties in katameya heights, Egypt | House Point` }
+      pageDesc={router.locale === "ar" ?"شقق وفيلات فاخره للايجار في القطاميه هايتس اذا كنت تبحث علي عقارات القطاميه هايتس فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل العقارات بافضل الاسعار"  : "more properties for rent in katameya heights, cairo, egypt. house point real estate in katameya heights we will help you to find excellent properties apartments, homes, villas to rent in katameya heights "}
+      
+      />
       {/* <!-- Main Header Nav --> */}
       <Header />
 

@@ -24,8 +24,8 @@ const NEWCAIRO = ({ data, t }) => {
       <Seo
         pageTitle={
           router.locale === "ar"
-            ? `عقارات في  القاهرة الجديده، مصر  | House Point `
-            : ` properties In new Cairo, Egypt | House Point`
+            ? `عقارات في  القاهرة الجديده، مصر  ${data?.length}   | House Point `
+            : ` ${data?.length}  properties In new Cairo, Egypt | House Point`
         }
         pageDesc={
           router.locale === "ar"

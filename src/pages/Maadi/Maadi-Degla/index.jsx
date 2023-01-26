@@ -20,8 +20,11 @@ const Index = ({ data }) => {
 
   return (
     <>
-      <Seo pageTitle="Simple Listing – Grid V1" />
-
+<Seo 
+      pageTitle={ router.locale === "ar" ? `عقارات في المعادي مصر ${data?.length} | House Point ` :` ${data?.length}  Properties in maadi, Egypt | House Point` }
+      pageDesc={router.locale === "ar" ?"شقق وفيلات فاخره للايجار في المعادي اذا كنت تبحث علي عقارات المعادي فبادر بالتجربه مع شركه هاوس بوينت للحصول علي افضل العقارات بافضل الاسعار"  : "more properties for rent in maadi, cairo, egypt. house point real estate in maadi we will help you to find excellent properties apartments, homes, villas to rent in maadi "}
+      
+      />
       {/* <!-- Main Header Nav --> */}
       <Header />
 
