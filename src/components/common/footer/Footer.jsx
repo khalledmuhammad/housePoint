@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 const Footer = () => {
   const router = useRouter();
   return (
-    <>
-      <div className="col-sm-6 col-md-6 col-lg-3 col-xl-3 pr0 pl0">
+    <div  className="d-flex gap-4 flex-wrap justify-content-center" dir={router.locale === "en" ? "" : "rtl" }>
+      <div className="col-sm-4">
         <div className="footer_about_widget">
           {router.locale === "en" ? (
             <h4>About us</h4>
@@ -15,7 +15,7 @@ const Footer = () => {
             <h4 dir="rtl"> من نحن</h4>
           )}
           {router.locale === "en" ? (
-            <p className="text-white">
+            <p className="">
               House Point Company, The art of Property Management, The easiest
               way to your new house in Maadi, Katameya Heights, and New Cairo.
               We have +15 years of experience in Property Management. We help
@@ -27,7 +27,7 @@ const Footer = () => {
               because we have what you are looking for.
             </p>
           ) : (
-            <p dir="rtl" className="text-white">
+            <p dir="rtl" className="">
               شركه كورنر لاداره الممتلكات. اسهل طريق لعنوانك الجديد في اي مكان
               في مصر باسعار تناسب الجميع تعمل الشركه في مجال اداره الاملاك
               والعقارات منذ سنه 2000 حيث ساعدنا الكثير في اختيار بيته وعنوانه
@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
       {/* End .col */}
 
-      <div className="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+      <div className="">
         <div className="footer_qlink_widget">
           {router.locale === "en" ? (
             <h4>Link</h4>
@@ -131,7 +131,7 @@ const Footer = () => {
       </div>
       {/* End .col */}
 
-      <div className="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+      <div className="">
         <div className="footer_contact_widget">
           {router.locale === "en" ? (
             <h4>Contact Us</h4>
@@ -162,12 +162,12 @@ const Footer = () => {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216.06024675745567!2d31.265611999999997!3d29.9517156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583807cabfbd7d%3A0x81e98f6ddff99809!2sHouse%20Point%20Egypt!5e0!3m2!1sen!2seg!4v1674645724966!5m2!1sen!2seg"
                     height="300"
                     style={{border:0}}
-                    allowfullscreen={true}
+                    allowFullScreen={true}
                     loading="lazy"
                     title="map"
                     className="gmap_iframe"
 
-                    referrerpolicy="no-referrer-when-downgrade"
+                    referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
             </li>
           </ul>
@@ -175,7 +175,7 @@ const Footer = () => {
       </div>
       {/* End .col */}
 
-      <div className="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+      <div className="">
         <div className="footer_social_widget">
         {router.locale === "en" ? (
             <h4>follow Us</h4>
@@ -187,7 +187,7 @@ const Footer = () => {
 
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
