@@ -6309,6 +6309,8 @@ form.home5_advanced_search_form
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+
 }
 @media (max-width: 576px) {
   .feat_property.d-flex {
