@@ -3,10 +3,9 @@ import Link from "next/link";
 const CopyrightFooter = () => {
   const menuItems = [
     { id: 1, name: "Home", routeLink: "/" },
-    { id: 2, name: "Listing", routeLink: "/listing-grid-v3" },
-    { id: 3, name: "Property", routeLink: "/listing-grid-v4" },
-    { id: 4, name: "About Us", routeLink: "/about-us" },
-    { id: 5, name: "Blog", routeLink: "/blog-list-3" },
+    { id: 2, name: "Rent", routeLink: "/rent" },
+    { id: 3, name: "Buy", routeLink: "/sale" },
+    { id: 4, name: "Blog", routeLink: "/blog" },
     { id: 6, name: "Contact", routeLink: "/contact" },
   ];
 
@@ -30,13 +29,13 @@ const CopyrightFooter = () => {
       <div className="col-lg-6 col-xl-6">
         <div className="copyright-widget text-end">
           <p>
-            &copy; {new Date().getFullYear()} by{" "}
+            &copy; 2023 by{" "}
             <a
-              href="https://themeforest.net/user/ib-themes"
+              href="https://yourappitunity.co.uk/"
               target="_blank"
               rel="noreferrer"
             >
-              ib-themes
+              Appitunity
             </a>
             . All rights reserved.
           </p>

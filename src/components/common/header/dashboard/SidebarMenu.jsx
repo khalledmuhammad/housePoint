@@ -10,13 +10,8 @@ const SidebarMenu = () => {
 
   const myProperties = [
     { id: 1, name: "My properties", route: "/my-properties" },
-   
   ];
-  const myBlogs = [
-    { id: 1, name: "My blogs", route: "/my-blogs" },
-   
-  ];
-
+  const myBlogs = [{ id: 1, name: "My blogs", route: "/my-blogs" }];
 
   return (
     <>
@@ -25,10 +20,11 @@ const SidebarMenu = () => {
           <Link legacyBehavior href="/">
             <a>
               <img
-                src="/assets/images/header-logo2.png"
-                alt="header-logo2.png"
+                src="/assets/images/hPLogo.png"
+                alt="hPLogo.png"
+                width="100px"
               />
-              <span>FindHouse</span>
+              <span>House Point</span>
             </a>
           </Link>
         </li>
@@ -115,13 +111,8 @@ const SidebarMenu = () => {
                 ))}
               </ul>
             </li>
-         
-
-      
           </ul>
         </li>
-
-       
       </ul>
     </>
   );

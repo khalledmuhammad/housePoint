@@ -10,8 +10,9 @@ const MobileMenu = () => {
           <div className="main_logo_home2 text-center">
             <img
               className="nav_logo_img img-fluid mt20"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
+              src="/assets/images/hPLogo.png"
+              alt="hPLogo.png"
+              width="100px"
             />
             <span className="mt20">Houe Point</span>
           </div>

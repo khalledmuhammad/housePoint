@@ -31,71 +31,66 @@ const Header = () => {
   return (
     <header
       className={`header-nav menu_style_home_one  navbar-scrolltofixed stricky main-menu  ${
-        navbar ? "stricky-fixed " : ""
+        navbar ? "stricky-fixed " : "stricky-fixed"
       }`}
     >
       <div className="container-fluid p0">
-      {
-        router.locale== "ar" ? 
-        
-        <>
-          {/* <!-- Ace Responsive Menu --> */}
+        {router.locale == "ar" ? (
+          <>
+            {/* <!-- Ace Responsive Menu --> */}
 
-          <Link legacyBehavior href="/">
-          <a className="navbar_brand float-end dn-smd">
-            <img
-              className="logo1 img-fluid"
-              src="/assets/images/header-logo.png"
-              alt="header-logo.png"
-            />
-            <img
-              className="logo2 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
-            />
-            <span>HousePoint</span>
+            <Link legacyBehavior href="/">
+              <a className="navbar_brand float-end dn-smd">
+                <img
+                  className="logo1 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
+                />
+                <img
+                  className="logo2 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
 
-            
-          </a>
-        </Link>
-        {/* site logo brand */}
+                />
+              </a>
+            </Link>
+            {/* site logo brand */}
 
-        <nav className="float-start" dir="rtl">
-          <HeaderMenuContent />
+            <nav className="float-start" dir="rtl">
+              <HeaderMenuContent />
+            </nav>
+            {/* End .navbar */}
+          </>
+        ) : (
+          <>
+            {/* <!-- Ace Responsive Menu --> */}
 
+            <Link legacyBehavior href="/">
+              <a className="navbar_brand float-start dn-smd">
+                <img
+                  className="logo1 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
+                />
+                <img
+                  className="logo2 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
+                />
+              </a>
+            </Link>
+            {/* site logo brand */}
 
-        </nav>
-        {/* End .navbar */}</>
-        :
-        <>
-          {/* <!-- Ace Responsive Menu --> */}
-
-          <Link legacyBehavior href="/">
-          <a className="navbar_brand float-start dn-smd">
-            <img
-              className="logo1 img-fluid"
-              src="/assets/images/header-logo.png"
-              alt="header-logo.png"
-            />
-            <img
-              className="logo2 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
-            />
-            <span>HousePoint</span>
-
-            
-          </a>
-        </Link>
-        {/* site logo brand */}
-
-        <nav>
-          <HeaderMenuContent />
-
-
-        </nav>
-        {/* End .navbar */}</>
-      }
+            <nav>
+              <HeaderMenuContent />
+            </nav>
+            {/* End .navbar */}
+          </>
+        )}
       </div>
     </header>
     // {/* <!-- /.theme-main-menu --> */}

@@ -15,8 +15,10 @@ const PropertyLocation = () => {
           <a href="#">
             <img
               className="map_img_icon"
-              src="/assets/images/header-logo.png"
-              alt="header-logo.png"
+              src="/assets/images/hPLogo.png"
+              alt="hPLogo.png"
+              width="150px"
+
             />
           </a>
         </div>

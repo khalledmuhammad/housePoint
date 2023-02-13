@@ -38,7 +38,7 @@ const Index = ({ Properties, ForBuy, LatestBlogs }) => {
               <div className="col-lg-12">
                 <div className="home_content home4">
                   <div className="home-text text-center">
-                    <h2 className="fz55">{t("FINDHOME")}</h2>
+                    <h2 className="fz55 ">{t("FINDHOME")}</h2>
                   </div>
                   <GlobalHeroFilter className="home4" />
                 </div>

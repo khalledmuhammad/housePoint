@@ -7,7 +7,7 @@ const LookingItem = () => {
         <li className="list-inline-item" key={item.id}>
           <div className="icon">
             <span className={item.icon}></span>
-            <p>{item.title}</p>
+        <a href={item.Link}> <p>{item.title}</p></a>   
           </div>
         </li>
       ))}

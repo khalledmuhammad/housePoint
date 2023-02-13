@@ -9,11 +9,7 @@ const Header = () => {
   const [navbar, setNavbar] = useState(false);
   const router = useRouter();
 
-  const { 
-    
-
-    
-   } = useTranslation("");
+  const {} = useTranslation("");
 
   useEffect(() => {
     let lang = router.locale == "ar" ? "ar" : "en";
@@ -39,55 +35,55 @@ const Header = () => {
       }`}
     >
       <div className="container-fluid p0">
+        {router.locale == "ar" ? (
+          <>
+            <Link legacyBehavior href="/">
+              <a className="navbar_brand float-end dn-smd">
+                <img
+                  className="logo1 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
 
-        {
-                  router.locale== "ar" ? 
-                  <>
-                   <Link legacyBehavior href="/">
-          <a className="navbar_brand float-end dn-smd">
-            <img
-              className="logo1 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
-            />
-            <img
-              className="logo2 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
-            />
-            <span>HousePoint</span>
-          </a>
-        </Link>
-        <nav className="float-start" dir="rtl">
-          <HeaderMenuContent dark={true} />
-        </nav>
-                  
-                  </>
-                  :
-                  <>
-                   <Link legacyBehavior href="/">
-          <a className="navbar_brand float-start dn-smd">
-            <img
-              className="logo1 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
-            />
-            <img
-              className="logo2 img-fluid"
-              src="/assets/images/header-logo2.png"
-              alt="header-logo2.png"
-            />
-            <span>HousePoint</span>
-          </a>
-        </Link>
-        <nav>
-          <HeaderMenuContent dark={true} />
-        </nav>
-                  </>
+                />
+                <img
+                  className="logo2 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
 
-        }
-       
-        
+                />
+              </a>
+            </Link>
+            <nav className="float-start" dir="rtl">
+              <HeaderMenuContent dark={true} />
+            </nav>
+          </>
+        ) : (
+          <>
+            <Link legacyBehavior href="/">
+              <a className="navbar_brand float-start dn-smd">
+                <img
+                  className="logo1 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
+
+                />
+                <img
+                  className="logo2 img-fluid"
+                  src="/assets/images/hPLogo.png"
+                  alt="hPLogo.png"
+                  width="150px"
+
+                />
+              </a>
+            </Link>
+            <nav>
+              <HeaderMenuContent dark={true} />
+            </nav>
+          </>
+        )}
       </div>
     </header>
     // {/* <!-- /.theme-main-menu --> */}

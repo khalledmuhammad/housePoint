@@ -93,9 +93,11 @@ const MobileMenuContent = () => {
           <Link legacyBehavior href="/">
             <a className="sidebar-header-inner">
               <img
-                className="nav_logo_img img-fluid mt20"
-                src="/assets/images/header-logo2.png"
-                alt="header-logo.png"
+                className="nav_logo_img  mt20"
+                src="/assets/images/hPLogo.png"
+                alt="hPLogo.png"
+                width="100px"
+
               />
               <span className="brand-text">House Point</span>
             </a>

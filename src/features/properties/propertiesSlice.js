@@ -21,7 +21,7 @@ const initialState = {
         max: "",
     },
     length: 0,
-    Property_for : "Sale",
+    Property_for : "Rent",
     dashboard_search : ""
 
     

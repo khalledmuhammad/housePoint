@@ -104,7 +104,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
   return (
     <ul
       id="respMenu"
-      className="ace-responsive-menu text-end d-lg-block d-none"
+      className="ace-responsive-menu text-end d-lg-block d-none  fw-bold"
       data-menu-style="horizontal"
     >
       <li>
@@ -112,7 +112,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
           <a
             className={
               home.some((page) => page.routerPath === route.pathname)
-                ? "ui-active"
+                ? "ui-active fw-bold"
                 : undefined
             }
           >
@@ -130,11 +130,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
           }`}
         >
           <a
-            className={
-              listing.some((page) => page.routerPath === route.pathname)
-                ? "ui-active"
-                : undefined
-            }
+            className={route.pathname === "/AllProperties" ? "ui-active fw-bold" : undefined}
           >
             <span className="title">{t("PROPERTIESALL")}</span>
           </a>
@@ -147,13 +143,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
           legacyBehavior
           href={`${route.locale === "ar" ? "/للايجار" : "/rent"}`}
         >
-          <a
-            className={
-              listing.some((page) => page.routerPath === route.pathname)
-                ? "ui-active"
-                : undefined
-            }
-          >
+          <a className={route.pathname === "/rent" ? "ui-active fw-bold" : undefined}>
             <span className="title">{t("RENT")}</span>
           </a>
         </Link>
@@ -165,13 +155,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
           legacyBehavior
           href={`${route.locale === "ar" ? "/للبيع" : "/sale"}`}
         >
-          <a
-            className={
-              listing.some((page) => page.routerPath === route.pathname)
-                ? "ui-active"
-                : undefined
-            }
-          >
+          <a className={route.pathname === "/sale" ? "ui-active fw-bold" : undefined}>
             <span className="title">{t("BUY")}</span>
           </a>
         </Link>
@@ -182,13 +166,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
           legacyBehavior
           href={`${route.locale === "ar" ? "/مدونه" : "/blog"}`}
         >
-          <a
-            className={
-              listing.some((page) => page.routerPath === route.pathname)
-                ? "ui-active"
-                : undefined
-            }
-          >
+          <a className={route.pathname === "/blog" ? "ui-active fw-bold" : undefined}>
             <span className="title">{t("BLOGS")}</span>
           </a>
         </Link>
@@ -200,7 +178,7 @@ const HeaderMenuContent = ({ float = "", dark }) => {
           href={`${route.locale === "ar" ? "/اتصل-بنا" : "/contact"}`}
         >
           <a
-            className={route.pathname === "/contact" ? "ui-active" : undefined}
+            className={route.pathname === "/contact" ? "ui-active fw-bold" : undefined}
           >
             {t("CONTACT")}
           </a>
