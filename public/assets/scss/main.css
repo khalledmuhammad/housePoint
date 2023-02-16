@@ -10144,7 +10144,7 @@ form.home5_advanced_search_form
 
 .breadcrumb_content.style2 {
   margin-bottom: 30px;
-  width: 100vw !important;
+  width: 90vw !important;
 }
 .breadcrumb-item:last-child::before[dir="rtl"] {
   display: none !important;
