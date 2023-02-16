@@ -15,9 +15,9 @@ module.exports = [
   },
   {
     id: 3,
-    title: "Town House",
+    title: "Ground Floors",
     icon: "flaticon-house-2",
-    Link: "/rent/townhouses",
+    Link: "/rent/ground-floors",
 
     text: `Aliquam dictum elit vitae mauris facilisis, at dictum urna.`,
   },
