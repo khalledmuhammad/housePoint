@@ -11,7 +11,7 @@ const SidebarMenu = () => {
   const myProperties = [
     { id: 1, name: "My properties", route: "/my-properties" },
   ];
-  const myBlogs = [{ id: 1, name: "My blogs", route: "/my-blogs" }];
+  const myBlogs = [{ id: 2, name: "My blogs", route: "/my-blogs" }];
 
   return (
     <>
@@ -95,11 +95,11 @@ const SidebarMenu = () => {
                 isParentPageActive(myBlogs, route.pathname) ? "active" : ""
               }`}
             >
-              <a data-bs-toggle="collapse" href="#my-property">
+              <a data-bs-toggle="collapse" href="#my-blogs">
                 <i className="flaticon-home"></i> <span>My Blogs</span>
                 <i className="fa fa-angle-down pull-right"></i>
               </a>
-              <ul className="treeview-menu collapse" id="my-property">
+              <ul className="treeview-menu collapse" id="my-blogs">
                 {myBlogs.map((item) => (
                   <li key={item.id}>
                     <Link legacyBehavior href={item.route}>

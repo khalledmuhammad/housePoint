@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import HeaderMenuContent from "../HeaderMenuContent";
 
-const Header = () => {
+const Header = ({remove}) => {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -41,7 +41,6 @@ const Header = () => {
               width="150px"
 
             />
-            <span>House Point</span>
           </a>
         </Link>
         {/* site logo brand */}

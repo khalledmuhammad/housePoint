@@ -7,6 +7,7 @@ import Router from "next/router";
 import { useEffect } from "react";
 import axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useSelector } from "react-redux";
 
 const Index = ({ data }) => {
   useEffect(() => {
@@ -16,10 +17,18 @@ const Index = ({ data }) => {
     }
   }, []);
 
-  return (
+  const isAuthenticated = useSelector((state) => state.agent.signedIn);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      Router.push("/login");
+    }
+  }, [isAuthenticated]);
+  if (isAuthenticated) 
+{  return (
     <>
       {/* <!-- Main Header Nav --> */}
-      <Header />
+      <Header  />
 
       {/* <!--  Mobile Menu --> */}
       <MobileMenu />
@@ -112,7 +121,7 @@ const Index = ({ data }) => {
         </div>
       </section>
     </>
-  );
+  );}
 };
 
 export async function getServerSideProps({ locale }) {
