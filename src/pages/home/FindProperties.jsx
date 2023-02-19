@@ -162,31 +162,31 @@ const FindProperties = () => {
           {" "}
           <i className="fa fa-home"></i> {t("PRIMELOC")}
         </h4>
-        <Link legacyBehavior href="/maadi">
+        <Link legacyBehavior href="maadi">
           <a className="  d-block">
             {" "}
             <i className={`fa fa-caret-${direction}`}></i> {t("MAADI")}
           </a>
         </Link>
-        <Link legacyBehavior href="/maadi/maadi-sarayat">
+        <Link legacyBehavior href="maadi/maadi-sarayat">
           <a className=" d-block">
             {" "}
             <i className={`fa fa-caret-${direction}`}></i> {t("MAADISARAYAT")}
           </a>
         </Link>
-        <Link legacyBehavior href="/maadi/maadi-degla">
+        <Link legacyBehavior href="maadi/maadi-degla">
           <a className=" d-block">
             {" "}
             <i className={`fa fa-caret-${direction}`}></i> {t("MAADIDEGLA")}
           </a>
         </Link>
-        <Link legacyBehavior href="/katameya-heights">
+        <Link legacyBehavior href="katameya-heights">
           <a className=" d-block">
             {" "}
             <i className={`fa fa-caret-${direction}`}></i> {t("KATAMYA")}
           </a>
         </Link>
-        <Link legacyBehavior href="/new-cairo">
+        <Link legacyBehavior href="new-cairo">
           <a className=" d-block">
             {" "}
             <i className={`fa fa-caret-${direction}`}></i> {t("NEWCAIRO")}
