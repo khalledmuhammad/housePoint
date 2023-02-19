@@ -4,10 +4,10 @@ const LookingItem = () => {
   return (
     <>
       {find.map((item) => (
-        <li className="list-inline-item" key={item.id}>
+        <li className="list-inline-item" key={Math.random() }>
           <div className="icon">
             <span className={item.icon}></span>
-        <a href={item.Link}> <p>{item.title}</p></a>   
+        <a href={item.Link} className="text-white py-2">{item.title}</a>   
           </div>
         </li>
       ))}

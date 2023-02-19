@@ -147,7 +147,7 @@ const FeaturedItem = ({
     return true;
   };
 
-  const [pageNumb, setPageNum] = useState(0);
+  const [pageNumb, setpagenum] = useState(0);
   const propertiesperPage = 25;
   const pageVisited = pageNumb * propertiesperPage;
   const pageCount = Math.ceil(
@@ -287,13 +287,13 @@ const FeaturedItem = ({
                 </h4>
               ) : null}
 
-              <p>
+              <span>
                 <span className="flaticon-placeholder"></span>
 
                 {router.locale == "ar"
                   ? `${item.namear} , ${item.name2ar}`
                   : `  ${item.name} ,${item.name2} `}
-              </p>
+              </span>
             </div>
             {/* End .tc_content */}
 
@@ -410,7 +410,7 @@ const FeaturedItem = ({
   const handlePageClick = async (data) => {
     console.log(data.selected);
 
-    setPageNum(data.selected);
+    setpagenum(data.selected);
   };
 
   return (

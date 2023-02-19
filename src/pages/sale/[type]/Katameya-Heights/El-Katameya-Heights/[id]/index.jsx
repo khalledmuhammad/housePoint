@@ -97,6 +97,9 @@ const ListingDynamicDetailsV1 = ({ Properties }) => {
               <div className="col-lg-6">
                 <BreadCrumb2
                   PropType={router.query.type}
+                  Slug={`  ${
+                    router.locale === "ar" ? property.slug_ar : property.slug_en
+                  }`}
                   Title={`   ${
                     router.locale === "ar" ? property.titlear : property.Title
                   }`}
