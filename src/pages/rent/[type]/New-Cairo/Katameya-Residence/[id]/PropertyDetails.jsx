@@ -89,6 +89,7 @@ const PropertyDetails = ({ Properties }) => {
         </div>
         <div className="Tags">
           <Link
+            legacyBehavior
             href={{
               pathname: "/Tag/[Slug]",
               query: {
@@ -102,6 +103,7 @@ const PropertyDetails = ({ Properties }) => {
           {/* ---------------------------------------------------- */}
 
           <Link
+            legacyBehavior
             href={{
               pathname: "/Tag/[Slug]",
               query: {
@@ -114,6 +116,7 @@ const PropertyDetails = ({ Properties }) => {
           </Link>
           {/* ---------------------------------------------------- */}
           <Link
+            legacyBehavior
             href={{
               pathname: "/Tag/[Slug]",
               query: {
@@ -127,6 +130,7 @@ const PropertyDetails = ({ Properties }) => {
           {/* ---------------------------------------------------- */}
 
           <Link
+            legacyBehavior
             href={{
               pathname: "/Tag/[Slug]",
               query: {
@@ -141,6 +145,7 @@ const PropertyDetails = ({ Properties }) => {
           {/* ---------------------------------------------------- */}
 
           <Link
+            legacyBehavior
             href={{
               pathname: "/Tag/[Slug]",
               query: {

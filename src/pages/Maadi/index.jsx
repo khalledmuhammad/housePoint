@@ -140,7 +140,7 @@ const Index = ({ data }) => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const apiUrlEndpoint = `${process.env.NEXT_PUBLIC_API}/in-maadi`;
   const { data } = await axios.get(apiUrlEndpoint);
   return {
