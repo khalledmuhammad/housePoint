@@ -38,26 +38,26 @@ const nextConfig = {
       {
         source:
           "/ar/%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D9%85%D9%8A%D9%87-%D9%87%D8%A7%D9%8A%D8%AA%D8%B3",
-        destination: "/ar/Katameya-Heights",
+        destination: "/ar/katameya-heights",
         locale: false,
       },
 
       {
         source: "/ar/%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%8A",
-        destination: "/ar/Maadi",
+        destination: "/ar/maadi",
         locale: false,
       },
 
       {
         source:
           "/ar/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D9%87-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87",
-        destination: "/ar/New-Cairo",
+        destination: "/ar/new-cairo",
         locale: false,
       },
       {
         source:
           "/ar/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1%2F%D8%B4%D9%82%D9%87",
-        destination: "/ar/rent/Apartment",
+        destination: "/ar/rent/apartments",
         locale: false,
       },
     ];
