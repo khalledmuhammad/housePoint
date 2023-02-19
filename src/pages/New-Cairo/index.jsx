@@ -51,10 +51,7 @@ const NEWCAIRO = ({ data, t }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <div>
-                The Arabic version of this page is:{" "}
-                {t("NEWCAIRO", { lng: "ar" })}
-              </div>
+           
               <BreadCrumb2 length={data?.length} />
             </div>
             {/* End .col */}
