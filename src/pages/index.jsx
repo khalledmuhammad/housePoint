@@ -26,6 +26,7 @@ const Index = ({ Properties, ForBuy, LatestBlogs }) => {
   );
 };
 
+
 export async function getServerSideProps({ locale }) {
   const [apiUrlEndpoint, apiUrlForBuy, apiUrlLatesBlogs] = await Promise.all([
     fetch(`${process.env.NEXT_PUBLIC_API}/`),
@@ -48,4 +49,6 @@ export async function getServerSideProps({ locale }) {
     },
   };
 }
+
+
 export default dynamic(() => Promise.resolve(Index), { ssr: false });
